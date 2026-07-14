@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-ROOT="${PQC_TLS_TESTBED:-$HOME/pqc-tls-testbed}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT="${PQC_TLS_TESTBED:-$(cd "${SCRIPT_DIR}/.." && pwd)}"
 INSTALL_DIR="${ROOT}/install"
 
 export OPENSSL_ROOT="${INSTALL_DIR}/openssl"
@@ -17,8 +18,13 @@ if [ -f "${OPENSSL_LIBDIR}/ossl-modules/oqsprovider.so" ]; then
 fi
 export OQSPROV_MODULES
 
+LIBOQS_LIBDIR="${LIBOQS_ROOT}/lib"
+if [ -d "${LIBOQS_ROOT}/lib64" ]; then
+  LIBOQS_LIBDIR="${LIBOQS_ROOT}/lib64"
+fi
+
 export PATH="${OPENSSL_ROOT}/bin:${PATH}"
-export LD_LIBRARY_PATH="${LIBOQS_ROOT}/lib:${OPENSSL_LIBDIR}:${LD_LIBRARY_PATH:-}"
+export LD_LIBRARY_PATH="${LIBOQS_LIBDIR}:${OPENSSL_LIBDIR}:${LD_LIBRARY_PATH:-}"
 export OPENSSL_MODULES="${OPENSSL_LIBDIR}/ossl-modules"
 
 oqs_openssl() {

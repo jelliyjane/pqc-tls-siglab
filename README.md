@@ -3,6 +3,10 @@
 Experimental TLS 1.3 testbed for PQC signature algorithms in OpenSSL 3.5,
 liboqs, and oqs-provider.
 
+Start with [INSTALL.md](INSTALL.md) for a clean pinned Ubuntu installation.
+See [REPRODUCIBILITY_STATUS.md](REPRODUCIBILITY_STATUS.md) for the exact public
+reproduction coverage and remaining paper-artifact work.
+
 This repository is the AWS/reproduction wrapper. The actual algorithm/provider
 changes live in two forked repositories.
 
@@ -33,11 +37,11 @@ Repository set:
 - wrapper branch:
   `main`
 
-Important local commits at handoff:
+Pinned component commits:
 
-- liboqs: `e084ea6 Add experimental PQC signature algorithms`
-- oqs-provider: `3fd2152 Add experimental PQC TLS signature provider support`
-- wrapper: `647202e Add PQC TLS AWS testbed wrapper`
+- liboqs: `81a07d160c413f0bf017aaee65233232d4cfa188`
+- oqs-provider: `29f791a772b8c72506efba414ef616bc48cac9ab`
+- OpenSSL: `openssl-3.5.7`
 
 ## Layout
 
@@ -59,15 +63,13 @@ Do not commit build outputs, generated certificates, logs, or installed librarie
 
 ## Fresh AWS Build
 
+The complete package list and verification steps are in
+[INSTALL.md](INSTALL.md). The short path is:
+
 ```bash
 git clone https://github.com/jelliyjane/pqc-tls-siglab.git
 cd pqc-tls-siglab
-
-export LIBOQS_REPO=https://github.com/jelliyjane/liboqs-pqc-tls-siglab.git
-export LIBOQS_REF=pqc-tls-siglab
-export OQSPROVIDER_REPO=https://github.com/jelliyjane/oqs-provider-pqc-tls-siglab.git
-export OQSPROVIDER_REF=pqc-tls-siglab
-
+export PQC_TLS_TESTBED="$PWD"
 ./scripts/build_aws.sh
 source ./scripts/env.sh
 ```

@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="${PQC_TLS_TESTBED:-$PWD}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT="${PQC_TLS_TESTBED:-$(cd "${SCRIPT_DIR}/.." && pwd)}"
 SRC="${ROOT}/src-work"
 INSTALL="${ROOT}/install"
 JOBS="${JOBS:-$(nproc)}"
 
 OPENSSL_REPO="${OPENSSL_REPO:-https://github.com/openssl/openssl.git}"
 OPENSSL_REF="${OPENSSL_REF:-openssl-3.5.7}"
-LIBOQS_REPO="${LIBOQS_REPO:-https://github.com/open-quantum-safe/liboqs.git}"
-LIBOQS_REF="${LIBOQS_REF:-main}"
-OQSPROVIDER_REPO="${OQSPROVIDER_REPO:-https://github.com/open-quantum-safe/oqs-provider.git}"
-OQSPROVIDER_REF="${OQSPROVIDER_REF:-main}"
+LIBOQS_REPO="${LIBOQS_REPO:-https://github.com/jelliyjane/liboqs-pqc-tls-siglab.git}"
+LIBOQS_REF="${LIBOQS_REF:-81a07d160c413f0bf017aaee65233232d4cfa188}"
+OQSPROVIDER_REPO="${OQSPROVIDER_REPO:-https://github.com/jelliyjane/oqs-provider-pqc-tls-siglab.git}"
+OQSPROVIDER_REF="${OQSPROVIDER_REF:-29f791a772b8c72506efba414ef616bc48cac9ab}"
 
 mkdir -p "${SRC}" "${INSTALL}"
 
@@ -47,19 +48,30 @@ cmake -S "${SRC}/liboqs" -B "${SRC}/build-liboqs" \
 cmake --build "${SRC}/build-liboqs" -j"${JOBS}"
 cmake --install "${SRC}/build-liboqs"
 
+LIBOQS_CMAKE_DIR="$(find "${INSTALL}/liboqs" -type d -path '*/cmake/liboqs' -print -quit)"
+if [ -z "${LIBOQS_CMAKE_DIR}" ]; then
+  echo "Unable to locate the installed liboqs CMake package." >&2
+  exit 1
+fi
+
 cmake -S "${SRC}/oqs-provider" -B "${SRC}/build-oqs-provider" \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX="${INSTALL}/oqs-provider" \
   -DOPENSSL_ROOT_DIR="${INSTALL}/openssl" \
-  -Dliboqs_DIR="${INSTALL}/liboqs/lib/cmake/liboqs"
+  -Dliboqs_DIR="${LIBOQS_CMAKE_DIR}"
 cmake --build "${SRC}/build-oqs-provider" -j"${JOBS}"
 cmake --install "${SRC}/build-oqs-provider"
+
+OPENSSL_LIBDIR="${INSTALL}/openssl/lib"
+if [ -d "${INSTALL}/openssl/lib64" ]; then
+  OPENSSL_LIBDIR="${INSTALL}/openssl/lib64"
+fi
 
 cc -O2 -Wall -Wextra \
   -I"${INSTALL}/openssl/include" \
   "${ROOT}/src/tls_maxcert_client.c" \
-  -L"${INSTALL}/openssl/lib" -lssl -lcrypto \
-  -Wl,-rpath,"${INSTALL}/openssl/lib" \
+  -L"${OPENSSL_LIBDIR}" -lssl -lcrypto \
+  -Wl,-rpath,"${OPENSSL_LIBDIR}" \
   -o "${INSTALL}/tls_maxcert_client"
 
 echo "Build complete."
