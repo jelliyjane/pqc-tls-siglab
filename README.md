@@ -10,6 +10,24 @@ reproduction coverage and remaining paper-artifact work.
 This repository is the AWS/reproduction wrapper. The actual algorithm/provider
 changes live in two forked repositories.
 
+## Reproduction Link
+
+Share this repository link:
+
+`https://github.com/jelliyjane/pqc-tls-siglab`
+
+For the verified self-contained baseline, use the `repro-self-contained-v1`
+tag. Its build script must use liboqs commit
+`fa33db143fb12a2e1e306b51ab3c8c98432a46c4`; this commit contains the vendored
+HAWK, QR-UOV Round 2, and SDitH sources.
+
+```bash
+git clone https://github.com/jelliyjane/pqc-tls-siglab.git
+cd pqc-tls-siglab
+git checkout repro-self-contained-v1
+./scripts/build_aws.sh
+```
+
 ## Handoff For Next Session
 
 If another Codex session continues this work, start here.

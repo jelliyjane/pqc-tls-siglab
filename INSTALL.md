@@ -3,6 +3,10 @@
 This guide installs the pinned PQC TLS SigLab cryptographic stack on a clean
 Ubuntu host and verifies that the custom OpenSSL provider is working.
 
+Use wrapper tag `repro-self-contained-v1`. Do not replace the pinned liboqs
+commit `fa33db143fb12a2e1e306b51ab3c8c98432a46c4` with an older revision; this
+is the self-contained revision that includes HAWK, QR-UOV Round 2, and SDitH.
+
 ## Supported Baseline
 
 The documented baseline is:
@@ -54,6 +58,7 @@ benchmark sessions.
 ```bash
 git clone https://github.com/jelliyjane/pqc-tls-siglab.git
 cd pqc-tls-siglab
+git checkout repro-self-contained-v1
 ```
 
 Do not run the experiment as root. Use a normal user with `sudo` permission
