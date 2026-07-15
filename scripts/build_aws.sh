@@ -10,7 +10,7 @@ JOBS="${JOBS:-$(nproc)}"
 OPENSSL_REPO="${OPENSSL_REPO:-https://github.com/openssl/openssl.git}"
 OPENSSL_REF="${OPENSSL_REF:-openssl-3.5.7}"
 LIBOQS_REPO="${LIBOQS_REPO:-https://github.com/jelliyjane/liboqs-pqc-tls-siglab.git}"
-LIBOQS_REF="${LIBOQS_REF:-81a07d160c413f0bf017aaee65233232d4cfa188}"
+LIBOQS_REF="${LIBOQS_REF:-fa33db143fb12a2e1e306b51ab3c8c98432a46c4}"
 OQSPROVIDER_REPO="${OQSPROVIDER_REPO:-https://github.com/jelliyjane/oqs-provider-pqc-tls-siglab.git}"
 OQSPROVIDER_REF="${OQSPROVIDER_REF:-29f791a772b8c72506efba414ef616bc48cac9ab}"
 
@@ -44,7 +44,11 @@ cmake -S "${SRC}/liboqs" -B "${SRC}/build-liboqs" \
   -DCMAKE_INSTALL_PREFIX="${INSTALL}/liboqs" \
   -DBUILD_SHARED_LIBS=ON \
   -DOQS_DIST_BUILD=ON \
-  -DOQS_OPT_TARGET=auto
+  -DOQS_OPT_TARGET=auto \
+  -DOQS_ENABLE_SIG_FAEST=ON \
+  -DOQS_ENABLE_SIG_HAWK=ON \
+  -DOQS_ENABLE_SIG_QRUOV_ROUND2=ON \
+  -DOQS_ENABLE_SIG_SDITH=ON
 cmake --build "${SRC}/build-liboqs" -j"${JOBS}"
 cmake --install "${SRC}/build-liboqs"
 

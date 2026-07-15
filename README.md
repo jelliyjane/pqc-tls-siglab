@@ -39,7 +39,7 @@ Repository set:
 
 Pinned component commits:
 
-- liboqs: `81a07d160c413f0bf017aaee65233232d4cfa188`
+- liboqs: `fa33db143fb12a2e1e306b51ab3c8c98432a46c4`
 - oqs-provider: `29f791a772b8c72506efba414ef616bc48cac9ab`
 - OpenSSL: `openssl-3.5.7`
 
@@ -65,6 +65,10 @@ Do not commit build outputs, generated certificates, logs, or installed librarie
 
 The complete package list and verification steps are in
 [INSTALL.md](INSTALL.md). The short path is:
+
+The pinned liboqs fork includes the HAWK, QR-UOV Round 2, and SDitH reference
+sources and their licenses. No separate `pq-sig-refs` checkout or
+machine-specific source path is required.
 
 ```bash
 git clone https://github.com/jelliyjane/pqc-tls-siglab.git

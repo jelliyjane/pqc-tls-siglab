@@ -1,6 +1,6 @@
 # Reproducibility Status
 
-Last reviewed: 2026-07-14
+Last reviewed: 2026-07-15
 
 ## Current Status
 
@@ -9,6 +9,10 @@ documents a clean Ubuntu installation in `INSTALL.md`.
 
 A new user can reproduce the cryptographic build and localhost TLS smoke tests
 from this repository alone.
+
+On 2026-07-15, a clean checkout of the pinned liboqs revision was built on an
+Ubuntu AWS host. Correctness tests passed for both HAWK variants, all three
+QR-UOV Round 2 variants, and all six SDitH GF256 variants.
 
 The complete paper benchmark is not yet a one-command public artifact. The
 multi-region AWS topology, 1ICA certificate generation, network-condition
@@ -19,6 +23,10 @@ added without credentials or user-specific paths.
 
 1. Pinned OpenSSL 3.5.7 build.
 2. Pinned custom liboqs build.
+   HAWK, QR-UOV Round 2, and SDitH sources are vendored with their licenses;
+   the build has no dependency on a user-specific source directory. The build
+   script explicitly enables all custom families that liboqs disables by
+   default.
 3. Pinned custom oqs-provider build.
 4. Provider activation and algorithm availability checks.
 5. Self-signed PQC leaf certificate generation.

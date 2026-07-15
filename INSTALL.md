@@ -18,7 +18,7 @@ The build script pins these source revisions:
 | Component | Revision |
 |---|---|
 | OpenSSL | `openssl-3.5.7` |
-| liboqs fork | `81a07d160c413f0bf017aaee65233232d4cfa188` |
+| liboqs fork | `fa33db143fb12a2e1e306b51ab3c8c98432a46c4` |
 | oqs-provider fork | `29f791a772b8c72506efba414ef616bc48cac9ab` |
 
 ## 1. Install Operating-System Packages
@@ -60,6 +60,13 @@ Do not run the experiment as root. Use a normal user with `sudo` permission
 only for package installation and `tc` configuration.
 
 ## 3. Build The Pinned Stack
+
+The pinned liboqs revision vendors the HAWK, QR-UOV Round 2, and SDitH
+reference implementations with their upstream license files. Do not create or
+configure a separate `pq-sig-refs` directory; the build uses only sources from
+the cloned liboqs repository. The build script explicitly enables FAEST, HAWK,
+QR-UOV Round 2, and SDitH because those experimental families are disabled by
+default in liboqs.
 
 ```bash
 export PQC_TLS_TESTBED="$PWD"
@@ -175,7 +182,7 @@ before building:
 export OPENSSL_REPO=https://github.com/openssl/openssl.git
 export OPENSSL_REF=openssl-3.5.7
 export LIBOQS_REPO=https://github.com/jelliyjane/liboqs-pqc-tls-siglab.git
-export LIBOQS_REF=81a07d160c413f0bf017aaee65233232d4cfa188
+export LIBOQS_REF=fa33db143fb12a2e1e306b51ab3c8c98432a46c4
 export OQSPROVIDER_REPO=https://github.com/jelliyjane/oqs-provider-pqc-tls-siglab.git
 export OQSPROVIDER_REF=29f791a772b8c72506efba414ef616bc48cac9ab
 ./scripts/build_aws.sh
