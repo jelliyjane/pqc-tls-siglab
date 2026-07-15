@@ -32,6 +32,11 @@ clone_or_update "${OPENSSL_REPO}" "${OPENSSL_REF}" "${SRC}/openssl"
 clone_or_update "${LIBOQS_REPO}" "${LIBOQS_REF}" "${SRC}/liboqs"
 clone_or_update "${OQSPROVIDER_REPO}" "${OQSPROVIDER_REF}" "${SRC}/oqs-provider"
 
+OPENSSL_TIMING_PATCH="${ROOT}/patches/openssl-3.5-s-client-handshake-time.patch"
+if ! grep -q 'OPT_HANDSHAKE_TIME' "${SRC}/openssl/apps/s_client.c"; then
+  git -C "${SRC}/openssl" apply "${OPENSSL_TIMING_PATCH}"
+fi
+
 (
   cd "${SRC}/openssl"
   ./Configure --prefix="${INSTALL}/openssl" --openssldir="${INSTALL}/openssl/ssl"
@@ -80,3 +85,4 @@ cc -O2 -Wall -Wextra \
 
 echo "Build complete."
 echo "Run: source ${ROOT}/scripts/env.sh"
+echo "TLS timer: openssl s_client -handshake_time"

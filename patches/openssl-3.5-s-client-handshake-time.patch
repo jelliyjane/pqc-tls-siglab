@@ -1,0 +1,83 @@
+diff --git a/apps/s_client.c b/apps/s_client.c
+--- a/apps/s_client.c
++++ b/apps/s_client.c
+@@ -14,6 +14,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <errno.h>
++#include <time.h>
+ #include <openssl/e_os2.h>
+ #include "internal/nelem.h"
+ #include "internal/sockets.h" /* for openssl_fdset() */
+@@ -495,6 +496,7 @@
+     OPT_VERIFY_RET_ERROR,
+     OPT_VERIFY_QUIET,
+     OPT_BRIEF,
++    OPT_HANDSHAKE_TIME,
+     OPT_PREXIT,
+     OPT_NO_INTERACTIVE,
+     OPT_CRLF,
+@@ -626,6 +628,8 @@
+     { "port", OPT_PORT, 'p', "Use -connect instead" },
+     { "connect", OPT_CONNECT, 's',
+         "TCP/IP where to connect; default: " PORT ")" },
++    { "handshake_time", OPT_HANDSHAKE_TIME, '-',
++        "Report TCP connect start through TLS handshake completion time" },
+     { "bind", OPT_BIND, 's', "bind local address for connection" },
+     { "proxy", OPT_PROXY, 's',
+         "Connect to via specified proxy to the real server" },
+@@ -1026,6 +1030,8 @@
+     int count4or6 = 0;
+     uint8_t maxfraglen = 0;
+     int c_nbio = 0, c_msg = 0, c_ign_eof = 0, c_brief = 0;
++    int c_handshake_time = 0, handshake_timer_running = 0;
++    struct timespec handshake_start, handshake_end;
+     int c_tlsextdebug = 0;
+ #ifndef OPENSSL_NO_OCSP
+     int c_status_req = 0;
+@@ -1205,6 +1211,9 @@
+             break;
+         case OPT_BRIEF:
+             c_brief = verify_args.quiet = c_quiet = 1;
++            break;
++        case OPT_HANDSHAKE_TIME:
++            c_handshake_time = 1;
+             break;
+         case OPT_S_CASES:
+             if (ssl_args == NULL)
+@@ -2259,6 +2268,13 @@
+     /* peer_addr might be set from previous connections */
+     BIO_ADDR_free(peer_addr);
+     peer_addr = NULL;
++    if (c_handshake_time) {
++        if (clock_gettime(CLOCK_MONOTONIC, &handshake_start) != 0) {
++            BIO_printf(bio_err, "Unable to start handshake timer\n");
++            goto end;
++        }
++        handshake_timer_running = 1;
++    }
+     if (init_client(&sock, host, port, bindhost, bindport, socket_family,
+             socket_type, protocol, tfo, !isquic, &peer_addr)
+         == 0) {
+@@ -2983,6 +2999,21 @@
+             tty_on = 1;
+             if (in_init) {
+                 in_init = 0;
++                if (c_handshake_time && handshake_timer_running) {
++                    double elapsed_ms;
++
++                    if (clock_gettime(CLOCK_MONOTONIC, &handshake_end) != 0) {
++                        BIO_printf(bio_err, "Unable to stop handshake timer\n");
++                        goto end;
++                    }
++                    elapsed_ms = (handshake_end.tv_sec - handshake_start.tv_sec)
++                        * 1000.0
++                        + (handshake_end.tv_nsec - handshake_start.tv_nsec)
++                        / 1000000.0;
++                    BIO_printf(bio_err, "TLS_HANDSHAKE_TIME_MS=%.6f\n",
++                        elapsed_ms);
++                    handshake_timer_running = 0;
++                }
+                 if (c_brief) {
+                     BIO_puts(bio_err, "CONNECTION ESTABLISHED\n");
+                     print_ssl_summary(con);

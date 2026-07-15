@@ -121,6 +121,17 @@ Confirm that the custom binary is active:
 The version must report OpenSSL 3.5.7 from the repository-local installation,
 not `/usr/bin/openssl`.
 
+Confirm that the experiment timing option is installed:
+
+```bash
+"$OPENSSL_ROOT/bin/openssl" s_client -help 2>&1 | grep handshake_time
+```
+
+`-handshake_time` reports `TLS_HANDSHAKE_TIME_MS` from TCP connect start to
+OpenSSL TLS handshake completion. Use this value for benchmark timing. Do not
+time the complete `openssl s_client` process because startup, application I/O,
+and shutdown add unrelated latency.
+
 ## 5. Verify The Provider
 
 ```bash
