@@ -34,7 +34,7 @@ oqs_openssl() {
     -provider default
 }
 
-# Testbed-local OID overrides for OQS SLH-DSA SHA2 variants.
+# Testbed-local OID overrides for OQS SLH-DSA SHA2 and SHAKE variants.
 # OpenSSL 3.5 default provider already registers the standard SLH-DSA OIDs;
 # these private OIDs keep oqsprovider variants usable for TLS experiments.
 export OQS_OID_SLHDSASHA2128S=1.3.9999.200.1
@@ -43,3 +43,9 @@ export OQS_OID_SLHDSASHA2192S=1.3.9999.200.3
 export OQS_OID_SLHDSASHA2192F=1.3.9999.200.4
 export OQS_OID_SLHDSASHA2256S=1.3.9999.200.5
 export OQS_OID_SLHDSASHA2256F=1.3.9999.200.6
+export OQS_OID_SLHDSASHAKE128S=1.3.9999.200.7
+export OQS_OID_SLHDSASHAKE128F=1.3.9999.200.8
+export OQS_OID_SLHDSASHAKE192S=1.3.9999.200.9
+export OQS_OID_SLHDSASHAKE192F=1.3.9999.200.10
+export OQS_OID_SLHDSASHAKE256S=1.3.9999.200.11
+export OQS_OID_SLHDSASHAKE256F=1.3.9999.200.12

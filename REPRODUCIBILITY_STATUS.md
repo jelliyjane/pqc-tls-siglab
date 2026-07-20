@@ -1,6 +1,6 @@
 # Reproducibility Status
 
-Last reviewed: 2026-07-15
+Last reviewed: 2026-07-20
 
 ## Current Status
 
@@ -35,7 +35,8 @@ added without credentials or user-specific paths.
 
 ## Not Yet Publicly Reproducible
 
-1. The exact current pure-PQC experiment manifest.
+1. Deployment-neutral multi-region orchestration for the current pure-PQC
+   experiment manifest.
 2. Deterministic root, ICA, and leaf generation for every algorithm.
 3. The Seoul client and USA, Tokyo, and Singapore server orchestration.
 4. Port-specific `tc` bandwidth and loss configuration and cleanup.
@@ -48,7 +49,7 @@ added without credentials or user-specific paths.
 
 1. Replace all addresses, SSH keys, ports, and interfaces with configuration
    variables and a safe example file.
-2. Add the exact algorithm manifests used by each experiment.
+2. Add the remaining composite experiment manifests.
 3. Add 1ICA certificate generation and verification scripts.
 4. Add smoke tests that stop the pipeline on any unsupported certificate.
 5. Add independent and matrix benchmark runners with guaranteed `tc` cleanup.

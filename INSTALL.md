@@ -23,7 +23,7 @@ The build script pins these source revisions:
 |---|---|
 | OpenSSL | `openssl-3.5.7` |
 | liboqs fork | `fa33db143fb12a2e1e306b51ab3c8c98432a46c4` |
-| oqs-provider fork | `29f791a772b8c72506efba414ef616bc48cac9ab` |
+| oqs-provider fork | `88910827255acea27a218374ccf3bce7446f542d` |
 
 ## 1. Install Operating-System Packages
 
@@ -156,7 +156,7 @@ Check representative added signature algorithms:
   -provider-path "$OQSPROV_MODULES" \
   -provider oqsprovider \
   -provider default \
-  | grep -E 'hawk512|mayo1|snova2454|mqom2cat1gf16fastr5|sdiththresholdcat5gf256'
+  | grep -E 'hawk512|mayo1|snova2454|mqom2cat1gf16fastr5|sdiththresholdcat5gf256|slhdsashake128s|slhdsashake256f'
 ```
 
 If an expected name is missing, do not start a long benchmark. Record the
@@ -170,6 +170,8 @@ three component revisions and inspect the provider build first.
 ./scripts/test_tls_sigalg.sh mayo1
 ./scripts/test_tls_sigalg.sh snova2454
 ./scripts/test_tls_sigalg.sh mqom2cat1gf16fastr5
+./scripts/test_tls_sigalg.sh slhdsashake128s
+./scripts/test_tls_sigalg.sh slhdsashake256f
 ```
 
 Use the large-certificate client when the certificate exceeds OpenSSL's
@@ -206,7 +208,7 @@ export OPENSSL_REF=openssl-3.5.7
 export LIBOQS_REPO=https://github.com/jelliyjane/liboqs-pqc-tls-siglab.git
 export LIBOQS_REF=fa33db143fb12a2e1e306b51ab3c8c98432a46c4
 export OQSPROVIDER_REPO=https://github.com/jelliyjane/oqs-provider-pqc-tls-siglab.git
-export OQSPROVIDER_REF=29f791a772b8c72506efba414ef616bc48cac9ab
+export OQSPROVIDER_REF=88910827255acea27a218374ccf3bce7446f542d
 ./scripts/build_aws.sh
 ```
 

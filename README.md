@@ -58,7 +58,7 @@ Repository set:
 Pinned component commits:
 
 - liboqs: `fa33db143fb12a2e1e306b51ab3c8c98432a46c4`
-- oqs-provider: `29f791a772b8c72506efba414ef616bc48cac9ab`
+- oqs-provider: `88910827255acea27a218374ccf3bce7446f542d`
 - OpenSSL: `openssl-3.5.7`
 
 ## Layout
@@ -107,6 +107,7 @@ The build script installs into:
 ```bash
 ./scripts/test_tls_sigalg.sh faest128s
 ./scripts/test_tls_sigalg.sh slhdsasha2128s
+./scripts/test_tls_sigalg.sh slhdsashake128s
 ./scripts/test_tls_sigalg.sh qruov5q7l10v1490m190 --large-cert
 ```
 
@@ -123,6 +124,9 @@ Useful signature names:
 - SLH-DSA SHA2:
   `slhdsasha2128s`, `slhdsasha2128f`, `slhdsasha2192s`,
   `slhdsasha2192f`, `slhdsasha2256s`, `slhdsasha2256f`
+- SLH-DSA SHAKE:
+  `slhdsashake128s`, `slhdsashake128f`, `slhdsashake192s`,
+  `slhdsashake192f`, `slhdsashake256s`, `slhdsashake256f`
 - SDitH: `sdithhypercubecat1gf256`
 
 For a quick availability check:
@@ -143,8 +147,10 @@ openssl list -tls-signature-algorithms \
 
 - QR-UOV level 5 exceeds OpenSSL's default certificate-list limit, so use
   `--large-cert`.
-- The local SLH-DSA provider experiment uses private OIDs to avoid OpenSSL 3.5
-  native SLH-DSA OID conflicts.
+- The local SLH-DSA provider experiment uses private OIDs for both SHA2 and
+  SHAKE variants to avoid OpenSSL 3.5 native SLH-DSA OID conflicts.
+- `config/targets_pure49.csv` is the current pure-PQC manifest. It contains
+  the original 43 algorithms plus all six FIPS 205 SHAKE parameter sets.
 - `oqs-provider` may have local build directories such as `build-35/`; do not
   commit them.
 - The timing scripts are simple localhost smoke tests. For paper-quality data,
