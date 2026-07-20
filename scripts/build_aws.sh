@@ -12,7 +12,7 @@ OPENSSL_REF="${OPENSSL_REF:-openssl-3.5.7}"
 LIBOQS_REPO="${LIBOQS_REPO:-https://github.com/jelliyjane/liboqs-pqc-tls-siglab.git}"
 LIBOQS_REF="${LIBOQS_REF:-fa33db143fb12a2e1e306b51ab3c8c98432a46c4}"
 OQSPROVIDER_REPO="${OQSPROVIDER_REPO:-https://github.com/jelliyjane/oqs-provider-pqc-tls-siglab.git}"
-OQSPROVIDER_REF="${OQSPROVIDER_REF:-88910827255acea27a218374ccf3bce7446f542d}"
+OQSPROVIDER_REF="${OQSPROVIDER_REF:-da0d3156af41915792cb99ce7a64b1a7633ce8f6}"
 
 mkdir -p "${SRC}" "${INSTALL}"
 

@@ -58,7 +58,7 @@ Repository set:
 Pinned component commits:
 
 - liboqs: `fa33db143fb12a2e1e306b51ab3c8c98432a46c4`
-- oqs-provider: `88910827255acea27a218374ccf3bce7446f542d`
+- oqs-provider: `da0d3156af41915792cb99ce7a64b1a7633ce8f6`
 - OpenSSL: `openssl-3.5.7`
 
 ## Layout
