@@ -10,6 +10,20 @@ reproduction coverage and remaining paper-artifact work.
 This repository is the AWS/reproduction wrapper. The actual algorithm/provider
 changes live in two forked repositories.
 
+## Measured Results
+
+The completed PC campaigns are available as [CSV results](results/pc_tls_20260929/README.md):
+40,440 condition summaries, validated against 1,683,600 successful raw measurements,
+plus EVP v2 cost profiles for 147 signature candidates (49 pure PQC, 98 composite).
+The results README explains the conditions, aggregation, join keys, and limitations.
+Use the Frankfurt signing profile and Seoul client verification profile for offline
+cost analysis without rerunning the benchmarks.
+
+These are measured data exports, not a complete reproduction package for the
+147-candidate campaigns. The baseline installation pins below are not asserted to
+reproduce every campaign configuration. No private keys, server addresses, raw
+connection logs, or trained Bandit models are included in this data release.
+
 ## Reproduction Link
 
 Share this repository link:

@@ -1,0 +1,2986 @@
+{
+  "audit": [
+    {
+      "dataset": "x25519_bw1_5_50",
+      "conditions": 17640,
+      "validated_raw_samples": 882000,
+      "algorithms": 147
+    },
+    {
+      "dataset": "x25519_bw100",
+      "conditions": 5880,
+      "validated_raw_samples": 294000,
+      "algorithms": 147
+    },
+    {
+      "dataset": "openssl_default_bw1_5_50",
+      "conditions": 16920,
+      "validated_raw_samples": 507600,
+      "algorithms": 141
+    }
+  ],
+  "cost_protocols": {
+    "server_sign_frankfurt": {
+      "protocol": "evp_cv_sha256_init_oneshot_v1",
+      "profile_role": "server_sign",
+      "platform": "Linux-7.0.0-1008-aws-x86_64-with-glibc2.43",
+      "machine": "x86_64",
+      "iterations": 50,
+      "warmup": 5,
+      "delay_ms": 1000,
+      "cpu_count": 1,
+      "message": "TLS1.3 server CertificateVerify, fixed SHA256 transcript digest, 130 bytes",
+      "timer_includes": [
+        "EVP_DigestSignInit_ex + EVP_DigestSign",
+        "EVP_DigestVerifyInit_ex + EVP_DigestVerify"
+      ],
+      "timer_excludes": [
+        "process startup",
+        "provider load",
+        "key import",
+        "buffer allocation",
+        "context reset",
+        "CSV output",
+        "sleep"
+      ],
+      "raw_trim": 0,
+      "chain_verification_measured": false,
+      "binary_sha256": "24e1b4209b51a5698722401140eadb9e575e49e809653751200bb45c4c202e51",
+      "provider_binary_sha256": "5a1f1f352e510f98edaeb7f6bcb7c561008efdfdafcc02a0bde9fcb50d9cb5d5",
+      "shake_provider_binary_sha256": "88468e767bc97421a4ad8dc31c5c3e56f63cfc45c2aa6ab1d6cdb1411f61f49a",
+      "libcrypto_sha256": "c86ec27872eea77e1b81935dacd5ff1ae747a2b4ecf73e1217da3cf65cb11633",
+      "benchmark_source_sha256": "e222d2f1386ad2149e0cb03726b59ff67d359ed6805a4bacd29f5619bd03d11a",
+      "cpu_model": "Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz"
+    },
+    "client_verify_seoul": {
+      "protocol": "evp_cv_sha256_init_oneshot_v1",
+      "profile_role": "seoul_client_verify",
+      "platform": "Linux-7.0.0-1006-aws-x86_64-with-glibc2.43",
+      "machine": "x86_64",
+      "iterations": 50,
+      "warmup": 5,
+      "delay_ms": 1000,
+      "cpu_count": 1,
+      "message": "TLS1.3 server CertificateVerify, fixed SHA256 transcript digest, 130 bytes",
+      "timer_includes": [
+        "EVP_DigestSignInit_ex + EVP_DigestSign",
+        "EVP_DigestVerifyInit_ex + EVP_DigestVerify"
+      ],
+      "timer_excludes": [
+        "process startup",
+        "provider load",
+        "key import",
+        "buffer allocation",
+        "context reset",
+        "CSV output",
+        "sleep"
+      ],
+      "raw_trim": 0,
+      "chain_verification_measured": false,
+      "binary_sha256": "24e1b4209b51a5698722401140eadb9e575e49e809653751200bb45c4c202e51",
+      "provider_binary_sha256": "5a1f1f352e510f98edaeb7f6bcb7c561008efdfdafcc02a0bde9fcb50d9cb5d5",
+      "shake_provider_binary_sha256": "88468e767bc97421a4ad8dc31c5c3e56f63cfc45c2aa6ab1d6cdb1411f61f49a",
+      "libcrypto_sha256": "c86ec27872eea77e1b81935dacd5ff1ae747a2b4ecf73e1217da3cf65cb11633",
+      "benchmark_source_sha256": "e222d2f1386ad2149e0cb03726b59ff67d359ed6805a4bacd29f5619bd03d11a",
+      "cpu_model": "Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz"
+    }
+  },
+  "sources": [
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/seoul/pure49/tls_results_seoul_pure49_chain1ica_bw_summary.csv",
+      "sha256": "81e0ae2024cb4b411cdf14719c090a9c5154bf80446d0f55dcebc6c98c6e7aa7"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/seoul/pure49/tls_results_seoul_pure49_chain1ica_bw_raw.csv",
+      "sha256": "40fb10e59ad2ca31608160e4f97e793105ff4c7ffd44d8109ce5e9076e1d2e7f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/seoul/composite86/tls_results_seoul_composite86_chain1ica_bw_summary.csv",
+      "sha256": "bb6f698fdb779935b28df8a9c1d800261f7015fbe8c92f7149c4cb11b07aaf36"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/seoul/composite86/tls_results_seoul_composite86_chain1ica_bw_raw.csv",
+      "sha256": "5aad9196c06d56df015c2aa0265c12a9b40e0c4af10b06bf556242ba61f24500"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain1ica_bw_summary.csv",
+      "sha256": "dcaa9fe5357be530733d9fa7c6ec4fbde1de5507115b9d6e5f0af3a2426d4955"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain1ica_bw_raw.csv",
+      "sha256": "ea04d4ec9e5d49a514832ce0ed66c88632887df8b9e91bb16e8b92942993ad80"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/tokyo/pure49/tls_results_tokyo_pure49_chain1ica_bw_summary.csv",
+      "sha256": "47cb235e882b5ace48fe485c052bfe78a70ee7253758fe02fa5ebd6afca7fec4"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/tokyo/pure49/tls_results_tokyo_pure49_chain1ica_bw_raw.csv",
+      "sha256": "e06b292360b71d69e329a1080b3c907a0d73e8bc9677a6f40b93fca398eac498"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/tokyo/composite86/tls_results_tokyo_composite86_chain1ica_bw_summary.csv",
+      "sha256": "3bdaca3969d48afac943669fce3e107b5948c8264e2de7cd03bc96be6252d4e5"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/tokyo/composite86/tls_results_tokyo_composite86_chain1ica_bw_raw.csv",
+      "sha256": "34dee2ae2ddb9b272aace37a309ed66e3d985b11ea4cec41c0f9471eeb2b940f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain1ica_bw_summary.csv",
+      "sha256": "4da410c689b8b809c009c446d329616559b50c1635af25d01fd7998c15b9b070"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain1ica_bw_raw.csv",
+      "sha256": "df3a9ff4519ad74d64035ec1431fa34bec3de3b34baf8d6354aa310d3c95dd1f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/singapore/pure49/tls_results_singapore_pure49_chain1ica_bw_summary.csv",
+      "sha256": "bbe22ccf5a577b59b461e20dc9a8982058987bd29ca311e13058d4f95c657682"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/singapore/pure49/tls_results_singapore_pure49_chain1ica_bw_raw.csv",
+      "sha256": "966a4b92d4e31b500170d5ce2e0b30d0e77381a7cea8c3fdd464fc59e2a3a3df"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/singapore/composite86/tls_results_singapore_composite86_chain1ica_bw_summary.csv",
+      "sha256": "aa08657a7f9cb7b3e98ed3fd07fde995d32026e244f28c1bc78cc46210eb181f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/singapore/composite86/tls_results_singapore_composite86_chain1ica_bw_raw.csv",
+      "sha256": "5d28606d2e04df2114a7487fab14ea939145bb8c953c0c602ac44e22114cb55f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain1ica_bw_summary.csv",
+      "sha256": "ce9a7a3e25e1d630d7358adf30be8c6450e704d2f6b3c8d3f24bdc05ce9953e6"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain1ica_bw_raw.csv",
+      "sha256": "5fcdc5afc70abdceaf5bec36d4aac9b7e0953298f4143de5c97b1340056b2982"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/usa/pure49/tls_results_usa_pure49_chain1ica_bw_summary.csv",
+      "sha256": "6de9f32d763cf0f84de99aa70421f600f17a63be2da246450579e5597e5fa3a6"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/usa/pure49/tls_results_usa_pure49_chain1ica_bw_raw.csv",
+      "sha256": "cc5e7cd94b526ed6d775a095c243edd4268301c81903307bc9e0d8b617c930e7"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/usa/composite86/tls_results_usa_composite86_chain1ica_bw_summary.csv",
+      "sha256": "58146c34dd11f7739acfb711b38a3f577b23223dbbd4c2fcdaedc6d0108bca8b"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/usa/composite86/tls_results_usa_composite86_chain1ica_bw_raw.csv",
+      "sha256": "5d27c0c1641f6946c092235b9210a6827a04a178d49ce74a7590ae5a7f08644c"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain1ica_bw_summary.csv",
+      "sha256": "f4a4cef438a1a524cd5b3ef59ce61502cf07ecfb1ef0d0c0af7ece12c69fd849"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain1ica_bw_raw.csv",
+      "sha256": "6c48724e937613e7e3532bb81f7e85aefc6f734c189bc4ca8823153df603e479"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain1ica_bw_summary.csv",
+      "sha256": "60fda84b38ebc461bb3d938a13c61f5f37c031e9bac1ab4ef4663c0aa79e9e10"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain1ica_bw_raw.csv",
+      "sha256": "604b9a13b9685b15cb6d983ee3991cc75536af76f4bee69a5e8eb8f1bb497d52"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain1ica_bw_summary.csv",
+      "sha256": "5d5236cc6f4fea54fbd3543097b68d8c97e285c90eb57e6e679b45a250de1e51"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain1ica_bw_raw.csv",
+      "sha256": "b625da7897615480e4b38f114dc22a5f4bd199ff75d793a75df41e477dbcfbe3"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain1ica_bw_summary.csv",
+      "sha256": "8703f5f4555f041e864fec90c407d7ff59f3ca021407c800910af2aea09cec5d"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain1ica_bw_raw.csv",
+      "sha256": "69345cc7b0c44e86078d9dcd54af74108b52476414f2970a8e40348370d3ba56"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/seoul/pure49/tls_results_seoul_pure49_chain1ica_bw_loss1_summary.csv",
+      "sha256": "1a4eade1fce9ff75fa546759b37b368a702ea09422a4c02a106c890782dbeb8c"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/seoul/pure49/tls_results_seoul_pure49_chain1ica_bw_loss1_raw.csv",
+      "sha256": "eeb02d7d320573bafb0f86ae307c60e282c964533d12b14d9b846c8c48da9656"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/seoul/composite86/tls_results_seoul_composite86_chain1ica_bw_loss1_summary.csv",
+      "sha256": "25c5c6d392692ec90f9172cffbd9bb7e602b9fa473b507c09983305c0f2ba1d2"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/seoul/composite86/tls_results_seoul_composite86_chain1ica_bw_loss1_raw.csv",
+      "sha256": "6b5967df58ff119fe07ee91a7cc8b48ffd68fc7725f622116aa2026b96f8fe48"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain1ica_bw_loss1_summary.csv",
+      "sha256": "c17e8bf78e924f76d5c1c066530626bc17d6bf30143517e2a351faa1975b56a7"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain1ica_bw_loss1_raw.csv",
+      "sha256": "7b6b1e684599cdd6c14f6e14eb554ac42a993446dad676029dc6b453b75c4c2a"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/tokyo/pure49/tls_results_tokyo_pure49_chain1ica_bw_loss1_summary.csv",
+      "sha256": "c79ca094d12cc98f9bc230620cc09034ea384d1fa2d25d754120682dee0b846b"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/tokyo/pure49/tls_results_tokyo_pure49_chain1ica_bw_loss1_raw.csv",
+      "sha256": "81e4ff3a6686a3a140071d716b199a45bc059912187f7b84a84a8a1fef3ae1d9"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/tokyo/composite86/tls_results_tokyo_composite86_chain1ica_bw_loss1_summary.csv",
+      "sha256": "586c51c65b520d187c1b459f99236fd743dc68bca8a53a66b9e56d90d9ee6139"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/tokyo/composite86/tls_results_tokyo_composite86_chain1ica_bw_loss1_raw.csv",
+      "sha256": "1f0f272b437f9aa4fc0bb1947d0eef11c48238bf2d84e0d1cf9bfda3709f2eb7"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain1ica_bw_loss1_summary.csv",
+      "sha256": "f85845da6c894554d98d6941521276ad68d1086e337e5fff0b191b2f6eed91f3"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain1ica_bw_loss1_raw.csv",
+      "sha256": "c5bd78060c0de9aef03e4dfa24b9d6a2497c9ee9f0e2b96b9b498fbe610d72f6"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/singapore/pure49/tls_results_singapore_pure49_chain1ica_bw_loss1_summary.csv",
+      "sha256": "d8d7f07ebbe217cbaed247ba8a2b241e01b55e7ff7488ed4432a20d9102919b1"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/singapore/pure49/tls_results_singapore_pure49_chain1ica_bw_loss1_raw.csv",
+      "sha256": "c7bfe1bdacbfc7c89c240ec1df5ec774db484a0a6197f567ec664380226f84d2"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/singapore/composite86/tls_results_singapore_composite86_chain1ica_bw_loss1_summary.csv",
+      "sha256": "457da75330c038c506f57b21dd3882f73fb0176e2076d685bba5f7db64c9c8c8"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/singapore/composite86/tls_results_singapore_composite86_chain1ica_bw_loss1_raw.csv",
+      "sha256": "1a47a303e1c26ef62aa2ddb4f5a3e0876cdfd1d25c366e5b00f6a45c74385afd"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain1ica_bw_loss1_summary.csv",
+      "sha256": "eda21336f45af2a0ec95aada90f83e709d3ee746645adc4ef140eec0be8ee405"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain1ica_bw_loss1_raw.csv",
+      "sha256": "9d505e589f6bf7c08733f293d21a54f6bc48715580b35435831c16b195910e87"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/usa/pure49/tls_results_usa_pure49_chain1ica_bw_loss1_summary.csv",
+      "sha256": "5902d16abd040b3cb6a2754889267bcf952bf0815f0286125731a88cf556fb2e"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/usa/pure49/tls_results_usa_pure49_chain1ica_bw_loss1_raw.csv",
+      "sha256": "a161b7e25a87530ea32ea09da9fefba52aec685e23b7b18fd23f142a7d5fc849"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/usa/composite86/tls_results_usa_composite86_chain1ica_bw_loss1_summary.csv",
+      "sha256": "54573db912ca018d69c43b2a8604cbeca3ad61b77ea8af5b77f106f047b68e85"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/usa/composite86/tls_results_usa_composite86_chain1ica_bw_loss1_raw.csv",
+      "sha256": "9c585cb21698f2da595b3cc94cacbf8c180cd7309356e2cfad478036fbae8414"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain1ica_bw_loss1_summary.csv",
+      "sha256": "8eeb41100065b7a0d615175a49dbb857e7f20e6024c9534ba6d3b654a112f7c1"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain1ica_bw_loss1_raw.csv",
+      "sha256": "5f7ebc0bdb915e973d88728a68999c31b4a4f720e873d0025dabb793348ab462"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain1ica_bw_loss1_summary.csv",
+      "sha256": "b79b3b9bdc3a682780dc3bffbaff9e858840e2812d1039013a2b7810030a13ee"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain1ica_bw_loss1_raw.csv",
+      "sha256": "ad2bee0eefe87150252358c8c4f8f8c41e40218e3e1764fa7cc22f4a592f278f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain1ica_bw_loss1_summary.csv",
+      "sha256": "71f882c47b582c346b31eed94bba7e1e9e22db428fe96698eb7879cbae940c05"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain1ica_bw_loss1_raw.csv",
+      "sha256": "9732648a2e7e49897fe2106da3bdc0fe2454db3ea1c292de996b463159a42b20"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain1ica_bw_loss1_summary.csv",
+      "sha256": "d7e710ebcd63a82a01c9b8600464ee821d1d95dd1d44fdb9362ee97b6d083da5"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain1ica_loss1_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain1ica_bw_loss1_raw.csv",
+      "sha256": "18a7c56096152d50b61c6e8c97689b767dcba33b0135f9e4cddb294c2942941d"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/seoul/pure49/tls_results_seoul_pure49_chain2ica_bw_loss0_summary.csv",
+      "sha256": "3dcd5935d277d06546cefbc9321d033fa24188ad5d7d863008230c096bb961a6"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/seoul/pure49/tls_results_seoul_pure49_chain2ica_bw_loss0_raw.csv",
+      "sha256": "d67fa44ab57abf8116e5a58f7036ed8c572c728e14ad214ecccece76390eb422"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/seoul/composite86/tls_results_seoul_composite86_chain2ica_bw_loss0_summary.csv",
+      "sha256": "d0d266d6df5638e9a9d1920a93440baae1e9213b275baf1b24dc60bbc7e00d91"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/seoul/composite86/tls_results_seoul_composite86_chain2ica_bw_loss0_raw.csv",
+      "sha256": "77a21f46150e3b33dd1607cf658a2cdadc176c2a2e3cbed3a01a41fac9818894"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain2ica_bw_loss0_summary.csv",
+      "sha256": "ed24303901a57d17129afc1eb7eb70d399cccce515529b89b955a40bb2615a00"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain2ica_bw_loss0_raw.csv",
+      "sha256": "0b07883172bd8dee1b36f7b69ba643137b18b6ee0e2b9a42178b989fe7f269f3"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/tokyo/pure49/tls_results_tokyo_pure49_chain2ica_bw_loss0_summary.csv",
+      "sha256": "b535c06a5701f7d82b0b8b78a658363e5cb2a0d4769c819378003ebd34cb7550"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/tokyo/pure49/tls_results_tokyo_pure49_chain2ica_bw_loss0_raw.csv",
+      "sha256": "7c828e8516e27632dd0e9a5c2df42ad8717330eb9785715f9c79701537b1e162"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/tokyo/composite86/tls_results_tokyo_composite86_chain2ica_bw_loss0_summary.csv",
+      "sha256": "d7a6ba32b46fb922e892af56eda7d4fa69e143cab77e6b072eb96e34f6ce6789"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/tokyo/composite86/tls_results_tokyo_composite86_chain2ica_bw_loss0_raw.csv",
+      "sha256": "5808ab6ed17e3250201f96328fb2e99ea597dbb406cd095438e39487578de13a"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain2ica_bw_loss0_summary.csv",
+      "sha256": "50a95b30a9aa98879c5c2f8c5eb1f2e244e31ce1cb77011d330658031cbd0887"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain2ica_bw_loss0_raw.csv",
+      "sha256": "d872dae3d001639db3687e7f5fb2f44c071e6e49d4237df09f94d6e66d9f1fdd"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/singapore/pure49/tls_results_singapore_pure49_chain2ica_bw_loss0_summary.csv",
+      "sha256": "ee7a8b03970e8257849a3aaa47b58a275dd120f19f2dc065e6d4a60799a7894e"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/singapore/pure49/tls_results_singapore_pure49_chain2ica_bw_loss0_raw.csv",
+      "sha256": "23807934d80575335eca2835e93275a47524c07d0a620c8674d4548f6cf9a3f0"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/singapore/composite86/tls_results_singapore_composite86_chain2ica_bw_loss0_summary.csv",
+      "sha256": "1583ccec07c12212348fdde67c9a7991b0f07c04bd58208ab267051f4129226d"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/singapore/composite86/tls_results_singapore_composite86_chain2ica_bw_loss0_raw.csv",
+      "sha256": "6119b051a9a0385a544ef1af291b79228864068a122b950e546bce25e07c6823"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain2ica_bw_loss0_summary.csv",
+      "sha256": "93f8fa70d5b0c5be2a0e450c3d37616f9ce356687c396791239cb04dbc94d02f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain2ica_bw_loss0_raw.csv",
+      "sha256": "d77a92dafa6af08bc2248d7e2a63564a598ea455b622d32aad76c504d230245d"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/usa/pure49/tls_results_usa_pure49_chain2ica_bw_loss0_summary.csv",
+      "sha256": "b2035ef279e5efd01b7cf9dbcb21c48a0a5ed17ba2b27767b90d7dfba1c374ce"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/usa/pure49/tls_results_usa_pure49_chain2ica_bw_loss0_raw.csv",
+      "sha256": "7e3b1b5e3f35caf677093e64bd871f6bf5b5885043084b00697975db768765e6"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/usa/composite86/tls_results_usa_composite86_chain2ica_bw_loss0_summary.csv",
+      "sha256": "dc47aa68bec6d497845685b447df4058f48b6515a484e5b796604c2d9aee820a"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/usa/composite86/tls_results_usa_composite86_chain2ica_bw_loss0_raw.csv",
+      "sha256": "1e65e52c8f0bd154f06ff51ab5e88e1edb82e9d3dbebe46e2faac04e3e6bc0b3"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain2ica_bw_loss0_summary.csv",
+      "sha256": "2fd1db328f84209097e1b5d88df88043917e14e6bdea7fed1a680973040341b7"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain2ica_bw_loss0_raw.csv",
+      "sha256": "1306265a070d12f4d5b8aea407e4a44addb8283c94d0eb5c55029f9772de1c55"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain2ica_bw_loss0_summary.csv",
+      "sha256": "b51247aca8128e70c484d5d533ae4d1a99d82ca48d34197162db7bfbdcb11fd2"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain2ica_bw_loss0_raw.csv",
+      "sha256": "89c1a2622b99991086ee04db850f4b118ec69d6259f2b7fa780c8a4fbb3913e5"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain2ica_bw_loss0_summary.csv",
+      "sha256": "7c06f46aed5ab7f107b1b2dbb267c0663600a68709f6952ebe23ceed464107ef"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain2ica_bw_loss0_raw.csv",
+      "sha256": "f1a25fd51f5560cba3b42e096dcc85a32ea38786aba8e21ab369692ead0e474f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain2ica_bw_loss0_summary.csv",
+      "sha256": "d579d7c84f94dc7166a348e13e449fd1cfcfd90129ba4a49641f7db9a47b9558"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss0_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain2ica_bw_loss0_raw.csv",
+      "sha256": "ec487f9f9041eca3851db1fa7cd618ddb65ae81b29e8736cc43bcffc680d8196"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/seoul/pure49/tls_results_seoul_pure49_chain2ica_bw_loss1_summary.csv",
+      "sha256": "4b208ea7576eec769c3df36980aa2188a403020d4b8c8d3087f5c3429c53d2b9"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/seoul/pure49/tls_results_seoul_pure49_chain2ica_bw_loss1_raw.csv",
+      "sha256": "41f3f50e99200bf03a46f5d946d9afce9235af6f9f25c8f661833ae2976065f1"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/seoul/composite86/tls_results_seoul_composite86_chain2ica_bw_loss1_summary.csv",
+      "sha256": "b2754cb39c2e11320c7f5e4a22c03066857cfbb436d9d7fcadb262b017662ea4"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/seoul/composite86/tls_results_seoul_composite86_chain2ica_bw_loss1_raw.csv",
+      "sha256": "2c4004c0181b142f64bafd2b2239184620bc7a71460a5a063aadddde70c24821"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain2ica_bw_loss1_summary.csv",
+      "sha256": "fa8aa2e29ef572736395f10fd66df38e66b8b223ee8c7319dd93a41b9e93e718"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain2ica_bw_loss1_raw.csv",
+      "sha256": "5c36c6cc98ea3467523e7406734ddfd44da56f11e28e454a2b32dfab358bfd11"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/tokyo/pure49/tls_results_tokyo_pure49_chain2ica_bw_loss1_summary.csv",
+      "sha256": "f1b6870ae8daebe4468e39be4065a307a8490d2cd3c9cc1cc0a1069465a023d0"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/tokyo/pure49/tls_results_tokyo_pure49_chain2ica_bw_loss1_raw.csv",
+      "sha256": "a45677ea4ac1b24a0d32485ba75bce475e96bb101910f9ab9af786720f2fbe29"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/tokyo/composite86/tls_results_tokyo_composite86_chain2ica_bw_loss1_summary.csv",
+      "sha256": "71bdccbb76bf572a8c1e9d0d54d572ddfa47722dfd99e8f833a089b1842df175"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/tokyo/composite86/tls_results_tokyo_composite86_chain2ica_bw_loss1_raw.csv",
+      "sha256": "f02fc0c5deef61a8b1605ebfa1216f83389c0b918c424e2d504ccdd9169707b0"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain2ica_bw_loss1_summary.csv",
+      "sha256": "498487891f53c052b18f3531fe0cce3995dcf54e2a4accff1e9291bb7ed86267"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain2ica_bw_loss1_raw.csv",
+      "sha256": "3da607564ba0d0675fbbe12ac5cf06c1997b6c22877d1c8970d2a2bee9819de9"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/singapore/pure49/tls_results_singapore_pure49_chain2ica_bw_loss1_summary.csv",
+      "sha256": "ce6d699ec8fc2b9788a630b6beb6946854068e1ea465fe80dd9afcf73843c5b7"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/singapore/pure49/tls_results_singapore_pure49_chain2ica_bw_loss1_raw.csv",
+      "sha256": "bc80121d3e0f339e105b496a2237a9da13b5b6425e4f9edab30cad5000f84ffd"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/singapore/composite86/tls_results_singapore_composite86_chain2ica_bw_loss1_summary.csv",
+      "sha256": "03cbee5299287f4d10da302cb6e646d88196a0bcbd61e7cafbd6774fb64dae3f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/singapore/composite86/tls_results_singapore_composite86_chain2ica_bw_loss1_raw.csv",
+      "sha256": "eb3ccb3e3df6d73d1051d687d2724564f2cdf786ef25d02931897651b09492c5"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain2ica_bw_loss1_summary.csv",
+      "sha256": "f1a4133c7789726d655835d4223960f8dedbfc28da9323f55c995c433303307c"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain2ica_bw_loss1_raw.csv",
+      "sha256": "3e7927eff0c486f7f1f1e454c34bec91ab371add2f9e5918a946df84c5919dbd"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/usa/pure49/tls_results_usa_pure49_chain2ica_bw_loss1_summary.csv",
+      "sha256": "6260f5b68a07d5a990f784521cc5f07a384e88a7a7f140a93ca357a6daf1d42d"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/usa/pure49/tls_results_usa_pure49_chain2ica_bw_loss1_raw.csv",
+      "sha256": "5609dc0dd12169aef3f5d9bbd6c84511fbfd9852209f42b9cebb2327507e683d"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/usa/composite86/tls_results_usa_composite86_chain2ica_bw_loss1_summary.csv",
+      "sha256": "d1349b7d5442bd6f52cca74f5db744e41c925e5ccca82d7755bc94837ddcdc6b"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/usa/composite86/tls_results_usa_composite86_chain2ica_bw_loss1_raw.csv",
+      "sha256": "db4e5048f533aab6640bb7df0044ee79526616c4e68fde8a681fba94d814b766"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain2ica_bw_loss1_summary.csv",
+      "sha256": "eb121d08751f7111a68fa2fb558619ab42610aa3d23babfd5c2bd08826b29f5a"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain2ica_bw_loss1_raw.csv",
+      "sha256": "fc66d34baba4fc703a6e89e2ba167214e1f589df937212129453df3121af502a"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain2ica_bw_loss1_summary.csv",
+      "sha256": "f2b5edec1fc80e9800e333c87d0e4111f5db6677cbd06784b09715c67c488f38"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain2ica_bw_loss1_raw.csv",
+      "sha256": "fb6c053404db589d58dd14dc31ab68a330d9fdb07edf0cab63e84d1a6f685d1f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain2ica_bw_loss1_summary.csv",
+      "sha256": "6cc305f8fefca751af22fa51024cf120925e3308f13ffe3fe424b79ba18142a5"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain2ica_bw_loss1_raw.csv",
+      "sha256": "2b542c4d8e4238bebaf33c1b9112f9094ac5fbe3be36f5ff8ec715e53a750dab"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain2ica_bw_loss1_summary.csv",
+      "sha256": "d067d3eed45aefe1c23fa8e87e3678907e2ac87ff12d1cad44a39109b622ea89"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain2ica_loss1_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain2ica_bw_loss1_raw.csv",
+      "sha256": "4470e6ea8d2fbd8762269cc3c1c68fb4a396f4170dd1ff3cd0a786e0d8e46dc7"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/seoul/pure49/tls_results_seoul_pure49_chain3ica_bw_loss0_summary.csv",
+      "sha256": "a622a766f11bb51187d560c259d649b75843b8e02f3270cd393359896bda2f23"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/seoul/pure49/tls_results_seoul_pure49_chain3ica_bw_loss0_raw.csv",
+      "sha256": "1158a5b8f76c712712a11ca6da5fafb2c52be682264f27f83b0caa76971905a1"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/seoul/composite86/tls_results_seoul_composite86_chain3ica_bw_loss0_summary.csv",
+      "sha256": "7c3e7fd0b99ded1d0f9ab7e9f2b32feb9a9894484e5aec332798353d797ae088"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/seoul/composite86/tls_results_seoul_composite86_chain3ica_bw_loss0_raw.csv",
+      "sha256": "4714009e92c9db90fc6ca386d8f2650171e6bf1bd72fe99495b1111f27eb4944"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain3ica_bw_loss0_summary.csv",
+      "sha256": "c9858b58739482ce38f9067af2deec0865e4e02a5b624e80fa5ac54acaad7bdd"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain3ica_bw_loss0_raw.csv",
+      "sha256": "3b171f494693ec7303d048721a64c03cea6df10da81bf4800fc21f43dc2bf5ec"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/tokyo/pure49/tls_results_tokyo_pure49_chain3ica_bw_loss0_summary.csv",
+      "sha256": "d3d0a248db125c11de48550f46c3c09650997aaaaf2f3585a53534a1b5a31032"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/tokyo/pure49/tls_results_tokyo_pure49_chain3ica_bw_loss0_raw.csv",
+      "sha256": "aa6cc2d0eb1092e8d53d40f81ea5409b1494897afc76c9f122667e3850dd7521"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/tokyo/composite86/tls_results_tokyo_composite86_chain3ica_bw_loss0_summary.csv",
+      "sha256": "545478c73bf0c590f47ccc1707c6553fb770756a968874333a6101f23709b838"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/tokyo/composite86/tls_results_tokyo_composite86_chain3ica_bw_loss0_raw.csv",
+      "sha256": "4eddd6d9ee6354209ce56b8ab443a70d25c92d09fd3177ce648fd2db5b5beb24"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain3ica_bw_loss0_summary.csv",
+      "sha256": "1bd9ec43680b30dc4e605ea2eb13e0aca2c4b7af17fe8c38133a1c7804d6649f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain3ica_bw_loss0_raw.csv",
+      "sha256": "6ca44c10b1529dd04728f61ea68bdd1d3544306bb5e6df4cd35af868af574e4b"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/singapore/pure49/tls_results_singapore_pure49_chain3ica_bw_loss0_summary.csv",
+      "sha256": "441924ee5653785e3a15ee61854cc1eaee62bfe4e09add3d2b2d5b6686361146"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/singapore/pure49/tls_results_singapore_pure49_chain3ica_bw_loss0_raw.csv",
+      "sha256": "5f6aa5217a3b6e0fa94de28d7a5fb134dfbf0dc9d3d6a2b085e58a124238049b"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/singapore/composite86/tls_results_singapore_composite86_chain3ica_bw_loss0_summary.csv",
+      "sha256": "dc35a6dccc6e901491592dfbead95d9c5fc2e4b7f41c3edfc1edc532980d0be3"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/singapore/composite86/tls_results_singapore_composite86_chain3ica_bw_loss0_raw.csv",
+      "sha256": "a4a845b4b412ed60982e4572d47a6f90f94533f028eeb4232dc032460a25d9da"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain3ica_bw_loss0_summary.csv",
+      "sha256": "7e145dc419e5d2166f6beda267b8eccd8c4bd3413264fbfdf0d8da2d52663e38"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain3ica_bw_loss0_raw.csv",
+      "sha256": "6ca16a0b4ed6d8fd92d85b2db7164a3fa4c22b130ae17815db7e8640abd5674e"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/usa/pure49/tls_results_usa_pure49_chain3ica_bw_loss0_summary.csv",
+      "sha256": "23832f3178b54334431abfda93188b8e7024ab94e11b339d9e6953f90bed8b67"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/usa/pure49/tls_results_usa_pure49_chain3ica_bw_loss0_raw.csv",
+      "sha256": "258440cb3987492e25e864b6f9de3c96ed8788bf04a5886c97162a66d127aa77"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/usa/composite86/tls_results_usa_composite86_chain3ica_bw_loss0_summary.csv",
+      "sha256": "ca3e3246c3b90412b78c4c174e823d222488f2ea3a3bb0dbc29a67c7fb721acc"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/usa/composite86/tls_results_usa_composite86_chain3ica_bw_loss0_raw.csv",
+      "sha256": "59e70c4c52b3cff92a815ffd1614d3e970c7456b9a352575ee70e0803815e8c2"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain3ica_bw_loss0_summary.csv",
+      "sha256": "3e83a2e4016a945b3e90a51c0db06d2c84ef20300a7d0c44980b3223cd5676ce"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain3ica_bw_loss0_raw.csv",
+      "sha256": "fdc80270bd0a6cfce9c2aca9ad14be66688f430dd6596914d41db0caec0908d5"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain3ica_bw_loss0_summary.csv",
+      "sha256": "222b72d86cfaa4456fe06ea65cc1788cc2852957b1a6ebb0d5f0f2c312270b97"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain3ica_bw_loss0_raw.csv",
+      "sha256": "0e6aded335fc5b1022027c87b33e0c4c63f1085b2f44ced0420ca42803bb7e80"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain3ica_bw_loss0_summary.csv",
+      "sha256": "79087aba78b4030151db737cb3a30b100c763564812d4040ab547ec8f5521c75"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain3ica_bw_loss0_raw.csv",
+      "sha256": "161ec8f1652c5749fcbb92df65803061872d7c9cb9bdf5ebace68bd9d0f4e8c5"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain3ica_bw_loss0_summary.csv",
+      "sha256": "11fb863a89fffd6dc6543c7e506a0a898886a34496c56b898ec8b3bd8bd8c73f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss0_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain3ica_bw_loss0_raw.csv",
+      "sha256": "39189ba61185c7f04c71d1f16e21eefc55b2f23368098b0fd6d1af32b368bb08"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/seoul/pure49/tls_results_seoul_pure49_chain3ica_bw_loss1_summary.csv",
+      "sha256": "d9f542c320ac6746a9d394373200ee0a7e7ff84e2f629ea8301a02a50e273924"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/seoul/pure49/tls_results_seoul_pure49_chain3ica_bw_loss1_raw.csv",
+      "sha256": "1da471650105b7596281f2bd35b3615ad647392f47e6d10dd4474c4784e8f47a"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/seoul/composite86/tls_results_seoul_composite86_chain3ica_bw_loss1_summary.csv",
+      "sha256": "9e1a4a01f9a32c2b433258617dcecc7c6264818481ab92113e524100c32f87da"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/seoul/composite86/tls_results_seoul_composite86_chain3ica_bw_loss1_raw.csv",
+      "sha256": "96f76223fb2fdee1a59dd8d5379e321b0f966a76f07b614c7ffc5dc8e7349443"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain3ica_bw_loss1_summary.csv",
+      "sha256": "8ce443bf1a8deb09c90e31ab3333b4185b6fd0091fa5926dbb609b597cf5ea80"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain3ica_bw_loss1_raw.csv",
+      "sha256": "db6fdf92727772f10cad1fcb9f99cf14ba55ad1f9a0371cdf7dd45bdec65e04d"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/tokyo/pure49/tls_results_tokyo_pure49_chain3ica_bw_loss1_summary.csv",
+      "sha256": "a13510e3a94f32be6ae87d63849140d91a5fa125ff7bf64ac4db3a3f4b60d292"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/tokyo/pure49/tls_results_tokyo_pure49_chain3ica_bw_loss1_raw.csv",
+      "sha256": "556c0fc0de1fc67fdc8f4667a03c06eb5730298c34e4c7559af26a7d0777a5d6"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/tokyo/composite86/tls_results_tokyo_composite86_chain3ica_bw_loss1_summary.csv",
+      "sha256": "dff6d6513f1c3b0f22172f044147b0f048c4d834a38a27738b3a6739d0d31a14"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/tokyo/composite86/tls_results_tokyo_composite86_chain3ica_bw_loss1_raw.csv",
+      "sha256": "f9aea6b1974115d94d1ff701e53e84c121646032d561c1ce5530485a35a05c80"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain3ica_bw_loss1_summary.csv",
+      "sha256": "214ec70095c0ff267aa5e9ba5e6c81db031c7ccd332f6e66d3f47e777bb0951c"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain3ica_bw_loss1_raw.csv",
+      "sha256": "ae4361664ca8bb25f678fca2a4329bea30ac8ab5072dcd481acfbb97cf85b91f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/singapore/pure49/tls_results_singapore_pure49_chain3ica_bw_loss1_summary.csv",
+      "sha256": "5e3ef77d46637d8768579824c79aef069b640577b0014072e67d6e2793725776"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/singapore/pure49/tls_results_singapore_pure49_chain3ica_bw_loss1_raw.csv",
+      "sha256": "c776e3210f0c4dfdc18bbcbfc35248b1d24aa09a7c6c82eb1a465578dbbee766"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/singapore/composite86/tls_results_singapore_composite86_chain3ica_bw_loss1_summary.csv",
+      "sha256": "2176a21dffc5f08d703ffaa4ce0f75f06b96ccc973af3c8cfd2d653d5cb9b87b"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/singapore/composite86/tls_results_singapore_composite86_chain3ica_bw_loss1_raw.csv",
+      "sha256": "5a594a643c3fc5e2d8d6f0e0e0e971357f120bdbbcffbe99a926d7fea9d0ffc8"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain3ica_bw_loss1_summary.csv",
+      "sha256": "ea7607269c19de75451fc65dee504bde2aa95b957248adc46732dd177d425c0c"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain3ica_bw_loss1_raw.csv",
+      "sha256": "a680fd3081bdfa80e7540e4660a1222e82806791bf3b95f3907eda82a84e6ade"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/usa/pure49/tls_results_usa_pure49_chain3ica_bw_loss1_summary.csv",
+      "sha256": "0f8964499a4d5c1369415be915e1638bcf50236d2c069d1af8db7685d88f9dcb"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/usa/pure49/tls_results_usa_pure49_chain3ica_bw_loss1_raw.csv",
+      "sha256": "f971e52ecdae3bca284ddbd7e5fadf60fe195f2467c89c7a98b4347d5aa68140"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/usa/composite86/tls_results_usa_composite86_chain3ica_bw_loss1_summary.csv",
+      "sha256": "afbb78f0d1d4a7fdd30822240c6aa87ed9865e670169be6d89457b31e58af58d"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/usa/composite86/tls_results_usa_composite86_chain3ica_bw_loss1_raw.csv",
+      "sha256": "9d514d749e8af618b9de1ba66f17189399c4c87a670f0998f0731c47f690dcd2"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain3ica_bw_loss1_summary.csv",
+      "sha256": "5bbcc1ed42e29bfc7843f12644ac7ea64456199a401c7df186402167ca9952be"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain3ica_bw_loss1_raw.csv",
+      "sha256": "1325efbc71b431fcd6d784a8e23cb9ea1ce03babb6f6049a59eef4df88ec1a52"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain3ica_bw_loss1_summary.csv",
+      "sha256": "11804f61895fe32320ee89e149c0c414728c421645a69d9538e35473cd467af4"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain3ica_bw_loss1_raw.csv",
+      "sha256": "0472c7cada005bce159994c0d4fc2e05df9480a1d5ffe79e7c7ada700dd35476"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain3ica_bw_loss1_summary.csv",
+      "sha256": "3faad716213c4f028eee413b54566939a297ffaaa215a43049857e984ee99786"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain3ica_bw_loss1_raw.csv",
+      "sha256": "947bce05fb439f7c4562da8691a655dec56425c8408ebc91f824f6e4f2418918"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain3ica_bw_loss1_summary.csv",
+      "sha256": "1431fbca2b3361864875fecc2c2d46eec0cae830099b57a0022ca9b7dcbf4980"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain3ica_loss1_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain3ica_bw_loss1_raw.csv",
+      "sha256": "67718d60e5ffbc174683317ab7f22e5ace0d56d0b032a8c3e3e84642a46866ce"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/seoul/pure49/tls_results_seoul_pure49_chain4ica_bw_loss0_summary.csv",
+      "sha256": "d510315ea8a021d78287395b218095beb00675827e5915508e50b155a3d21e45"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/seoul/pure49/tls_results_seoul_pure49_chain4ica_bw_loss0_raw.csv",
+      "sha256": "912f2613867697a52360d12c9a1399f1f39001caf425c1157f557e93c9e47c5d"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/seoul/composite86/tls_results_seoul_composite86_chain4ica_bw_loss0_summary.csv",
+      "sha256": "8652b193c5a7f2c12332373624cf29d0fd76ab91a63fda058c5d8553e2f81fa9"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/seoul/composite86/tls_results_seoul_composite86_chain4ica_bw_loss0_raw.csv",
+      "sha256": "73ea956b32e23a92bae51317592ee0a027874a82f652fa4c0876ea1d3eddd6d5"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain4ica_bw_loss0_summary.csv",
+      "sha256": "4dc6b0d54c65c4b88dac140e538f9575a43e90b04ec850d0df7c9ca7f4ba0eb2"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain4ica_bw_loss0_raw.csv",
+      "sha256": "414c66077093c2be0924110c6d0ea17a2627aac1b4ac6510a883ddb843ce76ec"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/tokyo/pure49/tls_results_tokyo_pure49_chain4ica_bw_loss0_summary.csv",
+      "sha256": "ef83d8657781d990f3d102b83cfd005900dca46cd8462abe971d8b31658477cc"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/tokyo/pure49/tls_results_tokyo_pure49_chain4ica_bw_loss0_raw.csv",
+      "sha256": "710d3a54dcd39d1ee0fea8f04fd832991b70ac4327d83131871a8d1ec0039195"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/tokyo/composite86/tls_results_tokyo_composite86_chain4ica_bw_loss0_summary.csv",
+      "sha256": "59abc405d2e088ad30c62b710e89c3f30cd89e72e55443dabd6716e0a28c1ad0"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/tokyo/composite86/tls_results_tokyo_composite86_chain4ica_bw_loss0_raw.csv",
+      "sha256": "46fa3b17e24622b5348582356ecfbbf4b3974f69a2ca5fb9f648ac218145099f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain4ica_bw_loss0_summary.csv",
+      "sha256": "1f33a8cc463e9964173f4b894b68f867ffcdf3c4b04841fa6fa1f66d5e177831"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain4ica_bw_loss0_raw.csv",
+      "sha256": "012bbb11d9d00d638c2741a288870f8eba18f6143253fdf26b21ae24fd8862b6"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/singapore/pure49/tls_results_singapore_pure49_chain4ica_bw_loss0_summary.csv",
+      "sha256": "3313627856360dcfd47aeac2ad1de43ea2aba82d2b4e91fb2205e91e15c1524b"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/singapore/pure49/tls_results_singapore_pure49_chain4ica_bw_loss0_raw.csv",
+      "sha256": "e870bfdfaab3a2be348dda2fd35aa7fdc77e327fa2aa3923f7f5c08516b624b6"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/singapore/composite86/tls_results_singapore_composite86_chain4ica_bw_loss0_summary.csv",
+      "sha256": "b29cece898053c589f4d8c20547c6cfc37f7c1bbffa68f24ed23f83fba5d26c0"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/singapore/composite86/tls_results_singapore_composite86_chain4ica_bw_loss0_raw.csv",
+      "sha256": "904c5212da2b17e4b71053de0ec044af821cca56aa1f1b2e0fdd1557a1f95734"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain4ica_bw_loss0_summary.csv",
+      "sha256": "ac7d47529c3b98717aaa490c1ce143c23fe075f4b311259becf43b1aaac776d7"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain4ica_bw_loss0_raw.csv",
+      "sha256": "02ad69e5d6b0c1f881b711123e40e3645d046a007ed8028df8913b795730cb43"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/usa/pure49/tls_results_usa_pure49_chain4ica_bw_loss0_summary.csv",
+      "sha256": "c4a5870eb20003fba7b274b575d0bcf28ae9b6ad4ad2a5e0a251ebf0181de252"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/usa/pure49/tls_results_usa_pure49_chain4ica_bw_loss0_raw.csv",
+      "sha256": "184add5085ce563040bacd7b18dfd6380975e82c31cc786309c67f7beb584979"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/usa/composite86/tls_results_usa_composite86_chain4ica_bw_loss0_summary.csv",
+      "sha256": "97bc1e73494e5f8cfddb871b83380a1de52de408839338a0342084e91c5e94c8"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/usa/composite86/tls_results_usa_composite86_chain4ica_bw_loss0_raw.csv",
+      "sha256": "81fda3b558759571cb4da3a7108ce2894977c90d1e97323214bcd7e9563480b3"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain4ica_bw_loss0_summary.csv",
+      "sha256": "1c5b57228b128c8203e909edc702898d4db64937cb25a7a10d99862f2780f5d1"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain4ica_bw_loss0_raw.csv",
+      "sha256": "b9eb6e1bf35579e921722ab55b2ddb929cb461cbba962fbd428c2cb582047e7c"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain4ica_bw_loss0_summary.csv",
+      "sha256": "8ce1ead15c3534b813dc5805de8d1d2bf7996f291ddca222175fb8d56b2ae05f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain4ica_bw_loss0_raw.csv",
+      "sha256": "8070f08c8990436f5f6005036373b5abfe1d733f3d9d98abe245b3962b703f1c"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain4ica_bw_loss0_summary.csv",
+      "sha256": "4a2817db802bea45c301e56f0bbc02e5b5a4adcf423046f850388256d37247a5"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain4ica_bw_loss0_raw.csv",
+      "sha256": "e26ab54da2219e8dd363918682407a6b66709ab7826f99074fd9d9b4101e74f9"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain4ica_bw_loss0_summary.csv",
+      "sha256": "143db402e88cea50badcfffcd7db817fe1100dcaa71897e07c6d552ef046bacb"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss0_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain4ica_bw_loss0_raw.csv",
+      "sha256": "a5ff91ac5e59d4e2d09f1c6ea4deb8916856e33e8b97d46156f77971ee1996aa"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/seoul/pure49/tls_results_seoul_pure49_chain4ica_bw_loss1_summary.csv",
+      "sha256": "9a2fd6ff2c87e854fb0b6be3644a710acdfb3c4ba59ff54058168e0c098edf48"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/seoul/pure49/tls_results_seoul_pure49_chain4ica_bw_loss1_raw.csv",
+      "sha256": "39b3e5b26f41ee9277e0959c57e2cd381de506446408aaf7109f419e24d8173c"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/seoul/composite86/tls_results_seoul_composite86_chain4ica_bw_loss1_summary.csv",
+      "sha256": "b03e4914a37f33fed87ecec061ecbb73d6b943de9629658ebb01ae19135c50c2"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/seoul/composite86/tls_results_seoul_composite86_chain4ica_bw_loss1_raw.csv",
+      "sha256": "915af45386e8bf92f690ab974281728b3136453ef550d0e3e80e707aeac614b9"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain4ica_bw_loss1_summary.csv",
+      "sha256": "425a92bfe7016aff7b4fd22168d8c9acd4022d055c31b18a83a44c61225061e4"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain4ica_bw_loss1_raw.csv",
+      "sha256": "92704b25027b71d5d15c2b113dd01a3e0c8d7f4c002f733c336dc4f1f22b06d6"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/tokyo/pure49/tls_results_tokyo_pure49_chain4ica_bw_loss1_summary.csv",
+      "sha256": "b17ad539c47612b17d43b8677e0fd4047c7698775499225d0ab762e3fbdc92da"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/tokyo/pure49/tls_results_tokyo_pure49_chain4ica_bw_loss1_raw.csv",
+      "sha256": "1b9780fe7c92e3c36714c6a32a30d8afa9571922d061156bba43aa8405132bd9"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/tokyo/composite86/tls_results_tokyo_composite86_chain4ica_bw_loss1_summary.csv",
+      "sha256": "bcd76df05257997d0738cae59da08373a0a887d9c7983b71fa2a659c5372dbea"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/tokyo/composite86/tls_results_tokyo_composite86_chain4ica_bw_loss1_raw.csv",
+      "sha256": "80791a5a087292b5dbe9fe8ae86a7e5e2a576a146e8a43b1a80eb5c866ab96ef"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain4ica_bw_loss1_summary.csv",
+      "sha256": "ac2bdbf3ad7411280a14712b7f8178f39075dffe231e9ff72cc5149d5d6d0e14"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain4ica_bw_loss1_raw.csv",
+      "sha256": "3aa55dac6b9f644301e9834d2e030a190c9f0d94809cfe995a86e6d6e1b244b0"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/singapore/pure49/tls_results_singapore_pure49_chain4ica_bw_loss1_summary.csv",
+      "sha256": "b1589149ff7f753a668a1c0d25fb2cbcf16d48cc3b7480a23bdfb6e1527b3782"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/singapore/pure49/tls_results_singapore_pure49_chain4ica_bw_loss1_raw.csv",
+      "sha256": "4e7dc24465bf517c01d91e7c310845c3f00152edfe200fc61f13a0e5eb6473c1"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/singapore/composite86/tls_results_singapore_composite86_chain4ica_bw_loss1_summary.csv",
+      "sha256": "885fa9aa5123e0e3ba3d28cc171baf2a6cd1fac843f11d2c0ebc6c07267407f3"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/singapore/composite86/tls_results_singapore_composite86_chain4ica_bw_loss1_raw.csv",
+      "sha256": "79aa4b1f23a3a0b9852d67edb4e6ed0000693b118a9700b29c2d77a09cf5b908"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain4ica_bw_loss1_summary.csv",
+      "sha256": "933197e91c762ad6f0fd81349bbb15fb33617818f55fbd6f04a0929d512c2a17"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain4ica_bw_loss1_raw.csv",
+      "sha256": "23b41b48403538a617571193ed39be85ade54eb6c8299f1f2b9b987175119b61"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/usa/pure49/tls_results_usa_pure49_chain4ica_bw_loss1_summary.csv",
+      "sha256": "7c6c0a3fc905e993d13ecd351a39172d059224383383ca7098ccf60b21019524"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/usa/pure49/tls_results_usa_pure49_chain4ica_bw_loss1_raw.csv",
+      "sha256": "6a48b15f2b72ade9923763795f43c2f0c2b8e5d5919ec1bcf5cfc9599203feb8"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/usa/composite86/tls_results_usa_composite86_chain4ica_bw_loss1_summary.csv",
+      "sha256": "fffca087a43f44445a9dad144c4fe1eeab05a09883ae95be63574a1b72ad1445"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/usa/composite86/tls_results_usa_composite86_chain4ica_bw_loss1_raw.csv",
+      "sha256": "e13b9e1c03dd1d7278e35ae0ed01aa82911f91fb44675f424d90392974cab8c8"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain4ica_bw_loss1_summary.csv",
+      "sha256": "f3d59076b3442fdf442affffd4d3872406149c544f22d6e208c7ca49ba7e67f7"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain4ica_bw_loss1_raw.csv",
+      "sha256": "129e58d8600b2f1579a8ea35fc343894c6168fce6f52c26564f9162ef689846a"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain4ica_bw_loss1_summary.csv",
+      "sha256": "ca21d12da63cc327055f29a9e1f73367f7caaaeebd0cddfc5c28625cfb7fb7be"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain4ica_bw_loss1_raw.csv",
+      "sha256": "80333c92f0a8ecfd87facb5b4acb58d88373f8216d8dbc43cbcc9e9a3d632d0e"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain4ica_bw_loss1_summary.csv",
+      "sha256": "c105daf737fc458478e8a82e26837efcdbdd0c54f999fa9d1c4f4eee9deba835"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain4ica_bw_loss1_raw.csv",
+      "sha256": "e2d27d1f93dc172e086537e3270cd86dcc647bf0b6d73792a1fd11663f2455c7"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain4ica_bw_loss1_summary.csv",
+      "sha256": "f230c3eb82db257d499463874eb7f68abfd7029c70eb9fd44276b69d07d1c77a"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_chain4ica_loss1_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain4ica_bw_loss1_raw.csv",
+      "sha256": "ed31abbf2456b1e5dbef38dfcb37d2485201f5eccdfa4ecbeb4ad7eeb399ad70"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/seoul/pure49/tls_results_seoul_pure49_chain1ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "cf5ef4919b4884bc9c292f698e20e774459e173ecc0450e062441b4e330b4497"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/seoul/pure49/tls_results_seoul_pure49_chain1ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "cf9a05a46829b7b5735c27abe5d2ae9380ebfb6983dab835f41aae7498101328"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/seoul/composite86/tls_results_seoul_composite86_chain1ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "56c21feb86a3eedc46476cd33bf22fec2dad126c453f4e7358dffb41bc26af54"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/seoul/composite86/tls_results_seoul_composite86_chain1ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "f8d6123ebb1430d88cd8f07447a9eae4ad922715cb398cd14167a3f68d42d748"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain1ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "b2a1dbd5605b431aed10b8e38f5b07fb08770ba37313c9aa9835b2e01641f400"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain1ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "d0c1703a9ec09fd4bd2113580dea1bc0850195e00dda4927ebde18cc68a206d9"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/tokyo/pure49/tls_results_tokyo_pure49_chain1ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "3515ba907a7db31e727cddc3c15b725de486973fda3fadfd0583890e71745b8f"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/tokyo/pure49/tls_results_tokyo_pure49_chain1ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "bf54cb9a823588a0170ef81f169acc58b9cd333fc2280a25df8ea7c126ed5baa"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/tokyo/composite86/tls_results_tokyo_composite86_chain1ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "8150ac5e699ed458b4785cdfa06e685cf88af16b9bf75a552169b81715869db8"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/tokyo/composite86/tls_results_tokyo_composite86_chain1ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "aebb3d87eaf06044562f997363533427931fe7170a7cb51221a3c3117c7f5ae4"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain1ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "a5324c62ab0f20c1be342237e522341c6acfd7d6e52747a7ee3799c70d9e9e2c"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain1ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "bf2bd8e827943c80920c7bf9094818391460bbd39c4a55ae3cdfd78e3d45ac3b"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/singapore/pure49/tls_results_singapore_pure49_chain1ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "dcccd67c8538aff7ce6907b42c17e2da325d569ed67778f07bb9a3ad758a8899"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/singapore/pure49/tls_results_singapore_pure49_chain1ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "7bba63536043df7e88d6a55a69a9619a959179d55ed774b03577d83a2c01ea6e"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/singapore/composite86/tls_results_singapore_composite86_chain1ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "99030174f5424b13cf453667da53896c108d620dc58de20cdbe152aac1ae1ca8"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/singapore/composite86/tls_results_singapore_composite86_chain1ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "ff7a089278fd94e97cb90d2a0e227dfa4a3fba84ee78f329208b11c44236ce75"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain1ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "72f2f16f11cf58434afe99c56fde4c35ea2f719bfc94c03255fcc1358453b9b3"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain1ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "cee4f0efdbcf0a1cbf3a089b396da8f1dbb07b59080cc754ffd59cdb00191e6f"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/usa/pure49/tls_results_usa_pure49_chain1ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "310499910b63032c7ab965ccc3c7a2fa45b52bdb5efed6140e5bc91dd2b9bbfb"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/usa/pure49/tls_results_usa_pure49_chain1ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "5ee6b951a6684a72c322128a07fb8f48f3458a17480da5d1912605feb44c3ca8"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/usa/composite86/tls_results_usa_composite86_chain1ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "988705bf5ec5bdeccf8f8603ba4e87927f05c2ee2daa37a16d321d2263f6c45b"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/usa/composite86/tls_results_usa_composite86_chain1ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "4cf41385c80fdacc3776f0139ff573f363a8062278d36859962f9011021d7941"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain1ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "0da8adbd23ed4de908a5b9c4da6a3687686d97af90b025d57f1110ea741c17a6"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain1ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "e03c0b6acc413f6c6446a7971e06905fccebfdb38182787d7fbe8198dd94b32b"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain1ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "2843f0636785eb0f22902cf9717ed67b03a5b96714fbc2e5a999452fdc8d3c85"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain1ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "642b94264795de6971d20c9252520001a8d10b2b8fd38c983dde1a4cd953c7c5"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain1ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "d0f15b4c629c53f4201217adb20fc4968b3715afdde212cbfd30722b5db38f8b"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain1ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "79129ad46d46cd9d9ea41775fe5ac32e36613c531e6a541d00b6695470a5ee49"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain1ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "b53222a8b50652a68361023fdc1e50197935b3b253c91a43a7dfafa3438a4cd9"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss0_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain1ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "03d5c0551b726366325d43f8be9ef9a6e6d0701c6ddf87fc5a88db6562a13784"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/seoul/pure49/tls_results_seoul_pure49_chain1ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "31c1512c7340be1f5e5d1764af0de2bdca2a1282e5bd651ffe985bcf373df9b5"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/seoul/pure49/tls_results_seoul_pure49_chain1ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "a77a9df59937a489dc3941d17b0712e6984baed2f21b86ea1c99aa697555bd2f"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/seoul/composite86/tls_results_seoul_composite86_chain1ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "e0d0e84a09fab185af6f1c0daac4bfb1eefc3ca0384aab390bc3d28f31497996"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/seoul/composite86/tls_results_seoul_composite86_chain1ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "c1aa2aa286159e6c6b3af9cfe658168a6b0055f7247a91b04302cc2ff4fbd41d"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain1ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "b5adb731caf89d4925a6fb159149a46a54a6f3598542d6e02872887e53352ed3"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain1ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "554f45f8cc9afc04adac29d123e67107da7a69be3e132494eb57ed603a63e310"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/tokyo/pure49/tls_results_tokyo_pure49_chain1ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "91085079ddf2e5471b9fabd6b9f2edb65dbfb5d99170bd110edfbc74b838c496"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/tokyo/pure49/tls_results_tokyo_pure49_chain1ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "8f451f3b32183ef6540b23b8055f13e51c199697b3f1473dad29aafc7d43a901"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/tokyo/composite86/tls_results_tokyo_composite86_chain1ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "109bb9e61cbb8a2dbfa557fc782804d73779cb80779cd92fe1a3fd2eeef3c5d3"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/tokyo/composite86/tls_results_tokyo_composite86_chain1ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "7503561cd5b6a184c4e1bd7e6c24e21e8182c930baf5d9e4ca292e0c1e95bfba"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain1ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "2fae2f3b5378e51c2803821e8639a041001841c6cfe07e96c602c7338be69d5a"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain1ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "e511fcbd58a01773bea6953af5d91bd4a151fc3d993b3f31c9cdb75bd59ef56c"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/singapore/pure49/tls_results_singapore_pure49_chain1ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "44dcfeacb470cd858d1fe0b5043a4cbf817df8aeb14c54595806d7b90d3d9156"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/singapore/pure49/tls_results_singapore_pure49_chain1ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "e19bb611718e3088a8841a6ed5326adc158574e189a6efcf26bdd4d596508088"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/singapore/composite86/tls_results_singapore_composite86_chain1ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "863b011963379e00cf352e10bbf3df343bb10963669d597ad262928714ea92be"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/singapore/composite86/tls_results_singapore_composite86_chain1ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "bacc19f7437ea9619b9f009cf4c02be31ea099f933c4664c7850842a751d9d0b"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain1ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "6735b71a6d9813431645ec64245ed0f1d646124431fb9f72156eed89a12d01a2"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain1ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "ee9fc02c2c01ba1145f7af780240b7dcc1fe6fd59d84da55b207b56003ad7a65"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/usa/pure49/tls_results_usa_pure49_chain1ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "905267c9bec722be5821a5a8cfef4f4776be3f90b98a7c7c05c72e94cb3e938f"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/usa/pure49/tls_results_usa_pure49_chain1ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "eae85d285f61b77b5c8da9ed5634b5c6969f4e0a35bede8ada0eb52d5d9f3988"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/usa/composite86/tls_results_usa_composite86_chain1ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "75f51e522b80df2d65d4be9c225790d570c3826e4405d765789e14193adfe392"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/usa/composite86/tls_results_usa_composite86_chain1ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "ffeb01e3229a886e7a3f6f3ccc1618b5c4ddf80f06179e0c9f87d1f0360017fb"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain1ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "ea6b24e4fd31563359210847ba30b5c3fbe1ec4cbfc00dcf629c458b1f54b25f"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain1ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "fc1b125412761d3f13c2b8c16c21a91bcc89a5ae0811a774b6c802cf3685ae15"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain1ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "16b03768fdaf5ff862762ec8a56994c2aa77ab4db294bbec0b53ba13e4d66496"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain1ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "4782d59887b5a25115c8879c46eaf4f4927d6dddc3267d0d342c177e8cf2ce09"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain1ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "7d3958a94cb85ed1b02b9759f2085a1bc59992d3701b99099a848f308ec69ed9"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain1ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "10401c65a2915dab2386cc4b58d1454fbd207f63ba178e2a485118e0b68fc42a"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain1ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "fee0c70d1cde30e371a058d2c3a7b39425e6a65beca78489e93ef5a747e4ad23"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain1ica_loss1_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain1ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "2ace5768935ce4f08b87a89a4ea69300193dc7ffe2d75af06e96df10f07cdb64"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/seoul/pure49/tls_results_seoul_pure49_chain2ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "71ba88287ca76c2264abb6d171763e7944573120e15192b7f5272e83881b3271"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/seoul/pure49/tls_results_seoul_pure49_chain2ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "152c07121d7e33677449ab4db2957242db84e93ad2cf0c7ef295c70e0859950a"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/seoul/composite86/tls_results_seoul_composite86_chain2ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "23853cbd46f84bdb907d2e4004b8c1ebf0752b10c966b1a20166205c984d2452"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/seoul/composite86/tls_results_seoul_composite86_chain2ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "6aa9716ada52f22ab2217c4a487c74f45812b156dbb0c7505b2c0f5976fe6fc9"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain2ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "f2a9b3e6333e7a9acadf9727173b2d24b9720e960554f25445cdf1e81d01f186"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain2ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "51a88c90143a8130cf230cdcb1da18ba534458cd849f13ba9ff783f5973e5a7c"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/tokyo/pure49/tls_results_tokyo_pure49_chain2ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "83d1fd2f86eb6b75a5ea2f09b45d0af1939f0614057cf697e6ef3d8428483724"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/tokyo/pure49/tls_results_tokyo_pure49_chain2ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "f5eff91fcdf7daa391fe3d4d84d5b32c2c43d22a607c6c2a3b8f2b515d61225b"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/tokyo/composite86/tls_results_tokyo_composite86_chain2ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "94974820e576fcc287c76b0a8423a98de3532f93d7212118d8178fe0d78b2b82"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/tokyo/composite86/tls_results_tokyo_composite86_chain2ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "b22b551bce749201f5879fab5aeebc8886f46533c40ea7c8501a818138aa5d24"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain2ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "fcd961c4a950c7a80b4cd0a585fac12714c82e4fea9a9ba0f893371fe9e9d8fc"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain2ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "e045c4cd36ec395cb2a4d91e5dca916608b804cbf8c6ee1de708763616f5df89"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/singapore/pure49/tls_results_singapore_pure49_chain2ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "2cba9d477438e809e76ae5f5e1c1fc182aeed7189c2e3cccc0e5a00089532f15"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/singapore/pure49/tls_results_singapore_pure49_chain2ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "432bf4e1ff2a3be956367573e8d06bf3dac812e9f2d688c3704f723099280b89"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/singapore/composite86/tls_results_singapore_composite86_chain2ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "dd354fa61caad85f58c41f26a7475dfe3eb70cf5cbfd3f01677b9d42cb5b3323"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/singapore/composite86/tls_results_singapore_composite86_chain2ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "83892840e0fb4bcf0dbda52dbd93cfefb5c42057a7dbd10d8b54d7322b764008"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain2ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "12eb5e09516ebec350b56d174cf54ef62f97ebc5042b3b6bce18672d08e8e045"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain2ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "eb9cef75a479357f69056b858db424f6ffc6d930e263980cd904fbdd931e2a9e"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/usa/pure49/tls_results_usa_pure49_chain2ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "c35b9b85023b4cb696ceab12f2307227f903353b3be49952ea28da1fbdaa07ff"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/usa/pure49/tls_results_usa_pure49_chain2ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "16330c9b3a6a4d70db74fe065a164a5547a34d31e1f74e90b2d9c09f89f22f7e"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/usa/composite86/tls_results_usa_composite86_chain2ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "d1d00fa7b9c046876b0c0d8117ec7debda0dfd40513f7ba18ff30cb2ffb6b3e4"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/usa/composite86/tls_results_usa_composite86_chain2ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "72b22ebae6241c861cd47a0491d24135dc6f2b5ebce0a96e41c95380d06e2d38"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain2ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "12eed6f2822f0cd4e33cbb4ff11fc344572955e08bac6c30112bcc90df54db05"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain2ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "38907548cb8428912f568c5763c4e947a18490e5bf55e327c6f2e3c5046aa242"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain2ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "73be45be3ea22515b6411f86394daac96921cf9bed9e18991a50383b81436235"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain2ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "29bac57555833038fc42b004fd8d0dfde53b1ad685127371cf896f4f86f613ee"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain2ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "768b169e96c827a3a82015a4bfdd708c39ce2de226074122da1257b527cfbcf5"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain2ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "0e8a57c5d4fd085351155bd67c4894bb03b25a5c92ebe75d56e654400f0dc6bf"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain2ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "1e9ce7f7e405e4968dc48c7d5ae73d96bd2258e67a7cd85ab8ab8a1d507562a3"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss0_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain2ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "ba7179c9d38c7c9276e723222eddea1e5ffd667cf9eeb2c40c73d990fa75e120"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/seoul/pure49/tls_results_seoul_pure49_chain2ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "8ce792eb71576e91f993092d31aa819df9639680080269127671760d24955179"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/seoul/pure49/tls_results_seoul_pure49_chain2ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "12863f4c3836b79cb7ceed0b281585b2f73549563c6e3f74bad6254c9b755b88"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/seoul/composite86/tls_results_seoul_composite86_chain2ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "5b0592f8879bd58cbcb8942c810e36ce18822dda93db9b8cfa1d8a3916736496"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/seoul/composite86/tls_results_seoul_composite86_chain2ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "ea40fb0b1702ffaa69c89a62d000fd8870133f2942b12521fbd113e8678d4655"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain2ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "bd9ca957832016e6d996bdeb358ae9a18168215669184f5dc4405e876a58adbc"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain2ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "a5bd0c65d4e2d410ea377ba1298d33e72fc236145da5cb82fa469aa0d9fd015e"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/tokyo/pure49/tls_results_tokyo_pure49_chain2ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "11bd64e1d23413c6d58c3d7a4269f8a88d710c62b3f81432c691ceffecfbb784"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/tokyo/pure49/tls_results_tokyo_pure49_chain2ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "1c5702e44f945c027bee1f2c1762ffcbb9af1c0567b4cb15665474ab8f26db92"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/tokyo/composite86/tls_results_tokyo_composite86_chain2ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "fd1017f6987bb1efcf5d4f1e17280a094ffaa77d8a5b64e4f6032d370341e3b9"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/tokyo/composite86/tls_results_tokyo_composite86_chain2ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "f0cb9cecf40ffe81ec4c5e98ba782b57effcb6bd91aed89b4dd556cd5a307663"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain2ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "037011a98a48e11431dad7e5c7d5debd72dd05e2a9c9c8a9748d332baab705df"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain2ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "cf748f02f6c6120839be414f5cae989261aaa0895f0b61cc2ed63b383fd7f370"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/singapore/pure49/tls_results_singapore_pure49_chain2ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "e279397e69ab0648927178b98aaf1f69b96c81fcd1b91142a65b7ddbaef4cb20"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/singapore/pure49/tls_results_singapore_pure49_chain2ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "dde4ed057f553d8dff92239af1bc6a0a098ab2635f4f9990409e22ddcfb64a3c"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/singapore/composite86/tls_results_singapore_composite86_chain2ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "555daab192b124a774b13e7463904288d1e820fc32f9ff79907ce52efc715340"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/singapore/composite86/tls_results_singapore_composite86_chain2ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "7913a9d50cf9ef07bdbe066bb57987d12f5cf2a9ff715e65fd17bb0bcefcd6b2"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain2ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "01933af37cdcede36de8ce1dfe0593958dfc8cbcb86e4ffbd03035ee9dd1934d"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain2ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "878f7a0a603e4483ddd7eb3ba07ba6e6d10871e474dcb845c660d6bbd98e24f2"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/usa/pure49/tls_results_usa_pure49_chain2ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "43932fea93a677a5e2921ac5d201e14454f2b665b1617df7d73afbcf208a6b44"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/usa/pure49/tls_results_usa_pure49_chain2ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "deee553ebb84dd2632d5453dd8915a99887a77f1681d37d87603a5d27530397d"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/usa/composite86/tls_results_usa_composite86_chain2ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "35aa8ef7271283e66c734cbbceb97d0aea1575181b592a93d298f191180e6c7e"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/usa/composite86/tls_results_usa_composite86_chain2ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "b9f216d0d9050ca0ff20279471cd65deac281d1bdfc8860027d7374b721dca71"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain2ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "d5fdd2e364d50fd5724e838c3b3154daae28fcf89e05b81f642d104058373427"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain2ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "94a3cce0aba1e7a6c42ab67c0b42bfbe71e9f646e19232e5e85c3e2c2e6bc940"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain2ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "6dde51c87e16c604228fa7533de4442ed6601823e841709c43e833c5a2378b91"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain2ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "68dc2d57be781833599de796775cc51dd1ad96835687369c9d208560d0d848c6"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain2ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "cb3c6d21ea11d26c233b41590ecaa9b5606b4fa33068e10adc7fd5c3b7bf9914"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain2ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "b5b74239c20d2bc2c104cd90543e69d7252464f7d244c55bb5ec20a062606b01"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain2ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "7eb7cb70a498458d85d03d0e8c18b6a1e1d56d04f6b7eabb5324be9e072e5c47"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain2ica_loss1_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain2ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "1b703d190d4a8feec5a2b451ea389affb114fbe6b24e67d7959cbefb2f48dc11"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/seoul/pure49/tls_results_seoul_pure49_chain3ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "febd649965b443b7a349ce1dc283326d5ec883be719a181dcdf6e19a8817652f"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/seoul/pure49/tls_results_seoul_pure49_chain3ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "458c152466d414512c8bced74914166d3402d54c082971f7e357d360fbfa7982"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/seoul/composite86/tls_results_seoul_composite86_chain3ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "84401da67add8e6a25b448b36113233478efe96321474ff03257b609b9fa7f0c"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/seoul/composite86/tls_results_seoul_composite86_chain3ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "6cb218719cde95671aad9872b3363acf6ea73161486c2baa6963cc2cc11e4e0a"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain3ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "56a94e09fde776509d508c588dbc6a86faf0856532ee1abba0b308b81c1a94ca"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain3ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "8955335b64d1e999315a872d63bf43cf497a6b28172db743e61dac2bbb0bf055"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/tokyo/pure49/tls_results_tokyo_pure49_chain3ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "3e5eca863df9e5de7ed7cb401488700b7779763fbcab241826a7fc029b8458da"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/tokyo/pure49/tls_results_tokyo_pure49_chain3ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "c3e99a75f5f126f73b5801c1993da2a618a3b70db03781608c8a0c5a62005aa1"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/tokyo/composite86/tls_results_tokyo_composite86_chain3ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "216af6d217deba71e337c60cec3a4e4904b12691c8fe0155f19122a92d0fabd3"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/tokyo/composite86/tls_results_tokyo_composite86_chain3ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "b5acb3f2038aed948418ee933f2bd91b7a3ff7d9209a59b33b04d6d1e9c320f0"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain3ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "7acb5df29c90a2d74cf78b8e07e24ff86c6665b17a14274ba1237ebd7b8c84a4"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain3ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "886012a327167767ac628e83ab19be20a4e22e3222c4b1eefda729994c4f5440"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/singapore/pure49/tls_results_singapore_pure49_chain3ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "ce118b44f3c504cfcd1fef08b51ce424e17e7057beb4c0389e0bcb39ffb32c05"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/singapore/pure49/tls_results_singapore_pure49_chain3ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "8d728fa68a56ee7b89236f9091241fdd32c16278603650b695b6bcdbe86127f9"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/singapore/composite86/tls_results_singapore_composite86_chain3ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "f0a1e950c36ab8427dfad8cc28631a455407e4bdafae8687a989bca8f8eab652"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/singapore/composite86/tls_results_singapore_composite86_chain3ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "14b2fa3202c7ab941fa7bf8672131a5ad0f3f3299cfb6ab2263efb464ee09baa"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain3ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "e420060dc9cc19f4cf463a082e13fd2c7ddb3269adb89418524d0e53b7a995ff"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain3ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "5269bf8fff6470191edef9d21942d97dc6076d4fba99f160ce94cbe7f1ea8e77"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/usa/pure49/tls_results_usa_pure49_chain3ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "c3e5800d351fa8c5f4ab9b32f99631eabbf996fb8b2c49b07bb4f1da8ee7ee7a"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/usa/pure49/tls_results_usa_pure49_chain3ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "d3e20757301114cbe82b55f01eb18c8a9d9c785cd65ba16113483f2fcdb877a9"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/usa/composite86/tls_results_usa_composite86_chain3ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "ce494d2ba28267a98d49722a0d1a6ec393a55fecf8ed28523d56266d42c9bdc2"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/usa/composite86/tls_results_usa_composite86_chain3ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "da669f8385d3446e6a78bf1830161049346b06dd336339e8fe7ecb1d623e28af"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain3ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "d5cde120f85086d0bf5d5d99b16127eda9e843a9add58b3bbaee5e645f77fa08"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain3ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "1532a1cac7b025067c0a7c194cb48c308e7f18d4b537e93505394e4a6110c76f"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain3ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "8ba809b0057c93268623997e268336ed73df36d7d86314970d302be275b2edfb"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain3ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "c84da44de30ee79eec8b705959518337a5378d3628739844854d2872531b7a07"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain3ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "3410a03e53ac152832f411c3714254233afb32d240fedc862449ba7d123cfa1c"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain3ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "62107ca63cd84c3308d9f3f0493ae4a77f6211bbfd5935598e68312a5d74ba17"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain3ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "7ece20ce7b26f4279334c20695d779bf5691e61351aed3fb474ba1901985623b"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss0_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain3ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "b1ef4635fd8288d6d1cdda3d07a4c08db5731b260ee7675d5198cc5251ca7527"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/seoul/pure49/tls_results_seoul_pure49_chain3ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "9e7f2eccd88d6ef98f4f61c4c330005dec4ab3f1934bc7de1048d450a1e85194"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/seoul/pure49/tls_results_seoul_pure49_chain3ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "8a24975bf9204043256cceb337fe858322ae0edac8fe5a60983136e367e7649c"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/seoul/composite86/tls_results_seoul_composite86_chain3ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "861db0b12ed5527c3e75e206d194879809c24b4f0686674541d636639ef3661a"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/seoul/composite86/tls_results_seoul_composite86_chain3ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "cf3da16968483a1be9746bdc868f874d5b1a1625faf9087897f14213f79a3317"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain3ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "e26881ffdbdc78f2e64d0a91b6b63b8c1e70e07dbf46ec910093ee1490e6aed4"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain3ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "18923e309f2c3c15a74baface9e1f19ef67aca1b743adeabb499d73e9f1f390e"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/tokyo/pure49/tls_results_tokyo_pure49_chain3ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "1b0d9e5e39a55c4b825f810b0163122d4cfd164dea0c42c7c82eb415eb5a7627"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/tokyo/pure49/tls_results_tokyo_pure49_chain3ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "3cda405fa8e8679dd4c798fea580b93642913a8df72796105bca3c47c1dd18f8"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/tokyo/composite86/tls_results_tokyo_composite86_chain3ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "02b941a90d9510ef92299dfcb367cf3add6c82590bb9ec0c4641ee43a452bb77"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/tokyo/composite86/tls_results_tokyo_composite86_chain3ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "f7b73dba79757c9948300c19d158b02c25ccc833895b452e23b655dae57297aa"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain3ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "1116a27308546d952edc705cdc6a10efb251f7f2ec652ba1f3744f5e7f06c5e4"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain3ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "ebb0a8971bbd173f987792a7c395bc879b350d2520a2a7ffbc4a9c9db2d77dc0"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/singapore/pure49/tls_results_singapore_pure49_chain3ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "bfd9b703e7ce19a7c324ac98007dbe37b35decb3ca5c7e04841444ca73a2faf9"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/singapore/pure49/tls_results_singapore_pure49_chain3ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "e1e61c0a6f868dfb3dc903a78bc5b5c4e2414f5833e3595d123f11720413e38c"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/singapore/composite86/tls_results_singapore_composite86_chain3ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "e093d270804a46836bb650a82f199ce7096db4382dd1d2f9d4a33f1c3e2b5cf9"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/singapore/composite86/tls_results_singapore_composite86_chain3ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "42229af8668c5bbd5173803badf2227b9c9ecb42f35ae9c676a798d85bf39ae5"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain3ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "b847597cfb8e1ef95e1954a96ea3eae3781c324bc5089654317fe44342872c5d"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain3ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "8be79e643deb66ab5c5961d0c6f022cd84df8a8500767c9dcf5630b1fc5de5f5"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/usa/pure49/tls_results_usa_pure49_chain3ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "9cbc3efd0b544cd70c50fcb686a6c54e8b0ec1dd5a0d01b27acd609e88e56f55"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/usa/pure49/tls_results_usa_pure49_chain3ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "3f67c9ec33cde59bed8435acab9dad2ed58b84e3cbb13636a26441d6018215b7"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/usa/composite86/tls_results_usa_composite86_chain3ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "b13dce4629a6fd71e0777b1c8c415320ffe2ec0cf02cfc8877b80739bb019944"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/usa/composite86/tls_results_usa_composite86_chain3ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "c4c40244309b1af05560490871a8940abe237905b6b3fa054533d0cbb4cf6fa0"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain3ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "32be31c0f1e1b34bd2c543a75e30a4c0c8da1523166ca644c6af76922998098e"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain3ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "6b3544be689fd19aabed05704ab0e9610c3764411d8dcedd585cc9f2e19d5300"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain3ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "d560b0dca5c01dd429edc4c090cfcb7e224a9ff9b6021aac8a16a35c46ffeb9b"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain3ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "8d15452e48611aec80b402ac4d3d9de4b1b7317fcc978b4bc20e5e64b5d69c2c"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain3ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "6ca0c15777cd12bd8076d3af59ab333329b67676b6780d28a661f0d564948371"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain3ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "89590ff3a886525124a20e88c98e7be0ebc58144b47aef75d5a11aa58f171e9c"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain3ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "a714eda5d5dcb11edceb7c8c46569c363a9ea3d0f284d0b08c25e12e1231c08e"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain3ica_loss1_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain3ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "695be682a025c9fd3f67f51f8beebc7473e74d863c1fa70d346b675ffaeba0ff"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/seoul/pure49/tls_results_seoul_pure49_chain4ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "991c1817234ee3d779cbbe3a6b13f65f8ade1a44f961b20877227868102df25c"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/seoul/pure49/tls_results_seoul_pure49_chain4ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "fec5084f9537738ba2b91ee4b743688dc16c2845fe210a00d7d39670db4dfb61"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/seoul/composite86/tls_results_seoul_composite86_chain4ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "90aefa3014472057080446c145faab6eccda38ce51ecaba12c24551a553611a2"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/seoul/composite86/tls_results_seoul_composite86_chain4ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "6d436536002ae11657f54f25c8ffff0b87a13ee57a1124e9a1095e2e4c424b46"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain4ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "11ae9658cd5679266b68427d6c49d8d3bbf4e7d460998989551d018ef2dcec2a"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain4ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "201f793d9c09c1c970ed2022d19b92235cd05ba1bb816dd22a5c2f8244ce474c"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/tokyo/pure49/tls_results_tokyo_pure49_chain4ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "a4ac4e0a92b6f028532b95f013c4ccafdefb197fcc507f7fe2f50a43b5092405"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/tokyo/pure49/tls_results_tokyo_pure49_chain4ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "dad1975a221dbd3a78003628d37bfe6c39cb71ea23a5afe75686c9fa9c328e86"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/tokyo/composite86/tls_results_tokyo_composite86_chain4ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "2baa56f7d3acf01d028a8abe55b32a0e4d5f5764fcecfd2c3b42f9070bf43209"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/tokyo/composite86/tls_results_tokyo_composite86_chain4ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "96196fedf1005b27b18c264f1d6d57cb422fa215147813ba9062029addbd8d65"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain4ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "f95fbfa7eb5bedac4c858e7ba3e45f4cd98e9152c13007eafb70be5cba0faf2e"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain4ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "c94876d229d99a59b3c237725f3cbbab35522e43017eaaf116d77f26a0dabaa4"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/singapore/pure49/tls_results_singapore_pure49_chain4ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "83721a67c5221b337e398b21631f09cf3800867e55ea582a0e9ced3bd55d7826"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/singapore/pure49/tls_results_singapore_pure49_chain4ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "b8e7ec4b0a0c0e235dee4faa232cbf059154e9d7dc5d4f42a8352aa8477df87e"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/singapore/composite86/tls_results_singapore_composite86_chain4ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "6e408f9f35d165083b85e97673b763f364a6144855b466773b2e5082c2cd5039"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/singapore/composite86/tls_results_singapore_composite86_chain4ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "1f239536d27837277d2fa51ae50328acd8e2a59c4e3c7698544da987551158d8"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain4ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "3076bc34498d22a7a058375f011d15fe8d468c2c792b197fd895c23861d64718"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain4ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "e8bb2918d4a7b261ef19dd857e001cd330164177cd5edccef616b8d67309fa57"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/usa/pure49/tls_results_usa_pure49_chain4ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "ca2de446ef229ff68c9f3c4a6137d689f2e63342017707cfa8210a03f70506fa"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/usa/pure49/tls_results_usa_pure49_chain4ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "0f82fdc4320f899018568e883b0681df33edb5f61564775ce338d0f3de15b3cf"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/usa/composite86/tls_results_usa_composite86_chain4ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "3a58bca66cf992ed63ea7550fcf15a8f16318ffa1e31393df4f28ae70557e9d8"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/usa/composite86/tls_results_usa_composite86_chain4ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "658393eb4a90ecfde55f1a966ed7480a8cdff661892997b8e859ec8a654df8e9"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain4ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "62d7e6d29236c1e4428f3764be6deb86cb44ab3f63f8b683b1392fc2b0038803"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain4ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "37ff3900f863545fa00c37ec1ff3abdafd6cab1539ddaa625771fcf973d665e9"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain4ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "784efb2822610323fc68da8a5520d85069fcd9851603e701d9db490b4c7740da"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain4ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "658f4cab3d493b56ba9a2b399f147d15aacc877ab707041fb907d18b985da944"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain4ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "e0ad8530cb3238a25627aabc6809a08695fcd2f5cc412525cd3d81d01ae8ad95"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain4ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "b217df6ae7f2618aa3ea354fa69414593dc1319b9610a69c3204912ff155f341"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain4ica_bw100_x25519_loss0_summary.csv",
+      "sha256": "b678276f5401f8b0097591b6e3d3235eca74110f0f8ccf87de657ee574d99db0"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss0_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain4ica_bw100_x25519_loss0_raw.csv",
+      "sha256": "20a4b42ca6e26b99cac9625c8199d53119a04f09cc7831d8b7b7c270bbe30b87"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/seoul/pure49/tls_results_seoul_pure49_chain4ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "f56f843fea148cd72846e4e4ae29b38bd7c5e3389fc94a1e8ac9acc0d417dfd6"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/seoul/pure49/tls_results_seoul_pure49_chain4ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "bed50fb301c9e6d156f4b43dd021d7e043ffbf4dfd219c2bae5c9af90761e1bb"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/seoul/composite86/tls_results_seoul_composite86_chain4ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "6bd1662328630c596656ed81d32c3b39442f9bc7c59ec84aa3fc66dcb8d5ccc0"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/seoul/composite86/tls_results_seoul_composite86_chain4ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "a047b67197396188c5eeb1b2aacfc85c7e09c5629b7274704fc83767c2688807"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain4ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "ac2ca88bc23d153b5c24817478aa612cdfcf5ff898dc98db4f3485f0bfd76108"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain4ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "aee30dd27ef497d0edbdfa1964481b11c6ce9bfd871ae85cb27a16ddf3523af9"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/tokyo/pure49/tls_results_tokyo_pure49_chain4ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "596798d1bfe31ecd50eda54b23b590b1b7ad7d538402c1570959b80e15e7e016"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/tokyo/pure49/tls_results_tokyo_pure49_chain4ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "56c9e5de524c1101768ccf640728f266d697fb7f4990fc834aa98aba34e92bed"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/tokyo/composite86/tls_results_tokyo_composite86_chain4ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "8b5bcdd249796043d0fd615ae7a5902b244a3e82110f87325236dccb6935d7af"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/tokyo/composite86/tls_results_tokyo_composite86_chain4ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "8fc0782c0784b9378515e7acacd6a1ab4fa429616f3253d71e7ea52ca7181b9e"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain4ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "e0e0bcdd13116d563c3b4b43c24e1902792a9e50e96711c92a36bb5ad5c28d69"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain4ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "ea4981a61d652a6aaf420560868791acf4ae7558b75c4461d3dda5919216ef55"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/singapore/pure49/tls_results_singapore_pure49_chain4ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "d4652ff89f804a9c755b799567859ec82d22da5b031dc5fb8b74cd12dd5c0ff6"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/singapore/pure49/tls_results_singapore_pure49_chain4ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "246801f489219f06852846789b15a810b1246fb8b5427bfc2875d1bdc64c15be"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/singapore/composite86/tls_results_singapore_composite86_chain4ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "0247edf6abeaedceca2826fbedc5600f663c658a11cc1d3e7abdf4b23ef00eda"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/singapore/composite86/tls_results_singapore_composite86_chain4ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "0af4176d4fdd2f099d8455dd2e2202acab7cca43071486780d051bb8025ae13e"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain4ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "517af9d2069dc037b533f6b9ef3220ae41fd4b4af35f3ff06ec7bfa32ca49c29"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain4ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "da8d3f068c0e8ef61f398fb7dee4b505e8a2a8547d4fc178abe476faa12d0c6d"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/usa/pure49/tls_results_usa_pure49_chain4ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "697ff39dfd22fa831d3adfcc7afdabb657458e236a29e3feb37fcbd34f82c09f"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/usa/pure49/tls_results_usa_pure49_chain4ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "1ac0c565f522ef385446f1f772e9c5db2fdf8f390f2c5b6b551e54c1480f01fb"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/usa/composite86/tls_results_usa_composite86_chain4ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "6aaac96ca9a163b71bca11c6df7e35c44531914bcf811af0fd03faeeec96522e"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/usa/composite86/tls_results_usa_composite86_chain4ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "e68ad7cd76f7f9f22a0488d2f38ff03b3603166227d2a4afc2735bd4ccfe77b8"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain4ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "46d8129ab2be35c07392c45247be5bc0cf6701939670b362b95d9a5ad8421626"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/usa/composite_shake12/tls_results_usa_composite_shake12_chain4ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "b6b80bb571667511f01778b4704e354ed74751ec836e7257e277d058e988d1f2"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain4ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "b3a649cbefd911638978d41af4ccb532cbcc68ab7fa60dfb514cd3819e4adaf3"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/frankfurt/pure49/tls_results_frankfurt_pure49_chain4ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "0577d3e822535de0a25b7b9f51b916a27988e4b27467585a5e684e0fe5896c0a"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain4ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "134027d0db34798ea5dde41080bfa1e9e05865bcc74bc42d1c909868f31c07ac"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/frankfurt/composite86/tls_results_frankfurt_composite86_chain4ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "95dc5fe090dfd147e802617c0d98ff2b665912f548dda0fd200a17e74ee4b734"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain4ica_bw100_x25519_loss1_summary.csv",
+      "sha256": "53c1a18aa4725ed3ba4cca904b6a57467ba0bf1a32a213bb5a0a4872e13f53cf"
+    },
+    {
+      "source": "outputs/regional_exact/bw100_x25519_chain4ica_loss1_50/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain4ica_bw100_x25519_loss1_raw.csv",
+      "sha256": "a8bb9ac86d70de85e2222b6a30b47eafaae2548eed1d8a4cc22987e62f042754"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/seoul/pure49/tls_results_seoul_pure49_chain1ica_openssl_default_loss0_summary.csv",
+      "sha256": "03c15ae67cdc3bda33a3f1019fefc6f66905b1bedb6d37d1c5a08fbb12bf6fca"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/seoul/pure49/tls_results_seoul_pure49_chain1ica_openssl_default_loss0_raw.csv",
+      "sha256": "ca298c9ecddf03abc49c582ffd639ff16301ca9366d78454fc8784af5af8d370"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/seoul/composite86/tls_results_seoul_composite86_chain1ica_openssl_default_loss0_summary.csv",
+      "sha256": "ba3d1509cc97863d65fd48d0ae8f7f878650e3506e6b2862d9b71e7a236fea38"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/seoul/composite86/tls_results_seoul_composite86_chain1ica_openssl_default_loss0_raw.csv",
+      "sha256": "d2b0a107fb98600af18af08044cfe8c054851b8f13546ea03b46b74734a38caf"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain1ica_openssl_default_loss0_summary.csv",
+      "sha256": "4e2be9e3259440439bced1309dd124ba86e5501fb89fe10d12fa76c17fe0b985"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain1ica_openssl_default_loss0_raw.csv",
+      "sha256": "e27f683e9e8e8307e93546ac5bcf84867fb9bcb2c39d4d45c73d7d401bdf2e19"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/tokyo/pure49/tls_results_tokyo_pure49_chain1ica_openssl_default_loss0_summary.csv",
+      "sha256": "c78e6245f7013c91bed12d26ee3de7e76e83550d51ffc7cb36b1605f6facdb5f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/tokyo/pure49/tls_results_tokyo_pure49_chain1ica_openssl_default_loss0_raw.csv",
+      "sha256": "399712eb49c6787b42121f79603f391ce188b823caee5d25794432c8de1865de"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/tokyo/composite86/tls_results_tokyo_composite86_chain1ica_openssl_default_loss0_summary.csv",
+      "sha256": "757b491aff00c858ea5f28900e42b236475fa7cb88158f728afc5b2e566fe29b"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/tokyo/composite86/tls_results_tokyo_composite86_chain1ica_openssl_default_loss0_raw.csv",
+      "sha256": "d8a8b5528d8f449649f785920649a41cac09419886ae0cd87f07d386d321695a"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain1ica_openssl_default_loss0_summary.csv",
+      "sha256": "f3fe66002328c6392dc132400b66377a7a8995e0de0c310930aca2ff00ee332c"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain1ica_openssl_default_loss0_raw.csv",
+      "sha256": "26fbc6e117d2609a7f88bfef6890d4d549069955d78b4716e4e7f2518b162956"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/singapore/pure49/tls_results_singapore_pure49_chain1ica_openssl_default_loss0_summary.csv",
+      "sha256": "54ef8c3a9d05b5eb3b0f935528819f8ef6384d5adcfd5081f02e6ac905e25dc6"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/singapore/pure49/tls_results_singapore_pure49_chain1ica_openssl_default_loss0_raw.csv",
+      "sha256": "2c30627de37aad92abb482d6fda671423459b73912a5a5ec766df77c1576c6df"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/singapore/composite86/tls_results_singapore_composite86_chain1ica_openssl_default_loss0_summary.csv",
+      "sha256": "fece5d19c399eac8b285fb9028d01ffa8ad277d045252115d6912682c977cf83"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/singapore/composite86/tls_results_singapore_composite86_chain1ica_openssl_default_loss0_raw.csv",
+      "sha256": "491dc215f6f135377368330d112d817903a4427d64dc9e29af0b6ca8773235c1"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain1ica_openssl_default_loss0_summary.csv",
+      "sha256": "8887cbade15fa7eefb508c05209a03887946a3f6ed9f4181a4e9ae352aa42fa4"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain1ica_openssl_default_loss0_raw.csv",
+      "sha256": "01b02cf0e1b6b9a8badafc5b888fa19ec8064a32cd51cc9befa921eacc130cea"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/usa/pure49/tls_results_usa_pure49_chain1ica_openssl_default_loss0_summary.csv",
+      "sha256": "a3885925cfb9383bb3c9489fee1a1e10020da3ea0fe00abd003e2320f64c5f1f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/usa/pure49/tls_results_usa_pure49_chain1ica_openssl_default_loss0_raw.csv",
+      "sha256": "fbc6a46f6f33c0e5508a58f6fc05b9668f25307c320be485e1049888e48ea853"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/usa/composite86/tls_results_usa_composite86_chain1ica_openssl_default_loss0_summary.csv",
+      "sha256": "bd8cdfe774f8a7cc0b5755898bf0eec9c0504d941335e8944f2bbbff6ab3d406"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/usa/composite86/tls_results_usa_composite86_chain1ica_openssl_default_loss0_raw.csv",
+      "sha256": "9169942ecd6ca5e1a48aac4eee39f768495029ef1be1d34eb613744eaa653b68"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/usa/composite_shake12/tls_results_usa_composite_shake12_chain1ica_openssl_default_loss0_summary.csv",
+      "sha256": "eff68a522c7e9124f19639670dcf46c3f7b4079b2e4658b623e436bd18f2f528"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/usa/composite_shake12/tls_results_usa_composite_shake12_chain1ica_openssl_default_loss0_raw.csv",
+      "sha256": "f8490e45565495d970a503674acd23703340228feacd476019ff82f6cec77a95"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/frankfurt/pure49/tls_results_frankfurt_pure49_chain1ica_openssl_default_loss0_summary.csv",
+      "sha256": "127c3438bf25ab7f53be685e1079407283dcf638649eb1164772e7418be65a66"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/frankfurt/pure49/tls_results_frankfurt_pure49_chain1ica_openssl_default_loss0_raw.csv",
+      "sha256": "6118edef6c7d2e797d5e8df1c4e081f03bae5f00eb160cfc7bdeb1bbd63772e2"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/frankfurt/composite86/tls_results_frankfurt_composite86_chain1ica_openssl_default_loss0_summary.csv",
+      "sha256": "27fdeb409aeeb2e77791b9fca586404b524a74ebc5d32032db386fa996d0aeb9"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/frankfurt/composite86/tls_results_frankfurt_composite86_chain1ica_openssl_default_loss0_raw.csv",
+      "sha256": "6bc0aaabce6716c0753681f5d8ec1eb2a6d3329218f941d5c1235b7709289de3"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain1ica_openssl_default_loss0_summary.csv",
+      "sha256": "36494b7f670a63f14e568b2ccfeca65b0f42a5e3456e50050c6b0eba1daeac60"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss0/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain1ica_openssl_default_loss0_raw.csv",
+      "sha256": "cb41b0ba33085b786021bbd8b958f28c53b55ebf02b42250fe6e4ef2da81cfbc"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/seoul/pure49/tls_results_seoul_pure49_chain1ica_openssl_default_loss1_summary.csv",
+      "sha256": "113593fdf28d03d29e61cbab31d49b24d5f1b296b3f99a0772986f704ada0c9b"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/seoul/pure49/tls_results_seoul_pure49_chain1ica_openssl_default_loss1_raw.csv",
+      "sha256": "b6cb9abaddcca0cea29b536d64b13828fe784708902815c6815b019ab4949723"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/seoul/composite86/tls_results_seoul_composite86_chain1ica_openssl_default_loss1_summary.csv",
+      "sha256": "df7800d395d484fac019f2f9bc962d1089effa5333792c5606fec0f6e073d06a"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/seoul/composite86/tls_results_seoul_composite86_chain1ica_openssl_default_loss1_raw.csv",
+      "sha256": "aba8f0c9b7f8a2615b41e415fb5bae760cf9380e356c89da116be1ca2f5d3e4c"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain1ica_openssl_default_loss1_summary.csv",
+      "sha256": "a2b96931cd57b2abf85aab5b47f2f84d5ebd87120da4510275aedce5f2e8b1bc"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain1ica_openssl_default_loss1_raw.csv",
+      "sha256": "76afb1a09c2f7cdaba981e8844ee67db0c761d03344b0fffdf12ee71a2946ce7"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/tokyo/pure49/tls_results_tokyo_pure49_chain1ica_openssl_default_loss1_summary.csv",
+      "sha256": "2a833b837a5fb3691c91c0c01e98cfa88df771d139db56bfa827f299cf244006"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/tokyo/pure49/tls_results_tokyo_pure49_chain1ica_openssl_default_loss1_raw.csv",
+      "sha256": "d975d6fd3386dea02e1428f2bb571423b4751cfe388fa04c1d1d338e149b24eb"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/tokyo/composite86/tls_results_tokyo_composite86_chain1ica_openssl_default_loss1_summary.csv",
+      "sha256": "1b9ff2b2922fc8293200b1714b2fe1ea3eb23abf5ff7bf60f2d095b92bbd3b05"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/tokyo/composite86/tls_results_tokyo_composite86_chain1ica_openssl_default_loss1_raw.csv",
+      "sha256": "f69a158903ee42a19c1c3e81512f705cf49677c82bdad118293747ae0f82865a"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain1ica_openssl_default_loss1_summary.csv",
+      "sha256": "f8bd5eb1659648b9e5aee7a5bdc2f84dcf21ff3d2c60805c22c339603d1f1e48"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain1ica_openssl_default_loss1_raw.csv",
+      "sha256": "7cabfce9f0950b8459b1f866c06cf8016e58337e79b497d019289ef392709d83"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/singapore/pure49/tls_results_singapore_pure49_chain1ica_openssl_default_loss1_summary.csv",
+      "sha256": "785e80555cfbe7608b8259dfb34f620cbbff36968def3c9d7d9ee1b8593966e0"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/singapore/pure49/tls_results_singapore_pure49_chain1ica_openssl_default_loss1_raw.csv",
+      "sha256": "a4b5f85d611ec473a186e579111b9896eb6d2a0273335f6f335e471bce7d00c7"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/singapore/composite86/tls_results_singapore_composite86_chain1ica_openssl_default_loss1_summary.csv",
+      "sha256": "cc21876c6c8fab325b0d2b7b672ac2e0d91919e20363976cab28ffc9cd44b097"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/singapore/composite86/tls_results_singapore_composite86_chain1ica_openssl_default_loss1_raw.csv",
+      "sha256": "e19fc62c73d16b064344eb0af6f3e707924bdf89a3ddcc11fea1be3d78137097"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain1ica_openssl_default_loss1_summary.csv",
+      "sha256": "ef60458fd72be56854375f3b14c37c7f94fee12754df00d6f128205a21b564a8"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain1ica_openssl_default_loss1_raw.csv",
+      "sha256": "6f6467cfc04f3a8403d205a0cb7a64f1faffe13ff2ec1b456375d150cd29d0c5"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/usa/pure49/tls_results_usa_pure49_chain1ica_openssl_default_loss1_summary.csv",
+      "sha256": "89567f6a06b012a5b0337b70130bff97efc0d5f8eac10959a72454fffbb959fe"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/usa/pure49/tls_results_usa_pure49_chain1ica_openssl_default_loss1_raw.csv",
+      "sha256": "b1962e1adb8e2509b45bf43ccfc510be9074482d3cea8d0c5ddad588307fe034"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/usa/composite86/tls_results_usa_composite86_chain1ica_openssl_default_loss1_summary.csv",
+      "sha256": "d0706407995d6f1b4d76e87a2ab4fc4173f53caf54339f0ba062154b65bfe006"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/usa/composite86/tls_results_usa_composite86_chain1ica_openssl_default_loss1_raw.csv",
+      "sha256": "609c26b4190652b68ddb7eb0d961e6359de91a2807b46db3c3b07ee9a07abcc1"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/usa/composite_shake12/tls_results_usa_composite_shake12_chain1ica_openssl_default_loss1_summary.csv",
+      "sha256": "b16a28b16bc37a001a21fc21fdd81d39fd716ad5731a50e28686df709a0c4a70"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/usa/composite_shake12/tls_results_usa_composite_shake12_chain1ica_openssl_default_loss1_raw.csv",
+      "sha256": "33fbfb3bbeb4b21283622cec9a9de4523121ab8aef093db162ac3c6ae511a03c"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/frankfurt/pure49/tls_results_frankfurt_pure49_chain1ica_openssl_default_loss1_summary.csv",
+      "sha256": "16aee2463b46120e7ba0cb2bd91cc749fe30ecddf725f066ebd465ea1c1ada5e"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/frankfurt/pure49/tls_results_frankfurt_pure49_chain1ica_openssl_default_loss1_raw.csv",
+      "sha256": "bf79b58f842bda3b83729600d977ee7b046ed8993a54a0dde2acb2015d03cd67"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/frankfurt/composite86/tls_results_frankfurt_composite86_chain1ica_openssl_default_loss1_summary.csv",
+      "sha256": "d6696b7afe7a30d51a74f53b03f80caeb6cbe01ddf91f8e8cb2c69a434a129d3"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/frankfurt/composite86/tls_results_frankfurt_composite86_chain1ica_openssl_default_loss1_raw.csv",
+      "sha256": "c06758f141af8aee869287f50be0452c1691361fd09068f4aa911ce2d06d7efe"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain1ica_openssl_default_loss1_summary.csv",
+      "sha256": "9df2ded88a3593ae1a2561261e66e2e14393768307160855121cb0b7f04c4aec"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain1ica_loss1/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain1ica_openssl_default_loss1_raw.csv",
+      "sha256": "c2fbf2df9057d20f9c2174f8fb1205cf6068987eaf71a0fa2b988d0c12330db2"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/seoul/pure49/tls_results_seoul_pure49_chain2ica_openssl_default_loss0_summary.csv",
+      "sha256": "31ee75d6e40fdc47903b61654eb11fcd3dc62878cf56c9eb64213e259bb1049b"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/seoul/pure49/tls_results_seoul_pure49_chain2ica_openssl_default_loss0_raw.csv",
+      "sha256": "d5135bc156f7c60aaaf689696bcc62befeb11917613f7150cf834022751bf75d"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/seoul/composite86/tls_results_seoul_composite86_chain2ica_openssl_default_loss0_summary.csv",
+      "sha256": "05cb5667309fc26b623415f8f8ee3775fcaa9c65aa462719de91fa6ae6c52bc8"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/seoul/composite86/tls_results_seoul_composite86_chain2ica_openssl_default_loss0_raw.csv",
+      "sha256": "b30f70ca72ca4aeeb6d5ea18a4cd071c3bdd20eea47c11b6da81e6ffb5cf0afd"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain2ica_openssl_default_loss0_summary.csv",
+      "sha256": "f98430842c58032077e0392daaf89841c8c0d8a2d6b96469103b43fe0ee24e9f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain2ica_openssl_default_loss0_raw.csv",
+      "sha256": "78afe6c980492a11a038eb29a802dc096c4068e823ab15c183069a16a883eccc"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/tokyo/pure49/tls_results_tokyo_pure49_chain2ica_openssl_default_loss0_summary.csv",
+      "sha256": "9eb86cc4265cea1196d3ad86ab86325a6b04be496ca49a2e009da4fbe28566a5"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/tokyo/pure49/tls_results_tokyo_pure49_chain2ica_openssl_default_loss0_raw.csv",
+      "sha256": "73e2d287a6802c237e7f9395d88740b8dcc3c6c1f7ba3fb6d5dc70061c64cb5f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/tokyo/composite86/tls_results_tokyo_composite86_chain2ica_openssl_default_loss0_summary.csv",
+      "sha256": "50a7bb399a372910c482db755a1d809e7534bc07d13561b11d3b9fb96d16e2a1"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/tokyo/composite86/tls_results_tokyo_composite86_chain2ica_openssl_default_loss0_raw.csv",
+      "sha256": "b78056cd7bb80a82e64c8d522996801808d94a0b3c0e5d9757802c62dc370a84"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain2ica_openssl_default_loss0_summary.csv",
+      "sha256": "1e3cbaf5602eff0ffd31cfdba3386f2f9c9c240efac39fa106b6efd954b59a5e"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain2ica_openssl_default_loss0_raw.csv",
+      "sha256": "bf0ab1c1f0744c2e0848cc8c6b300f99e7a5213c68b7a87acd415aa6e9285216"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/singapore/pure49/tls_results_singapore_pure49_chain2ica_openssl_default_loss0_summary.csv",
+      "sha256": "26625205953665b0ea1aed04441b122ddf943be94efbbe637d3cef90e36e4128"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/singapore/pure49/tls_results_singapore_pure49_chain2ica_openssl_default_loss0_raw.csv",
+      "sha256": "843c4bad31a553c7dccfbc9e22f1fe024d6bd33e9161be16a4aa15104c2bb5ca"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/singapore/composite86/tls_results_singapore_composite86_chain2ica_openssl_default_loss0_summary.csv",
+      "sha256": "b13af0d61d7def0f8be3271d083905974f2d5865653e40b6ee1c23ba591ca60d"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/singapore/composite86/tls_results_singapore_composite86_chain2ica_openssl_default_loss0_raw.csv",
+      "sha256": "a057acb5e68eaec21ac69a51afff330be049dbc87b0ab495de3db63adf8a316c"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain2ica_openssl_default_loss0_summary.csv",
+      "sha256": "ded36d27f348eee48b99af8addba7a94bec45f8ad955c8f7ed28e9ca39ce63e3"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain2ica_openssl_default_loss0_raw.csv",
+      "sha256": "2dfa48d6e35f16764fb9adb95a5addf137f42a9cbabaa19bcbb478b63bd70487"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/usa/pure49/tls_results_usa_pure49_chain2ica_openssl_default_loss0_summary.csv",
+      "sha256": "07c3749788ea162f4b7e74f6706199755dffca343aa3fde9099f9944b6a12c6a"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/usa/pure49/tls_results_usa_pure49_chain2ica_openssl_default_loss0_raw.csv",
+      "sha256": "1b2f854e1cf6c251fa6fb4e30890991398ab752cbe11df9114b98d0ad72b1327"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/usa/composite86/tls_results_usa_composite86_chain2ica_openssl_default_loss0_summary.csv",
+      "sha256": "a4eba7d1a02040e62a751f126827450dbc69df6030b9eb3989a19d1d2918e402"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/usa/composite86/tls_results_usa_composite86_chain2ica_openssl_default_loss0_raw.csv",
+      "sha256": "c2f64bf08eefb6e6eb6bcd2d52c47f5d63e1ce649c5ee354afc0bb17299ed419"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/usa/composite_shake12/tls_results_usa_composite_shake12_chain2ica_openssl_default_loss0_summary.csv",
+      "sha256": "a5fa32cc3e9e1ce3af0bb8d9b166731e83863683926beef81581c6beec940ed8"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/usa/composite_shake12/tls_results_usa_composite_shake12_chain2ica_openssl_default_loss0_raw.csv",
+      "sha256": "966453719cd5ab2fc7bb5e412b00f4b16b01b948bf20a94d85d7d00ef4098cec"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/frankfurt/pure49/tls_results_frankfurt_pure49_chain2ica_openssl_default_loss0_summary.csv",
+      "sha256": "da1863599201f1a64c2cd9eaa267ae74530c3a1836ab6e385f134ae97d418fa9"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/frankfurt/pure49/tls_results_frankfurt_pure49_chain2ica_openssl_default_loss0_raw.csv",
+      "sha256": "821254c4e8054d5a42c5033f48ac074665d95429ee33f0ec86eca054426e2a2e"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/frankfurt/composite86/tls_results_frankfurt_composite86_chain2ica_openssl_default_loss0_summary.csv",
+      "sha256": "20e64ca1028b1ed2b8491080f363eee8a6def3ff97229bbe130271c82791e99a"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/frankfurt/composite86/tls_results_frankfurt_composite86_chain2ica_openssl_default_loss0_raw.csv",
+      "sha256": "52a662ff012be7076e89b95fc8590280edea213da49891306a1616374dcc5017"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain2ica_openssl_default_loss0_summary.csv",
+      "sha256": "2408fb09874368ce869ef8606887c545be070d459a6091fd0ddc63449d897982"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss0/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain2ica_openssl_default_loss0_raw.csv",
+      "sha256": "b023d9b1ca19155a00c8f2727b3638cb3d5f27b51c652ad708e4a83552e27204"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/seoul/pure49/tls_results_seoul_pure49_chain2ica_openssl_default_loss1_summary.csv",
+      "sha256": "e9176ec12ce057de9e94937a507d125e0b5a8e821bc735e10f2a33f7461c98d5"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/seoul/pure49/tls_results_seoul_pure49_chain2ica_openssl_default_loss1_raw.csv",
+      "sha256": "7f7560d8bd3c871d50f01c4ac2ea5c4e0093ce603c3fed15df591ac3d8f3e4c6"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/seoul/composite86/tls_results_seoul_composite86_chain2ica_openssl_default_loss1_summary.csv",
+      "sha256": "f26e895603183ddc3d6a5b27736d43405e2f2b7ba36ed2f44d6ce9d9deb88326"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/seoul/composite86/tls_results_seoul_composite86_chain2ica_openssl_default_loss1_raw.csv",
+      "sha256": "5316c610bcc2b20e22e21b3c3e444281f4bcf4692a5c765847fdd251bb1af246"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain2ica_openssl_default_loss1_summary.csv",
+      "sha256": "33fc1077768f53c414472cd6698c6fc88486fa6aaf9630380020b7807101785d"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain2ica_openssl_default_loss1_raw.csv",
+      "sha256": "977728409dab1c57e8d9bdc86e0cd4eb72b550920861114d9d29a601a74635d1"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/tokyo/pure49/tls_results_tokyo_pure49_chain2ica_openssl_default_loss1_summary.csv",
+      "sha256": "1e28a92277641002afc9870a3bff7213f2abc4b5d0b4a132ec0a5b1cf69ba219"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/tokyo/pure49/tls_results_tokyo_pure49_chain2ica_openssl_default_loss1_raw.csv",
+      "sha256": "7ace68862f408752d699201ef4966c4b24291826fad58530c49f4aafc3978e23"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/tokyo/composite86/tls_results_tokyo_composite86_chain2ica_openssl_default_loss1_summary.csv",
+      "sha256": "b19c615c633021a7ea687948088de6872dbd37a2588ee61394079b6ef045d81f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/tokyo/composite86/tls_results_tokyo_composite86_chain2ica_openssl_default_loss1_raw.csv",
+      "sha256": "77b5b9e877416d0f2ef352a9049dc2ac4b349488f0dda98fbc0ce1ce7c43bccb"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain2ica_openssl_default_loss1_summary.csv",
+      "sha256": "c878c75663cb7247d128ab97f8cd59ed566e5fa5f7b4674a5d7549f3d733a9c9"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain2ica_openssl_default_loss1_raw.csv",
+      "sha256": "e8b558a1f133bee23ac2a95822930e58f036cbee66abba2307f796fd5f0dc5af"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/singapore/pure49/tls_results_singapore_pure49_chain2ica_openssl_default_loss1_summary.csv",
+      "sha256": "eab71e38a80ca36b6fc2250ee758db12868b8cf169af7e9141a450c72aee9e81"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/singapore/pure49/tls_results_singapore_pure49_chain2ica_openssl_default_loss1_raw.csv",
+      "sha256": "d4a7436d8264aa18775ecae2eb5e72488ced15f355bb297eab20d04f1952d61d"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/singapore/composite86/tls_results_singapore_composite86_chain2ica_openssl_default_loss1_summary.csv",
+      "sha256": "be0e46d7ddd57652ff20287a4ea69b55809d0757042e826727869a8d5577644e"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/singapore/composite86/tls_results_singapore_composite86_chain2ica_openssl_default_loss1_raw.csv",
+      "sha256": "15e66f7c5595946fe0ece7cec39f354838e7b96ac196ad9cef9506087b638473"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain2ica_openssl_default_loss1_summary.csv",
+      "sha256": "4e94e0992fe8147dc00856ee421d535a7397b2bb3a239c6ff660c28b797a8c04"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain2ica_openssl_default_loss1_raw.csv",
+      "sha256": "9bbebee48762031c252bb53cd0b80f530b847c33a2f1a42336b10688ea29b011"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/usa/pure49/tls_results_usa_pure49_chain2ica_openssl_default_loss1_summary.csv",
+      "sha256": "5838e44065aa0a2738f832b9049d9c4093fa6c711b9937e5b25a3840458fe759"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/usa/pure49/tls_results_usa_pure49_chain2ica_openssl_default_loss1_raw.csv",
+      "sha256": "2ea5f7d66c830c0dd7b044a47c3e395b71a5d1b4a0ee4ff24e415bfb51bce256"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/usa/composite86/tls_results_usa_composite86_chain2ica_openssl_default_loss1_summary.csv",
+      "sha256": "b929364e79e56083ef70799323d7ec1c4fc392b29f243594f8cfa5b9105f6af6"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/usa/composite86/tls_results_usa_composite86_chain2ica_openssl_default_loss1_raw.csv",
+      "sha256": "5f71ed7e657f55d3e06001d2cb25b9d2d005f2b7f07fe0c0b04de5359bf55309"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/usa/composite_shake12/tls_results_usa_composite_shake12_chain2ica_openssl_default_loss1_summary.csv",
+      "sha256": "2ee997d42c60be4a869c7643782c75ad91fde34a447d15228a24baa0bf040a90"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/usa/composite_shake12/tls_results_usa_composite_shake12_chain2ica_openssl_default_loss1_raw.csv",
+      "sha256": "bcc608ab0a88e6efa68cda6f4fa9e7688574c6afde2ecde4b804d3093145c051"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/frankfurt/pure49/tls_results_frankfurt_pure49_chain2ica_openssl_default_loss1_summary.csv",
+      "sha256": "4af06726991d447c6958270774ff39a62721198991e9d2ef7e59ea89b8c6fc98"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/frankfurt/pure49/tls_results_frankfurt_pure49_chain2ica_openssl_default_loss1_raw.csv",
+      "sha256": "a026b8ceab46d21e9cef90b11beb3793b48ad730cd7aae1d0f37e936ec09db0a"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/frankfurt/composite86/tls_results_frankfurt_composite86_chain2ica_openssl_default_loss1_summary.csv",
+      "sha256": "faf57b4c707158d388ce8266185ebbc7deebbbe1ce786b8b3baf68d0f3add96e"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/frankfurt/composite86/tls_results_frankfurt_composite86_chain2ica_openssl_default_loss1_raw.csv",
+      "sha256": "72acac4d569f639805b83b4ee76588eea4383b321109432a32f9d1345cac9047"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain2ica_openssl_default_loss1_summary.csv",
+      "sha256": "11edc4e53da0359ff6bfa6a727eb70269ab373ec84498b32ea8d33ccb621919f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain2ica_loss1/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain2ica_openssl_default_loss1_raw.csv",
+      "sha256": "b98c2a7d578b2e7e4478f384bb1146fa7b92b1a35332f22644eb9d03163595fb"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/seoul/pure49/tls_results_seoul_pure49_chain3ica_openssl_default_loss0_summary.csv",
+      "sha256": "187299aa6dc782c79c2b01ca3457082198349bc548b5e855d23294e7a6523e89"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/seoul/pure49/tls_results_seoul_pure49_chain3ica_openssl_default_loss0_raw.csv",
+      "sha256": "a0764e98831855fa7447226f2330d4b2278bcad6790db3b367da94cf66031cb2"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/seoul/composite86/tls_results_seoul_composite86_chain3ica_openssl_default_loss0_summary.csv",
+      "sha256": "fdd84a8c9a8266288ff42e4325c3f35fb818b0f624c95b6c4671b3271169636b"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/seoul/composite86/tls_results_seoul_composite86_chain3ica_openssl_default_loss0_raw.csv",
+      "sha256": "0350658ff4177a18352c521362e85e52c1e6312e52f91db14d5381e572fbc1ea"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain3ica_openssl_default_loss0_summary.csv",
+      "sha256": "8b4abcfb26d2f7929350c43b4704ff821dc1cc46c2a47a82f1b8310773adc605"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain3ica_openssl_default_loss0_raw.csv",
+      "sha256": "f0cf19770a404b90e062a78d9ccceda4f22e4b2287ebf438206c63b4cab1f093"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/tokyo/pure49/tls_results_tokyo_pure49_chain3ica_openssl_default_loss0_summary.csv",
+      "sha256": "28b42403d836a79e9cc91ba7ec8e170c45d876d4ad6a0c54587035d510ba85b3"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/tokyo/pure49/tls_results_tokyo_pure49_chain3ica_openssl_default_loss0_raw.csv",
+      "sha256": "853e1f1c235379645a1e403a8263c2056d7b1b8015ecb3ba87307351234cc9e7"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/tokyo/composite86/tls_results_tokyo_composite86_chain3ica_openssl_default_loss0_summary.csv",
+      "sha256": "998e622df9321d34b9ab67c3a05b5ec0db89000dd63c7357b2844c2e11ccbdb9"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/tokyo/composite86/tls_results_tokyo_composite86_chain3ica_openssl_default_loss0_raw.csv",
+      "sha256": "c9e613a1de5b0b3d1ff31eb452225c4d0e28d7fdd01b2a79c886b7c964f9b3d1"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain3ica_openssl_default_loss0_summary.csv",
+      "sha256": "1d49ea2d9771664d0b5af62f6c3a97d546c32c4696dbb6094d76fd5d0f8a6248"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain3ica_openssl_default_loss0_raw.csv",
+      "sha256": "a74816e47a945da614b2091900d7def71e767a581d09bfc160c345c01ff6f9e7"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/singapore/pure49/tls_results_singapore_pure49_chain3ica_openssl_default_loss0_summary.csv",
+      "sha256": "7ce67332fda7da066ae63659140e5c1d42d61f0d3562196d99f8e071bf0fd4ec"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/singapore/pure49/tls_results_singapore_pure49_chain3ica_openssl_default_loss0_raw.csv",
+      "sha256": "4fca59563b600b48cf1708a3745599290de0c923bc40f7f1e7e31ae06da40609"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/singapore/composite86/tls_results_singapore_composite86_chain3ica_openssl_default_loss0_summary.csv",
+      "sha256": "3dba73475794fd3eec54c01ac33fa5c2f6d618eb49f919f6581f26bb05f75de1"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/singapore/composite86/tls_results_singapore_composite86_chain3ica_openssl_default_loss0_raw.csv",
+      "sha256": "43f28b1deccc3387a0cb49a79216f0a5e1c5abc2ebf0ae928eeb87a2a3efb900"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain3ica_openssl_default_loss0_summary.csv",
+      "sha256": "4afe3695f4e097679a2df432e8b08a3b4f98fe48a60497c9ad51a36bf9135e3f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain3ica_openssl_default_loss0_raw.csv",
+      "sha256": "275732b39312bf9a088b1c989e799b6f093c1a8838500f8cd0d7863748d9ff91"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/usa/pure49/tls_results_usa_pure49_chain3ica_openssl_default_loss0_summary.csv",
+      "sha256": "0eacaea7dc6c6dfdcd87e8f17fec0171d72511977b893951ac941c91a3af507c"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/usa/pure49/tls_results_usa_pure49_chain3ica_openssl_default_loss0_raw.csv",
+      "sha256": "c7406587ff1f041b43af357466269624e5b7447c0f9b259405235d27ec5dee29"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/usa/composite86/tls_results_usa_composite86_chain3ica_openssl_default_loss0_summary.csv",
+      "sha256": "82b6aa65261d057643ba8638e9c0b890bff527513330c199fc462fb59a5125ac"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/usa/composite86/tls_results_usa_composite86_chain3ica_openssl_default_loss0_raw.csv",
+      "sha256": "4d98e0144e2f7cc05886ebd02eb5f734870a09ce9cd6e2f69d453c39909f9b01"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/usa/composite_shake12/tls_results_usa_composite_shake12_chain3ica_openssl_default_loss0_summary.csv",
+      "sha256": "d13245dafc484a429730acf501693b2427159891ed84a6733226f01374346a9a"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/usa/composite_shake12/tls_results_usa_composite_shake12_chain3ica_openssl_default_loss0_raw.csv",
+      "sha256": "b92b278aa0301f8f19474f9d6dd92a89e4f1b9e02492ef5779e6a95b9f77b998"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/frankfurt/pure49/tls_results_frankfurt_pure49_chain3ica_openssl_default_loss0_summary.csv",
+      "sha256": "bb4c4e0daeb92b50a39731da685616c076614f0e3980b7457176a5ec1fa50c71"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/frankfurt/pure49/tls_results_frankfurt_pure49_chain3ica_openssl_default_loss0_raw.csv",
+      "sha256": "87aa088be18a95fcdda8f602b5277c0c0ff35b0cb13acf57cd3169f2c2d740af"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/frankfurt/composite86/tls_results_frankfurt_composite86_chain3ica_openssl_default_loss0_summary.csv",
+      "sha256": "776d3060fce472dc073cab719d90b350e97211faa86bceb1936b4492d1679d86"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/frankfurt/composite86/tls_results_frankfurt_composite86_chain3ica_openssl_default_loss0_raw.csv",
+      "sha256": "1f0db43c57e7de6a1b241feaa89aec1a7b11ddcac59c0cbe0ed91318006590c5"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain3ica_openssl_default_loss0_summary.csv",
+      "sha256": "eacf8fb1ca4003c7db0ea2ad2ebea77015797d8bd2f3476f9ab7c644eea3c958"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss0/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain3ica_openssl_default_loss0_raw.csv",
+      "sha256": "fd971056a7286c1a4a7565f69a8b03cbbe836b774d550f6aaacfbd83919514c0"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/seoul/pure49/tls_results_seoul_pure49_chain3ica_openssl_default_loss1_summary.csv",
+      "sha256": "a16d9292b04ac6cb07e9ca94530ff02a819008515b361ff2de44d411e64e6a03"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/seoul/pure49/tls_results_seoul_pure49_chain3ica_openssl_default_loss1_raw.csv",
+      "sha256": "4c6f67242b9979f8322cbcbe00549b023a93ef53d410e735fa33fb857ef9295a"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/seoul/composite86/tls_results_seoul_composite86_chain3ica_openssl_default_loss1_summary.csv",
+      "sha256": "3d4ff18b8b34403dceb5c99c82cf2ef7bc73e492e36de450bda49f45d8fe8244"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/seoul/composite86/tls_results_seoul_composite86_chain3ica_openssl_default_loss1_raw.csv",
+      "sha256": "94c4608727ce599a8df83f63653f137c817129124ba114a06f47a211f99a47f0"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain3ica_openssl_default_loss1_summary.csv",
+      "sha256": "0c47ee78e3d4ae3d80b97d1e913be27d3cbe3b9db29b2b8ea1957552e14a2b12"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain3ica_openssl_default_loss1_raw.csv",
+      "sha256": "6f1e72df5db4a69a46dae341c39dd6d00e1a303be5c7aff9e40b5f05d3491418"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/tokyo/pure49/tls_results_tokyo_pure49_chain3ica_openssl_default_loss1_summary.csv",
+      "sha256": "cb0b02a5eeb66d77d4bb5cabb49bdc505bc2226bd32c69a0c3ee47072c938187"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/tokyo/pure49/tls_results_tokyo_pure49_chain3ica_openssl_default_loss1_raw.csv",
+      "sha256": "e2afa43006ed1627d0c9e5c6e5449f960aba5c72fc043543f48d93e9ccdba72a"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/tokyo/composite86/tls_results_tokyo_composite86_chain3ica_openssl_default_loss1_summary.csv",
+      "sha256": "f6dbaf2b06e975d9761a9b7c0734d9849b4b317c61e192af790d5e6d54071809"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/tokyo/composite86/tls_results_tokyo_composite86_chain3ica_openssl_default_loss1_raw.csv",
+      "sha256": "d54cd7b319634406300f7c772f5fd33c72914b8ee68caf355218c7d46e9787ee"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain3ica_openssl_default_loss1_summary.csv",
+      "sha256": "f80faec8b49acc777c543ebc895bdb96b3c56c9714adea0cc8106b15451cd86a"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain3ica_openssl_default_loss1_raw.csv",
+      "sha256": "b8484974dccb6db77c3f5f63ba23b6443fb659d36f6c198a042d307f7117537a"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/singapore/pure49/tls_results_singapore_pure49_chain3ica_openssl_default_loss1_summary.csv",
+      "sha256": "4a947462dbfe216e21ffdb9f0dfe7c5f8b5db772baff547c6eb4ea442537ee72"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/singapore/pure49/tls_results_singapore_pure49_chain3ica_openssl_default_loss1_raw.csv",
+      "sha256": "eba7bc50eae4aae7c7ab6538bd3826908a391fa4a7380a72f54408e7ceeb02d7"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/singapore/composite86/tls_results_singapore_composite86_chain3ica_openssl_default_loss1_summary.csv",
+      "sha256": "e1e9c9411f5e70a070b33fd0c4358305df8a18b7581a844088089c8217e53e87"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/singapore/composite86/tls_results_singapore_composite86_chain3ica_openssl_default_loss1_raw.csv",
+      "sha256": "1c981e40756d52bb24d45e8373763890f9d8b77ddeadb70eb54a3ab513a46ebd"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain3ica_openssl_default_loss1_summary.csv",
+      "sha256": "ec80ee3e5b8fdc1b6afe9ac6b18bdf28b74132f6177221672e9ab558ea46e7c9"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain3ica_openssl_default_loss1_raw.csv",
+      "sha256": "0e222af406709c66e9e51d93864e5cbb086b8234e69273f73c7bc233bdc53cff"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/usa/pure49/tls_results_usa_pure49_chain3ica_openssl_default_loss1_summary.csv",
+      "sha256": "fb8165fc3848448fa28ae02de28ff03dbb6d7afd1eceef7cdb76f2f60f5a96d7"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/usa/pure49/tls_results_usa_pure49_chain3ica_openssl_default_loss1_raw.csv",
+      "sha256": "48ed2ab49bde373ec66ace3beb5a9d3513e58b78b503ed85ab8d1f65eb63ec7d"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/usa/composite86/tls_results_usa_composite86_chain3ica_openssl_default_loss1_summary.csv",
+      "sha256": "af37f8e729149dfdb64a19e4af1466a9b2432cd1d816f8c3269e0b2e86c6f303"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/usa/composite86/tls_results_usa_composite86_chain3ica_openssl_default_loss1_raw.csv",
+      "sha256": "a5d6f9b0a0bf5c7c9fc3f11f9617b879b7336bb1d0cfee81c68be4e16c317e96"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/usa/composite_shake12/tls_results_usa_composite_shake12_chain3ica_openssl_default_loss1_summary.csv",
+      "sha256": "ace49cf597eadf558712237883f830dc9967b7c4d6043e23acd4fce07bbab879"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/usa/composite_shake12/tls_results_usa_composite_shake12_chain3ica_openssl_default_loss1_raw.csv",
+      "sha256": "83ca0c718dd8f1b786525fccf42102d4d060b8b3d2837aa0f7a817c02761dff9"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/frankfurt/pure49/tls_results_frankfurt_pure49_chain3ica_openssl_default_loss1_summary.csv",
+      "sha256": "8a539d763910ecd492a49724249b4e38b1055dc9a2f60e973bb48a6904a3dd6f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/frankfurt/pure49/tls_results_frankfurt_pure49_chain3ica_openssl_default_loss1_raw.csv",
+      "sha256": "8c109638c8e6444c03818d6040bdcc34a2410ef242941ec63c52a8e53d2ab482"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/frankfurt/composite86/tls_results_frankfurt_composite86_chain3ica_openssl_default_loss1_summary.csv",
+      "sha256": "38915a5aa9f532a4a6866572771d2b7da5810f4c1b4f0a67ff926306b96b408f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/frankfurt/composite86/tls_results_frankfurt_composite86_chain3ica_openssl_default_loss1_raw.csv",
+      "sha256": "a8f658c8780730ced6b24bdb4bd3ac0476d6af155549476c227fe6185a23c015"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain3ica_openssl_default_loss1_summary.csv",
+      "sha256": "432685ea911bd3e758b9893ee4604c3a8b8d3c24133d57743e51f23f42f0683d"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain3ica_loss1/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain3ica_openssl_default_loss1_raw.csv",
+      "sha256": "600a4688811d6bb8c9dd8a442f9cabf43db191f9f5d8e1dd4f5520a9adf9799f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/seoul/pure49/tls_results_seoul_pure49_chain4ica_openssl_default_loss0_summary.csv",
+      "sha256": "e590c03a0ccab9766068dda0a75d37aecb8db21d21605268664fd8a2667cea5b"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/seoul/pure49/tls_results_seoul_pure49_chain4ica_openssl_default_loss0_raw.csv",
+      "sha256": "d60d8ad2944b0f736de2efadc234a554040443ba903b8f79a3a66e1be05c6d53"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/seoul/composite86/tls_results_seoul_composite86_chain4ica_openssl_default_loss0_summary.csv",
+      "sha256": "f43cab3b584aace5d395cf0accefb38239ad5374bc81637886c7089c5149885d"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/seoul/composite86/tls_results_seoul_composite86_chain4ica_openssl_default_loss0_raw.csv",
+      "sha256": "3868a9901b86d64a116187a2f303131c473daa56062e47e60c65140532d57d70"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain4ica_openssl_default_loss0_summary.csv",
+      "sha256": "6ebc99cb1b82fbb248bf8d2f771e3db38b69d93f9678e0937802526863f4f445"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain4ica_openssl_default_loss0_raw.csv",
+      "sha256": "746f169106c006b54d54f1cc2d7b5ecd49a56393558840e96f63b0aa0ca314de"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/tokyo/pure49/tls_results_tokyo_pure49_chain4ica_openssl_default_loss0_summary.csv",
+      "sha256": "c7aa1b7640b04731f5a868ad340e77f7695206b98c7a7c2ed1852c7ec72f5e57"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/tokyo/pure49/tls_results_tokyo_pure49_chain4ica_openssl_default_loss0_raw.csv",
+      "sha256": "004510728d9bdf64971bed6c34ea111493261da5290b7c1be15f35f3b1dab065"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/tokyo/composite86/tls_results_tokyo_composite86_chain4ica_openssl_default_loss0_summary.csv",
+      "sha256": "9478f0da51951307a10e15be7fde036cf3008e77286ed4ee032021f89527299e"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/tokyo/composite86/tls_results_tokyo_composite86_chain4ica_openssl_default_loss0_raw.csv",
+      "sha256": "24e63bae0ab808b98bd646404d808c0e0b3ef5dbd6487c49c1623147e6b68e65"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain4ica_openssl_default_loss0_summary.csv",
+      "sha256": "7f16d82017c3e211771ba0d5121c4fbcca07ee4ff15356d65a2fa13fc7227c6f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain4ica_openssl_default_loss0_raw.csv",
+      "sha256": "edfc2feabc2d2df8cf8bef4c1acb5349cb47eb9414e4a9e4b9439d1222873e2e"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/singapore/pure49/tls_results_singapore_pure49_chain4ica_openssl_default_loss0_summary.csv",
+      "sha256": "83cd9b383b9ad4086247466e691310f1286a4d8b9b2dc3fde9dbbe6364e7f331"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/singapore/pure49/tls_results_singapore_pure49_chain4ica_openssl_default_loss0_raw.csv",
+      "sha256": "53ef17c4f50f950fbba210088ec6b3080da05c12e2d24f0b604d23a850fb6c47"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/singapore/composite86/tls_results_singapore_composite86_chain4ica_openssl_default_loss0_summary.csv",
+      "sha256": "3622623d2db57bc3baf63a9cc54f445a3b9fa0699d925db70c2e3679086a70b4"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/singapore/composite86/tls_results_singapore_composite86_chain4ica_openssl_default_loss0_raw.csv",
+      "sha256": "f4cb4207f55df5ff5e96799d39fc901d8d6111cb3a337af579f5582637f21aaf"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain4ica_openssl_default_loss0_summary.csv",
+      "sha256": "e35df181acf10acdf3c49ec23d9e5c449f25833c4063a7590af86cd775b6f58a"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain4ica_openssl_default_loss0_raw.csv",
+      "sha256": "b6cd64a64c004f3cf4b78367c635aead08571424a80fd849ba01c1cfcf0d54b4"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/usa/pure49/tls_results_usa_pure49_chain4ica_openssl_default_loss0_summary.csv",
+      "sha256": "7011f0e3885183b5df1f481997471792261a1dd87df4d2e4d731fb110b646ef2"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/usa/pure49/tls_results_usa_pure49_chain4ica_openssl_default_loss0_raw.csv",
+      "sha256": "8b61c7cc6c1e17d546cd10c9e43683a26bf883a9f831fd1be6d79200765a9b91"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/usa/composite86/tls_results_usa_composite86_chain4ica_openssl_default_loss0_summary.csv",
+      "sha256": "cba0315d9e8956e36f1e83b4e04f11d491e262af30c54cc00b6ee7bcd62be79f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/usa/composite86/tls_results_usa_composite86_chain4ica_openssl_default_loss0_raw.csv",
+      "sha256": "b7ddee1bee56d0b3fad43cf91e9c98a311d4548a55aaa42748cfdf798955e33e"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/usa/composite_shake12/tls_results_usa_composite_shake12_chain4ica_openssl_default_loss0_summary.csv",
+      "sha256": "b20c51e30e80981a8da3fe2fe5c41c4b99f7c63266fbf343068b837eebc6c8e9"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/usa/composite_shake12/tls_results_usa_composite_shake12_chain4ica_openssl_default_loss0_raw.csv",
+      "sha256": "6365dac692b09d8862363cc4aa4c6c7371cf875874a53954f75af607e8f93491"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/frankfurt/pure49/tls_results_frankfurt_pure49_chain4ica_openssl_default_loss0_summary.csv",
+      "sha256": "9354f3d54127391f1cebc4130dee48106bf42a7a25c131673243330f9656b5f6"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/frankfurt/pure49/tls_results_frankfurt_pure49_chain4ica_openssl_default_loss0_raw.csv",
+      "sha256": "a9f6de680a7953985ba267ee725a6ec21db7d80558b64ef8a30de90c76471783"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/frankfurt/composite86/tls_results_frankfurt_composite86_chain4ica_openssl_default_loss0_summary.csv",
+      "sha256": "c7e1b9c1e4fb6a2dde26e89a261dd210c5ff7a3d2b05892919a13cd726a831ab"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/frankfurt/composite86/tls_results_frankfurt_composite86_chain4ica_openssl_default_loss0_raw.csv",
+      "sha256": "1659fd80e595465957ab6eaebf9f2002fb2a9eb0a6e12f0f2cbce5ff52920616"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain4ica_openssl_default_loss0_summary.csv",
+      "sha256": "dc1d71b451042c21d7e2599a90b6a6ed0a3a7f59392efd7290da729eb08a53b3"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss0/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain4ica_openssl_default_loss0_raw.csv",
+      "sha256": "97ba77e8298a9746fa2974c84d0469abc74b4d49b75f9304f37957e4b1f86708"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/seoul/pure49/tls_results_seoul_pure49_chain4ica_openssl_default_loss1_summary.csv",
+      "sha256": "75847a24275d3e7e7107bcaaa60af7129f547efb7840f36afa943d119fa7e47b"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/seoul/pure49/tls_results_seoul_pure49_chain4ica_openssl_default_loss1_raw.csv",
+      "sha256": "dc8209a01af9c27875908beafb89bda55012de713f6dd61246761dd98a43530f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/seoul/composite86/tls_results_seoul_composite86_chain4ica_openssl_default_loss1_summary.csv",
+      "sha256": "d26c6b7a021dbd3361a13b5e3cf10bfbd079e8e2dc70ba1d74a9e8f8df29fe60"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/seoul/composite86/tls_results_seoul_composite86_chain4ica_openssl_default_loss1_raw.csv",
+      "sha256": "bf661cc511d00f6fc09d83cea7892f8711f4292ef5179b347af8a9a03bdebbdb"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain4ica_openssl_default_loss1_summary.csv",
+      "sha256": "31e4f9d7fa5006c307ea39720eb4253e02860b2356e02496c14262d7c616e92f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/seoul/composite_shake12/tls_results_seoul_composite_shake12_chain4ica_openssl_default_loss1_raw.csv",
+      "sha256": "42dbf958c0714bb929e2aaef52d8b01c9a774f81b2c04ed387ed1b1d075ad12e"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/tokyo/pure49/tls_results_tokyo_pure49_chain4ica_openssl_default_loss1_summary.csv",
+      "sha256": "eb27629e5e7383699eb86582a371429d3278f8a6b677ee0b97e27fc605729290"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/tokyo/pure49/tls_results_tokyo_pure49_chain4ica_openssl_default_loss1_raw.csv",
+      "sha256": "36d95e2086c63943be3be063e301bdca79afc9ccd25f6b8a74391422a8e97f39"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/tokyo/composite86/tls_results_tokyo_composite86_chain4ica_openssl_default_loss1_summary.csv",
+      "sha256": "d559cff78a5c50a17e97d6671a00a7cf339ffab6ee46a893ce24aa8b54b2c63f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/tokyo/composite86/tls_results_tokyo_composite86_chain4ica_openssl_default_loss1_raw.csv",
+      "sha256": "1208adbde2c1e74737fa829feec40d89dffca344a5e3c845bcff9d7195ec25e7"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain4ica_openssl_default_loss1_summary.csv",
+      "sha256": "36ac0b11bf83ef727388a2cf5b6046c7c32a5a66aa641b23c999a30e4e5e3bd4"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/tokyo/composite_shake12/tls_results_tokyo_composite_shake12_chain4ica_openssl_default_loss1_raw.csv",
+      "sha256": "30aff236b0bd764fdc877bc23d24ae1586e4bce96265e09f6deb68337536c585"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/singapore/pure49/tls_results_singapore_pure49_chain4ica_openssl_default_loss1_summary.csv",
+      "sha256": "963a39793590b7bcd50a80d1f5b0d60bee7bd5756d8c5b52558b5fb692d70ece"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/singapore/pure49/tls_results_singapore_pure49_chain4ica_openssl_default_loss1_raw.csv",
+      "sha256": "42e1247b91d1ed0b6e9487819c95fb5685b06f61ec9aed17d6d3bef137173926"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/singapore/composite86/tls_results_singapore_composite86_chain4ica_openssl_default_loss1_summary.csv",
+      "sha256": "c3a4f95438c9cf735c8fb8d9eb48bbc331a319fbead1583801592a3a05cc3f15"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/singapore/composite86/tls_results_singapore_composite86_chain4ica_openssl_default_loss1_raw.csv",
+      "sha256": "33845f8724861356416781cf350ea019736eae4680691adbc39a833b98b01e77"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain4ica_openssl_default_loss1_summary.csv",
+      "sha256": "8e0e50d8dd712f3223448d06e08072d141ce5000a2f48a7b3a9b9b651a0a9ffe"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/singapore/composite_shake12/tls_results_singapore_composite_shake12_chain4ica_openssl_default_loss1_raw.csv",
+      "sha256": "da1255bd79a0b78b2484c67e0ad301eaa46d35c05b7cd85933e506f82163e8eb"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/usa/pure49/tls_results_usa_pure49_chain4ica_openssl_default_loss1_summary.csv",
+      "sha256": "1730cb851e1ca4c4655efacd8b2d56e9448b61ce28dcfc09aa3cc3439c2bc700"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/usa/pure49/tls_results_usa_pure49_chain4ica_openssl_default_loss1_raw.csv",
+      "sha256": "b2007372b420129523ca2ab326b28945c3d37e076f2e5e93b46bf67df85e0ac1"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/usa/composite86/tls_results_usa_composite86_chain4ica_openssl_default_loss1_summary.csv",
+      "sha256": "137fe580712c1bdc8d75461e7189f9c86529fb4b2ba2e96abf80ef4b40436ec2"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/usa/composite86/tls_results_usa_composite86_chain4ica_openssl_default_loss1_raw.csv",
+      "sha256": "f0f628ccef27af84fcf918f8237aa26faa1271bfa8561a7a7fd933759ef71938"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/usa/composite_shake12/tls_results_usa_composite_shake12_chain4ica_openssl_default_loss1_summary.csv",
+      "sha256": "ad80a1ae688a0673f6d051580de18a9c9e30943869d28ec4da51ac670173c2ee"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/usa/composite_shake12/tls_results_usa_composite_shake12_chain4ica_openssl_default_loss1_raw.csv",
+      "sha256": "35f5c4b96af802ea189fb771ba30d761976066895b8e2e05cc705110a0b1c5c9"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/frankfurt/pure49/tls_results_frankfurt_pure49_chain4ica_openssl_default_loss1_summary.csv",
+      "sha256": "a6a165666c1bc7f39f4ce24af823d54c9cab5048102f6c37c4e30d8b9320e074"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/frankfurt/pure49/tls_results_frankfurt_pure49_chain4ica_openssl_default_loss1_raw.csv",
+      "sha256": "029fc807ebea6363c24dd5a17e7f380b9b6e194c068e36e2889c9632179f1035"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/frankfurt/composite86/tls_results_frankfurt_composite86_chain4ica_openssl_default_loss1_summary.csv",
+      "sha256": "6f528b5a86ad308e0c4c64fbd0794b470b0fd486659a3790d64d1f4ad434cac6"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/frankfurt/composite86/tls_results_frankfurt_composite86_chain4ica_openssl_default_loss1_raw.csv",
+      "sha256": "dbe63f5ca9d091856c1b07ceaf35f5c9c53a7ab50be71cb46d696da60569c53f"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain4ica_openssl_default_loss1_summary.csv",
+      "sha256": "2ef04742e097b2e8222f0c1c2ae3a269ebd86a835aff566002a8886525fefeca"
+    },
+    {
+      "source": "outputs/regional_exact/bw147_openssl_default_chain4ica_loss1/frankfurt/composite_shake12/tls_results_frankfurt_composite_shake12_chain4ica_openssl_default_loss1_raw.csv",
+      "sha256": "5486c571e5098816be9bee8e03eb981e350e3b790e8609da9af6bd09395a4dbe"
+    },
+    {
+      "source": "outputs/evp_cost_remeasurement/server_sign_frankfurt_openssl357_evp_v2/averages.20260912T142008696958Z.csv",
+      "sha256": "5703e40d70ac8c98e07a98dd20bafc1f225f78ec9cb1ff2f0a0169bb7014a573"
+    },
+    {
+      "source": "outputs/evp_cost_remeasurement/server_sign_frankfurt_openssl357_evp_v2/protocol.json",
+      "sha256": "e85309389ecd648de9eb2ae22ffae107c66807850a57ea0ca91be0748ef44f0e"
+    },
+    {
+      "source": "outputs/evp_cost_remeasurement/seoul_client1_verify_openssl357_evp_v2/averages.20260912T145141587410Z.csv",
+      "sha256": "c1f9ade75096d307b5352e992c2bfe0e59d4c4dfde1b021eb2aeddc29f3d13e0"
+    },
+    {
+      "source": "outputs/evp_cost_remeasurement/seoul_client1_verify_openssl357_evp_v2/protocol.json",
+      "sha256": "e92d5a8b152f0d7b81631d1d21fafae2a71d2cb91a138c22ec7b545c3df09d6f"
+    }
+  ]
+}
