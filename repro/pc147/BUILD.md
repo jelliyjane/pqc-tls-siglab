@@ -37,7 +37,9 @@ solely because these sources build successfully.
 ## Build and check on a clean Ubuntu machine
 
 Use a fresh clone of **main**, not the older `repro-self-contained-v1` tag, to get
-these handoff files. Follow [INSTALL.md](../../docs/INSTALL.md) for prerequisites.
+these handoff files. The build requires a C/C++ toolchain, Git, CMake, Ninja,
+Perl, Python 3, and the operating-system development dependencies used by
+OpenSSL and liboqs.
 From the repository root:
 
 ```bash

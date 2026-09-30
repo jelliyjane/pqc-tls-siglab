@@ -13,7 +13,6 @@ Pure PQC 49개와 Hybrid Composite 98개, 총 147개 인증서 후보를 다룹�
 | [src/](src/) | TLS 테스트용 C 코드 |
 | [config/](config/) | Pure PQC 49개 실험 대상 목록 |
 | [patches/](patches/) | OpenSSL 핸드셰이크 시간 측정 패치 |
-| [docs/](docs/) | Ubuntu 설치 안내와 예전 실험 기록. 과거 자료는 `archive/`에 별도 보관 |
 
 ## 파레토 필터 작업은 여기부터
 
@@ -27,7 +26,6 @@ Pure PQC 49개와 Hybrid Composite 98개, 총 147개 인증서 후보를 다룹�
 ## 빌드 자료가 필요한 경우
 
 버전, commit, provider 코드와 빌드 설정은 [빌드 및 재측정 안내](repro/pc147/BUILD.md)에 정리했습니다.
-Ubuntu 기본 설치 절차는 [설치 안내](docs/INSTALL.md)를 참고합니다.
 
 공개 결과는 40,440개 조건의 요약 CSV와 147개 후보의 비용 프로파일입니다.
 전체 원시 연결 로그와 학습된 Bandit 모델은 포함하지 않습니다.
