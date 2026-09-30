@@ -1,0 +1,2981 @@
+diff --git a/oqs-template/composite-experiment.yml b/oqs-template/composite-experiment.yml
+index 5d58fd8..ecc9086 100644
+--- a/oqs-template/composite-experiment.yml
++++ b/oqs-template/composite-experiment.yml
+@@ -275,6 +275,78 @@ composites:
+   composite: rsa15360_slhdsasha2256f
+   oid: 1.3.9999.30.23.2
+   code_point: '0xfe4d'
++- pqc: slhdsashake128s
++  nist_level: 1
++  classical: p256
++  composite: p256_slhdsashake128s
++  oid: 1.3.9999.30.24.1
++  code_point: '0xfe4e'
++- pqc: slhdsashake128s
++  nist_level: 1
++  classical: rsa3072
++  composite: rsa3072_slhdsashake128s
++  oid: 1.3.9999.30.24.2
++  code_point: '0xfe4f'
++- pqc: slhdsashake128f
++  nist_level: 1
++  classical: p256
++  composite: p256_slhdsashake128f
++  oid: 1.3.9999.30.25.1
++  code_point: '0xfe50'
++- pqc: slhdsashake128f
++  nist_level: 1
++  classical: rsa3072
++  composite: rsa3072_slhdsashake128f
++  oid: 1.3.9999.30.25.2
++  code_point: '0xfe51'
++- pqc: slhdsashake192s
++  nist_level: 3
++  classical: p384
++  composite: p384_slhdsashake192s
++  oid: 1.3.9999.30.26.1
++  code_point: '0xfe52'
++- pqc: slhdsashake192s
++  nist_level: 3
++  classical: rsa7680
++  composite: rsa7680_slhdsashake192s
++  oid: 1.3.9999.30.26.2
++  code_point: '0xfe53'
++- pqc: slhdsashake192f
++  nist_level: 3
++  classical: p384
++  composite: p384_slhdsashake192f
++  oid: 1.3.9999.30.27.1
++  code_point: '0xfe54'
++- pqc: slhdsashake192f
++  nist_level: 3
++  classical: rsa7680
++  composite: rsa7680_slhdsashake192f
++  oid: 1.3.9999.30.27.2
++  code_point: '0xfe55'
++- pqc: slhdsashake256s
++  nist_level: 5
++  classical: p521
++  composite: p521_slhdsashake256s
++  oid: 1.3.9999.30.28.1
++  code_point: '0xfe56'
++- pqc: slhdsashake256s
++  nist_level: 5
++  classical: rsa15360
++  composite: rsa15360_slhdsashake256s
++  oid: 1.3.9999.30.28.2
++  code_point: '0xfe57'
++- pqc: slhdsashake256f
++  nist_level: 5
++  classical: p521
++  composite: p521_slhdsashake256f
++  oid: 1.3.9999.30.29.1
++  code_point: '0xfe58'
++- pqc: slhdsashake256f
++  nist_level: 5
++  classical: rsa15360
++  composite: rsa15360_slhdsashake256f
++  oid: 1.3.9999.30.29.2
++  code_point: '0xfe59'
+ - pqc: mqom2cat1gf16fastr5
+   nist_level: 1
+   classical: p256
+@@ -285,8 +357,8 @@ composites:
+   nist_level: 1
+   classical: rsa3072
+   composite: rsa3072_mqom2cat1gf16fastr5
+-  oid: 1.3.9999.30.24.2
+-  code_point: '0xfe4f'
++  oid: 1.3.9999.30.30.2
++  code_point: '0xfe5b'
+ - pqc: mqom2cat3gf16fastr5
+   nist_level: 3
+   classical: p384
+@@ -297,8 +369,8 @@ composites:
+   nist_level: 3
+   classical: rsa7680
+   composite: rsa7680_mqom2cat3gf16fastr5
+-  oid: 1.3.9999.30.25.2
+-  code_point: '0xfe51'
++  oid: 1.3.9999.30.31.2
++  code_point: '0xfe5d'
+ - pqc: mqom2cat5gf16fastr5
+   nist_level: 5
+   classical: p521
+@@ -309,209 +381,209 @@ composites:
+   nist_level: 5
+   classical: rsa15360
+   composite: rsa15360_mqom2cat5gf16fastr5
+-  oid: 1.3.9999.30.26.2
+-  code_point: '0xfe53'
++  oid: 1.3.9999.30.32.2
++  code_point: '0xfe5f'
+ - pqc: faest128s
+   nist_level: 1
+   classical: p256
+   composite: p256_faest128s
+-  oid: 1.3.9999.30.27.1
+-  code_point: '0xfe54'
++  oid: 1.3.9999.30.33.1
++  code_point: '0xfe60'
+ - pqc: faest128s
+   nist_level: 1
+   classical: rsa3072
+   composite: rsa3072_faest128s
+-  oid: 1.3.9999.30.27.2
+-  code_point: '0xfe55'
++  oid: 1.3.9999.30.33.2
++  code_point: '0xfe61'
+ - pqc: faest128f
+   nist_level: 1
+   classical: p256
+   composite: p256_faest128f
+-  oid: 1.3.9999.30.28.1
+-  code_point: '0xfe56'
++  oid: 1.3.9999.30.34.1
++  code_point: '0xfe62'
+ - pqc: faest128f
+   nist_level: 1
+   classical: rsa3072
+   composite: rsa3072_faest128f
+-  oid: 1.3.9999.30.28.2
+-  code_point: '0xfe57'
++  oid: 1.3.9999.30.34.2
++  code_point: '0xfe63'
+ - pqc: faest192s
+   nist_level: 3
+   classical: p384
+   composite: p384_faest192s
+-  oid: 1.3.9999.30.29.1
+-  code_point: '0xfe58'
++  oid: 1.3.9999.30.35.1
++  code_point: '0xfe64'
+ - pqc: faest192s
+   nist_level: 3
+   classical: rsa7680
+   composite: rsa7680_faest192s
+-  oid: 1.3.9999.30.29.2
+-  code_point: '0xfe59'
++  oid: 1.3.9999.30.35.2
++  code_point: '0xfe65'
+ - pqc: faest192f
+   nist_level: 3
+   classical: p384
+   composite: p384_faest192f
+-  oid: 1.3.9999.30.30.1
+-  code_point: '0xfe5a'
++  oid: 1.3.9999.30.36.1
++  code_point: '0xfe66'
+ - pqc: faest192f
+   nist_level: 3
+   classical: rsa7680
+   composite: rsa7680_faest192f
+-  oid: 1.3.9999.30.30.2
+-  code_point: '0xfe5b'
++  oid: 1.3.9999.30.36.2
++  code_point: '0xfe67'
+ - pqc: faest256s
+   nist_level: 5
+   classical: p521
+   composite: p521_faest256s
+-  oid: 1.3.9999.30.31.1
+-  code_point: '0xfe5c'
++  oid: 1.3.9999.30.37.1
++  code_point: '0xfe68'
+ - pqc: faest256s
+   nist_level: 5
+   classical: rsa15360
+   composite: rsa15360_faest256s
+-  oid: 1.3.9999.30.31.2
+-  code_point: '0xfe5d'
++  oid: 1.3.9999.30.37.2
++  code_point: '0xfe69'
+ - pqc: faest256f
+   nist_level: 5
+   classical: p521
+   composite: p521_faest256f
+-  oid: 1.3.9999.30.32.1
+-  code_point: '0xfe5e'
++  oid: 1.3.9999.30.38.1
++  code_point: '0xfe6a'
+ - pqc: faest256f
+   nist_level: 5
+   classical: rsa15360
+   composite: rsa15360_faest256f
+-  oid: 1.3.9999.30.32.2
+-  code_point: '0xfe5f'
++  oid: 1.3.9999.30.38.2
++  code_point: '0xfe6b'
+ - pqc: hawk512
+   nist_level: 1
+   classical: p256
+   composite: p256_hawk512
+-  oid: 1.3.9999.30.33.1
+-  code_point: '0xfe60'
++  oid: 1.3.9999.30.39.1
++  code_point: '0xfe6c'
+ - pqc: hawk512
+   nist_level: 1
+   classical: rsa3072
+   composite: rsa3072_hawk512
+-  oid: 1.3.9999.30.33.2
+-  code_point: '0xfe61'
++  oid: 1.3.9999.30.39.2
++  code_point: '0xfe6d'
+ - pqc: hawk1024
+   nist_level: 5
+   classical: p521
+   composite: p521_hawk1024
+-  oid: 1.3.9999.30.34.1
+-  code_point: '0xfe62'
++  oid: 1.3.9999.30.40.1
++  code_point: '0xfe6e'
+ - pqc: hawk1024
+   nist_level: 5
+   classical: rsa15360
+   composite: rsa15360_hawk1024
+-  oid: 1.3.9999.30.34.2
+-  code_point: '0xfe63'
++  oid: 1.3.9999.30.40.2
++  code_point: '0xfe6f'
+ - pqc: qruov1q7l10v740m100
+   nist_level: 1
+   classical: p256
+   composite: p256_qruov1q7l10v740m100
+-  oid: 1.3.9999.30.35.1
+-  code_point: '0xfe64'
++  oid: 1.3.9999.30.41.1
++  code_point: '0xfe70'
+ - pqc: qruov1q7l10v740m100
+   nist_level: 1
+   classical: rsa3072
+   composite: rsa3072_qruov1q7l10v740m100
+-  oid: 1.3.9999.30.35.2
+-  code_point: '0xfe65'
++  oid: 1.3.9999.30.41.2
++  code_point: '0xfe71'
+ - pqc: qruov3q7l10v1100m140
+   nist_level: 3
+   classical: p384
+   composite: p384_qruov3q7l10v1100m140
+-  oid: 1.3.9999.30.36.1
+-  code_point: '0xfe66'
++  oid: 1.3.9999.30.42.1
++  code_point: '0xfe72'
+ - pqc: qruov3q7l10v1100m140
+   nist_level: 3
+   classical: rsa7680
+   composite: rsa7680_qruov3q7l10v1100m140
+-  oid: 1.3.9999.30.36.2
+-  code_point: '0xfe67'
++  oid: 1.3.9999.30.42.2
++  code_point: '0xfe73'
+ - pqc: qruov5q7l10v1490m190
+   nist_level: 5
+   classical: p521
+   composite: p521_qruov5q7l10v1490m190
+-  oid: 1.3.9999.30.37.1
+-  code_point: '0xfe68'
++  oid: 1.3.9999.30.43.1
++  code_point: '0xfe74'
+ - pqc: qruov5q7l10v1490m190
+   nist_level: 5
+   classical: rsa15360
+   composite: rsa15360_qruov5q7l10v1490m190
+-  oid: 1.3.9999.30.37.2
+-  code_point: '0xfe69'
++  oid: 1.3.9999.30.43.2
++  code_point: '0xfe75'
+ - pqc: sdithhypercubecat1gf256
+   nist_level: 1
+   classical: p256
+   composite: p256_sdithhypercubecat1gf256
+-  oid: 1.3.9999.30.38.1
+-  code_point: '0xfe6a'
++  oid: 1.3.9999.30.44.1
++  code_point: '0xfe76'
+ - pqc: sdithhypercubecat1gf256
+   nist_level: 1
+   classical: rsa3072
+   composite: rsa3072_sdithhypercubecat1gf256
+-  oid: 1.3.9999.30.38.2
+-  code_point: '0xfe6b'
++  oid: 1.3.9999.30.44.2
++  code_point: '0xfe77'
+ - pqc: sdithhypercubecat3gf256
+   nist_level: 3
+   classical: p384
+   composite: p384_sdithhypercubecat3gf256
+-  oid: 1.3.9999.30.39.1
+-  code_point: '0xfe6c'
++  oid: 1.3.9999.30.45.1
++  code_point: '0xfe78'
+ - pqc: sdithhypercubecat3gf256
+   nist_level: 3
+   classical: rsa7680
+   composite: rsa7680_sdithhypercubecat3gf256
+-  oid: 1.3.9999.30.39.2
+-  code_point: '0xfe6d'
++  oid: 1.3.9999.30.45.2
++  code_point: '0xfe79'
+ - pqc: sdithhypercubecat5gf256
+   nist_level: 5
+   classical: p521
+   composite: p521_sdithhypercubecat5gf256
+-  oid: 1.3.9999.30.40.1
+-  code_point: '0xfe6e'
++  oid: 1.3.9999.30.46.1
++  code_point: '0xfe7a'
+ - pqc: sdithhypercubecat5gf256
+   nist_level: 5
+   classical: rsa15360
+   composite: rsa15360_sdithhypercubecat5gf256
+-  oid: 1.3.9999.30.40.2
+-  code_point: '0xfe6f'
++  oid: 1.3.9999.30.46.2
++  code_point: '0xfe7b'
+ - pqc: sdiththresholdcat1gf256
+   nist_level: 1
+   classical: p256
+   composite: p256_sdiththresholdcat1gf256
+-  oid: 1.3.9999.30.41.1
+-  code_point: '0xfe70'
++  oid: 1.3.9999.30.47.1
++  code_point: '0xfe7c'
+ - pqc: sdiththresholdcat1gf256
+   nist_level: 1
+   classical: rsa3072
+   composite: rsa3072_sdiththresholdcat1gf256
+-  oid: 1.3.9999.30.41.2
+-  code_point: '0xfe71'
++  oid: 1.3.9999.30.47.2
++  code_point: '0xfe7d'
+ - pqc: sdiththresholdcat3gf256
+   nist_level: 3
+   classical: p384
+   composite: p384_sdiththresholdcat3gf256
+-  oid: 1.3.9999.30.42.1
+-  code_point: '0xfe72'
++  oid: 1.3.9999.30.48.1
++  code_point: '0xfe7e'
+ - pqc: sdiththresholdcat3gf256
+   nist_level: 3
+   classical: rsa7680
+   composite: rsa7680_sdiththresholdcat3gf256
+-  oid: 1.3.9999.30.42.2
+-  code_point: '0xfe73'
++  oid: 1.3.9999.30.48.2
++  code_point: '0xfe7f'
+ - pqc: sdiththresholdcat5gf256
+   nist_level: 5
+   classical: p521
+   composite: p521_sdiththresholdcat5gf256
+-  oid: 1.3.9999.30.43.1
+-  code_point: '0xfe74'
++  oid: 1.3.9999.30.49.1
++  code_point: '0xfe80'
+ - pqc: sdiththresholdcat5gf256
+   nist_level: 5
+   classical: rsa15360
+   composite: rsa15360_sdiththresholdcat5gf256
+-  oid: 1.3.9999.30.43.2
+-  code_point: '0xfe75'
++  oid: 1.3.9999.30.49.2
++  code_point: '0xfe81'
+diff --git a/oqs-template/generate.py b/oqs-template/generate.py
+index 3e469e7..bdc9ae4 100644
+--- a/oqs-template/generate.py
++++ b/oqs-template/generate.py
+@@ -13,7 +13,7 @@ kemoidcnt=0
+ 
+ # Contextual TLS experiment set. Each pure-PQC signature gets one ECDSA and
+ # one RSA composite at the same classical security strength. The private-use
+-# TLS slots 0xFE20..0xFE75 are reserved by position for this experiment; slots
++# TLS slots 0xFE20..0xFE81 are reserved by position for this experiment; slots
+ # belonging to composites already defined in generate.yml remain unused.
+ EXPERIMENT_COMPOSITE_SIGS = [
+     ('mldsa44', 2), ('mldsa65', 3), ('mldsa87', 5),
+@@ -26,6 +26,9 @@ EXPERIMENT_COMPOSITE_SIGS = [
+     ('slhdsasha2128s', 1), ('slhdsasha2128f', 1),
+     ('slhdsasha2192s', 3), ('slhdsasha2192f', 3),
+     ('slhdsasha2256s', 5), ('slhdsasha2256f', 5),
++    ('slhdsashake128s', 1), ('slhdsashake128f', 1),
++    ('slhdsashake192s', 3), ('slhdsashake192f', 3),
++    ('slhdsashake256s', 5), ('slhdsashake256f', 5),
+     ('mqom2cat1gf16fastr5', 1), ('mqom2cat3gf16fastr5', 3),
+     ('mqom2cat5gf16fastr5', 5),
+     ('faest128s', 1), ('faest128f', 1), ('faest192s', 3),
+@@ -112,7 +115,7 @@ def add_experiment_composites(config):
+             })
+ 
+     if len(manifest) != len(EXPERIMENT_COMPOSITE_SIGS) * 2:
+-        raise ValueError('Expected 86 experiment composite signatures')
++        raise ValueError('Expected 98 experiment composite signatures')
+     config['experiment_composites'] = manifest
+     return config
+ 
+diff --git a/oqsprov/oqs_decode_der2key.c b/oqsprov/oqs_decode_der2key.c
+index 9e1f898..022d4ee 100644
+--- a/oqsprov/oqs_decode_der2key.c
++++ b/oqsprov/oqs_decode_der2key.c
+@@ -951,16 +951,40 @@ MAKE_DECODER(, "rsa15360_slhdsasha2256f", rsa15360_slhdsasha2256f, oqsx, Private
+ MAKE_DECODER(, "rsa15360_slhdsasha2256f", rsa15360_slhdsasha2256f, oqsx, SubjectPublicKeyInfo);
+ MAKE_DECODER(, "slhdsashake128s", slhdsashake128s, oqsx, PrivateKeyInfo);
+ MAKE_DECODER(, "slhdsashake128s", slhdsashake128s, oqsx, SubjectPublicKeyInfo);
++MAKE_DECODER(, "p256_slhdsashake128s", p256_slhdsashake128s, oqsx, PrivateKeyInfo);
++MAKE_DECODER(, "p256_slhdsashake128s", p256_slhdsashake128s, oqsx, SubjectPublicKeyInfo);
++MAKE_DECODER(, "rsa3072_slhdsashake128s", rsa3072_slhdsashake128s, oqsx, PrivateKeyInfo);
++MAKE_DECODER(, "rsa3072_slhdsashake128s", rsa3072_slhdsashake128s, oqsx, SubjectPublicKeyInfo);
+ MAKE_DECODER(, "slhdsashake128f", slhdsashake128f, oqsx, PrivateKeyInfo);
+ MAKE_DECODER(, "slhdsashake128f", slhdsashake128f, oqsx, SubjectPublicKeyInfo);
++MAKE_DECODER(, "p256_slhdsashake128f", p256_slhdsashake128f, oqsx, PrivateKeyInfo);
++MAKE_DECODER(, "p256_slhdsashake128f", p256_slhdsashake128f, oqsx, SubjectPublicKeyInfo);
++MAKE_DECODER(, "rsa3072_slhdsashake128f", rsa3072_slhdsashake128f, oqsx, PrivateKeyInfo);
++MAKE_DECODER(, "rsa3072_slhdsashake128f", rsa3072_slhdsashake128f, oqsx, SubjectPublicKeyInfo);
+ MAKE_DECODER(, "slhdsashake192s", slhdsashake192s, oqsx, PrivateKeyInfo);
+ MAKE_DECODER(, "slhdsashake192s", slhdsashake192s, oqsx, SubjectPublicKeyInfo);
++MAKE_DECODER(, "p384_slhdsashake192s", p384_slhdsashake192s, oqsx, PrivateKeyInfo);
++MAKE_DECODER(, "p384_slhdsashake192s", p384_slhdsashake192s, oqsx, SubjectPublicKeyInfo);
++MAKE_DECODER(, "rsa7680_slhdsashake192s", rsa7680_slhdsashake192s, oqsx, PrivateKeyInfo);
++MAKE_DECODER(, "rsa7680_slhdsashake192s", rsa7680_slhdsashake192s, oqsx, SubjectPublicKeyInfo);
+ MAKE_DECODER(, "slhdsashake192f", slhdsashake192f, oqsx, PrivateKeyInfo);
+ MAKE_DECODER(, "slhdsashake192f", slhdsashake192f, oqsx, SubjectPublicKeyInfo);
++MAKE_DECODER(, "p384_slhdsashake192f", p384_slhdsashake192f, oqsx, PrivateKeyInfo);
++MAKE_DECODER(, "p384_slhdsashake192f", p384_slhdsashake192f, oqsx, SubjectPublicKeyInfo);
++MAKE_DECODER(, "rsa7680_slhdsashake192f", rsa7680_slhdsashake192f, oqsx, PrivateKeyInfo);
++MAKE_DECODER(, "rsa7680_slhdsashake192f", rsa7680_slhdsashake192f, oqsx, SubjectPublicKeyInfo);
+ MAKE_DECODER(, "slhdsashake256s", slhdsashake256s, oqsx, PrivateKeyInfo);
+ MAKE_DECODER(, "slhdsashake256s", slhdsashake256s, oqsx, SubjectPublicKeyInfo);
++MAKE_DECODER(, "p521_slhdsashake256s", p521_slhdsashake256s, oqsx, PrivateKeyInfo);
++MAKE_DECODER(, "p521_slhdsashake256s", p521_slhdsashake256s, oqsx, SubjectPublicKeyInfo);
++MAKE_DECODER(, "rsa15360_slhdsashake256s", rsa15360_slhdsashake256s, oqsx, PrivateKeyInfo);
++MAKE_DECODER(, "rsa15360_slhdsashake256s", rsa15360_slhdsashake256s, oqsx, SubjectPublicKeyInfo);
+ MAKE_DECODER(, "slhdsashake256f", slhdsashake256f, oqsx, PrivateKeyInfo);
+ MAKE_DECODER(, "slhdsashake256f", slhdsashake256f, oqsx, SubjectPublicKeyInfo);
++MAKE_DECODER(, "p521_slhdsashake256f", p521_slhdsashake256f, oqsx, PrivateKeyInfo);
++MAKE_DECODER(, "p521_slhdsashake256f", p521_slhdsashake256f, oqsx, SubjectPublicKeyInfo);
++MAKE_DECODER(, "rsa15360_slhdsashake256f", rsa15360_slhdsashake256f, oqsx, PrivateKeyInfo);
++MAKE_DECODER(, "rsa15360_slhdsashake256f", rsa15360_slhdsashake256f, oqsx, SubjectPublicKeyInfo);
+ MAKE_DECODER(, "mqom2cat1gf16fastr5", mqom2cat1gf16fastr5, oqsx, PrivateKeyInfo);
+ MAKE_DECODER(, "mqom2cat1gf16fastr5", mqom2cat1gf16fastr5, oqsx, SubjectPublicKeyInfo);
+ MAKE_DECODER(, "p256_mqom2cat1gf16fastr5", p256_mqom2cat1gf16fastr5, oqsx, PrivateKeyInfo);
+diff --git a/oqsprov/oqs_encode_key2any.c b/oqsprov/oqs_encode_key2any.c
+index 8378547..bd60aed 100644
+--- a/oqsprov/oqs_encode_key2any.c
++++ b/oqsprov/oqs_encode_key2any.c
+@@ -1157,21 +1157,57 @@ done:
+ # define slhdsashake128s_evp_type       0
+ # define slhdsashake128s_input_type      "slhdsashake128s"
+ # define slhdsashake128s_pem_type        "slhdsashake128s"
++# define p256_slhdsashake128s_evp_type       0
++# define p256_slhdsashake128s_input_type      "p256_slhdsashake128s"
++# define p256_slhdsashake128s_pem_type        "p256_slhdsashake128s"
++# define rsa3072_slhdsashake128s_evp_type       0
++# define rsa3072_slhdsashake128s_input_type      "rsa3072_slhdsashake128s"
++# define rsa3072_slhdsashake128s_pem_type        "rsa3072_slhdsashake128s"
+ # define slhdsashake128f_evp_type       0
+ # define slhdsashake128f_input_type      "slhdsashake128f"
+ # define slhdsashake128f_pem_type        "slhdsashake128f"
++# define p256_slhdsashake128f_evp_type       0
++# define p256_slhdsashake128f_input_type      "p256_slhdsashake128f"
++# define p256_slhdsashake128f_pem_type        "p256_slhdsashake128f"
++# define rsa3072_slhdsashake128f_evp_type       0
++# define rsa3072_slhdsashake128f_input_type      "rsa3072_slhdsashake128f"
++# define rsa3072_slhdsashake128f_pem_type        "rsa3072_slhdsashake128f"
+ # define slhdsashake192s_evp_type       0
+ # define slhdsashake192s_input_type      "slhdsashake192s"
+ # define slhdsashake192s_pem_type        "slhdsashake192s"
++# define p384_slhdsashake192s_evp_type       0
++# define p384_slhdsashake192s_input_type      "p384_slhdsashake192s"
++# define p384_slhdsashake192s_pem_type        "p384_slhdsashake192s"
++# define rsa7680_slhdsashake192s_evp_type       0
++# define rsa7680_slhdsashake192s_input_type      "rsa7680_slhdsashake192s"
++# define rsa7680_slhdsashake192s_pem_type        "rsa7680_slhdsashake192s"
+ # define slhdsashake192f_evp_type       0
+ # define slhdsashake192f_input_type      "slhdsashake192f"
+ # define slhdsashake192f_pem_type        "slhdsashake192f"
++# define p384_slhdsashake192f_evp_type       0
++# define p384_slhdsashake192f_input_type      "p384_slhdsashake192f"
++# define p384_slhdsashake192f_pem_type        "p384_slhdsashake192f"
++# define rsa7680_slhdsashake192f_evp_type       0
++# define rsa7680_slhdsashake192f_input_type      "rsa7680_slhdsashake192f"
++# define rsa7680_slhdsashake192f_pem_type        "rsa7680_slhdsashake192f"
+ # define slhdsashake256s_evp_type       0
+ # define slhdsashake256s_input_type      "slhdsashake256s"
+ # define slhdsashake256s_pem_type        "slhdsashake256s"
++# define p521_slhdsashake256s_evp_type       0
++# define p521_slhdsashake256s_input_type      "p521_slhdsashake256s"
++# define p521_slhdsashake256s_pem_type        "p521_slhdsashake256s"
++# define rsa15360_slhdsashake256s_evp_type       0
++# define rsa15360_slhdsashake256s_input_type      "rsa15360_slhdsashake256s"
++# define rsa15360_slhdsashake256s_pem_type        "rsa15360_slhdsashake256s"
+ # define slhdsashake256f_evp_type       0
+ # define slhdsashake256f_input_type      "slhdsashake256f"
+ # define slhdsashake256f_pem_type        "slhdsashake256f"
++# define p521_slhdsashake256f_evp_type       0
++# define p521_slhdsashake256f_input_type      "p521_slhdsashake256f"
++# define p521_slhdsashake256f_pem_type        "p521_slhdsashake256f"
++# define rsa15360_slhdsashake256f_evp_type       0
++# define rsa15360_slhdsashake256f_input_type      "rsa15360_slhdsashake256f"
++# define rsa15360_slhdsashake256f_pem_type        "rsa15360_slhdsashake256f"
+ # define mqom2cat1gf16fastr5_evp_type       0
+ # define mqom2cat1gf16fastr5_input_type      "mqom2cat1gf16fastr5"
+ # define mqom2cat1gf16fastr5_pem_type        "mqom2cat1gf16fastr5"
+@@ -3085,6 +3121,20 @@ MAKE_ENCODER(, slhdsashake128s, oqsx, PrivateKeyInfo, pem);
+ MAKE_ENCODER(, slhdsashake128s, oqsx, SubjectPublicKeyInfo, der);
+ MAKE_ENCODER(, slhdsashake128s, oqsx, SubjectPublicKeyInfo, pem);
+ MAKE_TEXT_ENCODER(, slhdsashake128s);
++MAKE_ENCODER(, p256_slhdsashake128s, oqsx, EncryptedPrivateKeyInfo, der);
++MAKE_ENCODER(, p256_slhdsashake128s, oqsx, EncryptedPrivateKeyInfo, pem);
++MAKE_ENCODER(, p256_slhdsashake128s, oqsx, PrivateKeyInfo, der);
++MAKE_ENCODER(, p256_slhdsashake128s, oqsx, PrivateKeyInfo, pem);
++MAKE_ENCODER(, p256_slhdsashake128s, oqsx, SubjectPublicKeyInfo, der);
++MAKE_ENCODER(, p256_slhdsashake128s, oqsx, SubjectPublicKeyInfo, pem);
++MAKE_TEXT_ENCODER(, p256_slhdsashake128s);
++MAKE_ENCODER(, rsa3072_slhdsashake128s, oqsx, EncryptedPrivateKeyInfo, der);
++MAKE_ENCODER(, rsa3072_slhdsashake128s, oqsx, EncryptedPrivateKeyInfo, pem);
++MAKE_ENCODER(, rsa3072_slhdsashake128s, oqsx, PrivateKeyInfo, der);
++MAKE_ENCODER(, rsa3072_slhdsashake128s, oqsx, PrivateKeyInfo, pem);
++MAKE_ENCODER(, rsa3072_slhdsashake128s, oqsx, SubjectPublicKeyInfo, der);
++MAKE_ENCODER(, rsa3072_slhdsashake128s, oqsx, SubjectPublicKeyInfo, pem);
++MAKE_TEXT_ENCODER(, rsa3072_slhdsashake128s);
+ MAKE_ENCODER(, slhdsashake128f, oqsx, EncryptedPrivateKeyInfo, der);
+ MAKE_ENCODER(, slhdsashake128f, oqsx, EncryptedPrivateKeyInfo, pem);
+ MAKE_ENCODER(, slhdsashake128f, oqsx, PrivateKeyInfo, der);
+@@ -3092,6 +3142,20 @@ MAKE_ENCODER(, slhdsashake128f, oqsx, PrivateKeyInfo, pem);
+ MAKE_ENCODER(, slhdsashake128f, oqsx, SubjectPublicKeyInfo, der);
+ MAKE_ENCODER(, slhdsashake128f, oqsx, SubjectPublicKeyInfo, pem);
+ MAKE_TEXT_ENCODER(, slhdsashake128f);
++MAKE_ENCODER(, p256_slhdsashake128f, oqsx, EncryptedPrivateKeyInfo, der);
++MAKE_ENCODER(, p256_slhdsashake128f, oqsx, EncryptedPrivateKeyInfo, pem);
++MAKE_ENCODER(, p256_slhdsashake128f, oqsx, PrivateKeyInfo, der);
++MAKE_ENCODER(, p256_slhdsashake128f, oqsx, PrivateKeyInfo, pem);
++MAKE_ENCODER(, p256_slhdsashake128f, oqsx, SubjectPublicKeyInfo, der);
++MAKE_ENCODER(, p256_slhdsashake128f, oqsx, SubjectPublicKeyInfo, pem);
++MAKE_TEXT_ENCODER(, p256_slhdsashake128f);
++MAKE_ENCODER(, rsa3072_slhdsashake128f, oqsx, EncryptedPrivateKeyInfo, der);
++MAKE_ENCODER(, rsa3072_slhdsashake128f, oqsx, EncryptedPrivateKeyInfo, pem);
++MAKE_ENCODER(, rsa3072_slhdsashake128f, oqsx, PrivateKeyInfo, der);
++MAKE_ENCODER(, rsa3072_slhdsashake128f, oqsx, PrivateKeyInfo, pem);
++MAKE_ENCODER(, rsa3072_slhdsashake128f, oqsx, SubjectPublicKeyInfo, der);
++MAKE_ENCODER(, rsa3072_slhdsashake128f, oqsx, SubjectPublicKeyInfo, pem);
++MAKE_TEXT_ENCODER(, rsa3072_slhdsashake128f);
+ MAKE_ENCODER(, slhdsashake192s, oqsx, EncryptedPrivateKeyInfo, der);
+ MAKE_ENCODER(, slhdsashake192s, oqsx, EncryptedPrivateKeyInfo, pem);
+ MAKE_ENCODER(, slhdsashake192s, oqsx, PrivateKeyInfo, der);
+@@ -3099,6 +3163,20 @@ MAKE_ENCODER(, slhdsashake192s, oqsx, PrivateKeyInfo, pem);
+ MAKE_ENCODER(, slhdsashake192s, oqsx, SubjectPublicKeyInfo, der);
+ MAKE_ENCODER(, slhdsashake192s, oqsx, SubjectPublicKeyInfo, pem);
+ MAKE_TEXT_ENCODER(, slhdsashake192s);
++MAKE_ENCODER(, p384_slhdsashake192s, oqsx, EncryptedPrivateKeyInfo, der);
++MAKE_ENCODER(, p384_slhdsashake192s, oqsx, EncryptedPrivateKeyInfo, pem);
++MAKE_ENCODER(, p384_slhdsashake192s, oqsx, PrivateKeyInfo, der);
++MAKE_ENCODER(, p384_slhdsashake192s, oqsx, PrivateKeyInfo, pem);
++MAKE_ENCODER(, p384_slhdsashake192s, oqsx, SubjectPublicKeyInfo, der);
++MAKE_ENCODER(, p384_slhdsashake192s, oqsx, SubjectPublicKeyInfo, pem);
++MAKE_TEXT_ENCODER(, p384_slhdsashake192s);
++MAKE_ENCODER(, rsa7680_slhdsashake192s, oqsx, EncryptedPrivateKeyInfo, der);
++MAKE_ENCODER(, rsa7680_slhdsashake192s, oqsx, EncryptedPrivateKeyInfo, pem);
++MAKE_ENCODER(, rsa7680_slhdsashake192s, oqsx, PrivateKeyInfo, der);
++MAKE_ENCODER(, rsa7680_slhdsashake192s, oqsx, PrivateKeyInfo, pem);
++MAKE_ENCODER(, rsa7680_slhdsashake192s, oqsx, SubjectPublicKeyInfo, der);
++MAKE_ENCODER(, rsa7680_slhdsashake192s, oqsx, SubjectPublicKeyInfo, pem);
++MAKE_TEXT_ENCODER(, rsa7680_slhdsashake192s);
+ MAKE_ENCODER(, slhdsashake192f, oqsx, EncryptedPrivateKeyInfo, der);
+ MAKE_ENCODER(, slhdsashake192f, oqsx, EncryptedPrivateKeyInfo, pem);
+ MAKE_ENCODER(, slhdsashake192f, oqsx, PrivateKeyInfo, der);
+@@ -3106,6 +3184,20 @@ MAKE_ENCODER(, slhdsashake192f, oqsx, PrivateKeyInfo, pem);
+ MAKE_ENCODER(, slhdsashake192f, oqsx, SubjectPublicKeyInfo, der);
+ MAKE_ENCODER(, slhdsashake192f, oqsx, SubjectPublicKeyInfo, pem);
+ MAKE_TEXT_ENCODER(, slhdsashake192f);
++MAKE_ENCODER(, p384_slhdsashake192f, oqsx, EncryptedPrivateKeyInfo, der);
++MAKE_ENCODER(, p384_slhdsashake192f, oqsx, EncryptedPrivateKeyInfo, pem);
++MAKE_ENCODER(, p384_slhdsashake192f, oqsx, PrivateKeyInfo, der);
++MAKE_ENCODER(, p384_slhdsashake192f, oqsx, PrivateKeyInfo, pem);
++MAKE_ENCODER(, p384_slhdsashake192f, oqsx, SubjectPublicKeyInfo, der);
++MAKE_ENCODER(, p384_slhdsashake192f, oqsx, SubjectPublicKeyInfo, pem);
++MAKE_TEXT_ENCODER(, p384_slhdsashake192f);
++MAKE_ENCODER(, rsa7680_slhdsashake192f, oqsx, EncryptedPrivateKeyInfo, der);
++MAKE_ENCODER(, rsa7680_slhdsashake192f, oqsx, EncryptedPrivateKeyInfo, pem);
++MAKE_ENCODER(, rsa7680_slhdsashake192f, oqsx, PrivateKeyInfo, der);
++MAKE_ENCODER(, rsa7680_slhdsashake192f, oqsx, PrivateKeyInfo, pem);
++MAKE_ENCODER(, rsa7680_slhdsashake192f, oqsx, SubjectPublicKeyInfo, der);
++MAKE_ENCODER(, rsa7680_slhdsashake192f, oqsx, SubjectPublicKeyInfo, pem);
++MAKE_TEXT_ENCODER(, rsa7680_slhdsashake192f);
+ MAKE_ENCODER(, slhdsashake256s, oqsx, EncryptedPrivateKeyInfo, der);
+ MAKE_ENCODER(, slhdsashake256s, oqsx, EncryptedPrivateKeyInfo, pem);
+ MAKE_ENCODER(, slhdsashake256s, oqsx, PrivateKeyInfo, der);
+@@ -3113,6 +3205,20 @@ MAKE_ENCODER(, slhdsashake256s, oqsx, PrivateKeyInfo, pem);
+ MAKE_ENCODER(, slhdsashake256s, oqsx, SubjectPublicKeyInfo, der);
+ MAKE_ENCODER(, slhdsashake256s, oqsx, SubjectPublicKeyInfo, pem);
+ MAKE_TEXT_ENCODER(, slhdsashake256s);
++MAKE_ENCODER(, p521_slhdsashake256s, oqsx, EncryptedPrivateKeyInfo, der);
++MAKE_ENCODER(, p521_slhdsashake256s, oqsx, EncryptedPrivateKeyInfo, pem);
++MAKE_ENCODER(, p521_slhdsashake256s, oqsx, PrivateKeyInfo, der);
++MAKE_ENCODER(, p521_slhdsashake256s, oqsx, PrivateKeyInfo, pem);
++MAKE_ENCODER(, p521_slhdsashake256s, oqsx, SubjectPublicKeyInfo, der);
++MAKE_ENCODER(, p521_slhdsashake256s, oqsx, SubjectPublicKeyInfo, pem);
++MAKE_TEXT_ENCODER(, p521_slhdsashake256s);
++MAKE_ENCODER(, rsa15360_slhdsashake256s, oqsx, EncryptedPrivateKeyInfo, der);
++MAKE_ENCODER(, rsa15360_slhdsashake256s, oqsx, EncryptedPrivateKeyInfo, pem);
++MAKE_ENCODER(, rsa15360_slhdsashake256s, oqsx, PrivateKeyInfo, der);
++MAKE_ENCODER(, rsa15360_slhdsashake256s, oqsx, PrivateKeyInfo, pem);
++MAKE_ENCODER(, rsa15360_slhdsashake256s, oqsx, SubjectPublicKeyInfo, der);
++MAKE_ENCODER(, rsa15360_slhdsashake256s, oqsx, SubjectPublicKeyInfo, pem);
++MAKE_TEXT_ENCODER(, rsa15360_slhdsashake256s);
+ MAKE_ENCODER(, slhdsashake256f, oqsx, EncryptedPrivateKeyInfo, der);
+ MAKE_ENCODER(, slhdsashake256f, oqsx, EncryptedPrivateKeyInfo, pem);
+ MAKE_ENCODER(, slhdsashake256f, oqsx, PrivateKeyInfo, der);
+@@ -3120,6 +3226,20 @@ MAKE_ENCODER(, slhdsashake256f, oqsx, PrivateKeyInfo, pem);
+ MAKE_ENCODER(, slhdsashake256f, oqsx, SubjectPublicKeyInfo, der);
+ MAKE_ENCODER(, slhdsashake256f, oqsx, SubjectPublicKeyInfo, pem);
+ MAKE_TEXT_ENCODER(, slhdsashake256f);
++MAKE_ENCODER(, p521_slhdsashake256f, oqsx, EncryptedPrivateKeyInfo, der);
++MAKE_ENCODER(, p521_slhdsashake256f, oqsx, EncryptedPrivateKeyInfo, pem);
++MAKE_ENCODER(, p521_slhdsashake256f, oqsx, PrivateKeyInfo, der);
++MAKE_ENCODER(, p521_slhdsashake256f, oqsx, PrivateKeyInfo, pem);
++MAKE_ENCODER(, p521_slhdsashake256f, oqsx, SubjectPublicKeyInfo, der);
++MAKE_ENCODER(, p521_slhdsashake256f, oqsx, SubjectPublicKeyInfo, pem);
++MAKE_TEXT_ENCODER(, p521_slhdsashake256f);
++MAKE_ENCODER(, rsa15360_slhdsashake256f, oqsx, EncryptedPrivateKeyInfo, der);
++MAKE_ENCODER(, rsa15360_slhdsashake256f, oqsx, EncryptedPrivateKeyInfo, pem);
++MAKE_ENCODER(, rsa15360_slhdsashake256f, oqsx, PrivateKeyInfo, der);
++MAKE_ENCODER(, rsa15360_slhdsashake256f, oqsx, PrivateKeyInfo, pem);
++MAKE_ENCODER(, rsa15360_slhdsashake256f, oqsx, SubjectPublicKeyInfo, der);
++MAKE_ENCODER(, rsa15360_slhdsashake256f, oqsx, SubjectPublicKeyInfo, pem);
++MAKE_TEXT_ENCODER(, rsa15360_slhdsashake256f);
+ MAKE_ENCODER(, mqom2cat1gf16fastr5, oqsx, EncryptedPrivateKeyInfo, der);
+ MAKE_ENCODER(, mqom2cat1gf16fastr5, oqsx, EncryptedPrivateKeyInfo, pem);
+ MAKE_ENCODER(, mqom2cat1gf16fastr5, oqsx, PrivateKeyInfo, der);
+diff --git a/oqsprov/oqs_kmgmt.c b/oqsprov/oqs_kmgmt.c
+index 887add7..0f5f787 100644
+--- a/oqsprov/oqs_kmgmt.c
++++ b/oqsprov/oqs_kmgmt.c
+@@ -1822,295 +1822,403 @@ static void *slhdsashake128s_gen_init(void *provctx, int selection)
+ {
+     return oqsx_gen_init(provctx, selection, OQS_SIG_alg_slh_dsa_pure_shake_128s, "slhdsashake128s", 0, 128, 122, 0);
+ }
++static void *p256_slhdsashake128s_new_key(void *provctx)
++{
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_slh_dsa_pure_shake_128s, "p256_slhdsashake128s", KEY_TYPE_HYB_SIG, NULL, 128, 123, 0);
++}
++
++static void *p256_slhdsashake128s_gen_init(void *provctx, int selection)
++{
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_slh_dsa_pure_shake_128s, "p256_slhdsashake128s", KEY_TYPE_HYB_SIG, 128, 123, 0);
++}
++static void *rsa3072_slhdsashake128s_new_key(void *provctx)
++{
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_slh_dsa_pure_shake_128s, "rsa3072_slhdsashake128s", KEY_TYPE_HYB_SIG, NULL, 128, 124, 0);
++}
++
++static void *rsa3072_slhdsashake128s_gen_init(void *provctx, int selection)
++{
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_slh_dsa_pure_shake_128s, "rsa3072_slhdsashake128s", KEY_TYPE_HYB_SIG, 128, 124, 0);
++}
+ static void *slhdsashake128f_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_slh_dsa_pure_shake_128f, "slhdsashake128f", KEY_TYPE_SIG, NULL, 128, 123, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_slh_dsa_pure_shake_128f, "slhdsashake128f", KEY_TYPE_SIG, NULL, 128, 125, 0);
+ }
+ 
+ static void *slhdsashake128f_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_slh_dsa_pure_shake_128f, "slhdsashake128f", 0, 128, 123, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_slh_dsa_pure_shake_128f, "slhdsashake128f", 0, 128, 125, 0);
++}
++static void *p256_slhdsashake128f_new_key(void *provctx)
++{
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_slh_dsa_pure_shake_128f, "p256_slhdsashake128f", KEY_TYPE_HYB_SIG, NULL, 128, 126, 0);
++}
++
++static void *p256_slhdsashake128f_gen_init(void *provctx, int selection)
++{
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_slh_dsa_pure_shake_128f, "p256_slhdsashake128f", KEY_TYPE_HYB_SIG, 128, 126, 0);
++}
++static void *rsa3072_slhdsashake128f_new_key(void *provctx)
++{
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_slh_dsa_pure_shake_128f, "rsa3072_slhdsashake128f", KEY_TYPE_HYB_SIG, NULL, 128, 127, 0);
++}
++
++static void *rsa3072_slhdsashake128f_gen_init(void *provctx, int selection)
++{
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_slh_dsa_pure_shake_128f, "rsa3072_slhdsashake128f", KEY_TYPE_HYB_SIG, 128, 127, 0);
+ }
+ static void *slhdsashake192s_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_slh_dsa_pure_shake_192s, "slhdsashake192s", KEY_TYPE_SIG, NULL, 192, 124, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_slh_dsa_pure_shake_192s, "slhdsashake192s", KEY_TYPE_SIG, NULL, 192, 128, 0);
+ }
+ 
+ static void *slhdsashake192s_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_slh_dsa_pure_shake_192s, "slhdsashake192s", 0, 192, 124, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_slh_dsa_pure_shake_192s, "slhdsashake192s", 0, 192, 128, 0);
++}
++static void *p384_slhdsashake192s_new_key(void *provctx)
++{
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_slh_dsa_pure_shake_192s, "p384_slhdsashake192s", KEY_TYPE_HYB_SIG, NULL, 192, 129, 0);
++}
++
++static void *p384_slhdsashake192s_gen_init(void *provctx, int selection)
++{
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_slh_dsa_pure_shake_192s, "p384_slhdsashake192s", KEY_TYPE_HYB_SIG, 192, 129, 0);
++}
++static void *rsa7680_slhdsashake192s_new_key(void *provctx)
++{
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_slh_dsa_pure_shake_192s, "rsa7680_slhdsashake192s", KEY_TYPE_HYB_SIG, NULL, 192, 130, 0);
++}
++
++static void *rsa7680_slhdsashake192s_gen_init(void *provctx, int selection)
++{
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_slh_dsa_pure_shake_192s, "rsa7680_slhdsashake192s", KEY_TYPE_HYB_SIG, 192, 130, 0);
+ }
+ static void *slhdsashake192f_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_slh_dsa_pure_shake_192f, "slhdsashake192f", KEY_TYPE_SIG, NULL, 192, 125, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_slh_dsa_pure_shake_192f, "slhdsashake192f", KEY_TYPE_SIG, NULL, 192, 131, 0);
+ }
+ 
+ static void *slhdsashake192f_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_slh_dsa_pure_shake_192f, "slhdsashake192f", 0, 192, 125, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_slh_dsa_pure_shake_192f, "slhdsashake192f", 0, 192, 131, 0);
++}
++static void *p384_slhdsashake192f_new_key(void *provctx)
++{
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_slh_dsa_pure_shake_192f, "p384_slhdsashake192f", KEY_TYPE_HYB_SIG, NULL, 192, 132, 0);
++}
++
++static void *p384_slhdsashake192f_gen_init(void *provctx, int selection)
++{
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_slh_dsa_pure_shake_192f, "p384_slhdsashake192f", KEY_TYPE_HYB_SIG, 192, 132, 0);
++}
++static void *rsa7680_slhdsashake192f_new_key(void *provctx)
++{
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_slh_dsa_pure_shake_192f, "rsa7680_slhdsashake192f", KEY_TYPE_HYB_SIG, NULL, 192, 133, 0);
++}
++
++static void *rsa7680_slhdsashake192f_gen_init(void *provctx, int selection)
++{
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_slh_dsa_pure_shake_192f, "rsa7680_slhdsashake192f", KEY_TYPE_HYB_SIG, 192, 133, 0);
+ }
+ static void *slhdsashake256s_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_slh_dsa_pure_shake_256s, "slhdsashake256s", KEY_TYPE_SIG, NULL, 256, 126, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_slh_dsa_pure_shake_256s, "slhdsashake256s", KEY_TYPE_SIG, NULL, 256, 134, 0);
+ }
+ 
+ static void *slhdsashake256s_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_slh_dsa_pure_shake_256s, "slhdsashake256s", 0, 256, 126, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_slh_dsa_pure_shake_256s, "slhdsashake256s", 0, 256, 134, 0);
++}
++static void *p521_slhdsashake256s_new_key(void *provctx)
++{
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_slh_dsa_pure_shake_256s, "p521_slhdsashake256s", KEY_TYPE_HYB_SIG, NULL, 256, 135, 0);
++}
++
++static void *p521_slhdsashake256s_gen_init(void *provctx, int selection)
++{
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_slh_dsa_pure_shake_256s, "p521_slhdsashake256s", KEY_TYPE_HYB_SIG, 256, 135, 0);
++}
++static void *rsa15360_slhdsashake256s_new_key(void *provctx)
++{
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_slh_dsa_pure_shake_256s, "rsa15360_slhdsashake256s", KEY_TYPE_HYB_SIG, NULL, 256, 136, 0);
++}
++
++static void *rsa15360_slhdsashake256s_gen_init(void *provctx, int selection)
++{
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_slh_dsa_pure_shake_256s, "rsa15360_slhdsashake256s", KEY_TYPE_HYB_SIG, 256, 136, 0);
+ }
+ static void *slhdsashake256f_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_slh_dsa_pure_shake_256f, "slhdsashake256f", KEY_TYPE_SIG, NULL, 256, 127, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_slh_dsa_pure_shake_256f, "slhdsashake256f", KEY_TYPE_SIG, NULL, 256, 137, 0);
+ }
+ 
+ static void *slhdsashake256f_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_slh_dsa_pure_shake_256f, "slhdsashake256f", 0, 256, 127, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_slh_dsa_pure_shake_256f, "slhdsashake256f", 0, 256, 137, 0);
++}
++static void *p521_slhdsashake256f_new_key(void *provctx)
++{
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_slh_dsa_pure_shake_256f, "p521_slhdsashake256f", KEY_TYPE_HYB_SIG, NULL, 256, 138, 0);
++}
++
++static void *p521_slhdsashake256f_gen_init(void *provctx, int selection)
++{
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_slh_dsa_pure_shake_256f, "p521_slhdsashake256f", KEY_TYPE_HYB_SIG, 256, 138, 0);
++}
++static void *rsa15360_slhdsashake256f_new_key(void *provctx)
++{
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_slh_dsa_pure_shake_256f, "rsa15360_slhdsashake256f", KEY_TYPE_HYB_SIG, NULL, 256, 139, 0);
++}
++
++static void *rsa15360_slhdsashake256f_gen_init(void *provctx, int selection)
++{
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_slh_dsa_pure_shake_256f, "rsa15360_slhdsashake256f", KEY_TYPE_HYB_SIG, 256, 139, 0);
+ }
+ 
+ static void *mqom2cat1gf16fastr5_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_mqom_mqom2_cat1_gf16_fast_r5, "mqom2cat1gf16fastr5", KEY_TYPE_SIG, NULL, 128, 128, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_mqom_mqom2_cat1_gf16_fast_r5, "mqom2cat1gf16fastr5", KEY_TYPE_SIG, NULL, 128, 140, 0);
+ }
+ 
+ static void *mqom2cat1gf16fastr5_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_mqom_mqom2_cat1_gf16_fast_r5, "mqom2cat1gf16fastr5", 0, 128, 128, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_mqom_mqom2_cat1_gf16_fast_r5, "mqom2cat1gf16fastr5", 0, 128, 140, 0);
+ }
+ static void *p256_mqom2cat1gf16fastr5_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_mqom_mqom2_cat1_gf16_fast_r5, "p256_mqom2cat1gf16fastr5", KEY_TYPE_HYB_SIG, NULL, 128, 129, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_mqom_mqom2_cat1_gf16_fast_r5, "p256_mqom2cat1gf16fastr5", KEY_TYPE_HYB_SIG, NULL, 128, 141, 0);
+ }
+ 
+ static void *p256_mqom2cat1gf16fastr5_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_mqom_mqom2_cat1_gf16_fast_r5, "p256_mqom2cat1gf16fastr5", KEY_TYPE_HYB_SIG, 128, 129, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_mqom_mqom2_cat1_gf16_fast_r5, "p256_mqom2cat1gf16fastr5", KEY_TYPE_HYB_SIG, 128, 141, 0);
+ }
+ static void *rsa3072_mqom2cat1gf16fastr5_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_mqom_mqom2_cat1_gf16_fast_r5, "rsa3072_mqom2cat1gf16fastr5", KEY_TYPE_HYB_SIG, NULL, 128, 130, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_mqom_mqom2_cat1_gf16_fast_r5, "rsa3072_mqom2cat1gf16fastr5", KEY_TYPE_HYB_SIG, NULL, 128, 142, 0);
+ }
+ 
+ static void *rsa3072_mqom2cat1gf16fastr5_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_mqom_mqom2_cat1_gf16_fast_r5, "rsa3072_mqom2cat1gf16fastr5", KEY_TYPE_HYB_SIG, 128, 130, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_mqom_mqom2_cat1_gf16_fast_r5, "rsa3072_mqom2cat1gf16fastr5", KEY_TYPE_HYB_SIG, 128, 142, 0);
+ }
+ static void *mqom2cat3gf16fastr5_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_mqom_mqom2_cat3_gf16_fast_r5, "mqom2cat3gf16fastr5", KEY_TYPE_SIG, NULL, 192, 131, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_mqom_mqom2_cat3_gf16_fast_r5, "mqom2cat3gf16fastr5", KEY_TYPE_SIG, NULL, 192, 143, 0);
+ }
+ 
+ static void *mqom2cat3gf16fastr5_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_mqom_mqom2_cat3_gf16_fast_r5, "mqom2cat3gf16fastr5", 0, 192, 131, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_mqom_mqom2_cat3_gf16_fast_r5, "mqom2cat3gf16fastr5", 0, 192, 143, 0);
+ }
+ static void *p384_mqom2cat3gf16fastr5_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_mqom_mqom2_cat3_gf16_fast_r5, "p384_mqom2cat3gf16fastr5", KEY_TYPE_HYB_SIG, NULL, 192, 132, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_mqom_mqom2_cat3_gf16_fast_r5, "p384_mqom2cat3gf16fastr5", KEY_TYPE_HYB_SIG, NULL, 192, 144, 0);
+ }
+ 
+ static void *p384_mqom2cat3gf16fastr5_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_mqom_mqom2_cat3_gf16_fast_r5, "p384_mqom2cat3gf16fastr5", KEY_TYPE_HYB_SIG, 192, 132, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_mqom_mqom2_cat3_gf16_fast_r5, "p384_mqom2cat3gf16fastr5", KEY_TYPE_HYB_SIG, 192, 144, 0);
+ }
+ static void *rsa7680_mqom2cat3gf16fastr5_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_mqom_mqom2_cat3_gf16_fast_r5, "rsa7680_mqom2cat3gf16fastr5", KEY_TYPE_HYB_SIG, NULL, 192, 133, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_mqom_mqom2_cat3_gf16_fast_r5, "rsa7680_mqom2cat3gf16fastr5", KEY_TYPE_HYB_SIG, NULL, 192, 145, 0);
+ }
+ 
+ static void *rsa7680_mqom2cat3gf16fastr5_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_mqom_mqom2_cat3_gf16_fast_r5, "rsa7680_mqom2cat3gf16fastr5", KEY_TYPE_HYB_SIG, 192, 133, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_mqom_mqom2_cat3_gf16_fast_r5, "rsa7680_mqom2cat3gf16fastr5", KEY_TYPE_HYB_SIG, 192, 145, 0);
+ }
+ static void *mqom2cat5gf16fastr5_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_mqom_mqom2_cat5_gf16_fast_r5, "mqom2cat5gf16fastr5", KEY_TYPE_SIG, NULL, 256, 134, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_mqom_mqom2_cat5_gf16_fast_r5, "mqom2cat5gf16fastr5", KEY_TYPE_SIG, NULL, 256, 146, 0);
+ }
+ 
+ static void *mqom2cat5gf16fastr5_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_mqom_mqom2_cat5_gf16_fast_r5, "mqom2cat5gf16fastr5", 0, 256, 134, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_mqom_mqom2_cat5_gf16_fast_r5, "mqom2cat5gf16fastr5", 0, 256, 146, 0);
+ }
+ static void *p521_mqom2cat5gf16fastr5_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_mqom_mqom2_cat5_gf16_fast_r5, "p521_mqom2cat5gf16fastr5", KEY_TYPE_HYB_SIG, NULL, 256, 135, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_mqom_mqom2_cat5_gf16_fast_r5, "p521_mqom2cat5gf16fastr5", KEY_TYPE_HYB_SIG, NULL, 256, 147, 0);
+ }
+ 
+ static void *p521_mqom2cat5gf16fastr5_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_mqom_mqom2_cat5_gf16_fast_r5, "p521_mqom2cat5gf16fastr5", KEY_TYPE_HYB_SIG, 256, 135, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_mqom_mqom2_cat5_gf16_fast_r5, "p521_mqom2cat5gf16fastr5", KEY_TYPE_HYB_SIG, 256, 147, 0);
+ }
+ static void *rsa15360_mqom2cat5gf16fastr5_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_mqom_mqom2_cat5_gf16_fast_r5, "rsa15360_mqom2cat5gf16fastr5", KEY_TYPE_HYB_SIG, NULL, 256, 136, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_mqom_mqom2_cat5_gf16_fast_r5, "rsa15360_mqom2cat5gf16fastr5", KEY_TYPE_HYB_SIG, NULL, 256, 148, 0);
+ }
+ 
+ static void *rsa15360_mqom2cat5gf16fastr5_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_mqom_mqom2_cat5_gf16_fast_r5, "rsa15360_mqom2cat5gf16fastr5", KEY_TYPE_HYB_SIG, 256, 136, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_mqom_mqom2_cat5_gf16_fast_r5, "rsa15360_mqom2cat5gf16fastr5", KEY_TYPE_HYB_SIG, 256, 148, 0);
+ }
+ 
+ static void *sdithhypercubecat1gf256_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_hypercube_cat1_gf256, "sdithhypercubecat1gf256", KEY_TYPE_SIG, NULL, 128, 137, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_hypercube_cat1_gf256, "sdithhypercubecat1gf256", KEY_TYPE_SIG, NULL, 128, 149, 0);
+ }
+ 
+ static void *sdithhypercubecat1gf256_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_hypercube_cat1_gf256, "sdithhypercubecat1gf256", 0, 128, 137, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_hypercube_cat1_gf256, "sdithhypercubecat1gf256", 0, 128, 149, 0);
+ }
+ static void *p256_sdithhypercubecat1gf256_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_hypercube_cat1_gf256, "p256_sdithhypercubecat1gf256", KEY_TYPE_HYB_SIG, NULL, 128, 138, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_hypercube_cat1_gf256, "p256_sdithhypercubecat1gf256", KEY_TYPE_HYB_SIG, NULL, 128, 150, 0);
+ }
+ 
+ static void *p256_sdithhypercubecat1gf256_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_hypercube_cat1_gf256, "p256_sdithhypercubecat1gf256", KEY_TYPE_HYB_SIG, 128, 138, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_hypercube_cat1_gf256, "p256_sdithhypercubecat1gf256", KEY_TYPE_HYB_SIG, 128, 150, 0);
+ }
+ static void *rsa3072_sdithhypercubecat1gf256_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_hypercube_cat1_gf256, "rsa3072_sdithhypercubecat1gf256", KEY_TYPE_HYB_SIG, NULL, 128, 139, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_hypercube_cat1_gf256, "rsa3072_sdithhypercubecat1gf256", KEY_TYPE_HYB_SIG, NULL, 128, 151, 0);
+ }
+ 
+ static void *rsa3072_sdithhypercubecat1gf256_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_hypercube_cat1_gf256, "rsa3072_sdithhypercubecat1gf256", KEY_TYPE_HYB_SIG, 128, 139, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_hypercube_cat1_gf256, "rsa3072_sdithhypercubecat1gf256", KEY_TYPE_HYB_SIG, 128, 151, 0);
+ }
+ static void *sdithhypercubecat3gf256_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_hypercube_cat3_gf256, "sdithhypercubecat3gf256", KEY_TYPE_SIG, NULL, 192, 140, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_hypercube_cat3_gf256, "sdithhypercubecat3gf256", KEY_TYPE_SIG, NULL, 192, 152, 0);
+ }
+ 
+ static void *sdithhypercubecat3gf256_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_hypercube_cat3_gf256, "sdithhypercubecat3gf256", 0, 192, 140, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_hypercube_cat3_gf256, "sdithhypercubecat3gf256", 0, 192, 152, 0);
+ }
+ static void *p384_sdithhypercubecat3gf256_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_hypercube_cat3_gf256, "p384_sdithhypercubecat3gf256", KEY_TYPE_HYB_SIG, NULL, 192, 141, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_hypercube_cat3_gf256, "p384_sdithhypercubecat3gf256", KEY_TYPE_HYB_SIG, NULL, 192, 153, 0);
+ }
+ 
+ static void *p384_sdithhypercubecat3gf256_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_hypercube_cat3_gf256, "p384_sdithhypercubecat3gf256", KEY_TYPE_HYB_SIG, 192, 141, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_hypercube_cat3_gf256, "p384_sdithhypercubecat3gf256", KEY_TYPE_HYB_SIG, 192, 153, 0);
+ }
+ static void *rsa7680_sdithhypercubecat3gf256_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_hypercube_cat3_gf256, "rsa7680_sdithhypercubecat3gf256", KEY_TYPE_HYB_SIG, NULL, 192, 142, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_hypercube_cat3_gf256, "rsa7680_sdithhypercubecat3gf256", KEY_TYPE_HYB_SIG, NULL, 192, 154, 0);
+ }
+ 
+ static void *rsa7680_sdithhypercubecat3gf256_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_hypercube_cat3_gf256, "rsa7680_sdithhypercubecat3gf256", KEY_TYPE_HYB_SIG, 192, 142, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_hypercube_cat3_gf256, "rsa7680_sdithhypercubecat3gf256", KEY_TYPE_HYB_SIG, 192, 154, 0);
+ }
+ static void *sdithhypercubecat5gf256_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_hypercube_cat5_gf256, "sdithhypercubecat5gf256", KEY_TYPE_SIG, NULL, 256, 143, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_hypercube_cat5_gf256, "sdithhypercubecat5gf256", KEY_TYPE_SIG, NULL, 256, 155, 0);
+ }
+ 
+ static void *sdithhypercubecat5gf256_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_hypercube_cat5_gf256, "sdithhypercubecat5gf256", 0, 256, 143, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_hypercube_cat5_gf256, "sdithhypercubecat5gf256", 0, 256, 155, 0);
+ }
+ static void *p521_sdithhypercubecat5gf256_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_hypercube_cat5_gf256, "p521_sdithhypercubecat5gf256", KEY_TYPE_HYB_SIG, NULL, 256, 144, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_hypercube_cat5_gf256, "p521_sdithhypercubecat5gf256", KEY_TYPE_HYB_SIG, NULL, 256, 156, 0);
+ }
+ 
+ static void *p521_sdithhypercubecat5gf256_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_hypercube_cat5_gf256, "p521_sdithhypercubecat5gf256", KEY_TYPE_HYB_SIG, 256, 144, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_hypercube_cat5_gf256, "p521_sdithhypercubecat5gf256", KEY_TYPE_HYB_SIG, 256, 156, 0);
+ }
+ static void *rsa15360_sdithhypercubecat5gf256_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_hypercube_cat5_gf256, "rsa15360_sdithhypercubecat5gf256", KEY_TYPE_HYB_SIG, NULL, 256, 145, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_hypercube_cat5_gf256, "rsa15360_sdithhypercubecat5gf256", KEY_TYPE_HYB_SIG, NULL, 256, 157, 0);
+ }
+ 
+ static void *rsa15360_sdithhypercubecat5gf256_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_hypercube_cat5_gf256, "rsa15360_sdithhypercubecat5gf256", KEY_TYPE_HYB_SIG, 256, 145, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_hypercube_cat5_gf256, "rsa15360_sdithhypercubecat5gf256", KEY_TYPE_HYB_SIG, 256, 157, 0);
+ }
+ static void *sdiththresholdcat1gf256_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_threshold_cat1_gf256, "sdiththresholdcat1gf256", KEY_TYPE_SIG, NULL, 128, 146, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_threshold_cat1_gf256, "sdiththresholdcat1gf256", KEY_TYPE_SIG, NULL, 128, 158, 0);
+ }
+ 
+ static void *sdiththresholdcat1gf256_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_threshold_cat1_gf256, "sdiththresholdcat1gf256", 0, 128, 146, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_threshold_cat1_gf256, "sdiththresholdcat1gf256", 0, 128, 158, 0);
+ }
+ static void *p256_sdiththresholdcat1gf256_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_threshold_cat1_gf256, "p256_sdiththresholdcat1gf256", KEY_TYPE_HYB_SIG, NULL, 128, 147, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_threshold_cat1_gf256, "p256_sdiththresholdcat1gf256", KEY_TYPE_HYB_SIG, NULL, 128, 159, 0);
+ }
+ 
+ static void *p256_sdiththresholdcat1gf256_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_threshold_cat1_gf256, "p256_sdiththresholdcat1gf256", KEY_TYPE_HYB_SIG, 128, 147, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_threshold_cat1_gf256, "p256_sdiththresholdcat1gf256", KEY_TYPE_HYB_SIG, 128, 159, 0);
+ }
+ static void *rsa3072_sdiththresholdcat1gf256_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_threshold_cat1_gf256, "rsa3072_sdiththresholdcat1gf256", KEY_TYPE_HYB_SIG, NULL, 128, 148, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_threshold_cat1_gf256, "rsa3072_sdiththresholdcat1gf256", KEY_TYPE_HYB_SIG, NULL, 128, 160, 0);
+ }
+ 
+ static void *rsa3072_sdiththresholdcat1gf256_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_threshold_cat1_gf256, "rsa3072_sdiththresholdcat1gf256", KEY_TYPE_HYB_SIG, 128, 148, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_threshold_cat1_gf256, "rsa3072_sdiththresholdcat1gf256", KEY_TYPE_HYB_SIG, 128, 160, 0);
+ }
+ static void *sdiththresholdcat3gf256_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_threshold_cat3_gf256, "sdiththresholdcat3gf256", KEY_TYPE_SIG, NULL, 192, 149, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_threshold_cat3_gf256, "sdiththresholdcat3gf256", KEY_TYPE_SIG, NULL, 192, 161, 0);
+ }
+ 
+ static void *sdiththresholdcat3gf256_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_threshold_cat3_gf256, "sdiththresholdcat3gf256", 0, 192, 149, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_threshold_cat3_gf256, "sdiththresholdcat3gf256", 0, 192, 161, 0);
+ }
+ static void *p384_sdiththresholdcat3gf256_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_threshold_cat3_gf256, "p384_sdiththresholdcat3gf256", KEY_TYPE_HYB_SIG, NULL, 192, 150, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_threshold_cat3_gf256, "p384_sdiththresholdcat3gf256", KEY_TYPE_HYB_SIG, NULL, 192, 162, 0);
+ }
+ 
+ static void *p384_sdiththresholdcat3gf256_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_threshold_cat3_gf256, "p384_sdiththresholdcat3gf256", KEY_TYPE_HYB_SIG, 192, 150, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_threshold_cat3_gf256, "p384_sdiththresholdcat3gf256", KEY_TYPE_HYB_SIG, 192, 162, 0);
+ }
+ static void *rsa7680_sdiththresholdcat3gf256_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_threshold_cat3_gf256, "rsa7680_sdiththresholdcat3gf256", KEY_TYPE_HYB_SIG, NULL, 192, 151, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_threshold_cat3_gf256, "rsa7680_sdiththresholdcat3gf256", KEY_TYPE_HYB_SIG, NULL, 192, 163, 0);
+ }
+ 
+ static void *rsa7680_sdiththresholdcat3gf256_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_threshold_cat3_gf256, "rsa7680_sdiththresholdcat3gf256", KEY_TYPE_HYB_SIG, 192, 151, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_threshold_cat3_gf256, "rsa7680_sdiththresholdcat3gf256", KEY_TYPE_HYB_SIG, 192, 163, 0);
+ }
+ static void *sdiththresholdcat5gf256_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_threshold_cat5_gf256, "sdiththresholdcat5gf256", KEY_TYPE_SIG, NULL, 256, 152, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_threshold_cat5_gf256, "sdiththresholdcat5gf256", KEY_TYPE_SIG, NULL, 256, 164, 0);
+ }
+ 
+ static void *sdiththresholdcat5gf256_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_threshold_cat5_gf256, "sdiththresholdcat5gf256", 0, 256, 152, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_threshold_cat5_gf256, "sdiththresholdcat5gf256", 0, 256, 164, 0);
+ }
+ static void *p521_sdiththresholdcat5gf256_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_threshold_cat5_gf256, "p521_sdiththresholdcat5gf256", KEY_TYPE_HYB_SIG, NULL, 256, 153, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_threshold_cat5_gf256, "p521_sdiththresholdcat5gf256", KEY_TYPE_HYB_SIG, NULL, 256, 165, 0);
+ }
+ 
+ static void *p521_sdiththresholdcat5gf256_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_threshold_cat5_gf256, "p521_sdiththresholdcat5gf256", KEY_TYPE_HYB_SIG, 256, 153, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_threshold_cat5_gf256, "p521_sdiththresholdcat5gf256", KEY_TYPE_HYB_SIG, 256, 165, 0);
+ }
+ static void *rsa15360_sdiththresholdcat5gf256_new_key(void *provctx)
+ {
+-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_threshold_cat5_gf256, "rsa15360_sdiththresholdcat5gf256", KEY_TYPE_HYB_SIG, NULL, 256, 154, 0);
++    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_sdith_threshold_cat5_gf256, "rsa15360_sdiththresholdcat5gf256", KEY_TYPE_HYB_SIG, NULL, 256, 166, 0);
+ }
+ 
+ static void *rsa15360_sdiththresholdcat5gf256_gen_init(void *provctx, int selection)
+ {
+-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_threshold_cat5_gf256, "rsa15360_sdiththresholdcat5gf256", KEY_TYPE_HYB_SIG, 256, 154, 0);
++    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sdith_threshold_cat5_gf256, "rsa15360_sdiththresholdcat5gf256", KEY_TYPE_HYB_SIG, 256, 166, 0);
+ }
+ 
+ ///// OQS_TEMPLATE_FRAGMENT_KEYMGMT_CONSTRUCTORS_END
+@@ -2419,11 +2527,23 @@ MAKE_SIG_KEYMGMT_FUNCTIONS(slhdsasha2256f)
+ MAKE_SIG_KEYMGMT_FUNCTIONS(p521_slhdsasha2256f)
+ MAKE_SIG_KEYMGMT_FUNCTIONS(rsa15360_slhdsasha2256f)
+ MAKE_SIG_KEYMGMT_FUNCTIONS(slhdsashake128s)
++MAKE_SIG_KEYMGMT_FUNCTIONS(p256_slhdsashake128s)
++MAKE_SIG_KEYMGMT_FUNCTIONS(rsa3072_slhdsashake128s)
+ MAKE_SIG_KEYMGMT_FUNCTIONS(slhdsashake128f)
++MAKE_SIG_KEYMGMT_FUNCTIONS(p256_slhdsashake128f)
++MAKE_SIG_KEYMGMT_FUNCTIONS(rsa3072_slhdsashake128f)
+ MAKE_SIG_KEYMGMT_FUNCTIONS(slhdsashake192s)
++MAKE_SIG_KEYMGMT_FUNCTIONS(p384_slhdsashake192s)
++MAKE_SIG_KEYMGMT_FUNCTIONS(rsa7680_slhdsashake192s)
+ MAKE_SIG_KEYMGMT_FUNCTIONS(slhdsashake192f)
++MAKE_SIG_KEYMGMT_FUNCTIONS(p384_slhdsashake192f)
++MAKE_SIG_KEYMGMT_FUNCTIONS(rsa7680_slhdsashake192f)
+ MAKE_SIG_KEYMGMT_FUNCTIONS(slhdsashake256s)
++MAKE_SIG_KEYMGMT_FUNCTIONS(p521_slhdsashake256s)
++MAKE_SIG_KEYMGMT_FUNCTIONS(rsa15360_slhdsashake256s)
+ MAKE_SIG_KEYMGMT_FUNCTIONS(slhdsashake256f)
++MAKE_SIG_KEYMGMT_FUNCTIONS(p521_slhdsashake256f)
++MAKE_SIG_KEYMGMT_FUNCTIONS(rsa15360_slhdsashake256f)
+ MAKE_SIG_KEYMGMT_FUNCTIONS(mqom2cat1gf16fastr5)
+ MAKE_SIG_KEYMGMT_FUNCTIONS(p256_mqom2cat1gf16fastr5)
+ MAKE_SIG_KEYMGMT_FUNCTIONS(rsa3072_mqom2cat1gf16fastr5)
+diff --git a/oqsprov/oqs_prov.h b/oqsprov/oqs_prov.h
+index 0e01801..7513b50 100644
+--- a/oqsprov/oqs_prov.h
++++ b/oqsprov/oqs_prov.h
+@@ -1726,7 +1726,23 @@ extern const OSSL_DISPATCH oqs_slhdsashake128s_to_SubjectPublicKeyInfo_der_encod
+ extern const OSSL_DISPATCH oqs_slhdsashake128s_to_SubjectPublicKeyInfo_pem_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_slhdsashake128s_to_text_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_PrivateKeyInfo_der_to_slhdsashake128s_decoder_functions[];
+-extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_slhdsashake128s_decoder_functions[];
++extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_slhdsashake128s_decoder_functions[];extern const OSSL_DISPATCH oqs_p256_slhdsashake128s_to_PrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p256_slhdsashake128s_to_PrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p256_slhdsashake128s_to_EncryptedPrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p256_slhdsashake128s_to_EncryptedPrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p256_slhdsashake128s_to_SubjectPublicKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p256_slhdsashake128s_to_SubjectPublicKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p256_slhdsashake128s_to_text_encoder_functions[];
++extern const OSSL_DISPATCH oqs_PrivateKeyInfo_der_to_p256_slhdsashake128s_decoder_functions[];
++extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_p256_slhdsashake128s_decoder_functions[];extern const OSSL_DISPATCH oqs_rsa3072_slhdsashake128s_to_PrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa3072_slhdsashake128s_to_PrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa3072_slhdsashake128s_to_EncryptedPrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa3072_slhdsashake128s_to_EncryptedPrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa3072_slhdsashake128s_to_SubjectPublicKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa3072_slhdsashake128s_to_SubjectPublicKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa3072_slhdsashake128s_to_text_encoder_functions[];
++extern const OSSL_DISPATCH oqs_PrivateKeyInfo_der_to_rsa3072_slhdsashake128s_decoder_functions[];
++extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_rsa3072_slhdsashake128s_decoder_functions[];
+ extern const OSSL_DISPATCH oqs_slhdsashake128f_to_PrivateKeyInfo_der_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_slhdsashake128f_to_PrivateKeyInfo_pem_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_slhdsashake128f_to_EncryptedPrivateKeyInfo_der_encoder_functions[];
+@@ -1735,7 +1751,23 @@ extern const OSSL_DISPATCH oqs_slhdsashake128f_to_SubjectPublicKeyInfo_der_encod
+ extern const OSSL_DISPATCH oqs_slhdsashake128f_to_SubjectPublicKeyInfo_pem_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_slhdsashake128f_to_text_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_PrivateKeyInfo_der_to_slhdsashake128f_decoder_functions[];
+-extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_slhdsashake128f_decoder_functions[];
++extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_slhdsashake128f_decoder_functions[];extern const OSSL_DISPATCH oqs_p256_slhdsashake128f_to_PrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p256_slhdsashake128f_to_PrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p256_slhdsashake128f_to_EncryptedPrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p256_slhdsashake128f_to_EncryptedPrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p256_slhdsashake128f_to_SubjectPublicKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p256_slhdsashake128f_to_SubjectPublicKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p256_slhdsashake128f_to_text_encoder_functions[];
++extern const OSSL_DISPATCH oqs_PrivateKeyInfo_der_to_p256_slhdsashake128f_decoder_functions[];
++extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_p256_slhdsashake128f_decoder_functions[];extern const OSSL_DISPATCH oqs_rsa3072_slhdsashake128f_to_PrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa3072_slhdsashake128f_to_PrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa3072_slhdsashake128f_to_EncryptedPrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa3072_slhdsashake128f_to_EncryptedPrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa3072_slhdsashake128f_to_SubjectPublicKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa3072_slhdsashake128f_to_SubjectPublicKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa3072_slhdsashake128f_to_text_encoder_functions[];
++extern const OSSL_DISPATCH oqs_PrivateKeyInfo_der_to_rsa3072_slhdsashake128f_decoder_functions[];
++extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_rsa3072_slhdsashake128f_decoder_functions[];
+ extern const OSSL_DISPATCH oqs_slhdsashake192s_to_PrivateKeyInfo_der_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_slhdsashake192s_to_PrivateKeyInfo_pem_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_slhdsashake192s_to_EncryptedPrivateKeyInfo_der_encoder_functions[];
+@@ -1744,7 +1776,23 @@ extern const OSSL_DISPATCH oqs_slhdsashake192s_to_SubjectPublicKeyInfo_der_encod
+ extern const OSSL_DISPATCH oqs_slhdsashake192s_to_SubjectPublicKeyInfo_pem_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_slhdsashake192s_to_text_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_PrivateKeyInfo_der_to_slhdsashake192s_decoder_functions[];
+-extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_slhdsashake192s_decoder_functions[];
++extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_slhdsashake192s_decoder_functions[];extern const OSSL_DISPATCH oqs_p384_slhdsashake192s_to_PrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p384_slhdsashake192s_to_PrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p384_slhdsashake192s_to_EncryptedPrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p384_slhdsashake192s_to_EncryptedPrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p384_slhdsashake192s_to_SubjectPublicKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p384_slhdsashake192s_to_SubjectPublicKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p384_slhdsashake192s_to_text_encoder_functions[];
++extern const OSSL_DISPATCH oqs_PrivateKeyInfo_der_to_p384_slhdsashake192s_decoder_functions[];
++extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_p384_slhdsashake192s_decoder_functions[];extern const OSSL_DISPATCH oqs_rsa7680_slhdsashake192s_to_PrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa7680_slhdsashake192s_to_PrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa7680_slhdsashake192s_to_EncryptedPrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa7680_slhdsashake192s_to_EncryptedPrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa7680_slhdsashake192s_to_SubjectPublicKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa7680_slhdsashake192s_to_SubjectPublicKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa7680_slhdsashake192s_to_text_encoder_functions[];
++extern const OSSL_DISPATCH oqs_PrivateKeyInfo_der_to_rsa7680_slhdsashake192s_decoder_functions[];
++extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_rsa7680_slhdsashake192s_decoder_functions[];
+ extern const OSSL_DISPATCH oqs_slhdsashake192f_to_PrivateKeyInfo_der_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_slhdsashake192f_to_PrivateKeyInfo_pem_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_slhdsashake192f_to_EncryptedPrivateKeyInfo_der_encoder_functions[];
+@@ -1753,7 +1801,23 @@ extern const OSSL_DISPATCH oqs_slhdsashake192f_to_SubjectPublicKeyInfo_der_encod
+ extern const OSSL_DISPATCH oqs_slhdsashake192f_to_SubjectPublicKeyInfo_pem_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_slhdsashake192f_to_text_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_PrivateKeyInfo_der_to_slhdsashake192f_decoder_functions[];
+-extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_slhdsashake192f_decoder_functions[];
++extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_slhdsashake192f_decoder_functions[];extern const OSSL_DISPATCH oqs_p384_slhdsashake192f_to_PrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p384_slhdsashake192f_to_PrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p384_slhdsashake192f_to_EncryptedPrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p384_slhdsashake192f_to_EncryptedPrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p384_slhdsashake192f_to_SubjectPublicKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p384_slhdsashake192f_to_SubjectPublicKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p384_slhdsashake192f_to_text_encoder_functions[];
++extern const OSSL_DISPATCH oqs_PrivateKeyInfo_der_to_p384_slhdsashake192f_decoder_functions[];
++extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_p384_slhdsashake192f_decoder_functions[];extern const OSSL_DISPATCH oqs_rsa7680_slhdsashake192f_to_PrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa7680_slhdsashake192f_to_PrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa7680_slhdsashake192f_to_EncryptedPrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa7680_slhdsashake192f_to_EncryptedPrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa7680_slhdsashake192f_to_SubjectPublicKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa7680_slhdsashake192f_to_SubjectPublicKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa7680_slhdsashake192f_to_text_encoder_functions[];
++extern const OSSL_DISPATCH oqs_PrivateKeyInfo_der_to_rsa7680_slhdsashake192f_decoder_functions[];
++extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_rsa7680_slhdsashake192f_decoder_functions[];
+ extern const OSSL_DISPATCH oqs_slhdsashake256s_to_PrivateKeyInfo_der_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_slhdsashake256s_to_PrivateKeyInfo_pem_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_slhdsashake256s_to_EncryptedPrivateKeyInfo_der_encoder_functions[];
+@@ -1762,7 +1826,23 @@ extern const OSSL_DISPATCH oqs_slhdsashake256s_to_SubjectPublicKeyInfo_der_encod
+ extern const OSSL_DISPATCH oqs_slhdsashake256s_to_SubjectPublicKeyInfo_pem_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_slhdsashake256s_to_text_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_PrivateKeyInfo_der_to_slhdsashake256s_decoder_functions[];
+-extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_slhdsashake256s_decoder_functions[];
++extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_slhdsashake256s_decoder_functions[];extern const OSSL_DISPATCH oqs_p521_slhdsashake256s_to_PrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p521_slhdsashake256s_to_PrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p521_slhdsashake256s_to_EncryptedPrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p521_slhdsashake256s_to_EncryptedPrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p521_slhdsashake256s_to_SubjectPublicKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p521_slhdsashake256s_to_SubjectPublicKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p521_slhdsashake256s_to_text_encoder_functions[];
++extern const OSSL_DISPATCH oqs_PrivateKeyInfo_der_to_p521_slhdsashake256s_decoder_functions[];
++extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_p521_slhdsashake256s_decoder_functions[];extern const OSSL_DISPATCH oqs_rsa15360_slhdsashake256s_to_PrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa15360_slhdsashake256s_to_PrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa15360_slhdsashake256s_to_EncryptedPrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa15360_slhdsashake256s_to_EncryptedPrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa15360_slhdsashake256s_to_SubjectPublicKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa15360_slhdsashake256s_to_SubjectPublicKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa15360_slhdsashake256s_to_text_encoder_functions[];
++extern const OSSL_DISPATCH oqs_PrivateKeyInfo_der_to_rsa15360_slhdsashake256s_decoder_functions[];
++extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_rsa15360_slhdsashake256s_decoder_functions[];
+ extern const OSSL_DISPATCH oqs_slhdsashake256f_to_PrivateKeyInfo_der_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_slhdsashake256f_to_PrivateKeyInfo_pem_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_slhdsashake256f_to_EncryptedPrivateKeyInfo_der_encoder_functions[];
+@@ -1771,7 +1851,23 @@ extern const OSSL_DISPATCH oqs_slhdsashake256f_to_SubjectPublicKeyInfo_der_encod
+ extern const OSSL_DISPATCH oqs_slhdsashake256f_to_SubjectPublicKeyInfo_pem_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_slhdsashake256f_to_text_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_PrivateKeyInfo_der_to_slhdsashake256f_decoder_functions[];
+-extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_slhdsashake256f_decoder_functions[];
++extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_slhdsashake256f_decoder_functions[];extern const OSSL_DISPATCH oqs_p521_slhdsashake256f_to_PrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p521_slhdsashake256f_to_PrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p521_slhdsashake256f_to_EncryptedPrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p521_slhdsashake256f_to_EncryptedPrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p521_slhdsashake256f_to_SubjectPublicKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p521_slhdsashake256f_to_SubjectPublicKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_p521_slhdsashake256f_to_text_encoder_functions[];
++extern const OSSL_DISPATCH oqs_PrivateKeyInfo_der_to_p521_slhdsashake256f_decoder_functions[];
++extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_p521_slhdsashake256f_decoder_functions[];extern const OSSL_DISPATCH oqs_rsa15360_slhdsashake256f_to_PrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa15360_slhdsashake256f_to_PrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa15360_slhdsashake256f_to_EncryptedPrivateKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa15360_slhdsashake256f_to_EncryptedPrivateKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa15360_slhdsashake256f_to_SubjectPublicKeyInfo_der_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa15360_slhdsashake256f_to_SubjectPublicKeyInfo_pem_encoder_functions[];
++extern const OSSL_DISPATCH oqs_rsa15360_slhdsashake256f_to_text_encoder_functions[];
++extern const OSSL_DISPATCH oqs_PrivateKeyInfo_der_to_rsa15360_slhdsashake256f_decoder_functions[];
++extern const OSSL_DISPATCH oqs_SubjectPublicKeyInfo_der_to_rsa15360_slhdsashake256f_decoder_functions[];
+ extern const OSSL_DISPATCH oqs_mqom2cat1gf16fastr5_to_PrivateKeyInfo_der_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_mqom2cat1gf16fastr5_to_PrivateKeyInfo_pem_encoder_functions[];
+ extern const OSSL_DISPATCH oqs_mqom2cat1gf16fastr5_to_EncryptedPrivateKeyInfo_der_encoder_functions[];
+@@ -2046,12 +2142,12 @@ extern const OSSL_DISPATCH oqs_slhdsasha2192s_keymgmt_functions[];extern const O
+ extern const OSSL_DISPATCH oqs_slhdsasha2192f_keymgmt_functions[];extern const OSSL_DISPATCH oqs_p384_slhdsasha2192f_keymgmt_functions[];extern const OSSL_DISPATCH oqs_rsa7680_slhdsasha2192f_keymgmt_functions[];
+ extern const OSSL_DISPATCH oqs_slhdsasha2256s_keymgmt_functions[];extern const OSSL_DISPATCH oqs_p521_slhdsasha2256s_keymgmt_functions[];extern const OSSL_DISPATCH oqs_rsa15360_slhdsasha2256s_keymgmt_functions[];
+ extern const OSSL_DISPATCH oqs_slhdsasha2256f_keymgmt_functions[];extern const OSSL_DISPATCH oqs_p521_slhdsasha2256f_keymgmt_functions[];extern const OSSL_DISPATCH oqs_rsa15360_slhdsasha2256f_keymgmt_functions[];
+-extern const OSSL_DISPATCH oqs_slhdsashake128s_keymgmt_functions[];
+-extern const OSSL_DISPATCH oqs_slhdsashake128f_keymgmt_functions[];
+-extern const OSSL_DISPATCH oqs_slhdsashake192s_keymgmt_functions[];
+-extern const OSSL_DISPATCH oqs_slhdsashake192f_keymgmt_functions[];
+-extern const OSSL_DISPATCH oqs_slhdsashake256s_keymgmt_functions[];
+-extern const OSSL_DISPATCH oqs_slhdsashake256f_keymgmt_functions[];
++extern const OSSL_DISPATCH oqs_slhdsashake128s_keymgmt_functions[];extern const OSSL_DISPATCH oqs_p256_slhdsashake128s_keymgmt_functions[];extern const OSSL_DISPATCH oqs_rsa3072_slhdsashake128s_keymgmt_functions[];
++extern const OSSL_DISPATCH oqs_slhdsashake128f_keymgmt_functions[];extern const OSSL_DISPATCH oqs_p256_slhdsashake128f_keymgmt_functions[];extern const OSSL_DISPATCH oqs_rsa3072_slhdsashake128f_keymgmt_functions[];
++extern const OSSL_DISPATCH oqs_slhdsashake192s_keymgmt_functions[];extern const OSSL_DISPATCH oqs_p384_slhdsashake192s_keymgmt_functions[];extern const OSSL_DISPATCH oqs_rsa7680_slhdsashake192s_keymgmt_functions[];
++extern const OSSL_DISPATCH oqs_slhdsashake192f_keymgmt_functions[];extern const OSSL_DISPATCH oqs_p384_slhdsashake192f_keymgmt_functions[];extern const OSSL_DISPATCH oqs_rsa7680_slhdsashake192f_keymgmt_functions[];
++extern const OSSL_DISPATCH oqs_slhdsashake256s_keymgmt_functions[];extern const OSSL_DISPATCH oqs_p521_slhdsashake256s_keymgmt_functions[];extern const OSSL_DISPATCH oqs_rsa15360_slhdsashake256s_keymgmt_functions[];
++extern const OSSL_DISPATCH oqs_slhdsashake256f_keymgmt_functions[];extern const OSSL_DISPATCH oqs_p521_slhdsashake256f_keymgmt_functions[];extern const OSSL_DISPATCH oqs_rsa15360_slhdsashake256f_keymgmt_functions[];
+ extern const OSSL_DISPATCH oqs_mqom2cat1gf16fastr5_keymgmt_functions[];extern const OSSL_DISPATCH oqs_p256_mqom2cat1gf16fastr5_keymgmt_functions[];extern const OSSL_DISPATCH oqs_rsa3072_mqom2cat1gf16fastr5_keymgmt_functions[];
+ extern const OSSL_DISPATCH oqs_mqom2cat3gf16fastr5_keymgmt_functions[];extern const OSSL_DISPATCH oqs_p384_mqom2cat3gf16fastr5_keymgmt_functions[];extern const OSSL_DISPATCH oqs_rsa7680_mqom2cat3gf16fastr5_keymgmt_functions[];
+ extern const OSSL_DISPATCH oqs_mqom2cat5gf16fastr5_keymgmt_functions[];extern const OSSL_DISPATCH oqs_p521_mqom2cat5gf16fastr5_keymgmt_functions[];extern const OSSL_DISPATCH oqs_rsa15360_mqom2cat5gf16fastr5_keymgmt_functions[];
+diff --git a/oqsprov/oqsdecoders.inc b/oqsprov/oqsdecoders.inc
+index 5ece605..952db1b 100644
+--- a/oqsprov/oqsdecoders.inc
++++ b/oqsprov/oqsdecoders.inc
+@@ -424,27 +424,39 @@ DECODER_w_structure("rsa15360_slhdsasha2256f", der, SubjectPublicKeyInfo, rsa153
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_128s
+ DECODER_w_structure("slhdsashake128s", der, PrivateKeyInfo, slhdsashake128s),
+-DECODER_w_structure("slhdsashake128s", der, SubjectPublicKeyInfo, slhdsashake128s),
++DECODER_w_structure("slhdsashake128s", der, SubjectPublicKeyInfo, slhdsashake128s),DECODER_w_structure("p256_slhdsashake128s", der, PrivateKeyInfo, p256_slhdsashake128s),
++DECODER_w_structure("p256_slhdsashake128s", der, SubjectPublicKeyInfo, p256_slhdsashake128s),DECODER_w_structure("rsa3072_slhdsashake128s", der, PrivateKeyInfo, rsa3072_slhdsashake128s),
++DECODER_w_structure("rsa3072_slhdsashake128s", der, SubjectPublicKeyInfo, rsa3072_slhdsashake128s),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_128f
+ DECODER_w_structure("slhdsashake128f", der, PrivateKeyInfo, slhdsashake128f),
+-DECODER_w_structure("slhdsashake128f", der, SubjectPublicKeyInfo, slhdsashake128f),
++DECODER_w_structure("slhdsashake128f", der, SubjectPublicKeyInfo, slhdsashake128f),DECODER_w_structure("p256_slhdsashake128f", der, PrivateKeyInfo, p256_slhdsashake128f),
++DECODER_w_structure("p256_slhdsashake128f", der, SubjectPublicKeyInfo, p256_slhdsashake128f),DECODER_w_structure("rsa3072_slhdsashake128f", der, PrivateKeyInfo, rsa3072_slhdsashake128f),
++DECODER_w_structure("rsa3072_slhdsashake128f", der, SubjectPublicKeyInfo, rsa3072_slhdsashake128f),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_192s
+ DECODER_w_structure("slhdsashake192s", der, PrivateKeyInfo, slhdsashake192s),
+-DECODER_w_structure("slhdsashake192s", der, SubjectPublicKeyInfo, slhdsashake192s),
++DECODER_w_structure("slhdsashake192s", der, SubjectPublicKeyInfo, slhdsashake192s),DECODER_w_structure("p384_slhdsashake192s", der, PrivateKeyInfo, p384_slhdsashake192s),
++DECODER_w_structure("p384_slhdsashake192s", der, SubjectPublicKeyInfo, p384_slhdsashake192s),DECODER_w_structure("rsa7680_slhdsashake192s", der, PrivateKeyInfo, rsa7680_slhdsashake192s),
++DECODER_w_structure("rsa7680_slhdsashake192s", der, SubjectPublicKeyInfo, rsa7680_slhdsashake192s),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_192f
+ DECODER_w_structure("slhdsashake192f", der, PrivateKeyInfo, slhdsashake192f),
+-DECODER_w_structure("slhdsashake192f", der, SubjectPublicKeyInfo, slhdsashake192f),
++DECODER_w_structure("slhdsashake192f", der, SubjectPublicKeyInfo, slhdsashake192f),DECODER_w_structure("p384_slhdsashake192f", der, PrivateKeyInfo, p384_slhdsashake192f),
++DECODER_w_structure("p384_slhdsashake192f", der, SubjectPublicKeyInfo, p384_slhdsashake192f),DECODER_w_structure("rsa7680_slhdsashake192f", der, PrivateKeyInfo, rsa7680_slhdsashake192f),
++DECODER_w_structure("rsa7680_slhdsashake192f", der, SubjectPublicKeyInfo, rsa7680_slhdsashake192f),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_256s
+ DECODER_w_structure("slhdsashake256s", der, PrivateKeyInfo, slhdsashake256s),
+-DECODER_w_structure("slhdsashake256s", der, SubjectPublicKeyInfo, slhdsashake256s),
++DECODER_w_structure("slhdsashake256s", der, SubjectPublicKeyInfo, slhdsashake256s),DECODER_w_structure("p521_slhdsashake256s", der, PrivateKeyInfo, p521_slhdsashake256s),
++DECODER_w_structure("p521_slhdsashake256s", der, SubjectPublicKeyInfo, p521_slhdsashake256s),DECODER_w_structure("rsa15360_slhdsashake256s", der, PrivateKeyInfo, rsa15360_slhdsashake256s),
++DECODER_w_structure("rsa15360_slhdsashake256s", der, SubjectPublicKeyInfo, rsa15360_slhdsashake256s),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_256f
+ DECODER_w_structure("slhdsashake256f", der, PrivateKeyInfo, slhdsashake256f),
+-DECODER_w_structure("slhdsashake256f", der, SubjectPublicKeyInfo, slhdsashake256f),
++DECODER_w_structure("slhdsashake256f", der, SubjectPublicKeyInfo, slhdsashake256f),DECODER_w_structure("p521_slhdsashake256f", der, PrivateKeyInfo, p521_slhdsashake256f),
++DECODER_w_structure("p521_slhdsashake256f", der, SubjectPublicKeyInfo, p521_slhdsashake256f),DECODER_w_structure("rsa15360_slhdsashake256f", der, PrivateKeyInfo, rsa15360_slhdsashake256f),
++DECODER_w_structure("rsa15360_slhdsashake256f", der, SubjectPublicKeyInfo, rsa15360_slhdsashake256f),
+ #endif
+ #ifdef OQS_ENABLE_SIG_mqom_mqom2_cat1_gf16_fast_r5
+ DECODER_w_structure("mqom2cat1gf16fastr5", der, PrivateKeyInfo, mqom2cat1gf16fastr5),
+diff --git a/oqsprov/oqsencoders.inc b/oqsprov/oqsencoders.inc
+index 53d9bb2..1d38c3a 100644
+--- a/oqsprov/oqsencoders.inc
++++ b/oqsprov/oqsencoders.inc
+@@ -1448,6 +1448,20 @@ ENCODER_w_structure("slhdsashake128s", slhdsashake128s, pem, EncryptedPrivateKey
+ ENCODER_w_structure("slhdsashake128s", slhdsashake128s, der, SubjectPublicKeyInfo),
+ ENCODER_w_structure("slhdsashake128s", slhdsashake128s, pem, SubjectPublicKeyInfo),
+ ENCODER_TEXT("slhdsashake128s", slhdsashake128s),
++ENCODER_w_structure("p256_slhdsashake128s", p256_slhdsashake128s, der, PrivateKeyInfo),
++ENCODER_w_structure("p256_slhdsashake128s", p256_slhdsashake128s, pem, PrivateKeyInfo),
++ENCODER_w_structure("p256_slhdsashake128s", p256_slhdsashake128s, der, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("p256_slhdsashake128s", p256_slhdsashake128s, pem, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("p256_slhdsashake128s", p256_slhdsashake128s, der, SubjectPublicKeyInfo),
++ENCODER_w_structure("p256_slhdsashake128s", p256_slhdsashake128s, pem, SubjectPublicKeyInfo),
++ENCODER_TEXT("p256_slhdsashake128s", p256_slhdsashake128s),
++ENCODER_w_structure("rsa3072_slhdsashake128s", rsa3072_slhdsashake128s, der, PrivateKeyInfo),
++ENCODER_w_structure("rsa3072_slhdsashake128s", rsa3072_slhdsashake128s, pem, PrivateKeyInfo),
++ENCODER_w_structure("rsa3072_slhdsashake128s", rsa3072_slhdsashake128s, der, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("rsa3072_slhdsashake128s", rsa3072_slhdsashake128s, pem, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("rsa3072_slhdsashake128s", rsa3072_slhdsashake128s, der, SubjectPublicKeyInfo),
++ENCODER_w_structure("rsa3072_slhdsashake128s", rsa3072_slhdsashake128s, pem, SubjectPublicKeyInfo),
++ENCODER_TEXT("rsa3072_slhdsashake128s", rsa3072_slhdsashake128s),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_128f
+ ENCODER_w_structure("slhdsashake128f", slhdsashake128f, der, PrivateKeyInfo),
+@@ -1457,6 +1471,20 @@ ENCODER_w_structure("slhdsashake128f", slhdsashake128f, pem, EncryptedPrivateKey
+ ENCODER_w_structure("slhdsashake128f", slhdsashake128f, der, SubjectPublicKeyInfo),
+ ENCODER_w_structure("slhdsashake128f", slhdsashake128f, pem, SubjectPublicKeyInfo),
+ ENCODER_TEXT("slhdsashake128f", slhdsashake128f),
++ENCODER_w_structure("p256_slhdsashake128f", p256_slhdsashake128f, der, PrivateKeyInfo),
++ENCODER_w_structure("p256_slhdsashake128f", p256_slhdsashake128f, pem, PrivateKeyInfo),
++ENCODER_w_structure("p256_slhdsashake128f", p256_slhdsashake128f, der, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("p256_slhdsashake128f", p256_slhdsashake128f, pem, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("p256_slhdsashake128f", p256_slhdsashake128f, der, SubjectPublicKeyInfo),
++ENCODER_w_structure("p256_slhdsashake128f", p256_slhdsashake128f, pem, SubjectPublicKeyInfo),
++ENCODER_TEXT("p256_slhdsashake128f", p256_slhdsashake128f),
++ENCODER_w_structure("rsa3072_slhdsashake128f", rsa3072_slhdsashake128f, der, PrivateKeyInfo),
++ENCODER_w_structure("rsa3072_slhdsashake128f", rsa3072_slhdsashake128f, pem, PrivateKeyInfo),
++ENCODER_w_structure("rsa3072_slhdsashake128f", rsa3072_slhdsashake128f, der, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("rsa3072_slhdsashake128f", rsa3072_slhdsashake128f, pem, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("rsa3072_slhdsashake128f", rsa3072_slhdsashake128f, der, SubjectPublicKeyInfo),
++ENCODER_w_structure("rsa3072_slhdsashake128f", rsa3072_slhdsashake128f, pem, SubjectPublicKeyInfo),
++ENCODER_TEXT("rsa3072_slhdsashake128f", rsa3072_slhdsashake128f),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_192s
+ ENCODER_w_structure("slhdsashake192s", slhdsashake192s, der, PrivateKeyInfo),
+@@ -1466,6 +1494,20 @@ ENCODER_w_structure("slhdsashake192s", slhdsashake192s, pem, EncryptedPrivateKey
+ ENCODER_w_structure("slhdsashake192s", slhdsashake192s, der, SubjectPublicKeyInfo),
+ ENCODER_w_structure("slhdsashake192s", slhdsashake192s, pem, SubjectPublicKeyInfo),
+ ENCODER_TEXT("slhdsashake192s", slhdsashake192s),
++ENCODER_w_structure("p384_slhdsashake192s", p384_slhdsashake192s, der, PrivateKeyInfo),
++ENCODER_w_structure("p384_slhdsashake192s", p384_slhdsashake192s, pem, PrivateKeyInfo),
++ENCODER_w_structure("p384_slhdsashake192s", p384_slhdsashake192s, der, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("p384_slhdsashake192s", p384_slhdsashake192s, pem, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("p384_slhdsashake192s", p384_slhdsashake192s, der, SubjectPublicKeyInfo),
++ENCODER_w_structure("p384_slhdsashake192s", p384_slhdsashake192s, pem, SubjectPublicKeyInfo),
++ENCODER_TEXT("p384_slhdsashake192s", p384_slhdsashake192s),
++ENCODER_w_structure("rsa7680_slhdsashake192s", rsa7680_slhdsashake192s, der, PrivateKeyInfo),
++ENCODER_w_structure("rsa7680_slhdsashake192s", rsa7680_slhdsashake192s, pem, PrivateKeyInfo),
++ENCODER_w_structure("rsa7680_slhdsashake192s", rsa7680_slhdsashake192s, der, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("rsa7680_slhdsashake192s", rsa7680_slhdsashake192s, pem, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("rsa7680_slhdsashake192s", rsa7680_slhdsashake192s, der, SubjectPublicKeyInfo),
++ENCODER_w_structure("rsa7680_slhdsashake192s", rsa7680_slhdsashake192s, pem, SubjectPublicKeyInfo),
++ENCODER_TEXT("rsa7680_slhdsashake192s", rsa7680_slhdsashake192s),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_192f
+ ENCODER_w_structure("slhdsashake192f", slhdsashake192f, der, PrivateKeyInfo),
+@@ -1475,6 +1517,20 @@ ENCODER_w_structure("slhdsashake192f", slhdsashake192f, pem, EncryptedPrivateKey
+ ENCODER_w_structure("slhdsashake192f", slhdsashake192f, der, SubjectPublicKeyInfo),
+ ENCODER_w_structure("slhdsashake192f", slhdsashake192f, pem, SubjectPublicKeyInfo),
+ ENCODER_TEXT("slhdsashake192f", slhdsashake192f),
++ENCODER_w_structure("p384_slhdsashake192f", p384_slhdsashake192f, der, PrivateKeyInfo),
++ENCODER_w_structure("p384_slhdsashake192f", p384_slhdsashake192f, pem, PrivateKeyInfo),
++ENCODER_w_structure("p384_slhdsashake192f", p384_slhdsashake192f, der, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("p384_slhdsashake192f", p384_slhdsashake192f, pem, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("p384_slhdsashake192f", p384_slhdsashake192f, der, SubjectPublicKeyInfo),
++ENCODER_w_structure("p384_slhdsashake192f", p384_slhdsashake192f, pem, SubjectPublicKeyInfo),
++ENCODER_TEXT("p384_slhdsashake192f", p384_slhdsashake192f),
++ENCODER_w_structure("rsa7680_slhdsashake192f", rsa7680_slhdsashake192f, der, PrivateKeyInfo),
++ENCODER_w_structure("rsa7680_slhdsashake192f", rsa7680_slhdsashake192f, pem, PrivateKeyInfo),
++ENCODER_w_structure("rsa7680_slhdsashake192f", rsa7680_slhdsashake192f, der, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("rsa7680_slhdsashake192f", rsa7680_slhdsashake192f, pem, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("rsa7680_slhdsashake192f", rsa7680_slhdsashake192f, der, SubjectPublicKeyInfo),
++ENCODER_w_structure("rsa7680_slhdsashake192f", rsa7680_slhdsashake192f, pem, SubjectPublicKeyInfo),
++ENCODER_TEXT("rsa7680_slhdsashake192f", rsa7680_slhdsashake192f),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_256s
+ ENCODER_w_structure("slhdsashake256s", slhdsashake256s, der, PrivateKeyInfo),
+@@ -1484,6 +1540,20 @@ ENCODER_w_structure("slhdsashake256s", slhdsashake256s, pem, EncryptedPrivateKey
+ ENCODER_w_structure("slhdsashake256s", slhdsashake256s, der, SubjectPublicKeyInfo),
+ ENCODER_w_structure("slhdsashake256s", slhdsashake256s, pem, SubjectPublicKeyInfo),
+ ENCODER_TEXT("slhdsashake256s", slhdsashake256s),
++ENCODER_w_structure("p521_slhdsashake256s", p521_slhdsashake256s, der, PrivateKeyInfo),
++ENCODER_w_structure("p521_slhdsashake256s", p521_slhdsashake256s, pem, PrivateKeyInfo),
++ENCODER_w_structure("p521_slhdsashake256s", p521_slhdsashake256s, der, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("p521_slhdsashake256s", p521_slhdsashake256s, pem, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("p521_slhdsashake256s", p521_slhdsashake256s, der, SubjectPublicKeyInfo),
++ENCODER_w_structure("p521_slhdsashake256s", p521_slhdsashake256s, pem, SubjectPublicKeyInfo),
++ENCODER_TEXT("p521_slhdsashake256s", p521_slhdsashake256s),
++ENCODER_w_structure("rsa15360_slhdsashake256s", rsa15360_slhdsashake256s, der, PrivateKeyInfo),
++ENCODER_w_structure("rsa15360_slhdsashake256s", rsa15360_slhdsashake256s, pem, PrivateKeyInfo),
++ENCODER_w_structure("rsa15360_slhdsashake256s", rsa15360_slhdsashake256s, der, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("rsa15360_slhdsashake256s", rsa15360_slhdsashake256s, pem, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("rsa15360_slhdsashake256s", rsa15360_slhdsashake256s, der, SubjectPublicKeyInfo),
++ENCODER_w_structure("rsa15360_slhdsashake256s", rsa15360_slhdsashake256s, pem, SubjectPublicKeyInfo),
++ENCODER_TEXT("rsa15360_slhdsashake256s", rsa15360_slhdsashake256s),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_256f
+ ENCODER_w_structure("slhdsashake256f", slhdsashake256f, der, PrivateKeyInfo),
+@@ -1493,6 +1563,20 @@ ENCODER_w_structure("slhdsashake256f", slhdsashake256f, pem, EncryptedPrivateKey
+ ENCODER_w_structure("slhdsashake256f", slhdsashake256f, der, SubjectPublicKeyInfo),
+ ENCODER_w_structure("slhdsashake256f", slhdsashake256f, pem, SubjectPublicKeyInfo),
+ ENCODER_TEXT("slhdsashake256f", slhdsashake256f),
++ENCODER_w_structure("p521_slhdsashake256f", p521_slhdsashake256f, der, PrivateKeyInfo),
++ENCODER_w_structure("p521_slhdsashake256f", p521_slhdsashake256f, pem, PrivateKeyInfo),
++ENCODER_w_structure("p521_slhdsashake256f", p521_slhdsashake256f, der, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("p521_slhdsashake256f", p521_slhdsashake256f, pem, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("p521_slhdsashake256f", p521_slhdsashake256f, der, SubjectPublicKeyInfo),
++ENCODER_w_structure("p521_slhdsashake256f", p521_slhdsashake256f, pem, SubjectPublicKeyInfo),
++ENCODER_TEXT("p521_slhdsashake256f", p521_slhdsashake256f),
++ENCODER_w_structure("rsa15360_slhdsashake256f", rsa15360_slhdsashake256f, der, PrivateKeyInfo),
++ENCODER_w_structure("rsa15360_slhdsashake256f", rsa15360_slhdsashake256f, pem, PrivateKeyInfo),
++ENCODER_w_structure("rsa15360_slhdsashake256f", rsa15360_slhdsashake256f, der, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("rsa15360_slhdsashake256f", rsa15360_slhdsashake256f, pem, EncryptedPrivateKeyInfo),
++ENCODER_w_structure("rsa15360_slhdsashake256f", rsa15360_slhdsashake256f, der, SubjectPublicKeyInfo),
++ENCODER_w_structure("rsa15360_slhdsashake256f", rsa15360_slhdsashake256f, pem, SubjectPublicKeyInfo),
++ENCODER_TEXT("rsa15360_slhdsashake256f", rsa15360_slhdsashake256f),
+ #endif
+ #ifdef OQS_ENABLE_SIG_mqom_mqom2_cat1_gf16_fast_r5
+ ENCODER_w_structure("mqom2cat1gf16fastr5", mqom2cat1gf16fastr5, der, PrivateKeyInfo),
+diff --git a/oqsprov/oqsprov.c b/oqsprov/oqsprov.c
+index 23bf3f4..14ca447 100644
+--- a/oqsprov/oqsprov.c
++++ b/oqsprov/oqsprov.c
+@@ -58,9 +58,9 @@ extern OSSL_FUNC_provider_get_capabilities_fn oqs_provider_get_capabilities;
+ 
+ 
+ #ifdef OQS_KEM_ENCODERS
+-#define OQS_OID_CNT 418
++#define OQS_OID_CNT 442
+ #else
+-#define OQS_OID_CNT 310
++#define OQS_OID_CNT 334
+ #endif
+ const char* oqs_oid_alg_list[OQS_OID_CNT] =
+ {
+@@ -72,38 +72,38 @@ NULL, "efrodo640aes",NULL, "p256_efrodo640aes",NULL, "x25519_efrodo640aes",NULL,
+ 
+ 
+ "1.3.9999.20.1.1", "faest128s",
+-"1.3.9999.30.27.1" , "p256_faest128s",
+-"1.3.9999.30.27.2" , "rsa3072_faest128s",
++"1.3.9999.30.33.1" , "p256_faest128s",
++"1.3.9999.30.33.2" , "rsa3072_faest128s",
+ "1.3.9999.20.1.2", "faest128f",
+-"1.3.9999.30.28.1" , "p256_faest128f",
+-"1.3.9999.30.28.2" , "rsa3072_faest128f",
++"1.3.9999.30.34.1" , "p256_faest128f",
++"1.3.9999.30.34.2" , "rsa3072_faest128f",
+ "1.3.9999.20.2.1", "faest192s",
+-"1.3.9999.30.29.1" , "p384_faest192s",
+-"1.3.9999.30.29.2" , "rsa7680_faest192s",
++"1.3.9999.30.35.1" , "p384_faest192s",
++"1.3.9999.30.35.2" , "rsa7680_faest192s",
+ "1.3.9999.20.2.2", "faest192f",
+-"1.3.9999.30.30.1" , "p384_faest192f",
+-"1.3.9999.30.30.2" , "rsa7680_faest192f",
++"1.3.9999.30.36.1" , "p384_faest192f",
++"1.3.9999.30.36.2" , "rsa7680_faest192f",
+ "1.3.9999.20.3.1", "faest256s",
+-"1.3.9999.30.31.1" , "p521_faest256s",
+-"1.3.9999.30.31.2" , "rsa15360_faest256s",
++"1.3.9999.30.37.1" , "p521_faest256s",
++"1.3.9999.30.37.2" , "rsa15360_faest256s",
+ "1.3.9999.20.3.2", "faest256f",
+-"1.3.9999.30.32.1" , "p521_faest256f",
+-"1.3.9999.30.32.2" , "rsa15360_faest256f",
++"1.3.9999.30.38.1" , "p521_faest256f",
++"1.3.9999.30.38.2" , "rsa15360_faest256f",
+ "1.3.9999.21.1.1", "hawk512",
+-"1.3.9999.30.33.1" , "p256_hawk512",
+-"1.3.9999.30.33.2" , "rsa3072_hawk512",
++"1.3.9999.30.39.1" , "p256_hawk512",
++"1.3.9999.30.39.2" , "rsa3072_hawk512",
+ "1.3.9999.21.2.1", "hawk1024",
+-"1.3.9999.30.34.1" , "p521_hawk1024",
+-"1.3.9999.30.34.2" , "rsa15360_hawk1024",
++"1.3.9999.30.40.1" , "p521_hawk1024",
++"1.3.9999.30.40.2" , "rsa15360_hawk1024",
+ "1.3.9999.22.1.1", "qruov1q7l10v740m100",
+-"1.3.9999.30.35.1" , "p256_qruov1q7l10v740m100",
+-"1.3.9999.30.35.2" , "rsa3072_qruov1q7l10v740m100",
++"1.3.9999.30.41.1" , "p256_qruov1q7l10v740m100",
++"1.3.9999.30.41.2" , "rsa3072_qruov1q7l10v740m100",
+ "1.3.9999.22.3.1", "qruov3q7l10v1100m140",
+-"1.3.9999.30.36.1" , "p384_qruov3q7l10v1100m140",
+-"1.3.9999.30.36.2" , "rsa7680_qruov3q7l10v1100m140",
++"1.3.9999.30.42.1" , "p384_qruov3q7l10v1100m140",
++"1.3.9999.30.42.2" , "rsa7680_qruov3q7l10v1100m140",
+ "1.3.9999.22.5.1", "qruov5q7l10v1490m190",
+-"1.3.9999.30.37.1" , "p521_qruov5q7l10v1490m190",
+-"1.3.9999.30.37.2" , "rsa15360_qruov5q7l10v1490m190",
++"1.3.9999.30.43.1" , "p521_qruov5q7l10v1490m190",
++"1.3.9999.30.43.2" , "rsa15360_qruov5q7l10v1490m190",
+ "2.16.840.1.101.3.4.3.17", "mldsa44",
+ "1.3.9999.7.5" , "p256_mldsa44",
+ "1.3.9999.7.6" , "rsa3072_mldsa44",
+@@ -175,58 +175,69 @@ NULL, "efrodo640aes",NULL, "p256_efrodo640aes",NULL, "x25519_efrodo640aes",NULL,
+ "1.3.9999.10.12.1", "snova2965",
+ "1.3.9999.10.12.2" , "p521_snova2965",
+ "1.3.9999.30.17.2" , "rsa15360_snova2965",
+-"2.16.840.1.101.3.4.3.20", "slhdsasha2128s",
++"1.3.9999.23.1", "slhdsasha2128s",
+ "1.3.9999.30.18.1" , "p256_slhdsasha2128s",
+ "1.3.9999.30.18.2" , "rsa3072_slhdsasha2128s",
+-"2.16.840.1.101.3.4.3.21", "slhdsasha2128f",
++"1.3.9999.23.2", "slhdsasha2128f",
+ "1.3.9999.30.19.1" , "p256_slhdsasha2128f",
+ "1.3.9999.30.19.2" , "rsa3072_slhdsasha2128f",
+-"2.16.840.1.101.3.4.3.22", "slhdsasha2192s",
++"1.3.9999.23.3", "slhdsasha2192s",
+ "1.3.9999.30.20.1" , "p384_slhdsasha2192s",
+ "1.3.9999.30.20.2" , "rsa7680_slhdsasha2192s",
+-"2.16.840.1.101.3.4.3.23", "slhdsasha2192f",
++"1.3.9999.23.4", "slhdsasha2192f",
+ "1.3.9999.30.21.1" , "p384_slhdsasha2192f",
+ "1.3.9999.30.21.2" , "rsa7680_slhdsasha2192f",
+-"2.16.840.1.101.3.4.3.24", "slhdsasha2256s",
++"1.3.9999.23.5", "slhdsasha2256s",
+ "1.3.9999.30.22.1" , "p521_slhdsasha2256s",
+ "1.3.9999.30.22.2" , "rsa15360_slhdsasha2256s",
+-"2.16.840.1.101.3.4.3.25", "slhdsasha2256f",
++"1.3.9999.23.6", "slhdsasha2256f",
+ "1.3.9999.30.23.1" , "p521_slhdsasha2256f",
+ "1.3.9999.30.23.2" , "rsa15360_slhdsasha2256f",
+-"2.16.840.1.101.3.4.3.26", "slhdsashake128s",
+-"2.16.840.1.101.3.4.3.27", "slhdsashake128f",
+-"2.16.840.1.101.3.4.3.28", "slhdsashake192s",
+-"2.16.840.1.101.3.4.3.29", "slhdsashake192f",
+-"2.16.840.1.101.3.4.3.30", "slhdsashake256s",
+-"2.16.840.1.101.3.4.3.31", "slhdsashake256f",
++"1.3.9999.23.7", "slhdsashake128s",
++"1.3.9999.30.24.1" , "p256_slhdsashake128s",
++"1.3.9999.30.24.2" , "rsa3072_slhdsashake128s",
++"1.3.9999.23.8", "slhdsashake128f",
++"1.3.9999.30.25.1" , "p256_slhdsashake128f",
++"1.3.9999.30.25.2" , "rsa3072_slhdsashake128f",
++"1.3.9999.23.9", "slhdsashake192s",
++"1.3.9999.30.26.1" , "p384_slhdsashake192s",
++"1.3.9999.30.26.2" , "rsa7680_slhdsashake192s",
++"1.3.9999.23.10", "slhdsashake192f",
++"1.3.9999.30.27.1" , "p384_slhdsashake192f",
++"1.3.9999.30.27.2" , "rsa7680_slhdsashake192f",
++"1.3.9999.23.11", "slhdsashake256s",
++"1.3.9999.30.28.1" , "p521_slhdsashake256s",
++"1.3.9999.30.28.2" , "rsa15360_slhdsashake256s",
++"1.3.9999.23.12", "slhdsashake256f",
++"1.3.9999.30.29.1" , "p521_slhdsashake256f",
++"1.3.9999.30.29.2" , "rsa15360_slhdsashake256f",
+ "1.3.9999.11.1.1", "mqom2cat1gf16fastr5",
+ "1.3.9999.11.1.2" , "p256_mqom2cat1gf16fastr5",
+-"1.3.9999.30.24.2" , "rsa3072_mqom2cat1gf16fastr5",
++"1.3.9999.30.30.2" , "rsa3072_mqom2cat1gf16fastr5",
+ "1.3.9999.11.3.1", "mqom2cat3gf16fastr5",
+ "1.3.9999.11.3.2" , "p384_mqom2cat3gf16fastr5",
+-"1.3.9999.30.25.2" , "rsa7680_mqom2cat3gf16fastr5",
++"1.3.9999.30.31.2" , "rsa7680_mqom2cat3gf16fastr5",
+ "1.3.9999.11.5.1", "mqom2cat5gf16fastr5",
+ "1.3.9999.11.5.2" , "p521_mqom2cat5gf16fastr5",
+-"1.3.9999.30.26.2" , "rsa15360_mqom2cat5gf16fastr5",
++"1.3.9999.30.32.2" , "rsa15360_mqom2cat5gf16fastr5",
+ "1.3.9999.23.1.1", "sdithhypercubecat1gf256",
+-"1.3.9999.30.38.1" , "p256_sdithhypercubecat1gf256",
+-"1.3.9999.30.38.2" , "rsa3072_sdithhypercubecat1gf256",
++"1.3.9999.30.44.1" , "p256_sdithhypercubecat1gf256",
++"1.3.9999.30.44.2" , "rsa3072_sdithhypercubecat1gf256",
+ "1.3.9999.23.3.1", "sdithhypercubecat3gf256",
+-"1.3.9999.30.39.1" , "p384_sdithhypercubecat3gf256",
+-"1.3.9999.30.39.2" , "rsa7680_sdithhypercubecat3gf256",
++"1.3.9999.30.45.1" , "p384_sdithhypercubecat3gf256",
++"1.3.9999.30.45.2" , "rsa7680_sdithhypercubecat3gf256",
+ "1.3.9999.23.5.1", "sdithhypercubecat5gf256",
+-"1.3.9999.30.40.1" , "p521_sdithhypercubecat5gf256",
+-"1.3.9999.30.40.2" , "rsa15360_sdithhypercubecat5gf256",
++"1.3.9999.30.46.1" , "p521_sdithhypercubecat5gf256",
++"1.3.9999.30.46.2" , "rsa15360_sdithhypercubecat5gf256",
+ "1.3.9999.23.1.2", "sdiththresholdcat1gf256",
+-"1.3.9999.30.41.1" , "p256_sdiththresholdcat1gf256",
+-"1.3.9999.30.41.2" , "rsa3072_sdiththresholdcat1gf256",
++"1.3.9999.30.47.1" , "p256_sdiththresholdcat1gf256",
++"1.3.9999.30.47.2" , "rsa3072_sdiththresholdcat1gf256",
+ "1.3.9999.23.3.2", "sdiththresholdcat3gf256",
+-"1.3.9999.30.42.1" , "p384_sdiththresholdcat3gf256",
+-"1.3.9999.30.42.2" , "rsa7680_sdiththresholdcat3gf256",
++"1.3.9999.30.48.1" , "p384_sdiththresholdcat3gf256",
++"1.3.9999.30.48.2" , "rsa7680_sdiththresholdcat3gf256",
+ "1.3.9999.23.5.2", "sdiththresholdcat5gf256",
+-"1.3.9999.30.43.1" , "p521_sdiththresholdcat5gf256",
+-"1.3.9999.30.43.2" , "rsa15360_sdiththresholdcat5gf256",
+-///// OQS_TEMPLATE_FRAGMENT_ASSIGN_SIG_OIDS_END
++"1.3.9999.30.49.1" , "p521_sdiththresholdcat5gf256",
++"1.3.9999.30.49.2" , "rsa15360_sdiththresholdcat5gf256",///// OQS_TEMPLATE_FRAGMENT_ASSIGN_SIG_OIDS_END
+ };
+ 
+ int oqs_patch_oids(void) {
+@@ -438,38 +449,50 @@ if ((envval = getenv("OQS_OID_P521_BIKEL5"))) oqs_oid_alg_list[106] = envval;
+    if ((envval = getenv("OQS_OID_P521_SLHDSASHA2256F"))) oqs_oid_alg_list[240+OQS_KEMOID_CNT] = envval;
+    if ((envval = getenv("OQS_OID_RSA15360_SLHDSASHA2256F"))) oqs_oid_alg_list[242+OQS_KEMOID_CNT] = envval;
+    if ((envval = getenv("OQS_OID_SLHDSASHAKE128S"))) oqs_oid_alg_list[244+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_SLHDSASHAKE128F"))) oqs_oid_alg_list[246+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_SLHDSASHAKE192S"))) oqs_oid_alg_list[248+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_SLHDSASHAKE192F"))) oqs_oid_alg_list[250+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_SLHDSASHAKE256S"))) oqs_oid_alg_list[252+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_SLHDSASHAKE256F"))) oqs_oid_alg_list[254+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_MQOM2CAT1GF16FASTR5"))) oqs_oid_alg_list[256+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_P256_MQOM2CAT1GF16FASTR5"))) oqs_oid_alg_list[258+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_RSA3072_MQOM2CAT1GF16FASTR5"))) oqs_oid_alg_list[260+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_MQOM2CAT3GF16FASTR5"))) oqs_oid_alg_list[262+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_P384_MQOM2CAT3GF16FASTR5"))) oqs_oid_alg_list[264+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_RSA7680_MQOM2CAT3GF16FASTR5"))) oqs_oid_alg_list[266+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_MQOM2CAT5GF16FASTR5"))) oqs_oid_alg_list[268+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_P521_MQOM2CAT5GF16FASTR5"))) oqs_oid_alg_list[270+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_RSA15360_MQOM2CAT5GF16FASTR5"))) oqs_oid_alg_list[272+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_SDITHHYPERCUBECAT1GF256"))) oqs_oid_alg_list[274+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_P256_SDITHHYPERCUBECAT1GF256"))) oqs_oid_alg_list[276+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_RSA3072_SDITHHYPERCUBECAT1GF256"))) oqs_oid_alg_list[278+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_SDITHHYPERCUBECAT3GF256"))) oqs_oid_alg_list[280+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_P384_SDITHHYPERCUBECAT3GF256"))) oqs_oid_alg_list[282+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_RSA7680_SDITHHYPERCUBECAT3GF256"))) oqs_oid_alg_list[284+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_SDITHHYPERCUBECAT5GF256"))) oqs_oid_alg_list[286+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_P521_SDITHHYPERCUBECAT5GF256"))) oqs_oid_alg_list[288+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_RSA15360_SDITHHYPERCUBECAT5GF256"))) oqs_oid_alg_list[290+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_SDITHTHRESHOLDCAT1GF256"))) oqs_oid_alg_list[292+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_P256_SDITHTHRESHOLDCAT1GF256"))) oqs_oid_alg_list[294+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_RSA3072_SDITHTHRESHOLDCAT1GF256"))) oqs_oid_alg_list[296+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_SDITHTHRESHOLDCAT3GF256"))) oqs_oid_alg_list[298+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_P384_SDITHTHRESHOLDCAT3GF256"))) oqs_oid_alg_list[300+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_RSA7680_SDITHTHRESHOLDCAT3GF256"))) oqs_oid_alg_list[302+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_SDITHTHRESHOLDCAT5GF256"))) oqs_oid_alg_list[304+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_P521_SDITHTHRESHOLDCAT5GF256"))) oqs_oid_alg_list[306+OQS_KEMOID_CNT] = envval;
+-   if ((envval = getenv("OQS_OID_RSA15360_SDITHTHRESHOLDCAT5GF256"))) oqs_oid_alg_list[308+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_P256_SLHDSASHAKE128S"))) oqs_oid_alg_list[246+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_RSA3072_SLHDSASHAKE128S"))) oqs_oid_alg_list[248+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_SLHDSASHAKE128F"))) oqs_oid_alg_list[250+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_P256_SLHDSASHAKE128F"))) oqs_oid_alg_list[252+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_RSA3072_SLHDSASHAKE128F"))) oqs_oid_alg_list[254+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_SLHDSASHAKE192S"))) oqs_oid_alg_list[256+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_P384_SLHDSASHAKE192S"))) oqs_oid_alg_list[258+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_RSA7680_SLHDSASHAKE192S"))) oqs_oid_alg_list[260+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_SLHDSASHAKE192F"))) oqs_oid_alg_list[262+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_P384_SLHDSASHAKE192F"))) oqs_oid_alg_list[264+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_RSA7680_SLHDSASHAKE192F"))) oqs_oid_alg_list[266+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_SLHDSASHAKE256S"))) oqs_oid_alg_list[268+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_P521_SLHDSASHAKE256S"))) oqs_oid_alg_list[270+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_RSA15360_SLHDSASHAKE256S"))) oqs_oid_alg_list[272+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_SLHDSASHAKE256F"))) oqs_oid_alg_list[274+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_P521_SLHDSASHAKE256F"))) oqs_oid_alg_list[276+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_RSA15360_SLHDSASHAKE256F"))) oqs_oid_alg_list[278+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_MQOM2CAT1GF16FASTR5"))) oqs_oid_alg_list[280+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_P256_MQOM2CAT1GF16FASTR5"))) oqs_oid_alg_list[282+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_RSA3072_MQOM2CAT1GF16FASTR5"))) oqs_oid_alg_list[284+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_MQOM2CAT3GF16FASTR5"))) oqs_oid_alg_list[286+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_P384_MQOM2CAT3GF16FASTR5"))) oqs_oid_alg_list[288+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_RSA7680_MQOM2CAT3GF16FASTR5"))) oqs_oid_alg_list[290+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_MQOM2CAT5GF16FASTR5"))) oqs_oid_alg_list[292+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_P521_MQOM2CAT5GF16FASTR5"))) oqs_oid_alg_list[294+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_RSA15360_MQOM2CAT5GF16FASTR5"))) oqs_oid_alg_list[296+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_SDITHHYPERCUBECAT1GF256"))) oqs_oid_alg_list[298+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_P256_SDITHHYPERCUBECAT1GF256"))) oqs_oid_alg_list[300+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_RSA3072_SDITHHYPERCUBECAT1GF256"))) oqs_oid_alg_list[302+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_SDITHHYPERCUBECAT3GF256"))) oqs_oid_alg_list[304+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_P384_SDITHHYPERCUBECAT3GF256"))) oqs_oid_alg_list[306+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_RSA7680_SDITHHYPERCUBECAT3GF256"))) oqs_oid_alg_list[308+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_SDITHHYPERCUBECAT5GF256"))) oqs_oid_alg_list[310+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_P521_SDITHHYPERCUBECAT5GF256"))) oqs_oid_alg_list[312+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_RSA15360_SDITHHYPERCUBECAT5GF256"))) oqs_oid_alg_list[314+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_SDITHTHRESHOLDCAT1GF256"))) oqs_oid_alg_list[316+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_P256_SDITHTHRESHOLDCAT1GF256"))) oqs_oid_alg_list[318+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_RSA3072_SDITHTHRESHOLDCAT1GF256"))) oqs_oid_alg_list[320+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_SDITHTHRESHOLDCAT3GF256"))) oqs_oid_alg_list[322+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_P384_SDITHTHRESHOLDCAT3GF256"))) oqs_oid_alg_list[324+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_RSA7680_SDITHTHRESHOLDCAT3GF256"))) oqs_oid_alg_list[326+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_SDITHTHRESHOLDCAT5GF256"))) oqs_oid_alg_list[328+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_P521_SDITHTHRESHOLDCAT5GF256"))) oqs_oid_alg_list[330+OQS_KEMOID_CNT] = envval;
++   if ((envval = getenv("OQS_OID_RSA15360_SDITHTHRESHOLDCAT5GF256"))) oqs_oid_alg_list[332+OQS_KEMOID_CNT] = envval;
+ }///// OQS_TEMPLATE_FRAGMENT_OID_PATCHING_END
+     return 1;
+ }
+@@ -728,21 +751,33 @@ static const OSSL_ALGORITHM oqsprovider_signatures[] = {
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_128s
+     SIGALG("slhdsashake128s", 128, oqs_signature_functions),
++    SIGALG("p256_slhdsashake128s", 128, oqs_signature_functions),
++    SIGALG("rsa3072_slhdsashake128s", 128, oqs_signature_functions),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_128f
+     SIGALG("slhdsashake128f", 128, oqs_signature_functions),
++    SIGALG("p256_slhdsashake128f", 128, oqs_signature_functions),
++    SIGALG("rsa3072_slhdsashake128f", 128, oqs_signature_functions),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_192s
+     SIGALG("slhdsashake192s", 192, oqs_signature_functions),
++    SIGALG("p384_slhdsashake192s", 192, oqs_signature_functions),
++    SIGALG("rsa7680_slhdsashake192s", 192, oqs_signature_functions),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_192f
+     SIGALG("slhdsashake192f", 192, oqs_signature_functions),
++    SIGALG("p384_slhdsashake192f", 192, oqs_signature_functions),
++    SIGALG("rsa7680_slhdsashake192f", 192, oqs_signature_functions),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_256s
+     SIGALG("slhdsashake256s", 256, oqs_signature_functions),
++    SIGALG("p521_slhdsashake256s", 256, oqs_signature_functions),
++    SIGALG("rsa15360_slhdsashake256s", 256, oqs_signature_functions),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_256f
+     SIGALG("slhdsashake256f", 256, oqs_signature_functions),
++    SIGALG("p521_slhdsashake256f", 256, oqs_signature_functions),
++    SIGALG("rsa15360_slhdsashake256f", 256, oqs_signature_functions),
+ #endif
+ #ifdef OQS_ENABLE_SIG_mqom_mqom2_cat1_gf16_fast_r5
+     SIGALG("mqom2cat1gf16fastr5", 128, oqs_signature_functions),
+@@ -1113,21 +1148,33 @@ static const OSSL_ALGORITHM
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_128s
+     SIGALG("slhdsashake128s", 128, oqs_slhdsashake128s_keymgmt_functions),
++    SIGALG("p256_slhdsashake128s", 128, oqs_p256_slhdsashake128s_keymgmt_functions),
++    SIGALG("rsa3072_slhdsashake128s", 128, oqs_rsa3072_slhdsashake128s_keymgmt_functions),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_128f
+     SIGALG("slhdsashake128f", 128, oqs_slhdsashake128f_keymgmt_functions),
++    SIGALG("p256_slhdsashake128f", 128, oqs_p256_slhdsashake128f_keymgmt_functions),
++    SIGALG("rsa3072_slhdsashake128f", 128, oqs_rsa3072_slhdsashake128f_keymgmt_functions),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_192s
+     SIGALG("slhdsashake192s", 192, oqs_slhdsashake192s_keymgmt_functions),
++    SIGALG("p384_slhdsashake192s", 192, oqs_p384_slhdsashake192s_keymgmt_functions),
++    SIGALG("rsa7680_slhdsashake192s", 192, oqs_rsa7680_slhdsashake192s_keymgmt_functions),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_192f
+     SIGALG("slhdsashake192f", 192, oqs_slhdsashake192f_keymgmt_functions),
++    SIGALG("p384_slhdsashake192f", 192, oqs_p384_slhdsashake192f_keymgmt_functions),
++    SIGALG("rsa7680_slhdsashake192f", 192, oqs_rsa7680_slhdsashake192f_keymgmt_functions),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_256s
+     SIGALG("slhdsashake256s", 256, oqs_slhdsashake256s_keymgmt_functions),
++    SIGALG("p521_slhdsashake256s", 256, oqs_p521_slhdsashake256s_keymgmt_functions),
++    SIGALG("rsa15360_slhdsashake256s", 256, oqs_rsa15360_slhdsashake256s_keymgmt_functions),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_256f
+     SIGALG("slhdsashake256f", 256, oqs_slhdsashake256f_keymgmt_functions),
++    SIGALG("p521_slhdsashake256f", 256, oqs_p521_slhdsashake256f_keymgmt_functions),
++    SIGALG("rsa15360_slhdsashake256f", 256, oqs_rsa15360_slhdsashake256f_keymgmt_functions),
+ #endif
+ #ifdef OQS_ENABLE_SIG_mqom_mqom2_cat1_gf16_fast_r5
+     SIGALG("mqom2cat1gf16fastr5", 128, oqs_mqom2cat1gf16fastr5_keymgmt_functions),
+@@ -1526,392 +1573,392 @@ int OQS_PROVIDER_ENTRYPOINT_NAME(const OSSL_CORE_HANDLE *handle,
+      */
+ 
+     ///// OQS_TEMPLATE_FRAGMENT_DISABLE_OSSL_ALGS_START
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
++  
++    
++  
++    
++  
++    
++  
++    
++  
++    
++  
++    
++  
++
++  
++    
++  
++    
++  
++
++  
++    
++  
++    
++  
++    
++  
++
++  
++    
+     if (strcmp("3.5.0", ossl_versionp) <= 0) {
+         rt_algo_filter_enabled = 1;
+         sk_OPENSSL_STRING_push(rt_disabled_algs, "mldsa44");
+     }
+-
+-
+-
++    
++  
++    
+     if (strcmp("3.5.0", ossl_versionp) <= 0) {
+         rt_algo_filter_enabled = 1;
+         sk_OPENSSL_STRING_push(rt_disabled_algs, "mldsa65");
+     }
+-
+-
+-
++    
++  
++    
+     if (strcmp("3.5.0", ossl_versionp) <= 0) {
+         rt_algo_filter_enabled = 1;
+         sk_OPENSSL_STRING_push(rt_disabled_algs, "mldsa87");
+     }
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
++    
++  
++
++  
++    
++  
++    
++  
++    
++  
++    
++  
++
++  
++    
++  
++    
++  
++    
++  
++    
++  
++
++  
++    
++  
++    
++  
++    
++  
++    
++  
++    
++  
++
++  
++    
++  
++    
++  
++    
++  
++    
++  
++    
++  
++    
++  
++    
++  
++    
++  
++
++  
++    
++  
++    
++  
++    
++  
++    
++  
++    
++  
++
++  
++    
+     if (0 && strcmp("3.5.0", ossl_versionp) <= 0) {
+         rt_algo_filter_enabled = 1;
+         sk_OPENSSL_STRING_push(rt_disabled_algs, "slhdsasha2128s");
+     }
+-
+-
+-
++    
++  
++    
+     if (0 && strcmp("3.5.0", ossl_versionp) <= 0) {
+         rt_algo_filter_enabled = 1;
+         sk_OPENSSL_STRING_push(rt_disabled_algs, "slhdsasha2128f");
+     }
+-
+-
+-
++    
++  
++    
+     if (0 && strcmp("3.5.0", ossl_versionp) <= 0) {
+         rt_algo_filter_enabled = 1;
+         sk_OPENSSL_STRING_push(rt_disabled_algs, "slhdsasha2192s");
+     }
+-
+-
+-
++    
++  
++    
+     if (0 && strcmp("3.5.0", ossl_versionp) <= 0) {
+         rt_algo_filter_enabled = 1;
+         sk_OPENSSL_STRING_push(rt_disabled_algs, "slhdsasha2192f");
+     }
+-
+-
+-
++    
++  
++    
+     if (0 && strcmp("3.5.0", ossl_versionp) <= 0) {
+         rt_algo_filter_enabled = 1;
+         sk_OPENSSL_STRING_push(rt_disabled_algs, "slhdsasha2256s");
+     }
+-
+-
+-
++    
++  
++    
+     if (0 && strcmp("3.5.0", ossl_versionp) <= 0) {
+         rt_algo_filter_enabled = 1;
+         sk_OPENSSL_STRING_push(rt_disabled_algs, "slhdsasha2256f");
+     }
+-
+-
+-
++    
++  
++    
+     if (0 && strcmp("3.5.0", ossl_versionp) <= 0) {
+         rt_algo_filter_enabled = 1;
+         sk_OPENSSL_STRING_push(rt_disabled_algs, "slhdsashake128s");
+     }
+-
+-
+-
++    
++  
++    
+     if (0 && strcmp("3.5.0", ossl_versionp) <= 0) {
+         rt_algo_filter_enabled = 1;
+         sk_OPENSSL_STRING_push(rt_disabled_algs, "slhdsashake128f");
+     }
+-
+-
+-
++    
++  
++    
+     if (0 && strcmp("3.5.0", ossl_versionp) <= 0) {
+         rt_algo_filter_enabled = 1;
+         sk_OPENSSL_STRING_push(rt_disabled_algs, "slhdsashake192s");
+     }
+-
+-
+-
++    
++  
++    
+     if (0 && strcmp("3.5.0", ossl_versionp) <= 0) {
+         rt_algo_filter_enabled = 1;
+         sk_OPENSSL_STRING_push(rt_disabled_algs, "slhdsashake192f");
+     }
+-
+-
+-
++    
++  
++    
+     if (0 && strcmp("3.5.0", ossl_versionp) <= 0) {
+         rt_algo_filter_enabled = 1;
+         sk_OPENSSL_STRING_push(rt_disabled_algs, "slhdsashake256s");
+     }
+-
+-
+-
++    
++  
++    
+     if (0 && strcmp("3.5.0", ossl_versionp) <= 0) {
+         rt_algo_filter_enabled = 1;
+         sk_OPENSSL_STRING_push(rt_disabled_algs, "slhdsashake256f");
+     }
++    
++  
+ 
++  
++    
++  
++    
++  
++    
++  
+ 
++  
++    
++  
++    
++  
++    
++  
++    
++  
++    
++  
++    
++  
+ 
+ 
+ 
++  
+ 
++  
++    
++      
++    
++  
+ 
++  
+ 
++  
++    
++      
++    
++  
+ 
++  
+ 
++  
++    
++      
++    
++  
+ 
++  
+ 
++  
++    
++      
++    
++  
+ 
++  
+ 
++  
+ 
++  
+ 
++  
+ 
++  
+ 
++  
++    
++      
++    
++  
+ 
++  
+ 
++  
++    
++      
++    
++  
+ 
++  
+ 
++  
++    
++      
++    
++  
+ 
++  
+ 
++  
++    
++      
++    
++  
+ 
++  
+ 
++  
+ 
++  
+ 
++  
+ 
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
++  
+     if (strcmp("3.5.0", ossl_versionp) <= 0) {
+         rt_algo_filter_enabled = 1;
+         sk_OPENSSL_STRING_push(rt_disabled_algs, "mlkem512");
+     }
++  
+ 
++  
++    
++      
++    
++      
++    
++  
+ 
+-
+-
+-
+-
+-
+-
+-
+-
+-
++  
+     if (strcmp("3.5.0", ossl_versionp) <= 0) {
+         rt_algo_filter_enabled = 1;
+         sk_OPENSSL_STRING_push(rt_disabled_algs, "mlkem768");
+     }
+-
+-
+-
+-
+-
+-
+-
+-
+-
++  
++
++  
++    
++      
++    
++      
++    
++      
+     if (strcmp("3.5.0", ossl_versionp) <= 0) {
+         rt_algo_filter_enabled = 1;
+         sk_OPENSSL_STRING_push(rt_disabled_algs, "X25519MLKEM768");
+     }
+-
+-
+-
++      
++    
++      
+     if (strcmp("3.5.0", ossl_versionp) <= 0) {
+         rt_algo_filter_enabled = 1;
+         sk_OPENSSL_STRING_push(rt_disabled_algs, "SecP256r1MLKEM768");
+     }
++      
++    
++  
+ 
+-
+-
+-
+-
++  
+     if (strcmp("3.5.0", ossl_versionp) <= 0) {
+         rt_algo_filter_enabled = 1;
+         sk_OPENSSL_STRING_push(rt_disabled_algs, "mlkem1024");
+     }
++  
+ 
+-
+-
+-
+-
++  
++    
++      
+     if (strcmp("3.5.0", ossl_versionp) <= 0) {
+         rt_algo_filter_enabled = 1;
+         sk_OPENSSL_STRING_push(rt_disabled_algs, "SecP384r1MLKEM1024");
+     }
++      
++    
++      
++    
++  
+ 
++  
+ 
++  
++    
++      
++    
++  
+ 
++  
+ 
++  
++    
++      
++    
++  
+ 
++  
+ 
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
++  
+ ///// OQS_TEMPLATE_FRAGMENT_DISABLE_OSSL_ALGS_END
+ 
+     // insert all OIDs to the global objects list
+diff --git a/oqsprov/oqsprov_capabilities.c b/oqsprov/oqsprov_capabilities.c
+index c4630d1..12a53f5 100644
+--- a/oqsprov/oqsprov_capabilities.c
++++ b/oqsprov/oqsprov_capabilities.c
+@@ -264,38 +264,38 @@ static OQS_SIGALG_CONSTANTS oqs_sigalg_list[] = {
+     // ad-hoc assignments - take from OQS generate data structures
+     ///// OQS_TEMPLATE_FRAGMENT_SIGALG_ASSIGNMENTS_START
+     { 0xff7b, 128, TLS1_3_VERSION, 0 },
+-    { 0xfe54, 128, TLS1_3_VERSION, 0 },
+-    { 0xfe55, 128, TLS1_3_VERSION, 0 },
++    { 0xfe60, 128, TLS1_3_VERSION, 0 },
++    { 0xfe61, 128, TLS1_3_VERSION, 0 },
+     { 0xff81, 128, TLS1_3_VERSION, 0 },
+-    { 0xfe56, 128, TLS1_3_VERSION, 0 },
+-    { 0xfe57, 128, TLS1_3_VERSION, 0 },
++    { 0xfe62, 128, TLS1_3_VERSION, 0 },
++    { 0xfe63, 128, TLS1_3_VERSION, 0 },
+     { 0xff7c, 192, TLS1_3_VERSION, 0 },
+-    { 0xfe58, 192, TLS1_3_VERSION, 0 },
+-    { 0xfe59, 192, TLS1_3_VERSION, 0 },
++    { 0xfe64, 192, TLS1_3_VERSION, 0 },
++    { 0xfe65, 192, TLS1_3_VERSION, 0 },
+     { 0xff82, 192, TLS1_3_VERSION, 0 },
+-    { 0xfe5a, 192, TLS1_3_VERSION, 0 },
+-    { 0xfe5b, 192, TLS1_3_VERSION, 0 },
++    { 0xfe66, 192, TLS1_3_VERSION, 0 },
++    { 0xfe67, 192, TLS1_3_VERSION, 0 },
+     { 0xff7d, 256, TLS1_3_VERSION, 0 },
+-    { 0xfe5c, 256, TLS1_3_VERSION, 0 },
+-    { 0xfe5d, 256, TLS1_3_VERSION, 0 },
++    { 0xfe68, 256, TLS1_3_VERSION, 0 },
++    { 0xfe69, 256, TLS1_3_VERSION, 0 },
+     { 0xff83, 256, TLS1_3_VERSION, 0 },
+-    { 0xfe5e, 256, TLS1_3_VERSION, 0 },
+-    { 0xfe5f, 256, TLS1_3_VERSION, 0 },
++    { 0xfe6a, 256, TLS1_3_VERSION, 0 },
++    { 0xfe6b, 256, TLS1_3_VERSION, 0 },
+     { 0xff7e, 128, TLS1_3_VERSION, 0 },
+-    { 0xfe60, 128, TLS1_3_VERSION, 0 },
+-    { 0xfe61, 128, TLS1_3_VERSION, 0 },
++    { 0xfe6c, 128, TLS1_3_VERSION, 0 },
++    { 0xfe6d, 128, TLS1_3_VERSION, 0 },
+     { 0xff7f, 256, TLS1_3_VERSION, 0 },
+-    { 0xfe62, 256, TLS1_3_VERSION, 0 },
+-    { 0xfe63, 256, TLS1_3_VERSION, 0 },
++    { 0xfe6e, 256, TLS1_3_VERSION, 0 },
++    { 0xfe6f, 256, TLS1_3_VERSION, 0 },
+     { 0xff80, 128, TLS1_3_VERSION, 0 },
+-    { 0xfe64, 128, TLS1_3_VERSION, 0 },
+-    { 0xfe65, 128, TLS1_3_VERSION, 0 },
++    { 0xfe70, 128, TLS1_3_VERSION, 0 },
++    { 0xfe71, 128, TLS1_3_VERSION, 0 },
+     { 0xff84, 192, TLS1_3_VERSION, 0 },
+-    { 0xfe66, 192, TLS1_3_VERSION, 0 },
+-    { 0xfe67, 192, TLS1_3_VERSION, 0 },
++    { 0xfe72, 192, TLS1_3_VERSION, 0 },
++    { 0xfe73, 192, TLS1_3_VERSION, 0 },
+     { 0xff85, 256, TLS1_3_VERSION, 0 },
+-    { 0xfe68, 256, TLS1_3_VERSION, 0 },
+-    { 0xfe69, 256, TLS1_3_VERSION, 0 },
++    { 0xfe74, 256, TLS1_3_VERSION, 0 },
++    { 0xfe75, 256, TLS1_3_VERSION, 0 },
+     { 0x0904, 128, TLS1_3_VERSION, 0 },
+     { 0xff06, 128, TLS1_3_VERSION, 0 },
+     { 0xff07, 128, TLS1_3_VERSION, 0 },
+@@ -386,38 +386,50 @@ static OQS_SIGALG_CONSTANTS oqs_sigalg_list[] = {
+     { 0xfe4c, 256, TLS1_3_VERSION, 0 },
+     { 0xfe4d, 256, TLS1_3_VERSION, 0 },
+     { 0x0917, 128, TLS1_3_VERSION, 0 },
++    { 0xfe4e, 128, TLS1_3_VERSION, 0 },
++    { 0xfe4f, 128, TLS1_3_VERSION, 0 },
+     { 0x0918, 128, TLS1_3_VERSION, 0 },
++    { 0xfe50, 128, TLS1_3_VERSION, 0 },
++    { 0xfe51, 128, TLS1_3_VERSION, 0 },
+     { 0x0919, 192, TLS1_3_VERSION, 0 },
++    { 0xfe52, 192, TLS1_3_VERSION, 0 },
++    { 0xfe53, 192, TLS1_3_VERSION, 0 },
+     { 0x091A, 192, TLS1_3_VERSION, 0 },
++    { 0xfe54, 192, TLS1_3_VERSION, 0 },
++    { 0xfe55, 192, TLS1_3_VERSION, 0 },
+     { 0x091B, 256, TLS1_3_VERSION, 0 },
++    { 0xfe56, 256, TLS1_3_VERSION, 0 },
++    { 0xfe57, 256, TLS1_3_VERSION, 0 },
+     { 0x091C, 256, TLS1_3_VERSION, 0 },
++    { 0xfe58, 256, TLS1_3_VERSION, 0 },
++    { 0xfe59, 256, TLS1_3_VERSION, 0 },
+     { 0xff63, 128, TLS1_3_VERSION, 0 },
+     { 0xff64, 128, TLS1_3_VERSION, 0 },
+-    { 0xfe4f, 128, TLS1_3_VERSION, 0 },
++    { 0xfe5b, 128, TLS1_3_VERSION, 0 },
+     { 0xff6b, 192, TLS1_3_VERSION, 0 },
+     { 0xff6c, 192, TLS1_3_VERSION, 0 },
+-    { 0xfe51, 192, TLS1_3_VERSION, 0 },
++    { 0xfe5d, 192, TLS1_3_VERSION, 0 },
+     { 0xff73, 256, TLS1_3_VERSION, 0 },
+     { 0xff74, 256, TLS1_3_VERSION, 0 },
+-    { 0xfe53, 256, TLS1_3_VERSION, 0 },
++    { 0xfe5f, 256, TLS1_3_VERSION, 0 },
+     { 0xff86, 128, TLS1_3_VERSION, 0 },
+-    { 0xfe6a, 128, TLS1_3_VERSION, 0 },
+-    { 0xfe6b, 128, TLS1_3_VERSION, 0 },
++    { 0xfe76, 128, TLS1_3_VERSION, 0 },
++    { 0xfe77, 128, TLS1_3_VERSION, 0 },
+     { 0xff87, 192, TLS1_3_VERSION, 0 },
+-    { 0xfe6c, 192, TLS1_3_VERSION, 0 },
+-    { 0xfe6d, 192, TLS1_3_VERSION, 0 },
++    { 0xfe78, 192, TLS1_3_VERSION, 0 },
++    { 0xfe79, 192, TLS1_3_VERSION, 0 },
+     { 0xff88, 256, TLS1_3_VERSION, 0 },
+-    { 0xfe6e, 256, TLS1_3_VERSION, 0 },
+-    { 0xfe6f, 256, TLS1_3_VERSION, 0 },
++    { 0xfe7a, 256, TLS1_3_VERSION, 0 },
++    { 0xfe7b, 256, TLS1_3_VERSION, 0 },
+     { 0xff89, 128, TLS1_3_VERSION, 0 },
+-    { 0xfe70, 128, TLS1_3_VERSION, 0 },
+-    { 0xfe71, 128, TLS1_3_VERSION, 0 },
++    { 0xfe7c, 128, TLS1_3_VERSION, 0 },
++    { 0xfe7d, 128, TLS1_3_VERSION, 0 },
+     { 0xff8a, 192, TLS1_3_VERSION, 0 },
+-    { 0xfe72, 192, TLS1_3_VERSION, 0 },
+-    { 0xfe73, 192, TLS1_3_VERSION, 0 },
++    { 0xfe7e, 192, TLS1_3_VERSION, 0 },
++    { 0xfe7f, 192, TLS1_3_VERSION, 0 },
+     { 0xff8b, 256, TLS1_3_VERSION, 0 },
+-    { 0xfe74, 256, TLS1_3_VERSION, 0 },
+-    { 0xfe75, 256, TLS1_3_VERSION, 0 },
++    { 0xfe80, 256, TLS1_3_VERSION, 0 },
++    { 0xfe81, 256, TLS1_3_VERSION, 0 },
+ ///// OQS_TEMPLATE_FRAGMENT_SIGALG_ASSIGNMENTS_END
+ };
+ 
+@@ -601,38 +613,50 @@ int oqs_patch_codepoints() {
+    if (getenv("OQS_CODEPOINT_P521_SLHDSASHA2256F")) oqs_sigalg_list[120].code_point = atoi(getenv("OQS_CODEPOINT_P521_SLHDSASHA2256F"));
+    if (getenv("OQS_CODEPOINT_RSA15360_SLHDSASHA2256F")) oqs_sigalg_list[121].code_point = atoi(getenv("OQS_CODEPOINT_RSA15360_SLHDSASHA2256F"));
+    if (getenv("OQS_CODEPOINT_SLHDSASHAKE128S")) oqs_sigalg_list[122].code_point = atoi(getenv("OQS_CODEPOINT_SLHDSASHAKE128S"));
+-   if (getenv("OQS_CODEPOINT_SLHDSASHAKE128F")) oqs_sigalg_list[123].code_point = atoi(getenv("OQS_CODEPOINT_SLHDSASHAKE128F"));
+-   if (getenv("OQS_CODEPOINT_SLHDSASHAKE192S")) oqs_sigalg_list[124].code_point = atoi(getenv("OQS_CODEPOINT_SLHDSASHAKE192S"));
+-   if (getenv("OQS_CODEPOINT_SLHDSASHAKE192F")) oqs_sigalg_list[125].code_point = atoi(getenv("OQS_CODEPOINT_SLHDSASHAKE192F"));
+-   if (getenv("OQS_CODEPOINT_SLHDSASHAKE256S")) oqs_sigalg_list[126].code_point = atoi(getenv("OQS_CODEPOINT_SLHDSASHAKE256S"));
+-   if (getenv("OQS_CODEPOINT_SLHDSASHAKE256F")) oqs_sigalg_list[127].code_point = atoi(getenv("OQS_CODEPOINT_SLHDSASHAKE256F"));
+-   if (getenv("OQS_CODEPOINT_MQOM2CAT1GF16FASTR5")) oqs_sigalg_list[128].code_point = atoi(getenv("OQS_CODEPOINT_MQOM2CAT1GF16FASTR5"));
+-   if (getenv("OQS_CODEPOINT_P256_MQOM2CAT1GF16FASTR5")) oqs_sigalg_list[129].code_point = atoi(getenv("OQS_CODEPOINT_P256_MQOM2CAT1GF16FASTR5"));
+-   if (getenv("OQS_CODEPOINT_RSA3072_MQOM2CAT1GF16FASTR5")) oqs_sigalg_list[130].code_point = atoi(getenv("OQS_CODEPOINT_RSA3072_MQOM2CAT1GF16FASTR5"));
+-   if (getenv("OQS_CODEPOINT_MQOM2CAT3GF16FASTR5")) oqs_sigalg_list[131].code_point = atoi(getenv("OQS_CODEPOINT_MQOM2CAT3GF16FASTR5"));
+-   if (getenv("OQS_CODEPOINT_P384_MQOM2CAT3GF16FASTR5")) oqs_sigalg_list[132].code_point = atoi(getenv("OQS_CODEPOINT_P384_MQOM2CAT3GF16FASTR5"));
+-   if (getenv("OQS_CODEPOINT_RSA7680_MQOM2CAT3GF16FASTR5")) oqs_sigalg_list[133].code_point = atoi(getenv("OQS_CODEPOINT_RSA7680_MQOM2CAT3GF16FASTR5"));
+-   if (getenv("OQS_CODEPOINT_MQOM2CAT5GF16FASTR5")) oqs_sigalg_list[134].code_point = atoi(getenv("OQS_CODEPOINT_MQOM2CAT5GF16FASTR5"));
+-   if (getenv("OQS_CODEPOINT_P521_MQOM2CAT5GF16FASTR5")) oqs_sigalg_list[135].code_point = atoi(getenv("OQS_CODEPOINT_P521_MQOM2CAT5GF16FASTR5"));
+-   if (getenv("OQS_CODEPOINT_RSA15360_MQOM2CAT5GF16FASTR5")) oqs_sigalg_list[136].code_point = atoi(getenv("OQS_CODEPOINT_RSA15360_MQOM2CAT5GF16FASTR5"));
+-   if (getenv("OQS_CODEPOINT_SDITHHYPERCUBECAT1GF256")) oqs_sigalg_list[137].code_point = atoi(getenv("OQS_CODEPOINT_SDITHHYPERCUBECAT1GF256"));
+-   if (getenv("OQS_CODEPOINT_P256_SDITHHYPERCUBECAT1GF256")) oqs_sigalg_list[138].code_point = atoi(getenv("OQS_CODEPOINT_P256_SDITHHYPERCUBECAT1GF256"));
+-   if (getenv("OQS_CODEPOINT_RSA3072_SDITHHYPERCUBECAT1GF256")) oqs_sigalg_list[139].code_point = atoi(getenv("OQS_CODEPOINT_RSA3072_SDITHHYPERCUBECAT1GF256"));
+-   if (getenv("OQS_CODEPOINT_SDITHHYPERCUBECAT3GF256")) oqs_sigalg_list[140].code_point = atoi(getenv("OQS_CODEPOINT_SDITHHYPERCUBECAT3GF256"));
+-   if (getenv("OQS_CODEPOINT_P384_SDITHHYPERCUBECAT3GF256")) oqs_sigalg_list[141].code_point = atoi(getenv("OQS_CODEPOINT_P384_SDITHHYPERCUBECAT3GF256"));
+-   if (getenv("OQS_CODEPOINT_RSA7680_SDITHHYPERCUBECAT3GF256")) oqs_sigalg_list[142].code_point = atoi(getenv("OQS_CODEPOINT_RSA7680_SDITHHYPERCUBECAT3GF256"));
+-   if (getenv("OQS_CODEPOINT_SDITHHYPERCUBECAT5GF256")) oqs_sigalg_list[143].code_point = atoi(getenv("OQS_CODEPOINT_SDITHHYPERCUBECAT5GF256"));
+-   if (getenv("OQS_CODEPOINT_P521_SDITHHYPERCUBECAT5GF256")) oqs_sigalg_list[144].code_point = atoi(getenv("OQS_CODEPOINT_P521_SDITHHYPERCUBECAT5GF256"));
+-   if (getenv("OQS_CODEPOINT_RSA15360_SDITHHYPERCUBECAT5GF256")) oqs_sigalg_list[145].code_point = atoi(getenv("OQS_CODEPOINT_RSA15360_SDITHHYPERCUBECAT5GF256"));
+-   if (getenv("OQS_CODEPOINT_SDITHTHRESHOLDCAT1GF256")) oqs_sigalg_list[146].code_point = atoi(getenv("OQS_CODEPOINT_SDITHTHRESHOLDCAT1GF256"));
+-   if (getenv("OQS_CODEPOINT_P256_SDITHTHRESHOLDCAT1GF256")) oqs_sigalg_list[147].code_point = atoi(getenv("OQS_CODEPOINT_P256_SDITHTHRESHOLDCAT1GF256"));
+-   if (getenv("OQS_CODEPOINT_RSA3072_SDITHTHRESHOLDCAT1GF256")) oqs_sigalg_list[148].code_point = atoi(getenv("OQS_CODEPOINT_RSA3072_SDITHTHRESHOLDCAT1GF256"));
+-   if (getenv("OQS_CODEPOINT_SDITHTHRESHOLDCAT3GF256")) oqs_sigalg_list[149].code_point = atoi(getenv("OQS_CODEPOINT_SDITHTHRESHOLDCAT3GF256"));
+-   if (getenv("OQS_CODEPOINT_P384_SDITHTHRESHOLDCAT3GF256")) oqs_sigalg_list[150].code_point = atoi(getenv("OQS_CODEPOINT_P384_SDITHTHRESHOLDCAT3GF256"));
+-   if (getenv("OQS_CODEPOINT_RSA7680_SDITHTHRESHOLDCAT3GF256")) oqs_sigalg_list[151].code_point = atoi(getenv("OQS_CODEPOINT_RSA7680_SDITHTHRESHOLDCAT3GF256"));
+-   if (getenv("OQS_CODEPOINT_SDITHTHRESHOLDCAT5GF256")) oqs_sigalg_list[152].code_point = atoi(getenv("OQS_CODEPOINT_SDITHTHRESHOLDCAT5GF256"));
+-   if (getenv("OQS_CODEPOINT_P521_SDITHTHRESHOLDCAT5GF256")) oqs_sigalg_list[153].code_point = atoi(getenv("OQS_CODEPOINT_P521_SDITHTHRESHOLDCAT5GF256"));
+-   if (getenv("OQS_CODEPOINT_RSA15360_SDITHTHRESHOLDCAT5GF256")) oqs_sigalg_list[154].code_point = atoi(getenv("OQS_CODEPOINT_RSA15360_SDITHTHRESHOLDCAT5GF256"));
++   if (getenv("OQS_CODEPOINT_P256_SLHDSASHAKE128S")) oqs_sigalg_list[123].code_point = atoi(getenv("OQS_CODEPOINT_P256_SLHDSASHAKE128S"));
++   if (getenv("OQS_CODEPOINT_RSA3072_SLHDSASHAKE128S")) oqs_sigalg_list[124].code_point = atoi(getenv("OQS_CODEPOINT_RSA3072_SLHDSASHAKE128S"));
++   if (getenv("OQS_CODEPOINT_SLHDSASHAKE128F")) oqs_sigalg_list[125].code_point = atoi(getenv("OQS_CODEPOINT_SLHDSASHAKE128F"));
++   if (getenv("OQS_CODEPOINT_P256_SLHDSASHAKE128F")) oqs_sigalg_list[126].code_point = atoi(getenv("OQS_CODEPOINT_P256_SLHDSASHAKE128F"));
++   if (getenv("OQS_CODEPOINT_RSA3072_SLHDSASHAKE128F")) oqs_sigalg_list[127].code_point = atoi(getenv("OQS_CODEPOINT_RSA3072_SLHDSASHAKE128F"));
++   if (getenv("OQS_CODEPOINT_SLHDSASHAKE192S")) oqs_sigalg_list[128].code_point = atoi(getenv("OQS_CODEPOINT_SLHDSASHAKE192S"));
++   if (getenv("OQS_CODEPOINT_P384_SLHDSASHAKE192S")) oqs_sigalg_list[129].code_point = atoi(getenv("OQS_CODEPOINT_P384_SLHDSASHAKE192S"));
++   if (getenv("OQS_CODEPOINT_RSA7680_SLHDSASHAKE192S")) oqs_sigalg_list[130].code_point = atoi(getenv("OQS_CODEPOINT_RSA7680_SLHDSASHAKE192S"));
++   if (getenv("OQS_CODEPOINT_SLHDSASHAKE192F")) oqs_sigalg_list[131].code_point = atoi(getenv("OQS_CODEPOINT_SLHDSASHAKE192F"));
++   if (getenv("OQS_CODEPOINT_P384_SLHDSASHAKE192F")) oqs_sigalg_list[132].code_point = atoi(getenv("OQS_CODEPOINT_P384_SLHDSASHAKE192F"));
++   if (getenv("OQS_CODEPOINT_RSA7680_SLHDSASHAKE192F")) oqs_sigalg_list[133].code_point = atoi(getenv("OQS_CODEPOINT_RSA7680_SLHDSASHAKE192F"));
++   if (getenv("OQS_CODEPOINT_SLHDSASHAKE256S")) oqs_sigalg_list[134].code_point = atoi(getenv("OQS_CODEPOINT_SLHDSASHAKE256S"));
++   if (getenv("OQS_CODEPOINT_P521_SLHDSASHAKE256S")) oqs_sigalg_list[135].code_point = atoi(getenv("OQS_CODEPOINT_P521_SLHDSASHAKE256S"));
++   if (getenv("OQS_CODEPOINT_RSA15360_SLHDSASHAKE256S")) oqs_sigalg_list[136].code_point = atoi(getenv("OQS_CODEPOINT_RSA15360_SLHDSASHAKE256S"));
++   if (getenv("OQS_CODEPOINT_SLHDSASHAKE256F")) oqs_sigalg_list[137].code_point = atoi(getenv("OQS_CODEPOINT_SLHDSASHAKE256F"));
++   if (getenv("OQS_CODEPOINT_P521_SLHDSASHAKE256F")) oqs_sigalg_list[138].code_point = atoi(getenv("OQS_CODEPOINT_P521_SLHDSASHAKE256F"));
++   if (getenv("OQS_CODEPOINT_RSA15360_SLHDSASHAKE256F")) oqs_sigalg_list[139].code_point = atoi(getenv("OQS_CODEPOINT_RSA15360_SLHDSASHAKE256F"));
++   if (getenv("OQS_CODEPOINT_MQOM2CAT1GF16FASTR5")) oqs_sigalg_list[140].code_point = atoi(getenv("OQS_CODEPOINT_MQOM2CAT1GF16FASTR5"));
++   if (getenv("OQS_CODEPOINT_P256_MQOM2CAT1GF16FASTR5")) oqs_sigalg_list[141].code_point = atoi(getenv("OQS_CODEPOINT_P256_MQOM2CAT1GF16FASTR5"));
++   if (getenv("OQS_CODEPOINT_RSA3072_MQOM2CAT1GF16FASTR5")) oqs_sigalg_list[142].code_point = atoi(getenv("OQS_CODEPOINT_RSA3072_MQOM2CAT1GF16FASTR5"));
++   if (getenv("OQS_CODEPOINT_MQOM2CAT3GF16FASTR5")) oqs_sigalg_list[143].code_point = atoi(getenv("OQS_CODEPOINT_MQOM2CAT3GF16FASTR5"));
++   if (getenv("OQS_CODEPOINT_P384_MQOM2CAT3GF16FASTR5")) oqs_sigalg_list[144].code_point = atoi(getenv("OQS_CODEPOINT_P384_MQOM2CAT3GF16FASTR5"));
++   if (getenv("OQS_CODEPOINT_RSA7680_MQOM2CAT3GF16FASTR5")) oqs_sigalg_list[145].code_point = atoi(getenv("OQS_CODEPOINT_RSA7680_MQOM2CAT3GF16FASTR5"));
++   if (getenv("OQS_CODEPOINT_MQOM2CAT5GF16FASTR5")) oqs_sigalg_list[146].code_point = atoi(getenv("OQS_CODEPOINT_MQOM2CAT5GF16FASTR5"));
++   if (getenv("OQS_CODEPOINT_P521_MQOM2CAT5GF16FASTR5")) oqs_sigalg_list[147].code_point = atoi(getenv("OQS_CODEPOINT_P521_MQOM2CAT5GF16FASTR5"));
++   if (getenv("OQS_CODEPOINT_RSA15360_MQOM2CAT5GF16FASTR5")) oqs_sigalg_list[148].code_point = atoi(getenv("OQS_CODEPOINT_RSA15360_MQOM2CAT5GF16FASTR5"));
++   if (getenv("OQS_CODEPOINT_SDITHHYPERCUBECAT1GF256")) oqs_sigalg_list[149].code_point = atoi(getenv("OQS_CODEPOINT_SDITHHYPERCUBECAT1GF256"));
++   if (getenv("OQS_CODEPOINT_P256_SDITHHYPERCUBECAT1GF256")) oqs_sigalg_list[150].code_point = atoi(getenv("OQS_CODEPOINT_P256_SDITHHYPERCUBECAT1GF256"));
++   if (getenv("OQS_CODEPOINT_RSA3072_SDITHHYPERCUBECAT1GF256")) oqs_sigalg_list[151].code_point = atoi(getenv("OQS_CODEPOINT_RSA3072_SDITHHYPERCUBECAT1GF256"));
++   if (getenv("OQS_CODEPOINT_SDITHHYPERCUBECAT3GF256")) oqs_sigalg_list[152].code_point = atoi(getenv("OQS_CODEPOINT_SDITHHYPERCUBECAT3GF256"));
++   if (getenv("OQS_CODEPOINT_P384_SDITHHYPERCUBECAT3GF256")) oqs_sigalg_list[153].code_point = atoi(getenv("OQS_CODEPOINT_P384_SDITHHYPERCUBECAT3GF256"));
++   if (getenv("OQS_CODEPOINT_RSA7680_SDITHHYPERCUBECAT3GF256")) oqs_sigalg_list[154].code_point = atoi(getenv("OQS_CODEPOINT_RSA7680_SDITHHYPERCUBECAT3GF256"));
++   if (getenv("OQS_CODEPOINT_SDITHHYPERCUBECAT5GF256")) oqs_sigalg_list[155].code_point = atoi(getenv("OQS_CODEPOINT_SDITHHYPERCUBECAT5GF256"));
++   if (getenv("OQS_CODEPOINT_P521_SDITHHYPERCUBECAT5GF256")) oqs_sigalg_list[156].code_point = atoi(getenv("OQS_CODEPOINT_P521_SDITHHYPERCUBECAT5GF256"));
++   if (getenv("OQS_CODEPOINT_RSA15360_SDITHHYPERCUBECAT5GF256")) oqs_sigalg_list[157].code_point = atoi(getenv("OQS_CODEPOINT_RSA15360_SDITHHYPERCUBECAT5GF256"));
++   if (getenv("OQS_CODEPOINT_SDITHTHRESHOLDCAT1GF256")) oqs_sigalg_list[158].code_point = atoi(getenv("OQS_CODEPOINT_SDITHTHRESHOLDCAT1GF256"));
++   if (getenv("OQS_CODEPOINT_P256_SDITHTHRESHOLDCAT1GF256")) oqs_sigalg_list[159].code_point = atoi(getenv("OQS_CODEPOINT_P256_SDITHTHRESHOLDCAT1GF256"));
++   if (getenv("OQS_CODEPOINT_RSA3072_SDITHTHRESHOLDCAT1GF256")) oqs_sigalg_list[160].code_point = atoi(getenv("OQS_CODEPOINT_RSA3072_SDITHTHRESHOLDCAT1GF256"));
++   if (getenv("OQS_CODEPOINT_SDITHTHRESHOLDCAT3GF256")) oqs_sigalg_list[161].code_point = atoi(getenv("OQS_CODEPOINT_SDITHTHRESHOLDCAT3GF256"));
++   if (getenv("OQS_CODEPOINT_P384_SDITHTHRESHOLDCAT3GF256")) oqs_sigalg_list[162].code_point = atoi(getenv("OQS_CODEPOINT_P384_SDITHTHRESHOLDCAT3GF256"));
++   if (getenv("OQS_CODEPOINT_RSA7680_SDITHTHRESHOLDCAT3GF256")) oqs_sigalg_list[163].code_point = atoi(getenv("OQS_CODEPOINT_RSA7680_SDITHTHRESHOLDCAT3GF256"));
++   if (getenv("OQS_CODEPOINT_SDITHTHRESHOLDCAT5GF256")) oqs_sigalg_list[164].code_point = atoi(getenv("OQS_CODEPOINT_SDITHTHRESHOLDCAT5GF256"));
++   if (getenv("OQS_CODEPOINT_P521_SDITHTHRESHOLDCAT5GF256")) oqs_sigalg_list[165].code_point = atoi(getenv("OQS_CODEPOINT_P521_SDITHTHRESHOLDCAT5GF256"));
++   if (getenv("OQS_CODEPOINT_RSA15360_SDITHTHRESHOLDCAT5GF256")) oqs_sigalg_list[166].code_point = atoi(getenv("OQS_CODEPOINT_RSA15360_SDITHTHRESHOLDCAT5GF256"));
+ ///// OQS_TEMPLATE_FRAGMENT_CODEPOINT_PATCHING_END
+     return 1;
+ }
+@@ -675,58 +699,58 @@ static const OSSL_PARAM oqs_param_sigalg_list[][12] = {
+ ///// OQS_TEMPLATE_FRAGMENT_SIGALG_NAMES_START
+ #ifdef OQS_ENABLE_SIG_faest_128s
+     OQS_SIGALG_ENTRY(faest128s, faest128s, faest128s, "1.3.9999.20.1.1", 0),
+-    OQS_SIGALG_ENTRY(p256_faest128s, p256_faest128s, p256_faest128s, "1.3.9999.30.27.1", 1),
+-    OQS_SIGALG_ENTRY(rsa3072_faest128s, rsa3072_faest128s, rsa3072_faest128s, "1.3.9999.30.27.2", 2),
++    OQS_SIGALG_ENTRY(p256_faest128s, p256_faest128s, p256_faest128s, "1.3.9999.30.33.1", 1),
++    OQS_SIGALG_ENTRY(rsa3072_faest128s, rsa3072_faest128s, rsa3072_faest128s, "1.3.9999.30.33.2", 2),
+ #endif
+ #ifdef OQS_ENABLE_SIG_faest_128f
+     OQS_SIGALG_ENTRY(faest128f, faest128f, faest128f, "1.3.9999.20.1.2", 3),
+-    OQS_SIGALG_ENTRY(p256_faest128f, p256_faest128f, p256_faest128f, "1.3.9999.30.28.1", 4),
+-    OQS_SIGALG_ENTRY(rsa3072_faest128f, rsa3072_faest128f, rsa3072_faest128f, "1.3.9999.30.28.2", 5),
++    OQS_SIGALG_ENTRY(p256_faest128f, p256_faest128f, p256_faest128f, "1.3.9999.30.34.1", 4),
++    OQS_SIGALG_ENTRY(rsa3072_faest128f, rsa3072_faest128f, rsa3072_faest128f, "1.3.9999.30.34.2", 5),
+ #endif
+ #ifdef OQS_ENABLE_SIG_faest_192s
+     OQS_SIGALG_ENTRY(faest192s, faest192s, faest192s, "1.3.9999.20.2.1", 6),
+-    OQS_SIGALG_ENTRY(p384_faest192s, p384_faest192s, p384_faest192s, "1.3.9999.30.29.1", 7),
+-    OQS_SIGALG_ENTRY(rsa7680_faest192s, rsa7680_faest192s, rsa7680_faest192s, "1.3.9999.30.29.2", 8),
++    OQS_SIGALG_ENTRY(p384_faest192s, p384_faest192s, p384_faest192s, "1.3.9999.30.35.1", 7),
++    OQS_SIGALG_ENTRY(rsa7680_faest192s, rsa7680_faest192s, rsa7680_faest192s, "1.3.9999.30.35.2", 8),
+ #endif
+ #ifdef OQS_ENABLE_SIG_faest_192f
+     OQS_SIGALG_ENTRY(faest192f, faest192f, faest192f, "1.3.9999.20.2.2", 9),
+-    OQS_SIGALG_ENTRY(p384_faest192f, p384_faest192f, p384_faest192f, "1.3.9999.30.30.1", 10),
+-    OQS_SIGALG_ENTRY(rsa7680_faest192f, rsa7680_faest192f, rsa7680_faest192f, "1.3.9999.30.30.2", 11),
++    OQS_SIGALG_ENTRY(p384_faest192f, p384_faest192f, p384_faest192f, "1.3.9999.30.36.1", 10),
++    OQS_SIGALG_ENTRY(rsa7680_faest192f, rsa7680_faest192f, rsa7680_faest192f, "1.3.9999.30.36.2", 11),
+ #endif
+ #ifdef OQS_ENABLE_SIG_faest_256s
+     OQS_SIGALG_ENTRY(faest256s, faest256s, faest256s, "1.3.9999.20.3.1", 12),
+-    OQS_SIGALG_ENTRY(p521_faest256s, p521_faest256s, p521_faest256s, "1.3.9999.30.31.1", 13),
+-    OQS_SIGALG_ENTRY(rsa15360_faest256s, rsa15360_faest256s, rsa15360_faest256s, "1.3.9999.30.31.2", 14),
++    OQS_SIGALG_ENTRY(p521_faest256s, p521_faest256s, p521_faest256s, "1.3.9999.30.37.1", 13),
++    OQS_SIGALG_ENTRY(rsa15360_faest256s, rsa15360_faest256s, rsa15360_faest256s, "1.3.9999.30.37.2", 14),
+ #endif
+ #ifdef OQS_ENABLE_SIG_faest_256f
+     OQS_SIGALG_ENTRY(faest256f, faest256f, faest256f, "1.3.9999.20.3.2", 15),
+-    OQS_SIGALG_ENTRY(p521_faest256f, p521_faest256f, p521_faest256f, "1.3.9999.30.32.1", 16),
+-    OQS_SIGALG_ENTRY(rsa15360_faest256f, rsa15360_faest256f, rsa15360_faest256f, "1.3.9999.30.32.2", 17),
++    OQS_SIGALG_ENTRY(p521_faest256f, p521_faest256f, p521_faest256f, "1.3.9999.30.38.1", 16),
++    OQS_SIGALG_ENTRY(rsa15360_faest256f, rsa15360_faest256f, rsa15360_faest256f, "1.3.9999.30.38.2", 17),
+ #endif
+ #ifdef OQS_ENABLE_SIG_hawk_512
+     OQS_SIGALG_ENTRY(hawk512, hawk512, hawk512, "1.3.9999.21.1.1", 18),
+-    OQS_SIGALG_ENTRY(p256_hawk512, p256_hawk512, p256_hawk512, "1.3.9999.30.33.1", 19),
+-    OQS_SIGALG_ENTRY(rsa3072_hawk512, rsa3072_hawk512, rsa3072_hawk512, "1.3.9999.30.33.2", 20),
++    OQS_SIGALG_ENTRY(p256_hawk512, p256_hawk512, p256_hawk512, "1.3.9999.30.39.1", 19),
++    OQS_SIGALG_ENTRY(rsa3072_hawk512, rsa3072_hawk512, rsa3072_hawk512, "1.3.9999.30.39.2", 20),
+ #endif
+ #ifdef OQS_ENABLE_SIG_hawk_1024
+     OQS_SIGALG_ENTRY(hawk1024, hawk1024, hawk1024, "1.3.9999.21.2.1", 21),
+-    OQS_SIGALG_ENTRY(p521_hawk1024, p521_hawk1024, p521_hawk1024, "1.3.9999.30.34.1", 22),
+-    OQS_SIGALG_ENTRY(rsa15360_hawk1024, rsa15360_hawk1024, rsa15360_hawk1024, "1.3.9999.30.34.2", 23),
++    OQS_SIGALG_ENTRY(p521_hawk1024, p521_hawk1024, p521_hawk1024, "1.3.9999.30.40.1", 22),
++    OQS_SIGALG_ENTRY(rsa15360_hawk1024, rsa15360_hawk1024, rsa15360_hawk1024, "1.3.9999.30.40.2", 23),
+ #endif
+ #ifdef OQS_ENABLE_SIG_qruov1q7l10v740m100
+     OQS_SIGALG_ENTRY(qruov1q7l10v740m100, qruov1q7l10v740m100, qruov1q7l10v740m100, "1.3.9999.22.1.1", 24),
+-    OQS_SIGALG_ENTRY(p256_qruov1q7l10v740m100, p256_qruov1q7l10v740m100, p256_qruov1q7l10v740m100, "1.3.9999.30.35.1", 25),
+-    OQS_SIGALG_ENTRY(rsa3072_qruov1q7l10v740m100, rsa3072_qruov1q7l10v740m100, rsa3072_qruov1q7l10v740m100, "1.3.9999.30.35.2", 26),
++    OQS_SIGALG_ENTRY(p256_qruov1q7l10v740m100, p256_qruov1q7l10v740m100, p256_qruov1q7l10v740m100, "1.3.9999.30.41.1", 25),
++    OQS_SIGALG_ENTRY(rsa3072_qruov1q7l10v740m100, rsa3072_qruov1q7l10v740m100, rsa3072_qruov1q7l10v740m100, "1.3.9999.30.41.2", 26),
+ #endif
+ #ifdef OQS_ENABLE_SIG_qruov3q7l10v1100m140
+     OQS_SIGALG_ENTRY(qruov3q7l10v1100m140, qruov3q7l10v1100m140, qruov3q7l10v1100m140, "1.3.9999.22.3.1", 27),
+-    OQS_SIGALG_ENTRY(p384_qruov3q7l10v1100m140, p384_qruov3q7l10v1100m140, p384_qruov3q7l10v1100m140, "1.3.9999.30.36.1", 28),
+-    OQS_SIGALG_ENTRY(rsa7680_qruov3q7l10v1100m140, rsa7680_qruov3q7l10v1100m140, rsa7680_qruov3q7l10v1100m140, "1.3.9999.30.36.2", 29),
++    OQS_SIGALG_ENTRY(p384_qruov3q7l10v1100m140, p384_qruov3q7l10v1100m140, p384_qruov3q7l10v1100m140, "1.3.9999.30.42.1", 28),
++    OQS_SIGALG_ENTRY(rsa7680_qruov3q7l10v1100m140, rsa7680_qruov3q7l10v1100m140, rsa7680_qruov3q7l10v1100m140, "1.3.9999.30.42.2", 29),
+ #endif
+ #ifdef OQS_ENABLE_SIG_qruov5q7l10v1490m190
+     OQS_SIGALG_ENTRY(qruov5q7l10v1490m190, qruov5q7l10v1490m190, qruov5q7l10v1490m190, "1.3.9999.22.5.1", 30),
+-    OQS_SIGALG_ENTRY(p521_qruov5q7l10v1490m190, p521_qruov5q7l10v1490m190, p521_qruov5q7l10v1490m190, "1.3.9999.30.37.1", 31),
+-    OQS_SIGALG_ENTRY(rsa15360_qruov5q7l10v1490m190, rsa15360_qruov5q7l10v1490m190, rsa15360_qruov5q7l10v1490m190, "1.3.9999.30.37.2", 32),
++    OQS_SIGALG_ENTRY(p521_qruov5q7l10v1490m190, p521_qruov5q7l10v1490m190, p521_qruov5q7l10v1490m190, "1.3.9999.30.43.1", 31),
++    OQS_SIGALG_ENTRY(rsa15360_qruov5q7l10v1490m190, rsa15360_qruov5q7l10v1490m190, rsa15360_qruov5q7l10v1490m190, "1.3.9999.30.43.2", 32),
+ #endif
+ #ifdef OQS_ENABLE_SIG_ml_dsa_44
+     OQS_SIGALG_ENTRY(mldsa44, mldsa44, mldsa44, "2.16.840.1.101.3.4.3.17", 33),
+@@ -889,66 +913,78 @@ static const OSSL_PARAM oqs_param_sigalg_list[][12] = {
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_128s
+     OQS_SIGALG_ENTRY(slhdsashake128s, slhdsashake128s, slhdsashake128s, "2.16.840.1.101.3.4.3.26", 122),
++    OQS_SIGALG_ENTRY(p256_slhdsashake128s, p256_slhdsashake128s, p256_slhdsashake128s, "1.3.9999.30.24.1", 123),
++    OQS_SIGALG_ENTRY(rsa3072_slhdsashake128s, rsa3072_slhdsashake128s, rsa3072_slhdsashake128s, "1.3.9999.30.24.2", 124),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_128f
+-    OQS_SIGALG_ENTRY(slhdsashake128f, slhdsashake128f, slhdsashake128f, "2.16.840.1.101.3.4.3.27", 123),
++    OQS_SIGALG_ENTRY(slhdsashake128f, slhdsashake128f, slhdsashake128f, "2.16.840.1.101.3.4.3.27", 125),
++    OQS_SIGALG_ENTRY(p256_slhdsashake128f, p256_slhdsashake128f, p256_slhdsashake128f, "1.3.9999.30.25.1", 126),
++    OQS_SIGALG_ENTRY(rsa3072_slhdsashake128f, rsa3072_slhdsashake128f, rsa3072_slhdsashake128f, "1.3.9999.30.25.2", 127),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_192s
+-    OQS_SIGALG_ENTRY(slhdsashake192s, slhdsashake192s, slhdsashake192s, "2.16.840.1.101.3.4.3.28", 124),
++    OQS_SIGALG_ENTRY(slhdsashake192s, slhdsashake192s, slhdsashake192s, "2.16.840.1.101.3.4.3.28", 128),
++    OQS_SIGALG_ENTRY(p384_slhdsashake192s, p384_slhdsashake192s, p384_slhdsashake192s, "1.3.9999.30.26.1", 129),
++    OQS_SIGALG_ENTRY(rsa7680_slhdsashake192s, rsa7680_slhdsashake192s, rsa7680_slhdsashake192s, "1.3.9999.30.26.2", 130),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_192f
+-    OQS_SIGALG_ENTRY(slhdsashake192f, slhdsashake192f, slhdsashake192f, "2.16.840.1.101.3.4.3.29", 125),
++    OQS_SIGALG_ENTRY(slhdsashake192f, slhdsashake192f, slhdsashake192f, "2.16.840.1.101.3.4.3.29", 131),
++    OQS_SIGALG_ENTRY(p384_slhdsashake192f, p384_slhdsashake192f, p384_slhdsashake192f, "1.3.9999.30.27.1", 132),
++    OQS_SIGALG_ENTRY(rsa7680_slhdsashake192f, rsa7680_slhdsashake192f, rsa7680_slhdsashake192f, "1.3.9999.30.27.2", 133),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_256s
+-    OQS_SIGALG_ENTRY(slhdsashake256s, slhdsashake256s, slhdsashake256s, "2.16.840.1.101.3.4.3.30", 126),
++    OQS_SIGALG_ENTRY(slhdsashake256s, slhdsashake256s, slhdsashake256s, "2.16.840.1.101.3.4.3.30", 134),
++    OQS_SIGALG_ENTRY(p521_slhdsashake256s, p521_slhdsashake256s, p521_slhdsashake256s, "1.3.9999.30.28.1", 135),
++    OQS_SIGALG_ENTRY(rsa15360_slhdsashake256s, rsa15360_slhdsashake256s, rsa15360_slhdsashake256s, "1.3.9999.30.28.2", 136),
+ #endif
+ #ifdef OQS_ENABLE_SIG_slh_dsa_pure_shake_256f
+-    OQS_SIGALG_ENTRY(slhdsashake256f, slhdsashake256f, slhdsashake256f, "2.16.840.1.101.3.4.3.31", 127),
++    OQS_SIGALG_ENTRY(slhdsashake256f, slhdsashake256f, slhdsashake256f, "2.16.840.1.101.3.4.3.31", 137),
++    OQS_SIGALG_ENTRY(p521_slhdsashake256f, p521_slhdsashake256f, p521_slhdsashake256f, "1.3.9999.30.29.1", 138),
++    OQS_SIGALG_ENTRY(rsa15360_slhdsashake256f, rsa15360_slhdsashake256f, rsa15360_slhdsashake256f, "1.3.9999.30.29.2", 139),
+ #endif
+ #ifdef OQS_ENABLE_SIG_mqom_mqom2_cat1_gf16_fast_r5
+-    OQS_SIGALG_ENTRY(mqom2cat1gf16fastr5, mqom2cat1gf16fastr5, mqom2cat1gf16fastr5, "1.3.9999.11.1.1", 128),
+-    OQS_SIGALG_ENTRY(p256_mqom2cat1gf16fastr5, p256_mqom2cat1gf16fastr5, p256_mqom2cat1gf16fastr5, "1.3.9999.11.1.2", 129),
+-    OQS_SIGALG_ENTRY(rsa3072_mqom2cat1gf16fastr5, rsa3072_mqom2cat1gf16fastr5, rsa3072_mqom2cat1gf16fastr5, "1.3.9999.30.24.2", 130),
++    OQS_SIGALG_ENTRY(mqom2cat1gf16fastr5, mqom2cat1gf16fastr5, mqom2cat1gf16fastr5, "1.3.9999.11.1.1", 140),
++    OQS_SIGALG_ENTRY(p256_mqom2cat1gf16fastr5, p256_mqom2cat1gf16fastr5, p256_mqom2cat1gf16fastr5, "1.3.9999.11.1.2", 141),
++    OQS_SIGALG_ENTRY(rsa3072_mqom2cat1gf16fastr5, rsa3072_mqom2cat1gf16fastr5, rsa3072_mqom2cat1gf16fastr5, "1.3.9999.30.30.2", 142),
+ #endif
+ #ifdef OQS_ENABLE_SIG_mqom_mqom2_cat3_gf16_fast_r5
+-    OQS_SIGALG_ENTRY(mqom2cat3gf16fastr5, mqom2cat3gf16fastr5, mqom2cat3gf16fastr5, "1.3.9999.11.3.1", 131),
+-    OQS_SIGALG_ENTRY(p384_mqom2cat3gf16fastr5, p384_mqom2cat3gf16fastr5, p384_mqom2cat3gf16fastr5, "1.3.9999.11.3.2", 132),
+-    OQS_SIGALG_ENTRY(rsa7680_mqom2cat3gf16fastr5, rsa7680_mqom2cat3gf16fastr5, rsa7680_mqom2cat3gf16fastr5, "1.3.9999.30.25.2", 133),
++    OQS_SIGALG_ENTRY(mqom2cat3gf16fastr5, mqom2cat3gf16fastr5, mqom2cat3gf16fastr5, "1.3.9999.11.3.1", 143),
++    OQS_SIGALG_ENTRY(p384_mqom2cat3gf16fastr5, p384_mqom2cat3gf16fastr5, p384_mqom2cat3gf16fastr5, "1.3.9999.11.3.2", 144),
++    OQS_SIGALG_ENTRY(rsa7680_mqom2cat3gf16fastr5, rsa7680_mqom2cat3gf16fastr5, rsa7680_mqom2cat3gf16fastr5, "1.3.9999.30.31.2", 145),
+ #endif
+ #ifdef OQS_ENABLE_SIG_mqom_mqom2_cat5_gf16_fast_r5
+-    OQS_SIGALG_ENTRY(mqom2cat5gf16fastr5, mqom2cat5gf16fastr5, mqom2cat5gf16fastr5, "1.3.9999.11.5.1", 134),
+-    OQS_SIGALG_ENTRY(p521_mqom2cat5gf16fastr5, p521_mqom2cat5gf16fastr5, p521_mqom2cat5gf16fastr5, "1.3.9999.11.5.2", 135),
+-    OQS_SIGALG_ENTRY(rsa15360_mqom2cat5gf16fastr5, rsa15360_mqom2cat5gf16fastr5, rsa15360_mqom2cat5gf16fastr5, "1.3.9999.30.26.2", 136),
++    OQS_SIGALG_ENTRY(mqom2cat5gf16fastr5, mqom2cat5gf16fastr5, mqom2cat5gf16fastr5, "1.3.9999.11.5.1", 146),
++    OQS_SIGALG_ENTRY(p521_mqom2cat5gf16fastr5, p521_mqom2cat5gf16fastr5, p521_mqom2cat5gf16fastr5, "1.3.9999.11.5.2", 147),
++    OQS_SIGALG_ENTRY(rsa15360_mqom2cat5gf16fastr5, rsa15360_mqom2cat5gf16fastr5, rsa15360_mqom2cat5gf16fastr5, "1.3.9999.30.32.2", 148),
+ #endif
+ #ifdef OQS_ENABLE_SIG_sdith_hypercube_cat1_gf256
+-    OQS_SIGALG_ENTRY(sdithhypercubecat1gf256, sdithhypercubecat1gf256, sdithhypercubecat1gf256, "1.3.9999.23.1.1", 137),
+-    OQS_SIGALG_ENTRY(p256_sdithhypercubecat1gf256, p256_sdithhypercubecat1gf256, p256_sdithhypercubecat1gf256, "1.3.9999.30.38.1", 138),
+-    OQS_SIGALG_ENTRY(rsa3072_sdithhypercubecat1gf256, rsa3072_sdithhypercubecat1gf256, rsa3072_sdithhypercubecat1gf256, "1.3.9999.30.38.2", 139),
++    OQS_SIGALG_ENTRY(sdithhypercubecat1gf256, sdithhypercubecat1gf256, sdithhypercubecat1gf256, "1.3.9999.23.1.1", 149),
++    OQS_SIGALG_ENTRY(p256_sdithhypercubecat1gf256, p256_sdithhypercubecat1gf256, p256_sdithhypercubecat1gf256, "1.3.9999.30.44.1", 150),
++    OQS_SIGALG_ENTRY(rsa3072_sdithhypercubecat1gf256, rsa3072_sdithhypercubecat1gf256, rsa3072_sdithhypercubecat1gf256, "1.3.9999.30.44.2", 151),
+ #endif
+ #ifdef OQS_ENABLE_SIG_sdith_hypercube_cat3_gf256
+-    OQS_SIGALG_ENTRY(sdithhypercubecat3gf256, sdithhypercubecat3gf256, sdithhypercubecat3gf256, "1.3.9999.23.3.1", 140),
+-    OQS_SIGALG_ENTRY(p384_sdithhypercubecat3gf256, p384_sdithhypercubecat3gf256, p384_sdithhypercubecat3gf256, "1.3.9999.30.39.1", 141),
+-    OQS_SIGALG_ENTRY(rsa7680_sdithhypercubecat3gf256, rsa7680_sdithhypercubecat3gf256, rsa7680_sdithhypercubecat3gf256, "1.3.9999.30.39.2", 142),
++    OQS_SIGALG_ENTRY(sdithhypercubecat3gf256, sdithhypercubecat3gf256, sdithhypercubecat3gf256, "1.3.9999.23.3.1", 152),
++    OQS_SIGALG_ENTRY(p384_sdithhypercubecat3gf256, p384_sdithhypercubecat3gf256, p384_sdithhypercubecat3gf256, "1.3.9999.30.45.1", 153),
++    OQS_SIGALG_ENTRY(rsa7680_sdithhypercubecat3gf256, rsa7680_sdithhypercubecat3gf256, rsa7680_sdithhypercubecat3gf256, "1.3.9999.30.45.2", 154),
+ #endif
+ #ifdef OQS_ENABLE_SIG_sdith_hypercube_cat5_gf256
+-    OQS_SIGALG_ENTRY(sdithhypercubecat5gf256, sdithhypercubecat5gf256, sdithhypercubecat5gf256, "1.3.9999.23.5.1", 143),
+-    OQS_SIGALG_ENTRY(p521_sdithhypercubecat5gf256, p521_sdithhypercubecat5gf256, p521_sdithhypercubecat5gf256, "1.3.9999.30.40.1", 144),
+-    OQS_SIGALG_ENTRY(rsa15360_sdithhypercubecat5gf256, rsa15360_sdithhypercubecat5gf256, rsa15360_sdithhypercubecat5gf256, "1.3.9999.30.40.2", 145),
++    OQS_SIGALG_ENTRY(sdithhypercubecat5gf256, sdithhypercubecat5gf256, sdithhypercubecat5gf256, "1.3.9999.23.5.1", 155),
++    OQS_SIGALG_ENTRY(p521_sdithhypercubecat5gf256, p521_sdithhypercubecat5gf256, p521_sdithhypercubecat5gf256, "1.3.9999.30.46.1", 156),
++    OQS_SIGALG_ENTRY(rsa15360_sdithhypercubecat5gf256, rsa15360_sdithhypercubecat5gf256, rsa15360_sdithhypercubecat5gf256, "1.3.9999.30.46.2", 157),
+ #endif
+ #ifdef OQS_ENABLE_SIG_sdith_threshold_cat1_gf256
+-    OQS_SIGALG_ENTRY(sdiththresholdcat1gf256, sdiththresholdcat1gf256, sdiththresholdcat1gf256, "1.3.9999.23.1.2", 146),
+-    OQS_SIGALG_ENTRY(p256_sdiththresholdcat1gf256, p256_sdiththresholdcat1gf256, p256_sdiththresholdcat1gf256, "1.3.9999.30.41.1", 147),
+-    OQS_SIGALG_ENTRY(rsa3072_sdiththresholdcat1gf256, rsa3072_sdiththresholdcat1gf256, rsa3072_sdiththresholdcat1gf256, "1.3.9999.30.41.2", 148),
++    OQS_SIGALG_ENTRY(sdiththresholdcat1gf256, sdiththresholdcat1gf256, sdiththresholdcat1gf256, "1.3.9999.23.1.2", 158),
++    OQS_SIGALG_ENTRY(p256_sdiththresholdcat1gf256, p256_sdiththresholdcat1gf256, p256_sdiththresholdcat1gf256, "1.3.9999.30.47.1", 159),
++    OQS_SIGALG_ENTRY(rsa3072_sdiththresholdcat1gf256, rsa3072_sdiththresholdcat1gf256, rsa3072_sdiththresholdcat1gf256, "1.3.9999.30.47.2", 160),
+ #endif
+ #ifdef OQS_ENABLE_SIG_sdith_threshold_cat3_gf256
+-    OQS_SIGALG_ENTRY(sdiththresholdcat3gf256, sdiththresholdcat3gf256, sdiththresholdcat3gf256, "1.3.9999.23.3.2", 149),
+-    OQS_SIGALG_ENTRY(p384_sdiththresholdcat3gf256, p384_sdiththresholdcat3gf256, p384_sdiththresholdcat3gf256, "1.3.9999.30.42.1", 150),
+-    OQS_SIGALG_ENTRY(rsa7680_sdiththresholdcat3gf256, rsa7680_sdiththresholdcat3gf256, rsa7680_sdiththresholdcat3gf256, "1.3.9999.30.42.2", 151),
++    OQS_SIGALG_ENTRY(sdiththresholdcat3gf256, sdiththresholdcat3gf256, sdiththresholdcat3gf256, "1.3.9999.23.3.2", 161),
++    OQS_SIGALG_ENTRY(p384_sdiththresholdcat3gf256, p384_sdiththresholdcat3gf256, p384_sdiththresholdcat3gf256, "1.3.9999.30.48.1", 162),
++    OQS_SIGALG_ENTRY(rsa7680_sdiththresholdcat3gf256, rsa7680_sdiththresholdcat3gf256, rsa7680_sdiththresholdcat3gf256, "1.3.9999.30.48.2", 163),
+ #endif
+ #ifdef OQS_ENABLE_SIG_sdith_threshold_cat5_gf256
+-    OQS_SIGALG_ENTRY(sdiththresholdcat5gf256, sdiththresholdcat5gf256, sdiththresholdcat5gf256, "1.3.9999.23.5.2", 152),
+-    OQS_SIGALG_ENTRY(p521_sdiththresholdcat5gf256, p521_sdiththresholdcat5gf256, p521_sdiththresholdcat5gf256, "1.3.9999.30.43.1", 153),
+-    OQS_SIGALG_ENTRY(rsa15360_sdiththresholdcat5gf256, rsa15360_sdiththresholdcat5gf256, rsa15360_sdiththresholdcat5gf256, "1.3.9999.30.43.2", 154),
++    OQS_SIGALG_ENTRY(sdiththresholdcat5gf256, sdiththresholdcat5gf256, sdiththresholdcat5gf256, "1.3.9999.23.5.2", 164),
++    OQS_SIGALG_ENTRY(p521_sdiththresholdcat5gf256, p521_sdiththresholdcat5gf256, p521_sdiththresholdcat5gf256, "1.3.9999.30.49.1", 165),
++    OQS_SIGALG_ENTRY(rsa15360_sdiththresholdcat5gf256, rsa15360_sdiththresholdcat5gf256, rsa15360_sdiththresholdcat5gf256, "1.3.9999.30.49.2", 166),
+ #endif
+ ///// OQS_TEMPLATE_FRAGMENT_SIGALG_NAMES_END
+ };
+diff --git a/oqsprov/oqsprov_keys.c b/oqsprov/oqsprov_keys.c
+index bf2b42f..516e570 100644
+--- a/oqsprov/oqsprov_keys.c
++++ b/oqsprov/oqsprov_keys.c
+@@ -57,9 +57,9 @@ static int oqsx_key_recreate_classickey(OQSX_KEY *key, oqsx_key_op_t op);
+ 
+ 
+ #ifdef OQS_KEM_ENCODERS
+-#define NID_TABLE_LEN 209
++#define NID_TABLE_LEN 221
+ #else
+-#define NID_TABLE_LEN 155
++#define NID_TABLE_LEN 167
+ #endif
+ 
+ static oqs_nid_name_t nid_names[NID_TABLE_LEN] = {
+@@ -244,11 +244,23 @@ static oqs_nid_name_t nid_names[NID_TABLE_LEN] = {
+        { 0, "p521_slhdsasha2256f", OQS_SIG_alg_slh_dsa_pure_sha2_256f, KEY_TYPE_HYB_SIG, 256 },
+        { 0, "rsa15360_slhdsasha2256f", OQS_SIG_alg_slh_dsa_pure_sha2_256f, KEY_TYPE_HYB_SIG, 256 },
+        { 0, "slhdsashake128s", OQS_SIG_alg_slh_dsa_pure_shake_128s, KEY_TYPE_SIG, 128 },
++       { 0, "p256_slhdsashake128s", OQS_SIG_alg_slh_dsa_pure_shake_128s, KEY_TYPE_HYB_SIG, 128 },
++       { 0, "rsa3072_slhdsashake128s", OQS_SIG_alg_slh_dsa_pure_shake_128s, KEY_TYPE_HYB_SIG, 128 },
+        { 0, "slhdsashake128f", OQS_SIG_alg_slh_dsa_pure_shake_128f, KEY_TYPE_SIG, 128 },
++       { 0, "p256_slhdsashake128f", OQS_SIG_alg_slh_dsa_pure_shake_128f, KEY_TYPE_HYB_SIG, 128 },
++       { 0, "rsa3072_slhdsashake128f", OQS_SIG_alg_slh_dsa_pure_shake_128f, KEY_TYPE_HYB_SIG, 128 },
+        { 0, "slhdsashake192s", OQS_SIG_alg_slh_dsa_pure_shake_192s, KEY_TYPE_SIG, 192 },
++       { 0, "p384_slhdsashake192s", OQS_SIG_alg_slh_dsa_pure_shake_192s, KEY_TYPE_HYB_SIG, 192 },
++       { 0, "rsa7680_slhdsashake192s", OQS_SIG_alg_slh_dsa_pure_shake_192s, KEY_TYPE_HYB_SIG, 192 },
+        { 0, "slhdsashake192f", OQS_SIG_alg_slh_dsa_pure_shake_192f, KEY_TYPE_SIG, 192 },
++       { 0, "p384_slhdsashake192f", OQS_SIG_alg_slh_dsa_pure_shake_192f, KEY_TYPE_HYB_SIG, 192 },
++       { 0, "rsa7680_slhdsashake192f", OQS_SIG_alg_slh_dsa_pure_shake_192f, KEY_TYPE_HYB_SIG, 192 },
+        { 0, "slhdsashake256s", OQS_SIG_alg_slh_dsa_pure_shake_256s, KEY_TYPE_SIG, 256 },
++       { 0, "p521_slhdsashake256s", OQS_SIG_alg_slh_dsa_pure_shake_256s, KEY_TYPE_HYB_SIG, 256 },
++       { 0, "rsa15360_slhdsashake256s", OQS_SIG_alg_slh_dsa_pure_shake_256s, KEY_TYPE_HYB_SIG, 256 },
+        { 0, "slhdsashake256f", OQS_SIG_alg_slh_dsa_pure_shake_256f, KEY_TYPE_SIG, 256 },
++       { 0, "p521_slhdsashake256f", OQS_SIG_alg_slh_dsa_pure_shake_256f, KEY_TYPE_HYB_SIG, 256 },
++       { 0, "rsa15360_slhdsashake256f", OQS_SIG_alg_slh_dsa_pure_shake_256f, KEY_TYPE_HYB_SIG, 256 },
+        { 0, "mqom2cat1gf16fastr5", OQS_SIG_alg_mqom_mqom2_cat1_gf16_fast_r5, KEY_TYPE_SIG, 128 },
+        { 0, "p256_mqom2cat1gf16fastr5", OQS_SIG_alg_mqom_mqom2_cat1_gf16_fast_r5, KEY_TYPE_HYB_SIG, 128 },
+        { 0, "rsa3072_mqom2cat1gf16fastr5", OQS_SIG_alg_mqom_mqom2_cat1_gf16_fast_r5, KEY_TYPE_HYB_SIG, 128 },
+diff --git a/scripts/common.py b/scripts/common.py
+index 8f3289a..b8f6aa6 100644
+--- a/scripts/common.py
++++ b/scripts/common.py
+@@ -19,7 +19,7 @@ signatures_oqs = [
+     # post-quantum signatures
+     'faest128s','faest128f','faest192s','faest192f','faest256s','faest256f','hawk512','hawk1024','qruov1q7l10v740m100','qruov3q7l10v1100m140','qruov5q7l10v1490m190','mldsa44','mldsa65','mldsa87','falcon512','falconpadded512','falcon1024','falconpadded1024','mayo1','mayo2','mayo3','mayo5','CROSSrsdp128balanced','CROSSrsdp128fast','CROSSrsdp128small','CROSSrsdp192balanced','CROSSrsdp192fast','OV_Is_pkc','OV_Ip_pkc','OV_III_pkc','OV_V_pkc','OV_Ip_pkc_skc','OV_III_pkc_skc','OV_V_pkc_skc','snova2454','snova2454esk','snova37172','snova2455','snova2965','slhdsasha2128s','slhdsasha2128f','slhdsasha2192s','slhdsasha2192f','slhdsasha2256s','slhdsasha2256f','slhdsashake128s','slhdsashake128f','slhdsashake192s','slhdsashake192f','slhdsashake256s','slhdsashake256f','mqom2cat1gf16fastr5','mqom2cat3gf16fastr5','mqom2cat5gf16fastr5','sdithhypercubecat1gf256','sdithhypercubecat3gf256','sdithhypercubecat5gf256','sdiththresholdcat1gf256','sdiththresholdcat3gf256','sdiththresholdcat5gf256',
+     # post-quantum + classical signatures
+-    'p256_faest128s','rsa3072_faest128s','p256_faest128f','rsa3072_faest128f','p384_faest192s','rsa7680_faest192s','p384_faest192f','rsa7680_faest192f','p521_faest256s','rsa15360_faest256s','p521_faest256f','rsa15360_faest256f','p256_hawk512','rsa3072_hawk512','p521_hawk1024','rsa15360_hawk1024','p256_qruov1q7l10v740m100','rsa3072_qruov1q7l10v740m100','p384_qruov3q7l10v1100m140','rsa7680_qruov3q7l10v1100m140','p521_qruov5q7l10v1490m190','rsa15360_qruov5q7l10v1490m190','p256_mldsa44','rsa3072_mldsa44','p384_mldsa65','rsa7680_mldsa65','p521_mldsa87','rsa15360_mldsa87','p256_falcon512','rsa3072_falcon512','p256_falconpadded512','rsa3072_falconpadded512','p521_falcon1024','rsa15360_falcon1024','p521_falconpadded1024','p256_mayo1','rsa3072_mayo1','p256_mayo2','rsa3072_mayo2','p384_mayo3','rsa7680_mayo3','p521_mayo5','rsa15360_mayo5','p256_OV_Is_pkc','rsa3072_OV_Is_pkc','p256_OV_Ip_pkc','rsa3072_OV_Ip_pkc','p384_OV_III_pkc','rsa7680_OV_III_pkc','p521_OV_V_pkc','rsa15360_OV_V_pkc','p256_OV_Ip_pkc_skc','p384_OV_III_pkc_skc','p521_OV_V_pkc_skc','p256_snova2454','rsa3072_snova2454','p256_snova2454esk','p256_snova37172','rsa3072_snova37172','p384_snova2455','rsa7680_snova2455','p521_snova2965','rsa15360_snova2965','p256_slhdsasha2128s','rsa3072_slhdsasha2128s','p256_slhdsasha2128f','rsa3072_slhdsasha2128f','p384_slhdsasha2192s','rsa7680_slhdsasha2192s','p384_slhdsasha2192f','rsa7680_slhdsasha2192f','p521_slhdsasha2256s','rsa15360_slhdsasha2256s','p521_slhdsasha2256f','rsa15360_slhdsasha2256f','p256_mqom2cat1gf16fastr5','rsa3072_mqom2cat1gf16fastr5','p384_mqom2cat3gf16fastr5','rsa7680_mqom2cat3gf16fastr5','p521_mqom2cat5gf16fastr5','rsa15360_mqom2cat5gf16fastr5','p256_sdithhypercubecat1gf256','rsa3072_sdithhypercubecat1gf256','p384_sdithhypercubecat3gf256','rsa7680_sdithhypercubecat3gf256','p521_sdithhypercubecat5gf256','rsa15360_sdithhypercubecat5gf256','p256_sdiththresholdcat1gf256','rsa3072_sdiththresholdcat1gf256','p384_sdiththresholdcat3gf256','rsa7680_sdiththresholdcat3gf256','p521_sdiththresholdcat5gf256','rsa15360_sdiththresholdcat5gf256',
++    'p256_faest128s','rsa3072_faest128s','p256_faest128f','rsa3072_faest128f','p384_faest192s','rsa7680_faest192s','p384_faest192f','rsa7680_faest192f','p521_faest256s','rsa15360_faest256s','p521_faest256f','rsa15360_faest256f','p256_hawk512','rsa3072_hawk512','p521_hawk1024','rsa15360_hawk1024','p256_qruov1q7l10v740m100','rsa3072_qruov1q7l10v740m100','p384_qruov3q7l10v1100m140','rsa7680_qruov3q7l10v1100m140','p521_qruov5q7l10v1490m190','rsa15360_qruov5q7l10v1490m190','p256_mldsa44','rsa3072_mldsa44','p384_mldsa65','rsa7680_mldsa65','p521_mldsa87','rsa15360_mldsa87','p256_falcon512','rsa3072_falcon512','p256_falconpadded512','rsa3072_falconpadded512','p521_falcon1024','rsa15360_falcon1024','p521_falconpadded1024','p256_mayo1','rsa3072_mayo1','p256_mayo2','rsa3072_mayo2','p384_mayo3','rsa7680_mayo3','p521_mayo5','rsa15360_mayo5','p256_OV_Is_pkc','rsa3072_OV_Is_pkc','p256_OV_Ip_pkc','rsa3072_OV_Ip_pkc','p384_OV_III_pkc','rsa7680_OV_III_pkc','p521_OV_V_pkc','rsa15360_OV_V_pkc','p256_OV_Ip_pkc_skc','p384_OV_III_pkc_skc','p521_OV_V_pkc_skc','p256_snova2454','rsa3072_snova2454','p256_snova2454esk','p256_snova37172','rsa3072_snova37172','p384_snova2455','rsa7680_snova2455','p521_snova2965','rsa15360_snova2965','p256_slhdsasha2128s','rsa3072_slhdsasha2128s','p256_slhdsasha2128f','rsa3072_slhdsasha2128f','p384_slhdsasha2192s','rsa7680_slhdsasha2192s','p384_slhdsasha2192f','rsa7680_slhdsasha2192f','p521_slhdsasha2256s','rsa15360_slhdsasha2256s','p521_slhdsasha2256f','rsa15360_slhdsasha2256f','p256_slhdsashake128s','rsa3072_slhdsashake128s','p256_slhdsashake128f','rsa3072_slhdsashake128f','p384_slhdsashake192s','rsa7680_slhdsashake192s','p384_slhdsashake192f','rsa7680_slhdsashake192f','p521_slhdsashake256s','rsa15360_slhdsashake256s','p521_slhdsashake256f','rsa15360_slhdsashake256f','p256_mqom2cat1gf16fastr5','rsa3072_mqom2cat1gf16fastr5','p384_mqom2cat3gf16fastr5','rsa7680_mqom2cat3gf16fastr5','p521_mqom2cat5gf16fastr5','rsa15360_mqom2cat5gf16fastr5','p256_sdithhypercubecat1gf256','rsa3072_sdithhypercubecat1gf256','p384_sdithhypercubecat3gf256','rsa7680_sdithhypercubecat3gf256','p521_sdithhypercubecat5gf256','rsa15360_sdithhypercubecat5gf256','p256_sdiththresholdcat1gf256','rsa3072_sdiththresholdcat1gf256','p384_sdiththresholdcat3gf256','rsa7680_sdiththresholdcat3gf256','p521_sdiththresholdcat5gf256','rsa15360_sdiththresholdcat5gf256',
+     ##### OQS_TEMPLATE_FRAGMENT_SIG_ALGS_END
+ ]
+ 
+diff --git a/test/test_common.c b/test/test_common.c
+index ea81365..5c5d407 100644
+--- a/test/test_common.c
++++ b/test/test_common.c
+@@ -10,7 +10,7 @@
+ 
+ /** \brief List of hybrid signature algorithms. */
+ const char *kHybridSignatureAlgorithms[] = {
+-"p256_faest128s","rsa3072_faest128s","p256_faest128f","rsa3072_faest128f","p384_faest192s","rsa7680_faest192s","p384_faest192f","rsa7680_faest192f","p521_faest256s","rsa15360_faest256s","p521_faest256f","rsa15360_faest256f","p256_hawk512","rsa3072_hawk512","p521_hawk1024","rsa15360_hawk1024","p256_qruov1q7l10v740m100","rsa3072_qruov1q7l10v740m100","p384_qruov3q7l10v1100m140","rsa7680_qruov3q7l10v1100m140","p521_qruov5q7l10v1490m190","rsa15360_qruov5q7l10v1490m190","p256_mldsa44","rsa3072_mldsa44","p384_mldsa65","rsa7680_mldsa65","p521_mldsa87","rsa15360_mldsa87","p256_falcon512","rsa3072_falcon512","p256_falconpadded512","rsa3072_falconpadded512","p521_falcon1024","rsa15360_falcon1024","p521_falconpadded1024","p256_mayo1","rsa3072_mayo1","p256_mayo2","rsa3072_mayo2","p384_mayo3","rsa7680_mayo3","p521_mayo5","rsa15360_mayo5","p256_OV_Is_pkc","rsa3072_OV_Is_pkc","p256_OV_Ip_pkc","rsa3072_OV_Ip_pkc","p384_OV_III_pkc","rsa7680_OV_III_pkc","p521_OV_V_pkc","rsa15360_OV_V_pkc","p256_OV_Is_pkc_skc","p256_OV_Ip_pkc_skc","p384_OV_III_pkc_skc","p521_OV_V_pkc_skc","p256_snova2454","rsa3072_snova2454","p256_snova2454esk","p256_snova37172","rsa3072_snova37172","p384_snova2455","rsa7680_snova2455","p521_snova2965","rsa15360_snova2965","p256_slhdsasha2128s","rsa3072_slhdsasha2128s","p256_slhdsasha2128f","rsa3072_slhdsasha2128f","p384_slhdsasha2192s","rsa7680_slhdsasha2192s","p384_slhdsasha2192f","rsa7680_slhdsasha2192f","p521_slhdsasha2256s","rsa15360_slhdsasha2256s","p521_slhdsasha2256f","rsa15360_slhdsasha2256f","p256_mqom2cat1gf16fastr5","rsa3072_mqom2cat1gf16fastr5","p384_mqom2cat3gf16fastr5","rsa7680_mqom2cat3gf16fastr5","p521_mqom2cat5gf16fastr5","rsa15360_mqom2cat5gf16fastr5","p256_sdithhypercubecat1gf256","rsa3072_sdithhypercubecat1gf256","p384_sdithhypercubecat3gf256","rsa7680_sdithhypercubecat3gf256","p521_sdithhypercubecat5gf256","rsa15360_sdithhypercubecat5gf256","p256_sdiththresholdcat1gf256","rsa3072_sdiththresholdcat1gf256","p384_sdiththresholdcat3gf256","rsa7680_sdiththresholdcat3gf256","p521_sdiththresholdcat5gf256","rsa15360_sdiththresholdcat5gf256",
++"p256_faest128s","rsa3072_faest128s","p256_faest128f","rsa3072_faest128f","p384_faest192s","rsa7680_faest192s","p384_faest192f","rsa7680_faest192f","p521_faest256s","rsa15360_faest256s","p521_faest256f","rsa15360_faest256f","p256_hawk512","rsa3072_hawk512","p521_hawk1024","rsa15360_hawk1024","p256_qruov1q7l10v740m100","rsa3072_qruov1q7l10v740m100","p384_qruov3q7l10v1100m140","rsa7680_qruov3q7l10v1100m140","p521_qruov5q7l10v1490m190","rsa15360_qruov5q7l10v1490m190","p256_mldsa44","rsa3072_mldsa44","p384_mldsa65","rsa7680_mldsa65","p521_mldsa87","rsa15360_mldsa87","p256_falcon512","rsa3072_falcon512","p256_falconpadded512","rsa3072_falconpadded512","p521_falcon1024","rsa15360_falcon1024","p521_falconpadded1024","p256_mayo1","rsa3072_mayo1","p256_mayo2","rsa3072_mayo2","p384_mayo3","rsa7680_mayo3","p521_mayo5","rsa15360_mayo5","p256_OV_Is_pkc","rsa3072_OV_Is_pkc","p256_OV_Ip_pkc","rsa3072_OV_Ip_pkc","p384_OV_III_pkc","rsa7680_OV_III_pkc","p521_OV_V_pkc","rsa15360_OV_V_pkc","p256_OV_Is_pkc_skc","p256_OV_Ip_pkc_skc","p384_OV_III_pkc_skc","p521_OV_V_pkc_skc","p256_snova2454","rsa3072_snova2454","p256_snova2454esk","p256_snova37172","rsa3072_snova37172","p384_snova2455","rsa7680_snova2455","p521_snova2965","rsa15360_snova2965","p256_slhdsasha2128s","rsa3072_slhdsasha2128s","p256_slhdsasha2128f","rsa3072_slhdsasha2128f","p384_slhdsasha2192s","rsa7680_slhdsasha2192s","p384_slhdsasha2192f","rsa7680_slhdsasha2192f","p521_slhdsasha2256s","rsa15360_slhdsasha2256s","p521_slhdsasha2256f","rsa15360_slhdsasha2256f","p256_slhdsashake128s","rsa3072_slhdsashake128s","p256_slhdsashake128f","rsa3072_slhdsashake128f","p384_slhdsashake192s","rsa7680_slhdsashake192s","p384_slhdsashake192f","rsa7680_slhdsashake192f","p521_slhdsashake256s","rsa15360_slhdsashake256s","p521_slhdsashake256f","rsa15360_slhdsashake256f","p256_mqom2cat1gf16fastr5","rsa3072_mqom2cat1gf16fastr5","p384_mqom2cat3gf16fastr5","rsa7680_mqom2cat3gf16fastr5","p521_mqom2cat5gf16fastr5","rsa15360_mqom2cat5gf16fastr5","p256_sdithhypercubecat1gf256","rsa3072_sdithhypercubecat1gf256","p384_sdithhypercubecat3gf256","rsa7680_sdithhypercubecat3gf256","p521_sdithhypercubecat5gf256","rsa15360_sdithhypercubecat5gf256","p256_sdiththresholdcat1gf256","rsa3072_sdiththresholdcat1gf256","p384_sdiththresholdcat3gf256","rsa7680_sdiththresholdcat3gf256","p521_sdiththresholdcat5gf256","rsa15360_sdiththresholdcat5gf256",
+ NULL,
+ };
+ ///// OQS_TEMPLATE_FRAGMENT_HYBRID_SIG_ALGS_END
+@@ -24,7 +24,7 @@ typedef struct {
+ 
+ 
+ 
+-#define SIGS_DICT_LEN 155
++#define SIGS_DICT_LEN 167
+ 
+ /** \brief Mapping of signature algorithm with PQ naming in liboqs */
+ oqs_naming_dict kOQSNameMapSignatureAlgorithms[SIGS_DICT_LEN] = {
+@@ -75,12 +75,12 @@ oqs_naming_dict kOQSNameMapSignatureAlgorithms[SIGS_DICT_LEN] = {
+       { OQS_SIG_alg_slh_dsa_pure_sha2_192f, "slhdsasha2192f" },{ OQS_SIG_alg_slh_dsa_pure_sha2_192f, "p384_slhdsasha2192f" },{ OQS_SIG_alg_slh_dsa_pure_sha2_192f, "rsa7680_slhdsasha2192f" },
+       { OQS_SIG_alg_slh_dsa_pure_sha2_256s, "slhdsasha2256s" },{ OQS_SIG_alg_slh_dsa_pure_sha2_256s, "p521_slhdsasha2256s" },{ OQS_SIG_alg_slh_dsa_pure_sha2_256s, "rsa15360_slhdsasha2256s" },
+       { OQS_SIG_alg_slh_dsa_pure_sha2_256f, "slhdsasha2256f" },{ OQS_SIG_alg_slh_dsa_pure_sha2_256f, "p521_slhdsasha2256f" },{ OQS_SIG_alg_slh_dsa_pure_sha2_256f, "rsa15360_slhdsasha2256f" },
+-      { OQS_SIG_alg_slh_dsa_pure_shake_128s, "slhdsashake128s" },
+-      { OQS_SIG_alg_slh_dsa_pure_shake_128f, "slhdsashake128f" },
+-      { OQS_SIG_alg_slh_dsa_pure_shake_192s, "slhdsashake192s" },
+-      { OQS_SIG_alg_slh_dsa_pure_shake_192f, "slhdsashake192f" },
+-      { OQS_SIG_alg_slh_dsa_pure_shake_256s, "slhdsashake256s" },
+-      { OQS_SIG_alg_slh_dsa_pure_shake_256f, "slhdsashake256f" },
++      { OQS_SIG_alg_slh_dsa_pure_shake_128s, "slhdsashake128s" },{ OQS_SIG_alg_slh_dsa_pure_shake_128s, "p256_slhdsashake128s" },{ OQS_SIG_alg_slh_dsa_pure_shake_128s, "rsa3072_slhdsashake128s" },
++      { OQS_SIG_alg_slh_dsa_pure_shake_128f, "slhdsashake128f" },{ OQS_SIG_alg_slh_dsa_pure_shake_128f, "p256_slhdsashake128f" },{ OQS_SIG_alg_slh_dsa_pure_shake_128f, "rsa3072_slhdsashake128f" },
++      { OQS_SIG_alg_slh_dsa_pure_shake_192s, "slhdsashake192s" },{ OQS_SIG_alg_slh_dsa_pure_shake_192s, "p384_slhdsashake192s" },{ OQS_SIG_alg_slh_dsa_pure_shake_192s, "rsa7680_slhdsashake192s" },
++      { OQS_SIG_alg_slh_dsa_pure_shake_192f, "slhdsashake192f" },{ OQS_SIG_alg_slh_dsa_pure_shake_192f, "p384_slhdsashake192f" },{ OQS_SIG_alg_slh_dsa_pure_shake_192f, "rsa7680_slhdsashake192f" },
++      { OQS_SIG_alg_slh_dsa_pure_shake_256s, "slhdsashake256s" },{ OQS_SIG_alg_slh_dsa_pure_shake_256s, "p521_slhdsashake256s" },{ OQS_SIG_alg_slh_dsa_pure_shake_256s, "rsa15360_slhdsashake256s" },
++      { OQS_SIG_alg_slh_dsa_pure_shake_256f, "slhdsashake256f" },{ OQS_SIG_alg_slh_dsa_pure_shake_256f, "p521_slhdsashake256f" },{ OQS_SIG_alg_slh_dsa_pure_shake_256f, "rsa15360_slhdsashake256f" },
+       { OQS_SIG_alg_mqom_mqom2_cat1_gf16_fast_r5, "mqom2cat1gf16fastr5" },{ OQS_SIG_alg_mqom_mqom2_cat1_gf16_fast_r5, "p256_mqom2cat1gf16fastr5" },{ OQS_SIG_alg_mqom_mqom2_cat1_gf16_fast_r5, "rsa3072_mqom2cat1gf16fastr5" },
+       { OQS_SIG_alg_mqom_mqom2_cat3_gf16_fast_r5, "mqom2cat3gf16fastr5" },{ OQS_SIG_alg_mqom_mqom2_cat3_gf16_fast_r5, "p384_mqom2cat3gf16fastr5" },{ OQS_SIG_alg_mqom_mqom2_cat3_gf16_fast_r5, "rsa7680_mqom2cat3gf16fastr5" },
+       { OQS_SIG_alg_mqom_mqom2_cat5_gf16_fast_r5, "mqom2cat5gf16fastr5" },{ OQS_SIG_alg_mqom_mqom2_cat5_gf16_fast_r5, "p521_mqom2cat5gf16fastr5" },{ OQS_SIG_alg_mqom_mqom2_cat5_gf16_fast_r5, "rsa15360_mqom2cat5gf16fastr5" },

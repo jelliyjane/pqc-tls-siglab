@@ -66,8 +66,10 @@ as the unique condition key. Join cost profiles on the exact, case-sensitive
   level labels. Apply an explicitly documented policy mapping if needed.
 
 The candidate names in these files are the recorded experiment identifiers.
-This release does **not** provide an audited mapping to Bandit arm IDs or TLS
-SignatureScheme code points. Do not infer either from row order.
+The [147-candidate handoff](../../repro/pc147/README.md) supplies the runtime-verified
+TLS code point mapping and separate Bandit weight-arm definitions. Arm IDs are
+not algorithm IDs. Code points must be interpreted within their provider-build
+scope; do not infer any identifier from row order.
 
 ## EVP v2 cost protocol
 
