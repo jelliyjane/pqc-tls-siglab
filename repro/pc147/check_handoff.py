@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate published identifiers, action indices, joins, and source hashes."""
+"""Validate Pareto handoff identifiers, cost joins, and source hashes."""
 import csv
 import hashlib
 import json
@@ -18,7 +18,6 @@ def main():
     assert sum(r['provider_build'] == 'standard' for r in mapping) == 135
     assert sum(r['provider_build'] == 'shake98' for r in mapping) == 12
     for r in mapping:
-        assert r['bandit_arm_id'] is None
         assert int(r['tls_code_point_hex'], 16) == r['tls_code_point_decimal']
     for scope in ['standard', 'shake98']:
         rows = [r for r in mapping if r['provider_build'] == scope]
@@ -27,12 +26,6 @@ def main():
         with (ROOT / 'results/pc_tls_20260929' / name).open(newline='') as f:
             rows = list(csv.DictReader(f))
         assert {r['algorithm'] for r in rows} == {r['algorithm'] for r in mapping}
-    arms = json.loads((HERE / 'bandit_arms.json').read_text())['variants']
-    for variant, count, dimensions in zip(arms, [126, 66], [5, 3]):
-        assert len(variant['arms']) == count
-        for i, arm in enumerate(variant['arms']):
-            assert arm['arm_id'] == i and len(arm['weights']) == dimensions
-            assert abs(sum(arm['weights']) - 1) < 1e-9
     provenance = json.loads((HERE / 'build_provenance.json').read_text())
     digest = lambda path: hashlib.sha256(path.read_bytes()).hexdigest()
     assert digest(HERE / 'provider-shake98.patch') == provenance['rebuild_sources']['provider_shake98']['patch_sha256']
@@ -41,7 +34,7 @@ def main():
     assert digest(HERE / 'evp_sig_bench.c') == protocol['benchmark_source_sha256']
     for binary, key in [('standard', 'provider_binary_sha256'), ('shake98', 'shake_provider_binary_sha256'), ('libcrypto', 'libcrypto_sha256')]:
         assert provenance['runtime_binary_sha256'][binary] == protocol[key]
-    print('PASS: 147 candidates, 49/98 split, 135/12 provider scopes, exact cost joins, 126/66 arms, and historical hashes')
+    print('PASS: 147 candidates, 49/98 split, 135/12 provider scopes, exact cost joins, and historical hashes')
 
 
 if __name__ == '__main__':

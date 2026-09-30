@@ -66,10 +66,9 @@ as the unique condition key. Join cost profiles on the exact, case-sensitive
   level labels. Apply an explicitly documented policy mapping if needed.
 
 The candidate names in these files are the recorded experiment identifiers.
-The [147-candidate handoff](../../repro/pc147/README.md) supplies the runtime-verified
-TLS code point mapping and separate Bandit weight-arm definitions. Arm IDs are
-not algorithm IDs. Code points must be interpreted within their provider-build
-scope; do not infer any identifier from row order.
+The [Pareto-filter handoff](../../repro/pc147/README.md) supplies the candidate
+mapping and instructions for using the cost profiles. TLS code points must be
+interpreted within their provider-build scope; do not infer identifiers from row order.
 
 ## EVP v2 cost protocol
 

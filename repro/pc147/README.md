@@ -1,171 +1,49 @@
-# 147-candidate experiment handoff
+# 파레토 필터 실험 안내
 
-Use this directory with the [published PC results](../../results/pc_tls_20260929/README.md).
-It supplies the candidate identifiers, Bandit action definitions, custom provider
-patch, and build information needed to interpret those results.
+기존 PC 실험 결과를 사용해, 클라이언트가 지원하는 후보 중 비용 면에서 지배되는 후보를 제거하는 파레토 필터를 구현하기 위한 자료입니다. 기존 결과로 분석할 때는 OpenSSL을 다시 빌드하거나 비용을 재측정할 필요가 없습니다.
 
-## What is included
+## 먼저 볼 파일
 
-- [algorithm_mapping.json](algorithm_mapping.json): all 49 pure PQC and 98
-  composite candidates, their OpenSSL arguments, fetched EVP signature names,
-  provider names, TLS SignatureScheme names, and hexadecimal/decimal code points.
-- [bandit_arms.json](bandit_arms.json): zero-based arm IDs and their weight vectors
-  from the saved models. It contains the September 27 five-term model's 126 arms
-  and the older three-term model's 66 arms, under separate variant names.
-- [build_provenance.json](build_provenance.json): runtime versions, binary hashes,
-  public source pins, runtime OID overrides, and the limits of the recovered
-  historical build information.
-- [provider-shake98.patch](provider-shake98.patch): the generator changes and
-  generated C changes from the actual isolated SHAKE provider source, relative to
-  provider commit `da0d3156af41915792cb99ce7a64b1a7633ce8f6`. Provider licensing is
-  included in [PROVIDER_LICENSE.txt](PROVIDER_LICENSE.txt).
-- [evp_sig_bench.c](evp_sig_bench.c): the cost benchmark source, byte-for-byte
-  matching the source hash in the original EVP v2 protocol.
-- [inspect_provider.py](inspect_provider.py): a read-only runtime capability and
-  identifier check for a recipient's build. It does not run TLS measurements.
-- [check_handoff.py](check_handoff.py): local consistency and historical-hash checks.
-
-## Identifier mapping
-
-Join result CSVs to the mapping using the exact `algorithm` string. Do not use
-row order as an identifier. `openssl_algorithm_argument` is the experiment's
-OpenSSL-facing name; `evp_signature_name` is the name returned by
-`EVP_SIGNATURE_fetch`. For example, `mldsa44` resolves to `ML-DSA-44` in OpenSSL's
-`default` provider. The provider field must not be assumed to be `oqsprovider`
-for every candidate.
-
-The mapping was queried on 2026-09-30 with `OSSL_PROVIDER_get_capabilities` and
-`EVP_SIGNATURE_fetch`, without private-key access. The standard provider, SHAKE
-provider, and libcrypto binary hashes match the September 12 EVP v2 records.
-This establishes runtime identity for the cost profiles; it is not a fresh
-packet-capture verification of every earlier TLS measurement.
-
-The experiment used **two provider scopes**:
-
-| `provider_build` | Candidates selected in the campaign |
+| 파일 | 사용할 내용 |
 | --- | --- |
-| `standard` | 49 pure PQC plus the original 86 composite candidates |
-| `shake98` | The 12 additional composite SLH-DSA-SHAKE candidates |
+| [algorithm_mapping.json](algorithm_mapping.json) | Pure PQC 49개, Composite 98개의 후보 목록, 보안 정책 그룹, OpenSSL 식별자, TLS code point |
+| [서버 서명 비용 CSV](../../results/pc_tls_20260929/server_sign_frankfurt_evp_v2.csv) | `algorithm`, `sign_mean_ms` |
+| [클라이언트 검증 비용 CSV](../../results/pc_tls_20260929/client_verify_seoul_evp_v2.csv) | `algorithm`, `verify_mean_ms` |
+| [PC 결과 README](../../results/pc_tls_20260929/README.md) | 조건별 TLS 성능 CSV, 실험 조건과 집계 방식 |
 
-The SHAKE build can fetch all 147 names, but inserting SHAKE variants into the
-generator changes some other composite assignments. Nine selected code points
-are reused across the two historical scopes for different algorithms. The exact
-pairs are listed in `cross_build_codepoint_reuse` in the mapping.
+모든 파일은 대소문자를 포함한 `algorithm` 문자열로 연결합니다. 행 번호를 알고리즘 ID로 사용하지 않습니다. 시간 단위는 ms입니다.
 
-**Use `(provider_build, tls_code_point_decimal)` as the lookup key, not the code
-point alone.** Match the provider build on both client and server. Do not load
-both builds into one process or use the old standard-scope assignments with a
-SHAKE-only server. These include experimental assignments; the mapping is not a
-claim that all candidates or code points are standardized.
+## 작업 순서
 
-`source_security_level` preserves the original labels. `policy_level` records the
-existing selector convention of grouping ML-DSA-44 and its composites into L1.
-That grouping is a policy cohort, not a redefinition of the algorithm's security
-category. The two fields are intentionally separate.
+1. 후보 목록에 서명 비용과 검증 비용을 연결합니다.
+2. 클라이언트 지원 목록과 보안 정책을 적용해 비교할 후보를 정합니다.
+3. 비교 지표를 정한 뒤, 모든 지표에서 다른 후보보다 같거나 나쁘고 적어도 한 지표에서 더 나쁜 후보를 제거합니다. 모든 지표가 같은 후보는 이 규칙만으로 제거하지 않습니다.
+4. 클라이언트 지원 목록별로 필터 적용 전후 후보 수와 남은 알고리즘 목록을 기록합니다.
+5. TLS 결과와 비교할 때는 같은 캠페인, 지역, 대역폭, 손실률, 인증서 체인 구성 안에서 비교합니다.
 
-## Bandit arm IDs are not algorithm IDs
+전체 후보에서 구한 파레토 집합을 단순히 클라이언트 지원 목록과 교집합해서는 안 됩니다. 어떤 후보를 지배하던 알고리즘이 클라이언트에서 지원되지 않을 수 있으므로, **지원 목록과 정책으로 후보를 먼저 제한한 뒤** 파레토 집합을 구합니다.
 
-The saved Bandit selects a **weight vector**. The cost rule then selects an
-eligible algorithm for the current context. Consequently, there is no fixed
-`arm_id -> algorithm -> code_point` mapping. `bandit_arm_id` is explicitly null
-in each candidate row rather than an invented index.
+## 비용 데이터에서 주의할 점
 
-For the five-term model, the weight order is:
+- 서명 비용은 Frankfurt 서버, 검증 비용은 Seoul PC 클라이언트에서 측정한 기존 값입니다. 서로 다른 장비의 비용을 새로 섞지 않습니다.
+- 검증 비용은 CertificateVerify 서명 한 번의 검증 비용이며, 인증서 체인 전체 검증 실측값이 아닙니다.
+- `signature_bytes_mean`은 서명 크기입니다. 인증서 크기나 체인 전체 전송 크기가 아닙니다.
+- **인증서 또는 체인 전송 크기를 비교 지표로 쓰려면 해당 크기 프로파일을 추가로 받아야 합니다.** 현재 공개된 비용 CSV만으로 그 지표를 구성하지 않습니다.
+- X25519 캠페인은 50회 전체 평균, 기본 ClientHello 캠페인은 빠른 70%의 평균입니다. 두 집계 방식을 동일한 통계로 취급하지 않습니다.
 
-1. `sign_ms`
-2. `transmission_ms`
-3. `extra_round_ms`
-4. `verify_chain_ms`
-5. `i_tail`
+## 식별자에서 주의할 점
 
-The 126 action vectors were checked against all 75 saved models in the
-`tail5_step02_x25519_20260927/unified_evp` run. Their IDs are the original
-zero-based positions in `actions`. The older model uses three terms, in the
-order `sign`, `size_over_bandwidth`, `critical_path`, and has 66 actions.
-Never interchange IDs between model variants.
+- `openssl_algorithm_argument`는 실험에서 사용한 이름, `evp_signature_name`은 실행 환경에서 확인한 EVP 이름입니다. 예를 들어 `mldsa44`는 `default` provider의 `ML-DSA-44`로 연결됩니다.
+- `source_security_level`은 원본 분류이며, `policy_level`은 기존 실험의 비교 그룹입니다. ML-DSA-44와 그 Composite를 L1 그룹에 묶은 것은 정책상 분류이지 알고리즘의 보안 범주를 바꾼 것이 아닙니다.
+- `standard` 빌드는 Pure 49개와 기존 Composite 86개, `shake98` 빌드는 추가 Composite SLH-DSA-SHAKE 12개에 사용했습니다.
+- 두 빌드 사이에서 code point 9개가 서로 다른 알고리즘에 재사용됩니다. **`(provider_build, tls_code_point_decimal)`을 함께 사용**하고, 실제 연결에서는 클라이언트와 서버의 provider 빌드를 맞춥니다. code point만으로 알고리즘을 식별하지 않습니다.
 
-For a Pareto-filter comparison, use algorithm strings as candidate IDs and keep
-the selected model's existing weight-arm IDs unchanged. After applying the
-client-supported set and policy constraints, an arm's selected candidate can
-change with context. Trained model parameters are not included or modified here.
+## 검증 및 재측정이 필요한 경우
 
-## Source code and versions
-
-| Component | Recorded runtime | Public rebuild source |
-| --- | --- | --- |
-| OpenSSL | 3.5.7 | `openssl-3.5.7`, plus the existing handshake timing patch |
-| liboqs | Installed header reports 0.15.0 | [self-contained liboqs fork](https://github.com/jelliyjane/liboqs-pqc-tls-siglab/tree/fa33db143fb12a2e1e306b51ab3c8c98432a46c4), commit `fa33db143fb12a2e1e306b51ab3c8c98432a46c4` |
-| Standard oqs-provider | 0.12.0-dev | [custom provider fork](https://github.com/jelliyjane/oqs-provider-pqc-tls-siglab/tree/da0d3156af41915792cb99ce7a64b1a7633ce8f6), commit `da0d3156af41915792cb99ce7a64b1a7633ce8f6` |
-| Additional SHAKE provider | 0.12.0-dev | Same provider commit plus `provider-shake98.patch` |
-
-The repository's [baseline build script](../../scripts/build_aws.sh) records the
-OpenSSL configuration and CMake flags, including explicit enablement of FAEST,
-HAWK, QR-UOV Round 2, and SDitH. [env.sh](../../scripts/env.sh) supplies the private
-SLH-DSA OID overrides used by the testbed. Keep these overrides when reproducing
-the experiment identifiers; OIDs are not TLS code points.
-
-### Historical provenance limitation
-
-The installed binary hashes are verified, but the exact historical liboqs source
-commit cannot be established from the surviving checkout and cache. The old
-cache disables four experimental families that the installed header enables;
-the current checkout HEAD is therefore not reliable evidence of the installed
-binary's source. The public self-contained liboqs commit above is a rebuild
-baseline, **not a recovered historical commit**. The standard provider's old
-checkout is also not presented as the installed binary's exact source.
-
-The SHAKE source patch is recovered from its separate build workspace. Applying
-it to the pinned provider commit has been checked, and its selected code points
-are checked against the runtime mapping. A new clean Linux compilation and
-bit-identical or timing-equivalent reproduction of the full stack have not been
-performed for this release. Do not claim an identical measurement environment
-solely because these sources build successfully.
-
-## Build and check on a clean Ubuntu machine
-
-Use a fresh clone of **main**, not the older `repro-self-contained-v1` tag, to get
-these handoff files. Follow [INSTALL.md](../../INSTALL.md) for prerequisites.
-From the repository root:
+자료의 후보 수, 비용 CSV 연결, 해시를 확인하려면 저장소 루트에서 실행합니다.
 
 ```bash
-export PQC_TLS_TESTBED="$PWD"
-bash scripts/build_aws.sh
-source scripts/env.sh
-bash scripts/build_pc147_shake_provider.sh
 python3 repro/pc147/check_handoff.py
 ```
 
-The additional build is placed in
-`src-work/build-oqs-provider-shake98-repro/lib`; it is not installed over the
-standard provider. The script refuses to overwrite an existing reproduction
-source/build directory. Generated provider C sources are supplied in the patch,
-so no generator run is required to build that snapshot.
-
-Check the standard build separately (the Linux layout below uses `lib64`):
-
-```bash
-python3 repro/pc147/inspect_provider.py \
-  --libcrypto "$OPENSSL_ROOT/lib64/libcrypto.so.3" \
-  --provider-dir "$OQSPROV_MODULES" \
-  --provider-build standard \
-  --mapping repro/pc147/algorithm_mapping.json
-```
-
-The additional build script runs the corresponding check for the SHAKE scope.
-Both checks must report an empty `errors` list before using the identifiers for
-new measurements. They check name, provider, and code point availability, not
-cryptographic correctness, full TLS interoperability, or performance equivalence.
-
-## Existing costs or optional remeasurement
-
-For the same offline cost assumptions, use `sign_mean_ms` from the published
-Frankfurt profile and `verify_mean_ms` from the Seoul client profile. These are
-CertificateVerify costs, not full certificate-chain verification costs.
-
-If a separate desktop profile is needed, the supplied `evp_sig_bench.c` accepts
-a locally generated test key, provider directory, provider name, warmup count,
-iteration count, and delay in milliseconds. The historical settings were
-`5 50 1000`. Compile with the existing OpenSSL headers and libcrypto using
-`-O2 -Wall -Wextra -Werror`, as recorded by the original cost runner. Never put
-private keys in this repository. New desktop measurements are a different
-hardware profile and must not replace or be labeled as the original server data.
+버전, commit, 추가 provider 코드, 빌드 설정이 필요한 경우에만 [빌드 및 재측정 안내](BUILD.md)를 참고합니다. 당시 liboqs 바이너리의 정확한 소스 commit은 복원되지 않았으므로, 제공한 재빌드용 commit을 당시 commit과 동일하다고 간주하지 않습니다.

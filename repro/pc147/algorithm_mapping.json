@@ -3,7 +3,6 @@
   "verified_on": "2026-09-30",
   "method": "EVP_SIGNATURE_fetch and OSSL_PROVIDER_get_capabilities on the recorded Frankfurt binaries, separate process per provider build",
   "candidate_key": "algorithm",
-  "bandit_arm_id_note": "Not applicable: saved Bandit arms are weight vectors, not algorithms. See bandit_arms.json.",
   "cross_build_codepoint_reuse": {
     "0xfe4f": [
       "rsa3072_mqom2cat1gf16fastr5",
@@ -57,8 +56,7 @@
       "tls_signature_scheme_name": "ML-DSA-65",
       "tls_code_point_decimal": 2309,
       "tls_code_point_hex": "0x0905",
-      "tls_capability_oid": "2.16.840.1.101.3.4.3.18",
-      "bandit_arm_id": null
+      "tls_capability_oid": "2.16.840.1.101.3.4.3.18"
     },
     {
       "algorithm": "mldsa87",
@@ -74,8 +72,7 @@
       "tls_signature_scheme_name": "ML-DSA-87",
       "tls_code_point_decimal": 2310,
       "tls_code_point_hex": "0x0906",
-      "tls_capability_oid": "2.16.840.1.101.3.4.3.19",
-      "bandit_arm_id": null
+      "tls_capability_oid": "2.16.840.1.101.3.4.3.19"
     },
     {
       "algorithm": "mldsa44",
@@ -91,8 +88,7 @@
       "tls_signature_scheme_name": "ML-DSA-44",
       "tls_code_point_decimal": 2308,
       "tls_code_point_hex": "0x0904",
-      "tls_capability_oid": "2.16.840.1.101.3.4.3.17",
-      "bandit_arm_id": null
+      "tls_capability_oid": "2.16.840.1.101.3.4.3.17"
     },
     {
       "algorithm": "falcon512",
@@ -108,8 +104,7 @@
       "tls_signature_scheme_name": "falcon512",
       "tls_code_point_decimal": 65239,
       "tls_code_point_hex": "0xfed7",
-      "tls_capability_oid": "1.3.9999.3.11",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.3.11"
     },
     {
       "algorithm": "falcon1024",
@@ -125,8 +120,7 @@
       "tls_signature_scheme_name": "falcon1024",
       "tls_code_point_decimal": 65242,
       "tls_code_point_hex": "0xfeda",
-      "tls_capability_oid": "1.3.9999.3.14",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.3.14"
     },
     {
       "algorithm": "mayo1",
@@ -142,8 +136,7 @@
       "tls_signature_scheme_name": "mayo1",
       "tls_code_point_decimal": 65330,
       "tls_code_point_hex": "0xff32",
-      "tls_capability_oid": "1.3.9999.8.1.3",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.8.1.3"
     },
     {
       "algorithm": "mayo2",
@@ -159,8 +152,7 @@
       "tls_signature_scheme_name": "mayo2",
       "tls_code_point_decimal": 65331,
       "tls_code_point_hex": "0xff33",
-      "tls_capability_oid": "1.3.9999.8.2.3",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.8.2.3"
     },
     {
       "algorithm": "mayo3",
@@ -176,8 +168,7 @@
       "tls_signature_scheme_name": "mayo3",
       "tls_code_point_decimal": 65332,
       "tls_code_point_hex": "0xff34",
-      "tls_capability_oid": "1.3.9999.8.3.3",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.8.3.3"
     },
     {
       "algorithm": "mayo5",
@@ -193,8 +184,7 @@
       "tls_signature_scheme_name": "mayo5",
       "tls_code_point_decimal": 65333,
       "tls_code_point_hex": "0xff35",
-      "tls_capability_oid": "1.3.9999.8.5.3",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.8.5.3"
     },
     {
       "algorithm": "OV_Is_pkc",
@@ -210,8 +200,7 @@
       "tls_signature_scheme_name": "OV_Is_pkc",
       "tls_code_point_decimal": 65294,
       "tls_code_point_hex": "0xff0e",
-      "tls_capability_oid": "1.3.9999.9.5.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.9.5.1"
     },
     {
       "algorithm": "OV_Ip_pkc",
@@ -227,8 +216,7 @@
       "tls_signature_scheme_name": "OV_Ip_pkc",
       "tls_code_point_decimal": 65295,
       "tls_code_point_hex": "0xff0f",
-      "tls_capability_oid": "1.3.9999.9.6.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.9.6.1"
     },
     {
       "algorithm": "OV_III_pkc",
@@ -244,8 +232,7 @@
       "tls_signature_scheme_name": "OV_III_pkc",
       "tls_code_point_decimal": 65296,
       "tls_code_point_hex": "0xff10",
-      "tls_capability_oid": "1.3.9999.9.7.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.9.7.1"
     },
     {
       "algorithm": "OV_V_pkc",
@@ -261,8 +248,7 @@
       "tls_signature_scheme_name": "OV_V_pkc",
       "tls_code_point_decimal": 65297,
       "tls_code_point_hex": "0xff11",
-      "tls_capability_oid": "1.3.9999.9.8.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.9.8.1"
     },
     {
       "algorithm": "snova2454",
@@ -278,8 +264,7 @@
       "tls_signature_scheme_name": "snova2454",
       "tls_code_point_decimal": 65338,
       "tls_code_point_hex": "0xff3a",
-      "tls_capability_oid": "1.3.9999.10.1.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.10.1.1"
     },
     {
       "algorithm": "snova37172",
@@ -295,8 +280,7 @@
       "tls_signature_scheme_name": "snova37172",
       "tls_code_point_decimal": 65346,
       "tls_code_point_hex": "0xff42",
-      "tls_capability_oid": "1.3.9999.10.5.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.10.5.1"
     },
     {
       "algorithm": "snova2455",
@@ -312,8 +296,7 @@
       "tls_signature_scheme_name": "snova2455",
       "tls_code_point_decimal": 65356,
       "tls_code_point_hex": "0xff4c",
-      "tls_capability_oid": "1.3.9999.10.10.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.10.10.1"
     },
     {
       "algorithm": "snova2965",
@@ -329,8 +312,7 @@
       "tls_signature_scheme_name": "snova2965",
       "tls_code_point_decimal": 65361,
       "tls_code_point_hex": "0xff51",
-      "tls_capability_oid": "1.3.9999.10.12.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.10.12.1"
     },
     {
       "algorithm": "slhdsasha2128s",
@@ -346,8 +328,7 @@
       "tls_signature_scheme_name": "slhdsasha2128s",
       "tls_code_point_decimal": 2321,
       "tls_code_point_hex": "0x0911",
-      "tls_capability_oid": "2.16.840.1.101.3.4.3.20",
-      "bandit_arm_id": null
+      "tls_capability_oid": "2.16.840.1.101.3.4.3.20"
     },
     {
       "algorithm": "slhdsasha2128f",
@@ -363,8 +344,7 @@
       "tls_signature_scheme_name": "slhdsasha2128f",
       "tls_code_point_decimal": 2322,
       "tls_code_point_hex": "0x0912",
-      "tls_capability_oid": "2.16.840.1.101.3.4.3.21",
-      "bandit_arm_id": null
+      "tls_capability_oid": "2.16.840.1.101.3.4.3.21"
     },
     {
       "algorithm": "slhdsasha2192s",
@@ -380,8 +360,7 @@
       "tls_signature_scheme_name": "slhdsasha2192s",
       "tls_code_point_decimal": 2323,
       "tls_code_point_hex": "0x0913",
-      "tls_capability_oid": "2.16.840.1.101.3.4.3.22",
-      "bandit_arm_id": null
+      "tls_capability_oid": "2.16.840.1.101.3.4.3.22"
     },
     {
       "algorithm": "slhdsasha2192f",
@@ -397,8 +376,7 @@
       "tls_signature_scheme_name": "slhdsasha2192f",
       "tls_code_point_decimal": 2324,
       "tls_code_point_hex": "0x0914",
-      "tls_capability_oid": "2.16.840.1.101.3.4.3.23",
-      "bandit_arm_id": null
+      "tls_capability_oid": "2.16.840.1.101.3.4.3.23"
     },
     {
       "algorithm": "slhdsasha2256s",
@@ -414,8 +392,7 @@
       "tls_signature_scheme_name": "slhdsasha2256s",
       "tls_code_point_decimal": 2325,
       "tls_code_point_hex": "0x0915",
-      "tls_capability_oid": "2.16.840.1.101.3.4.3.24",
-      "bandit_arm_id": null
+      "tls_capability_oid": "2.16.840.1.101.3.4.3.24"
     },
     {
       "algorithm": "slhdsasha2256f",
@@ -431,8 +408,7 @@
       "tls_signature_scheme_name": "slhdsasha2256f",
       "tls_code_point_decimal": 2326,
       "tls_code_point_hex": "0x0916",
-      "tls_capability_oid": "2.16.840.1.101.3.4.3.25",
-      "bandit_arm_id": null
+      "tls_capability_oid": "2.16.840.1.101.3.4.3.25"
     },
     {
       "algorithm": "slhdsashake128s",
@@ -448,8 +424,7 @@
       "tls_signature_scheme_name": "slhdsashake128s",
       "tls_code_point_decimal": 2327,
       "tls_code_point_hex": "0x0917",
-      "tls_capability_oid": "2.16.840.1.101.3.4.3.26",
-      "bandit_arm_id": null
+      "tls_capability_oid": "2.16.840.1.101.3.4.3.26"
     },
     {
       "algorithm": "slhdsashake128f",
@@ -465,8 +440,7 @@
       "tls_signature_scheme_name": "slhdsashake128f",
       "tls_code_point_decimal": 2328,
       "tls_code_point_hex": "0x0918",
-      "tls_capability_oid": "2.16.840.1.101.3.4.3.27",
-      "bandit_arm_id": null
+      "tls_capability_oid": "2.16.840.1.101.3.4.3.27"
     },
     {
       "algorithm": "slhdsashake192s",
@@ -482,8 +456,7 @@
       "tls_signature_scheme_name": "slhdsashake192s",
       "tls_code_point_decimal": 2329,
       "tls_code_point_hex": "0x0919",
-      "tls_capability_oid": "2.16.840.1.101.3.4.3.28",
-      "bandit_arm_id": null
+      "tls_capability_oid": "2.16.840.1.101.3.4.3.28"
     },
     {
       "algorithm": "slhdsashake192f",
@@ -499,8 +472,7 @@
       "tls_signature_scheme_name": "slhdsashake192f",
       "tls_code_point_decimal": 2330,
       "tls_code_point_hex": "0x091a",
-      "tls_capability_oid": "2.16.840.1.101.3.4.3.29",
-      "bandit_arm_id": null
+      "tls_capability_oid": "2.16.840.1.101.3.4.3.29"
     },
     {
       "algorithm": "slhdsashake256s",
@@ -516,8 +488,7 @@
       "tls_signature_scheme_name": "slhdsashake256s",
       "tls_code_point_decimal": 2331,
       "tls_code_point_hex": "0x091b",
-      "tls_capability_oid": "2.16.840.1.101.3.4.3.30",
-      "bandit_arm_id": null
+      "tls_capability_oid": "2.16.840.1.101.3.4.3.30"
     },
     {
       "algorithm": "slhdsashake256f",
@@ -533,8 +504,7 @@
       "tls_signature_scheme_name": "slhdsashake256f",
       "tls_code_point_decimal": 2332,
       "tls_code_point_hex": "0x091c",
-      "tls_capability_oid": "2.16.840.1.101.3.4.3.31",
-      "bandit_arm_id": null
+      "tls_capability_oid": "2.16.840.1.101.3.4.3.31"
     },
     {
       "algorithm": "mqom2cat1gf16fastr5",
@@ -550,8 +520,7 @@
       "tls_signature_scheme_name": "mqom2cat1gf16fastr5",
       "tls_code_point_decimal": 65379,
       "tls_code_point_hex": "0xff63",
-      "tls_capability_oid": "1.3.9999.11.1.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.11.1.1"
     },
     {
       "algorithm": "mqom2cat3gf16fastr5",
@@ -567,8 +536,7 @@
       "tls_signature_scheme_name": "mqom2cat3gf16fastr5",
       "tls_code_point_decimal": 65387,
       "tls_code_point_hex": "0xff6b",
-      "tls_capability_oid": "1.3.9999.11.3.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.11.3.1"
     },
     {
       "algorithm": "mqom2cat5gf16fastr5",
@@ -584,8 +552,7 @@
       "tls_signature_scheme_name": "mqom2cat5gf16fastr5",
       "tls_code_point_decimal": 65395,
       "tls_code_point_hex": "0xff73",
-      "tls_capability_oid": "1.3.9999.11.5.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.11.5.1"
     },
     {
       "algorithm": "faest128s",
@@ -601,8 +568,7 @@
       "tls_signature_scheme_name": "faest128s",
       "tls_code_point_decimal": 65403,
       "tls_code_point_hex": "0xff7b",
-      "tls_capability_oid": "1.3.9999.20.1.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.20.1.1"
     },
     {
       "algorithm": "faest128f",
@@ -618,8 +584,7 @@
       "tls_signature_scheme_name": "faest128f",
       "tls_code_point_decimal": 65409,
       "tls_code_point_hex": "0xff81",
-      "tls_capability_oid": "1.3.9999.20.1.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.20.1.2"
     },
     {
       "algorithm": "faest192s",
@@ -635,8 +600,7 @@
       "tls_signature_scheme_name": "faest192s",
       "tls_code_point_decimal": 65404,
       "tls_code_point_hex": "0xff7c",
-      "tls_capability_oid": "1.3.9999.20.2.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.20.2.1"
     },
     {
       "algorithm": "faest192f",
@@ -652,8 +616,7 @@
       "tls_signature_scheme_name": "faest192f",
       "tls_code_point_decimal": 65410,
       "tls_code_point_hex": "0xff82",
-      "tls_capability_oid": "1.3.9999.20.2.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.20.2.2"
     },
     {
       "algorithm": "faest256s",
@@ -669,8 +632,7 @@
       "tls_signature_scheme_name": "faest256s",
       "tls_code_point_decimal": 65405,
       "tls_code_point_hex": "0xff7d",
-      "tls_capability_oid": "1.3.9999.20.3.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.20.3.1"
     },
     {
       "algorithm": "faest256f",
@@ -686,8 +648,7 @@
       "tls_signature_scheme_name": "faest256f",
       "tls_code_point_decimal": 65411,
       "tls_code_point_hex": "0xff83",
-      "tls_capability_oid": "1.3.9999.20.3.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.20.3.2"
     },
     {
       "algorithm": "hawk512",
@@ -703,8 +664,7 @@
       "tls_signature_scheme_name": "hawk512",
       "tls_code_point_decimal": 65406,
       "tls_code_point_hex": "0xff7e",
-      "tls_capability_oid": "1.3.9999.21.1.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.21.1.1"
     },
     {
       "algorithm": "hawk1024",
@@ -720,8 +680,7 @@
       "tls_signature_scheme_name": "hawk1024",
       "tls_code_point_decimal": 65407,
       "tls_code_point_hex": "0xff7f",
-      "tls_capability_oid": "1.3.9999.21.2.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.21.2.1"
     },
     {
       "algorithm": "qruov1q7l10v740m100",
@@ -737,8 +696,7 @@
       "tls_signature_scheme_name": "qruov1q7l10v740m100",
       "tls_code_point_decimal": 65408,
       "tls_code_point_hex": "0xff80",
-      "tls_capability_oid": "1.3.9999.22.1.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.22.1.1"
     },
     {
       "algorithm": "qruov3q7l10v1100m140",
@@ -754,8 +712,7 @@
       "tls_signature_scheme_name": "qruov3q7l10v1100m140",
       "tls_code_point_decimal": 65412,
       "tls_code_point_hex": "0xff84",
-      "tls_capability_oid": "1.3.9999.22.3.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.22.3.1"
     },
     {
       "algorithm": "qruov5q7l10v1490m190",
@@ -771,8 +728,7 @@
       "tls_signature_scheme_name": "qruov5q7l10v1490m190",
       "tls_code_point_decimal": 65413,
       "tls_code_point_hex": "0xff85",
-      "tls_capability_oid": "1.3.9999.22.5.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.22.5.1"
     },
     {
       "algorithm": "sdithhypercubecat1gf256",
@@ -788,8 +744,7 @@
       "tls_signature_scheme_name": "sdithhypercubecat1gf256",
       "tls_code_point_decimal": 65414,
       "tls_code_point_hex": "0xff86",
-      "tls_capability_oid": "1.3.9999.23.1.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.23.1.1"
     },
     {
       "algorithm": "sdithhypercubecat3gf256",
@@ -805,8 +760,7 @@
       "tls_signature_scheme_name": "sdithhypercubecat3gf256",
       "tls_code_point_decimal": 65415,
       "tls_code_point_hex": "0xff87",
-      "tls_capability_oid": "1.3.9999.23.3.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.23.3.1"
     },
     {
       "algorithm": "sdithhypercubecat5gf256",
@@ -822,8 +776,7 @@
       "tls_signature_scheme_name": "sdithhypercubecat5gf256",
       "tls_code_point_decimal": 65416,
       "tls_code_point_hex": "0xff88",
-      "tls_capability_oid": "1.3.9999.23.5.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.23.5.1"
     },
     {
       "algorithm": "sdiththresholdcat1gf256",
@@ -839,8 +792,7 @@
       "tls_signature_scheme_name": "sdiththresholdcat1gf256",
       "tls_code_point_decimal": 65417,
       "tls_code_point_hex": "0xff89",
-      "tls_capability_oid": "1.3.9999.23.1.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.23.1.2"
     },
     {
       "algorithm": "sdiththresholdcat3gf256",
@@ -856,8 +808,7 @@
       "tls_signature_scheme_name": "sdiththresholdcat3gf256",
       "tls_code_point_decimal": 65418,
       "tls_code_point_hex": "0xff8a",
-      "tls_capability_oid": "1.3.9999.23.3.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.23.3.2"
     },
     {
       "algorithm": "sdiththresholdcat5gf256",
@@ -873,8 +824,7 @@
       "tls_signature_scheme_name": "sdiththresholdcat5gf256",
       "tls_code_point_decimal": 65419,
       "tls_code_point_hex": "0xff8b",
-      "tls_capability_oid": "1.3.9999.23.5.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.23.5.2"
     },
     {
       "algorithm": "p256_mldsa44",
@@ -890,8 +840,7 @@
       "tls_signature_scheme_name": "p256_mldsa44",
       "tls_code_point_decimal": 65286,
       "tls_code_point_hex": "0xff06",
-      "tls_capability_oid": "1.3.9999.7.5",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.7.5"
     },
     {
       "algorithm": "rsa3072_mldsa44",
@@ -907,8 +856,7 @@
       "tls_signature_scheme_name": "rsa3072_mldsa44",
       "tls_code_point_decimal": 65287,
       "tls_code_point_hex": "0xff07",
-      "tls_capability_oid": "1.3.9999.7.6",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.7.6"
     },
     {
       "algorithm": "p384_mldsa65",
@@ -924,8 +872,7 @@
       "tls_signature_scheme_name": "p384_mldsa65",
       "tls_code_point_decimal": 65288,
       "tls_code_point_hex": "0xff08",
-      "tls_capability_oid": "1.3.9999.7.7",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.7.7"
     },
     {
       "algorithm": "rsa7680_mldsa65",
@@ -941,8 +888,7 @@
       "tls_signature_scheme_name": "rsa7680_mldsa65",
       "tls_code_point_decimal": 65059,
       "tls_code_point_hex": "0xfe23",
-      "tls_capability_oid": "1.3.9999.30.2.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.2.2"
     },
     {
       "algorithm": "p521_mldsa87",
@@ -958,8 +904,7 @@
       "tls_signature_scheme_name": "p521_mldsa87",
       "tls_code_point_decimal": 65289,
       "tls_code_point_hex": "0xff09",
-      "tls_capability_oid": "1.3.9999.7.8",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.7.8"
     },
     {
       "algorithm": "rsa15360_mldsa87",
@@ -975,8 +920,7 @@
       "tls_signature_scheme_name": "rsa15360_mldsa87",
       "tls_code_point_decimal": 65061,
       "tls_code_point_hex": "0xfe25",
-      "tls_capability_oid": "1.3.9999.30.3.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.3.2"
     },
     {
       "algorithm": "p256_falcon512",
@@ -992,8 +936,7 @@
       "tls_signature_scheme_name": "p256_falcon512",
       "tls_code_point_decimal": 65240,
       "tls_code_point_hex": "0xfed8",
-      "tls_capability_oid": "1.3.9999.3.12",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.3.12"
     },
     {
       "algorithm": "rsa3072_falcon512",
@@ -1009,8 +952,7 @@
       "tls_signature_scheme_name": "rsa3072_falcon512",
       "tls_code_point_decimal": 65241,
       "tls_code_point_hex": "0xfed9",
-      "tls_capability_oid": "1.3.9999.3.13",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.3.13"
     },
     {
       "algorithm": "p521_falcon1024",
@@ -1026,8 +968,7 @@
       "tls_signature_scheme_name": "p521_falcon1024",
       "tls_code_point_decimal": 65243,
       "tls_code_point_hex": "0xfedb",
-      "tls_capability_oid": "1.3.9999.3.15",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.3.15"
     },
     {
       "algorithm": "rsa15360_falcon1024",
@@ -1043,8 +984,7 @@
       "tls_signature_scheme_name": "rsa15360_falcon1024",
       "tls_code_point_decimal": 65065,
       "tls_code_point_hex": "0xfe29",
-      "tls_capability_oid": "1.3.9999.30.5.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.5.2"
     },
     {
       "algorithm": "p256_mayo1",
@@ -1060,8 +1000,7 @@
       "tls_signature_scheme_name": "p256_mayo1",
       "tls_code_point_decimal": 65334,
       "tls_code_point_hex": "0xff36",
-      "tls_capability_oid": "1.3.9999.8.1.4",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.8.1.4"
     },
     {
       "algorithm": "rsa3072_mayo1",
@@ -1077,8 +1016,7 @@
       "tls_signature_scheme_name": "rsa3072_mayo1",
       "tls_code_point_decimal": 65067,
       "tls_code_point_hex": "0xfe2b",
-      "tls_capability_oid": "1.3.9999.30.6.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.6.2"
     },
     {
       "algorithm": "p256_mayo2",
@@ -1094,8 +1032,7 @@
       "tls_signature_scheme_name": "p256_mayo2",
       "tls_code_point_decimal": 65335,
       "tls_code_point_hex": "0xff37",
-      "tls_capability_oid": "1.3.9999.8.2.4",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.8.2.4"
     },
     {
       "algorithm": "rsa3072_mayo2",
@@ -1111,8 +1048,7 @@
       "tls_signature_scheme_name": "rsa3072_mayo2",
       "tls_code_point_decimal": 65069,
       "tls_code_point_hex": "0xfe2d",
-      "tls_capability_oid": "1.3.9999.30.7.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.7.2"
     },
     {
       "algorithm": "p384_mayo3",
@@ -1128,8 +1064,7 @@
       "tls_signature_scheme_name": "p384_mayo3",
       "tls_code_point_decimal": 65336,
       "tls_code_point_hex": "0xff38",
-      "tls_capability_oid": "1.3.9999.8.3.4",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.8.3.4"
     },
     {
       "algorithm": "rsa7680_mayo3",
@@ -1145,8 +1080,7 @@
       "tls_signature_scheme_name": "rsa7680_mayo3",
       "tls_code_point_decimal": 65071,
       "tls_code_point_hex": "0xfe2f",
-      "tls_capability_oid": "1.3.9999.30.8.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.8.2"
     },
     {
       "algorithm": "p521_mayo5",
@@ -1162,8 +1096,7 @@
       "tls_signature_scheme_name": "p521_mayo5",
       "tls_code_point_decimal": 65337,
       "tls_code_point_hex": "0xff39",
-      "tls_capability_oid": "1.3.9999.8.5.4",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.8.5.4"
     },
     {
       "algorithm": "rsa15360_mayo5",
@@ -1179,8 +1112,7 @@
       "tls_signature_scheme_name": "rsa15360_mayo5",
       "tls_code_point_decimal": 65073,
       "tls_code_point_hex": "0xfe31",
-      "tls_capability_oid": "1.3.9999.30.9.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.9.2"
     },
     {
       "algorithm": "p256_OV_Is_pkc",
@@ -1196,8 +1128,7 @@
       "tls_signature_scheme_name": "p256_OV_Is_pkc",
       "tls_code_point_decimal": 65306,
       "tls_code_point_hex": "0xff1a",
-      "tls_capability_oid": "1.3.9999.9.5.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.9.5.2"
     },
     {
       "algorithm": "rsa3072_OV_Is_pkc",
@@ -1213,8 +1144,7 @@
       "tls_signature_scheme_name": "rsa3072_OV_Is_pkc",
       "tls_code_point_decimal": 65075,
       "tls_code_point_hex": "0xfe33",
-      "tls_capability_oid": "1.3.9999.30.10.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.10.2"
     },
     {
       "algorithm": "p256_OV_Ip_pkc",
@@ -1230,8 +1160,7 @@
       "tls_signature_scheme_name": "p256_OV_Ip_pkc",
       "tls_code_point_decimal": 65307,
       "tls_code_point_hex": "0xff1b",
-      "tls_capability_oid": "1.3.9999.9.6.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.9.6.2"
     },
     {
       "algorithm": "rsa3072_OV_Ip_pkc",
@@ -1247,8 +1176,7 @@
       "tls_signature_scheme_name": "rsa3072_OV_Ip_pkc",
       "tls_code_point_decimal": 65077,
       "tls_code_point_hex": "0xfe35",
-      "tls_capability_oid": "1.3.9999.30.11.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.11.2"
     },
     {
       "algorithm": "p384_OV_III_pkc",
@@ -1264,8 +1192,7 @@
       "tls_signature_scheme_name": "p384_OV_III_pkc",
       "tls_code_point_decimal": 65308,
       "tls_code_point_hex": "0xff1c",
-      "tls_capability_oid": "1.3.9999.9.7.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.9.7.2"
     },
     {
       "algorithm": "rsa7680_OV_III_pkc",
@@ -1281,8 +1208,7 @@
       "tls_signature_scheme_name": "rsa7680_OV_III_pkc",
       "tls_code_point_decimal": 65079,
       "tls_code_point_hex": "0xfe37",
-      "tls_capability_oid": "1.3.9999.30.12.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.12.2"
     },
     {
       "algorithm": "p521_OV_V_pkc",
@@ -1298,8 +1224,7 @@
       "tls_signature_scheme_name": "p521_OV_V_pkc",
       "tls_code_point_decimal": 65309,
       "tls_code_point_hex": "0xff1d",
-      "tls_capability_oid": "1.3.9999.9.8.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.9.8.2"
     },
     {
       "algorithm": "rsa15360_OV_V_pkc",
@@ -1315,8 +1240,7 @@
       "tls_signature_scheme_name": "rsa15360_OV_V_pkc",
       "tls_code_point_decimal": 65081,
       "tls_code_point_hex": "0xfe39",
-      "tls_capability_oid": "1.3.9999.30.13.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.13.2"
     },
     {
       "algorithm": "p256_snova2454",
@@ -1332,8 +1256,7 @@
       "tls_signature_scheme_name": "p256_snova2454",
       "tls_code_point_decimal": 65339,
       "tls_code_point_hex": "0xff3b",
-      "tls_capability_oid": "1.3.9999.10.1.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.10.1.2"
     },
     {
       "algorithm": "rsa3072_snova2454",
@@ -1349,8 +1272,7 @@
       "tls_signature_scheme_name": "rsa3072_snova2454",
       "tls_code_point_decimal": 65083,
       "tls_code_point_hex": "0xfe3b",
-      "tls_capability_oid": "1.3.9999.30.14.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.14.2"
     },
     {
       "algorithm": "p256_snova37172",
@@ -1366,8 +1288,7 @@
       "tls_signature_scheme_name": "p256_snova37172",
       "tls_code_point_decimal": 65347,
       "tls_code_point_hex": "0xff43",
-      "tls_capability_oid": "1.3.9999.10.5.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.10.5.2"
     },
     {
       "algorithm": "rsa3072_snova37172",
@@ -1383,8 +1304,7 @@
       "tls_signature_scheme_name": "rsa3072_snova37172",
       "tls_code_point_decimal": 65085,
       "tls_code_point_hex": "0xfe3d",
-      "tls_capability_oid": "1.3.9999.30.15.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.15.2"
     },
     {
       "algorithm": "p384_snova2455",
@@ -1400,8 +1320,7 @@
       "tls_signature_scheme_name": "p384_snova2455",
       "tls_code_point_decimal": 65357,
       "tls_code_point_hex": "0xff4d",
-      "tls_capability_oid": "1.3.9999.10.10.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.10.10.2"
     },
     {
       "algorithm": "rsa7680_snova2455",
@@ -1417,8 +1336,7 @@
       "tls_signature_scheme_name": "rsa7680_snova2455",
       "tls_code_point_decimal": 65087,
       "tls_code_point_hex": "0xfe3f",
-      "tls_capability_oid": "1.3.9999.30.16.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.16.2"
     },
     {
       "algorithm": "p521_snova2965",
@@ -1434,8 +1352,7 @@
       "tls_signature_scheme_name": "p521_snova2965",
       "tls_code_point_decimal": 65362,
       "tls_code_point_hex": "0xff52",
-      "tls_capability_oid": "1.3.9999.10.12.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.10.12.2"
     },
     {
       "algorithm": "rsa15360_snova2965",
@@ -1451,8 +1368,7 @@
       "tls_signature_scheme_name": "rsa15360_snova2965",
       "tls_code_point_decimal": 65089,
       "tls_code_point_hex": "0xfe41",
-      "tls_capability_oid": "1.3.9999.30.17.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.17.2"
     },
     {
       "algorithm": "p256_slhdsasha2128s",
@@ -1468,8 +1384,7 @@
       "tls_signature_scheme_name": "p256_slhdsasha2128s",
       "tls_code_point_decimal": 65090,
       "tls_code_point_hex": "0xfe42",
-      "tls_capability_oid": "1.3.9999.30.18.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.18.1"
     },
     {
       "algorithm": "rsa3072_slhdsasha2128s",
@@ -1485,8 +1400,7 @@
       "tls_signature_scheme_name": "rsa3072_slhdsasha2128s",
       "tls_code_point_decimal": 65091,
       "tls_code_point_hex": "0xfe43",
-      "tls_capability_oid": "1.3.9999.30.18.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.18.2"
     },
     {
       "algorithm": "p256_slhdsasha2128f",
@@ -1502,8 +1416,7 @@
       "tls_signature_scheme_name": "p256_slhdsasha2128f",
       "tls_code_point_decimal": 65092,
       "tls_code_point_hex": "0xfe44",
-      "tls_capability_oid": "1.3.9999.30.19.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.19.1"
     },
     {
       "algorithm": "rsa3072_slhdsasha2128f",
@@ -1519,8 +1432,7 @@
       "tls_signature_scheme_name": "rsa3072_slhdsasha2128f",
       "tls_code_point_decimal": 65093,
       "tls_code_point_hex": "0xfe45",
-      "tls_capability_oid": "1.3.9999.30.19.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.19.2"
     },
     {
       "algorithm": "p384_slhdsasha2192s",
@@ -1536,8 +1448,7 @@
       "tls_signature_scheme_name": "p384_slhdsasha2192s",
       "tls_code_point_decimal": 65094,
       "tls_code_point_hex": "0xfe46",
-      "tls_capability_oid": "1.3.9999.30.20.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.20.1"
     },
     {
       "algorithm": "rsa7680_slhdsasha2192s",
@@ -1553,8 +1464,7 @@
       "tls_signature_scheme_name": "rsa7680_slhdsasha2192s",
       "tls_code_point_decimal": 65095,
       "tls_code_point_hex": "0xfe47",
-      "tls_capability_oid": "1.3.9999.30.20.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.20.2"
     },
     {
       "algorithm": "p384_slhdsasha2192f",
@@ -1570,8 +1480,7 @@
       "tls_signature_scheme_name": "p384_slhdsasha2192f",
       "tls_code_point_decimal": 65096,
       "tls_code_point_hex": "0xfe48",
-      "tls_capability_oid": "1.3.9999.30.21.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.21.1"
     },
     {
       "algorithm": "rsa7680_slhdsasha2192f",
@@ -1587,8 +1496,7 @@
       "tls_signature_scheme_name": "rsa7680_slhdsasha2192f",
       "tls_code_point_decimal": 65097,
       "tls_code_point_hex": "0xfe49",
-      "tls_capability_oid": "1.3.9999.30.21.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.21.2"
     },
     {
       "algorithm": "p521_slhdsasha2256s",
@@ -1604,8 +1512,7 @@
       "tls_signature_scheme_name": "p521_slhdsasha2256s",
       "tls_code_point_decimal": 65098,
       "tls_code_point_hex": "0xfe4a",
-      "tls_capability_oid": "1.3.9999.30.22.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.22.1"
     },
     {
       "algorithm": "rsa15360_slhdsasha2256s",
@@ -1621,8 +1528,7 @@
       "tls_signature_scheme_name": "rsa15360_slhdsasha2256s",
       "tls_code_point_decimal": 65099,
       "tls_code_point_hex": "0xfe4b",
-      "tls_capability_oid": "1.3.9999.30.22.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.22.2"
     },
     {
       "algorithm": "p521_slhdsasha2256f",
@@ -1638,8 +1544,7 @@
       "tls_signature_scheme_name": "p521_slhdsasha2256f",
       "tls_code_point_decimal": 65100,
       "tls_code_point_hex": "0xfe4c",
-      "tls_capability_oid": "1.3.9999.30.23.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.23.1"
     },
     {
       "algorithm": "rsa15360_slhdsasha2256f",
@@ -1655,8 +1560,7 @@
       "tls_signature_scheme_name": "rsa15360_slhdsasha2256f",
       "tls_code_point_decimal": 65101,
       "tls_code_point_hex": "0xfe4d",
-      "tls_capability_oid": "1.3.9999.30.23.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.23.2"
     },
     {
       "algorithm": "p256_mqom2cat1gf16fastr5",
@@ -1672,8 +1576,7 @@
       "tls_signature_scheme_name": "p256_mqom2cat1gf16fastr5",
       "tls_code_point_decimal": 65380,
       "tls_code_point_hex": "0xff64",
-      "tls_capability_oid": "1.3.9999.11.1.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.11.1.2"
     },
     {
       "algorithm": "rsa3072_mqom2cat1gf16fastr5",
@@ -1689,8 +1592,7 @@
       "tls_signature_scheme_name": "rsa3072_mqom2cat1gf16fastr5",
       "tls_code_point_decimal": 65103,
       "tls_code_point_hex": "0xfe4f",
-      "tls_capability_oid": "1.3.9999.30.24.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.24.2"
     },
     {
       "algorithm": "p384_mqom2cat3gf16fastr5",
@@ -1706,8 +1608,7 @@
       "tls_signature_scheme_name": "p384_mqom2cat3gf16fastr5",
       "tls_code_point_decimal": 65388,
       "tls_code_point_hex": "0xff6c",
-      "tls_capability_oid": "1.3.9999.11.3.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.11.3.2"
     },
     {
       "algorithm": "rsa7680_mqom2cat3gf16fastr5",
@@ -1723,8 +1624,7 @@
       "tls_signature_scheme_name": "rsa7680_mqom2cat3gf16fastr5",
       "tls_code_point_decimal": 65105,
       "tls_code_point_hex": "0xfe51",
-      "tls_capability_oid": "1.3.9999.30.25.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.25.2"
     },
     {
       "algorithm": "p521_mqom2cat5gf16fastr5",
@@ -1740,8 +1640,7 @@
       "tls_signature_scheme_name": "p521_mqom2cat5gf16fastr5",
       "tls_code_point_decimal": 65396,
       "tls_code_point_hex": "0xff74",
-      "tls_capability_oid": "1.3.9999.11.5.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.11.5.2"
     },
     {
       "algorithm": "rsa15360_mqom2cat5gf16fastr5",
@@ -1757,8 +1656,7 @@
       "tls_signature_scheme_name": "rsa15360_mqom2cat5gf16fastr5",
       "tls_code_point_decimal": 65107,
       "tls_code_point_hex": "0xfe53",
-      "tls_capability_oid": "1.3.9999.30.26.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.26.2"
     },
     {
       "algorithm": "p256_faest128s",
@@ -1774,8 +1672,7 @@
       "tls_signature_scheme_name": "p256_faest128s",
       "tls_code_point_decimal": 65108,
       "tls_code_point_hex": "0xfe54",
-      "tls_capability_oid": "1.3.9999.30.27.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.27.1"
     },
     {
       "algorithm": "rsa3072_faest128s",
@@ -1791,8 +1688,7 @@
       "tls_signature_scheme_name": "rsa3072_faest128s",
       "tls_code_point_decimal": 65109,
       "tls_code_point_hex": "0xfe55",
-      "tls_capability_oid": "1.3.9999.30.27.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.27.2"
     },
     {
       "algorithm": "p256_faest128f",
@@ -1808,8 +1704,7 @@
       "tls_signature_scheme_name": "p256_faest128f",
       "tls_code_point_decimal": 65110,
       "tls_code_point_hex": "0xfe56",
-      "tls_capability_oid": "1.3.9999.30.28.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.28.1"
     },
     {
       "algorithm": "rsa3072_faest128f",
@@ -1825,8 +1720,7 @@
       "tls_signature_scheme_name": "rsa3072_faest128f",
       "tls_code_point_decimal": 65111,
       "tls_code_point_hex": "0xfe57",
-      "tls_capability_oid": "1.3.9999.30.28.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.28.2"
     },
     {
       "algorithm": "p384_faest192s",
@@ -1842,8 +1736,7 @@
       "tls_signature_scheme_name": "p384_faest192s",
       "tls_code_point_decimal": 65112,
       "tls_code_point_hex": "0xfe58",
-      "tls_capability_oid": "1.3.9999.30.29.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.29.1"
     },
     {
       "algorithm": "rsa7680_faest192s",
@@ -1859,8 +1752,7 @@
       "tls_signature_scheme_name": "rsa7680_faest192s",
       "tls_code_point_decimal": 65113,
       "tls_code_point_hex": "0xfe59",
-      "tls_capability_oid": "1.3.9999.30.29.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.29.2"
     },
     {
       "algorithm": "p384_faest192f",
@@ -1876,8 +1768,7 @@
       "tls_signature_scheme_name": "p384_faest192f",
       "tls_code_point_decimal": 65114,
       "tls_code_point_hex": "0xfe5a",
-      "tls_capability_oid": "1.3.9999.30.30.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.30.1"
     },
     {
       "algorithm": "rsa7680_faest192f",
@@ -1893,8 +1784,7 @@
       "tls_signature_scheme_name": "rsa7680_faest192f",
       "tls_code_point_decimal": 65115,
       "tls_code_point_hex": "0xfe5b",
-      "tls_capability_oid": "1.3.9999.30.30.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.30.2"
     },
     {
       "algorithm": "p521_faest256s",
@@ -1910,8 +1800,7 @@
       "tls_signature_scheme_name": "p521_faest256s",
       "tls_code_point_decimal": 65116,
       "tls_code_point_hex": "0xfe5c",
-      "tls_capability_oid": "1.3.9999.30.31.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.31.1"
     },
     {
       "algorithm": "rsa15360_faest256s",
@@ -1927,8 +1816,7 @@
       "tls_signature_scheme_name": "rsa15360_faest256s",
       "tls_code_point_decimal": 65117,
       "tls_code_point_hex": "0xfe5d",
-      "tls_capability_oid": "1.3.9999.30.31.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.31.2"
     },
     {
       "algorithm": "p521_faest256f",
@@ -1944,8 +1832,7 @@
       "tls_signature_scheme_name": "p521_faest256f",
       "tls_code_point_decimal": 65118,
       "tls_code_point_hex": "0xfe5e",
-      "tls_capability_oid": "1.3.9999.30.32.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.32.1"
     },
     {
       "algorithm": "rsa15360_faest256f",
@@ -1961,8 +1848,7 @@
       "tls_signature_scheme_name": "rsa15360_faest256f",
       "tls_code_point_decimal": 65119,
       "tls_code_point_hex": "0xfe5f",
-      "tls_capability_oid": "1.3.9999.30.32.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.32.2"
     },
     {
       "algorithm": "p256_hawk512",
@@ -1978,8 +1864,7 @@
       "tls_signature_scheme_name": "p256_hawk512",
       "tls_code_point_decimal": 65120,
       "tls_code_point_hex": "0xfe60",
-      "tls_capability_oid": "1.3.9999.30.33.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.33.1"
     },
     {
       "algorithm": "rsa3072_hawk512",
@@ -1995,8 +1880,7 @@
       "tls_signature_scheme_name": "rsa3072_hawk512",
       "tls_code_point_decimal": 65121,
       "tls_code_point_hex": "0xfe61",
-      "tls_capability_oid": "1.3.9999.30.33.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.33.2"
     },
     {
       "algorithm": "p521_hawk1024",
@@ -2012,8 +1896,7 @@
       "tls_signature_scheme_name": "p521_hawk1024",
       "tls_code_point_decimal": 65122,
       "tls_code_point_hex": "0xfe62",
-      "tls_capability_oid": "1.3.9999.30.34.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.34.1"
     },
     {
       "algorithm": "rsa15360_hawk1024",
@@ -2029,8 +1912,7 @@
       "tls_signature_scheme_name": "rsa15360_hawk1024",
       "tls_code_point_decimal": 65123,
       "tls_code_point_hex": "0xfe63",
-      "tls_capability_oid": "1.3.9999.30.34.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.34.2"
     },
     {
       "algorithm": "p256_qruov1q7l10v740m100",
@@ -2046,8 +1928,7 @@
       "tls_signature_scheme_name": "p256_qruov1q7l10v740m100",
       "tls_code_point_decimal": 65124,
       "tls_code_point_hex": "0xfe64",
-      "tls_capability_oid": "1.3.9999.30.35.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.35.1"
     },
     {
       "algorithm": "rsa3072_qruov1q7l10v740m100",
@@ -2063,8 +1944,7 @@
       "tls_signature_scheme_name": "rsa3072_qruov1q7l10v740m100",
       "tls_code_point_decimal": 65125,
       "tls_code_point_hex": "0xfe65",
-      "tls_capability_oid": "1.3.9999.30.35.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.35.2"
     },
     {
       "algorithm": "p384_qruov3q7l10v1100m140",
@@ -2080,8 +1960,7 @@
       "tls_signature_scheme_name": "p384_qruov3q7l10v1100m140",
       "tls_code_point_decimal": 65126,
       "tls_code_point_hex": "0xfe66",
-      "tls_capability_oid": "1.3.9999.30.36.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.36.1"
     },
     {
       "algorithm": "rsa7680_qruov3q7l10v1100m140",
@@ -2097,8 +1976,7 @@
       "tls_signature_scheme_name": "rsa7680_qruov3q7l10v1100m140",
       "tls_code_point_decimal": 65127,
       "tls_code_point_hex": "0xfe67",
-      "tls_capability_oid": "1.3.9999.30.36.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.36.2"
     },
     {
       "algorithm": "p521_qruov5q7l10v1490m190",
@@ -2114,8 +1992,7 @@
       "tls_signature_scheme_name": "p521_qruov5q7l10v1490m190",
       "tls_code_point_decimal": 65128,
       "tls_code_point_hex": "0xfe68",
-      "tls_capability_oid": "1.3.9999.30.37.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.37.1"
     },
     {
       "algorithm": "rsa15360_qruov5q7l10v1490m190",
@@ -2131,8 +2008,7 @@
       "tls_signature_scheme_name": "rsa15360_qruov5q7l10v1490m190",
       "tls_code_point_decimal": 65129,
       "tls_code_point_hex": "0xfe69",
-      "tls_capability_oid": "1.3.9999.30.37.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.37.2"
     },
     {
       "algorithm": "p256_sdithhypercubecat1gf256",
@@ -2148,8 +2024,7 @@
       "tls_signature_scheme_name": "p256_sdithhypercubecat1gf256",
       "tls_code_point_decimal": 65130,
       "tls_code_point_hex": "0xfe6a",
-      "tls_capability_oid": "1.3.9999.30.38.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.38.1"
     },
     {
       "algorithm": "rsa3072_sdithhypercubecat1gf256",
@@ -2165,8 +2040,7 @@
       "tls_signature_scheme_name": "rsa3072_sdithhypercubecat1gf256",
       "tls_code_point_decimal": 65131,
       "tls_code_point_hex": "0xfe6b",
-      "tls_capability_oid": "1.3.9999.30.38.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.38.2"
     },
     {
       "algorithm": "p384_sdithhypercubecat3gf256",
@@ -2182,8 +2056,7 @@
       "tls_signature_scheme_name": "p384_sdithhypercubecat3gf256",
       "tls_code_point_decimal": 65132,
       "tls_code_point_hex": "0xfe6c",
-      "tls_capability_oid": "1.3.9999.30.39.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.39.1"
     },
     {
       "algorithm": "rsa7680_sdithhypercubecat3gf256",
@@ -2199,8 +2072,7 @@
       "tls_signature_scheme_name": "rsa7680_sdithhypercubecat3gf256",
       "tls_code_point_decimal": 65133,
       "tls_code_point_hex": "0xfe6d",
-      "tls_capability_oid": "1.3.9999.30.39.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.39.2"
     },
     {
       "algorithm": "p521_sdithhypercubecat5gf256",
@@ -2216,8 +2088,7 @@
       "tls_signature_scheme_name": "p521_sdithhypercubecat5gf256",
       "tls_code_point_decimal": 65134,
       "tls_code_point_hex": "0xfe6e",
-      "tls_capability_oid": "1.3.9999.30.40.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.40.1"
     },
     {
       "algorithm": "rsa15360_sdithhypercubecat5gf256",
@@ -2233,8 +2104,7 @@
       "tls_signature_scheme_name": "rsa15360_sdithhypercubecat5gf256",
       "tls_code_point_decimal": 65135,
       "tls_code_point_hex": "0xfe6f",
-      "tls_capability_oid": "1.3.9999.30.40.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.40.2"
     },
     {
       "algorithm": "p256_sdiththresholdcat1gf256",
@@ -2250,8 +2120,7 @@
       "tls_signature_scheme_name": "p256_sdiththresholdcat1gf256",
       "tls_code_point_decimal": 65136,
       "tls_code_point_hex": "0xfe70",
-      "tls_capability_oid": "1.3.9999.30.41.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.41.1"
     },
     {
       "algorithm": "rsa3072_sdiththresholdcat1gf256",
@@ -2267,8 +2136,7 @@
       "tls_signature_scheme_name": "rsa3072_sdiththresholdcat1gf256",
       "tls_code_point_decimal": 65137,
       "tls_code_point_hex": "0xfe71",
-      "tls_capability_oid": "1.3.9999.30.41.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.41.2"
     },
     {
       "algorithm": "p384_sdiththresholdcat3gf256",
@@ -2284,8 +2152,7 @@
       "tls_signature_scheme_name": "p384_sdiththresholdcat3gf256",
       "tls_code_point_decimal": 65138,
       "tls_code_point_hex": "0xfe72",
-      "tls_capability_oid": "1.3.9999.30.42.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.42.1"
     },
     {
       "algorithm": "rsa7680_sdiththresholdcat3gf256",
@@ -2301,8 +2168,7 @@
       "tls_signature_scheme_name": "rsa7680_sdiththresholdcat3gf256",
       "tls_code_point_decimal": 65139,
       "tls_code_point_hex": "0xfe73",
-      "tls_capability_oid": "1.3.9999.30.42.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.42.2"
     },
     {
       "algorithm": "p521_sdiththresholdcat5gf256",
@@ -2318,8 +2184,7 @@
       "tls_signature_scheme_name": "p521_sdiththresholdcat5gf256",
       "tls_code_point_decimal": 65140,
       "tls_code_point_hex": "0xfe74",
-      "tls_capability_oid": "1.3.9999.30.43.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.43.1"
     },
     {
       "algorithm": "rsa15360_sdiththresholdcat5gf256",
@@ -2335,8 +2200,7 @@
       "tls_signature_scheme_name": "rsa15360_sdiththresholdcat5gf256",
       "tls_code_point_decimal": 65141,
       "tls_code_point_hex": "0xfe75",
-      "tls_capability_oid": "1.3.9999.30.43.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.43.2"
     },
     {
       "algorithm": "p256_slhdsashake128s",
@@ -2352,8 +2216,7 @@
       "tls_signature_scheme_name": "p256_slhdsashake128s",
       "tls_code_point_decimal": 65102,
       "tls_code_point_hex": "0xfe4e",
-      "tls_capability_oid": "1.3.9999.30.24.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.24.1"
     },
     {
       "algorithm": "rsa3072_slhdsashake128s",
@@ -2369,8 +2232,7 @@
       "tls_signature_scheme_name": "rsa3072_slhdsashake128s",
       "tls_code_point_decimal": 65103,
       "tls_code_point_hex": "0xfe4f",
-      "tls_capability_oid": "1.3.9999.30.24.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.24.2"
     },
     {
       "algorithm": "p256_slhdsashake128f",
@@ -2386,8 +2248,7 @@
       "tls_signature_scheme_name": "p256_slhdsashake128f",
       "tls_code_point_decimal": 65104,
       "tls_code_point_hex": "0xfe50",
-      "tls_capability_oid": "1.3.9999.30.25.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.25.1"
     },
     {
       "algorithm": "rsa3072_slhdsashake128f",
@@ -2403,8 +2264,7 @@
       "tls_signature_scheme_name": "rsa3072_slhdsashake128f",
       "tls_code_point_decimal": 65105,
       "tls_code_point_hex": "0xfe51",
-      "tls_capability_oid": "1.3.9999.30.25.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.25.2"
     },
     {
       "algorithm": "p384_slhdsashake192s",
@@ -2420,8 +2280,7 @@
       "tls_signature_scheme_name": "p384_slhdsashake192s",
       "tls_code_point_decimal": 65106,
       "tls_code_point_hex": "0xfe52",
-      "tls_capability_oid": "1.3.9999.30.26.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.26.1"
     },
     {
       "algorithm": "rsa7680_slhdsashake192s",
@@ -2437,8 +2296,7 @@
       "tls_signature_scheme_name": "rsa7680_slhdsashake192s",
       "tls_code_point_decimal": 65107,
       "tls_code_point_hex": "0xfe53",
-      "tls_capability_oid": "1.3.9999.30.26.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.26.2"
     },
     {
       "algorithm": "p384_slhdsashake192f",
@@ -2454,8 +2312,7 @@
       "tls_signature_scheme_name": "p384_slhdsashake192f",
       "tls_code_point_decimal": 65108,
       "tls_code_point_hex": "0xfe54",
-      "tls_capability_oid": "1.3.9999.30.27.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.27.1"
     },
     {
       "algorithm": "rsa7680_slhdsashake192f",
@@ -2471,8 +2328,7 @@
       "tls_signature_scheme_name": "rsa7680_slhdsashake192f",
       "tls_code_point_decimal": 65109,
       "tls_code_point_hex": "0xfe55",
-      "tls_capability_oid": "1.3.9999.30.27.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.27.2"
     },
     {
       "algorithm": "p521_slhdsashake256s",
@@ -2488,8 +2344,7 @@
       "tls_signature_scheme_name": "p521_slhdsashake256s",
       "tls_code_point_decimal": 65110,
       "tls_code_point_hex": "0xfe56",
-      "tls_capability_oid": "1.3.9999.30.28.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.28.1"
     },
     {
       "algorithm": "rsa15360_slhdsashake256s",
@@ -2505,8 +2360,7 @@
       "tls_signature_scheme_name": "rsa15360_slhdsashake256s",
       "tls_code_point_decimal": 65111,
       "tls_code_point_hex": "0xfe57",
-      "tls_capability_oid": "1.3.9999.30.28.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.28.2"
     },
     {
       "algorithm": "p521_slhdsashake256f",
@@ -2522,8 +2376,7 @@
       "tls_signature_scheme_name": "p521_slhdsashake256f",
       "tls_code_point_decimal": 65112,
       "tls_code_point_hex": "0xfe58",
-      "tls_capability_oid": "1.3.9999.30.29.1",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.29.1"
     },
     {
       "algorithm": "rsa15360_slhdsashake256f",
@@ -2539,8 +2392,7 @@
       "tls_signature_scheme_name": "rsa15360_slhdsashake256f",
       "tls_code_point_decimal": 65113,
       "tls_code_point_hex": "0xfe59",
-      "tls_capability_oid": "1.3.9999.30.29.2",
-      "bandit_arm_id": null
+      "tls_capability_oid": "1.3.9999.30.29.2"
     }
   ]
 }

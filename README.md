@@ -19,10 +19,9 @@ The results README explains the conditions, aggregation, join keys, and limitati
 Use the Frankfurt signing profile and Seoul client verification profile for offline
 cost analysis without rerunning the benchmarks.
 
-The [147-candidate handoff](repro/pc147/README.md) adds runtime-verified OpenSSL
-names and TLS code points, the saved Bandit weight-arm IDs, source pins, the
-additional Composite SHAKE provider patch, and build/check instructions.
-Code points are scoped to the provider build; Bandit arm IDs are not algorithm IDs.
+Start with the [Pareto-filter handoff](repro/pc147/README.md) for the candidate
+mapping, existing cost profiles, and task instructions. Optional source pins,
+provider patches, and build instructions are linked separately.
 
 These are measured data exports, not a complete reproduction package for the
 147-candidate campaigns. The baseline installation pins below are not asserted to
