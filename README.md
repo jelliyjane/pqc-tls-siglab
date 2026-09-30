@@ -1,206 +1,34 @@
 # PQC TLS SigLab
 
-Experimental TLS 1.3 testbed for PQC signature algorithms in OpenSSL 3.5,
-liboqs, and oqs-provider.
+PQC 서명 기반 TLS 실험의 결과와 알고리즘 식별자, 비용 프로파일, 빌드 자료를 모아 둔 저장소입니다.
+Pure PQC 49개와 Hybrid Composite 98개, 총 147개 인증서 후보를 다룹니다.
 
-Start with [INSTALL.md](INSTALL.md) for a clean pinned Ubuntu installation.
-See [REPRODUCIBILITY_STATUS.md](REPRODUCIBILITY_STATUS.md) for the exact public
-reproduction coverage and remaining paper-artifact work.
+## 저장소 구성
 
-This repository is the AWS/reproduction wrapper. The actual algorithm/provider
-changes live in two forked repositories.
+| 폴더 | 들어 있는 자료 |
+| --- | --- |
+| [results/pc_tls_20260929/](results/pc_tls_20260929/README.md) | PC 실험 결과 CSV, 서버 서명 비용과 클라이언트 검증 비용, 실험 조건과 집계 방식 |
+| [repro/pc147/](repro/pc147/README.md) | 파레토 필터 작업 안내, 147개 후보와 OpenSSL 식별자, TLS code point 매핑, 버전 기록과 추가 provider 패치 |
+| [scripts/](scripts/) | OpenSSL, liboqs, oqs-provider 빌드, 실행 환경 설정, TLS 간이 테스트 스크립트 |
+| [src/](src/) | TLS 테스트용 C 코드 |
+| [config/](config/) | Pure PQC 49개 실험 대상 목록 |
+| [patches/](patches/) | OpenSSL 핸드셰이크 시간 측정 패치 |
+| [docs/](docs/) | Ubuntu 설치 안내와 예전 실험 기록. 과거 자료는 `archive/`에 별도 보관 |
 
-## Measured Results
+## 파레토 필터 작업은 여기부터
 
-The completed PC campaigns are available as [CSV results](results/pc_tls_20260929/README.md):
-40,440 condition summaries, validated against 1,683,600 successful raw measurements,
-plus EVP v2 cost profiles for 147 signature candidates (49 pure PQC, 98 composite).
-The results README explains the conditions, aggregation, join keys, and limitations.
-Use the Frankfurt signing profile and Seoul client verification profile for offline
-cost analysis without rerunning the benchmarks.
+1. [작업 안내](repro/pc147/README.md)에서 구현 순서와 비용 데이터의 범위를 확인합니다.
+2. [147개 후보 매핑](repro/pc147/algorithm_mapping.json)에 [서명 비용 CSV](results/pc_tls_20260929/server_sign_frankfurt_evp_v2.csv)와 [검증 비용 CSV](results/pc_tls_20260929/client_verify_seoul_evp_v2.csv)를 `algorithm` 이름으로 연결합니다.
+3. [TLS 실험 결과 안내](results/pc_tls_20260929/README.md)를 보고 비교할 조건과 결과 CSV를 선택합니다.
 
-Start with the [Pareto-filter handoff](repro/pc147/README.md) for the candidate
-mapping, existing cost profiles, and task instructions. Optional source pins,
-provider patches, and build instructions are linked separately.
+기존 결과를 이용한 파레토 필터 분석에는 OpenSSL 재설치나 비용 재측정이 필요하지 않습니다.
+클라이언트 지원 목록과 보안 정책으로 후보를 먼저 제한한 뒤, 그 안에서 파레토 필터를 적용합니다.
 
-These are measured data exports, not a complete reproduction package for the
-147-candidate campaigns. The baseline installation pins below are not asserted to
-reproduce every campaign configuration. No private keys, server addresses, raw
-connection logs, or trained Bandit models are included in this data release.
+## 빌드 자료가 필요한 경우
 
-## Reproduction Link
+버전, commit, provider 코드와 빌드 설정은 [빌드 및 재측정 안내](repro/pc147/BUILD.md)에 정리했습니다.
+Ubuntu 기본 설치 절차는 [설치 안내](docs/INSTALL.md)를 참고합니다.
 
-Share this repository link:
-
-`https://github.com/jelliyjane/pqc-tls-siglab`
-
-For the verified self-contained baseline, use the `repro-self-contained-v1`
-tag. Its build script must use liboqs commit
-`fa33db143fb12a2e1e306b51ab3c8c98432a46c4`; this commit contains the vendored
-HAWK, QR-UOV Round 2, and SDitH sources.
-
-```bash
-git clone https://github.com/jelliyjane/pqc-tls-siglab.git
-cd pqc-tls-siglab
-git checkout repro-self-contained-v1
-./scripts/build_aws.sh
-```
-
-## Handoff For Next Session
-
-If another Codex session continues this work, start here.
-
-User context:
-
-- Research area: TLS 1.3, PQC signatures, hybrid/adaptive certificate selection.
-- Goal: run AWS-based benchmarks for PQC signature certificates and TLS 1.3
-  handshakes.
-- Current focus: certificate DER size and localhost TLS handshake time by
-  algorithm/security level.
-
-Repository set:
-
-- liboqs fork:
-  `https://github.com/jelliyjane/liboqs-pqc-tls-siglab.git`
-- liboqs branch:
-  `pqc-tls-siglab`
-- oqs-provider fork:
-  `https://github.com/jelliyjane/oqs-provider-pqc-tls-siglab.git`
-- oqs-provider branch:
-  `pqc-tls-siglab`
-- wrapper repo:
-  `https://github.com/jelliyjane/pqc-tls-siglab.git`
-- wrapper branch:
-  `main`
-
-Pinned component commits:
-
-- liboqs: `fa33db143fb12a2e1e306b51ab3c8c98432a46c4`
-- oqs-provider: `da0d3156af41915792cb99ce7a64b1a7633ce8f6`
-- OpenSSL: `openssl-3.5.7`
-
-## Layout
-
-- `scripts/build_aws.sh`: builds OpenSSL, liboqs, and oqs-provider.
-- `scripts/env.sh`: runtime environment variables.
-- `scripts/test_tls_sigalg.sh`: localhost TLS 1.3 handshake test for one signature algorithm.
-- `src/tls_maxcert_client.c`: client with larger certificate-list limit for oversized certs.
-- `patches/`: optional patch exports from local liboqs and oqs-provider worktrees.
-
-## Recommended Git Setup
-
-Use three repositories:
-
-1. A fork of `open-quantum-safe/liboqs` with added algorithms.
-2. A fork of `open-quantum-safe/oqs-provider` with provider/TLS support.
-3. This wrapper repository for AWS build and benchmark scripts.
-
-Do not commit build outputs, generated certificates, logs, or installed libraries.
-
-## Fresh AWS Build
-
-The complete package list and verification steps are in
-[INSTALL.md](INSTALL.md). The short path is:
-
-The pinned liboqs fork includes the HAWK, QR-UOV Round 2, and SDitH reference
-sources and their licenses. No separate `pq-sig-refs` checkout or
-machine-specific source path is required.
-
-```bash
-git clone https://github.com/jelliyjane/pqc-tls-siglab.git
-cd pqc-tls-siglab
-export PQC_TLS_TESTBED="$PWD"
-./scripts/build_aws.sh
-source ./scripts/env.sh
-```
-
-The build script installs into:
-
-- `install/openssl`
-- `install/liboqs`
-- `install/oqs-provider`
-
-## TLS Test
-
-```bash
-./scripts/test_tls_sigalg.sh faest128s
-./scripts/test_tls_sigalg.sh slhdsasha2128s
-./scripts/test_tls_sigalg.sh slhdsashake128s
-./scripts/test_tls_sigalg.sh qruov5q7l10v1490m190 --large-cert
-```
-
-Useful signature names:
-
-- FAEST: `faest128s`, `faest128f`, `faest192s`, `faest192f`,
-  `faest256s`, `faest256f`
-- HAWK: `hawk512`, `hawk1024`
-- QR-UOV Round2:
-  `qruov1q7l10v740m100`, `qruov3q7l10v1100m140`,
-  `qruov5q7l10v1490m190`
-- ML-DSA: `mldsa44`, `mldsa65`, `mldsa87`
-- Falcon: `falcon512`, `falcon1024`
-- SLH-DSA SHA2:
-  `slhdsasha2128s`, `slhdsasha2128f`, `slhdsasha2192s`,
-  `slhdsasha2192f`, `slhdsasha2256s`, `slhdsasha2256f`
-- SLH-DSA SHAKE:
-  `slhdsashake128s`, `slhdsashake128f`, `slhdsashake192s`,
-  `slhdsashake192f`, `slhdsashake256s`, `slhdsashake256f`
-- SDitH: `sdithhypercubecat1gf256`
-
-For a quick availability check:
-
-```bash
-openssl list -signature-algorithms \
-  -provider-path "$OQSPROV_MODULES" \
-  -provider oqsprovider \
-  -provider default
-
-openssl list -tls-signature-algorithms \
-  -provider-path "$OQSPROV_MODULES" \
-  -provider oqsprovider \
-  -provider default
-```
-
-## Notes
-
-- QR-UOV level 5 exceeds OpenSSL's default certificate-list limit, so use
-  `--large-cert`.
-- The local SLH-DSA provider experiment uses private OIDs for both SHA2 and
-  SHAKE variants to avoid OpenSSL 3.5 native SLH-DSA OID conflicts.
-- `config/targets_pure49.csv` is the current pure-PQC manifest. It contains
-  the original 43 algorithms plus all six FIPS 205 SHAKE parameter sets.
-- `oqs-provider` may have local build directories such as `build-35/`; do not
-  commit them.
-- The timing scripts are simple localhost smoke tests. For paper-quality data,
-  repeat measurements, pin CPU settings, record machine type, and separate
-  certificate size from network effects.
-
-## Previously Observed Local Results
-
-These were one-shot localhost measurements on the original development machine.
-Use them only as sanity checks, not final benchmark data.
-
-| Algorithm | Certificate DER | TLS handshake |
-|---|---:|---:|
-| Falcon512 | 1,788B | 10ms |
-| HAWK512 | 1,819B | 30ms |
-| ML-DSA44 | 3,981B | 10ms |
-| FAEST128s | 4,773B | 110ms |
-| FAEST128f | 6,191B | 70ms |
-| SLH-DSA-SHA2-128s | 8,130B | 260ms |
-| SLH-DSA-SHA2-128f | 17,362B | 30ms |
-| QR-UOV level1 | 21,212B | 50ms |
-| ML-DSA65 | 5,510B | 10ms |
-| FAEST192s | 11,544B | 310ms |
-| FAEST192f | 15,232B | 150ms |
-| SLH-DSA-SHA2-192s | 16,515B | 440ms |
-| SLH-DSA-SHA2-192f | 35,955B | 30ms |
-| QR-UOV level3 | 55,878B | 80ms |
-| Falcon1024 | 3,304B | 10ms |
-| HAWK1024 | 3,901B | 30ms |
-| ML-DSA87 | 7,468B | 10ms |
-| FAEST256s | 20,980B | 490ms |
-| FAEST256f | 26,832B | 230ms |
-| SLH-DSA-SHA2-256s | 30,099B | 400ms |
-| SLH-DSA-SHA2-256f | 50,163B | 60ms |
-| QR-UOV level5 | 136,313B | 90ms with large-cert client |
+공개 결과는 40,440개 조건의 요약 CSV와 147개 후보의 비용 프로파일입니다.
+전체 원시 연결 로그와 학습된 Bandit 모델은 포함하지 않습니다.
+재빌드 자료만으로 당시 측정 환경이 완전히 재현된다고 보장하지는 않습니다.

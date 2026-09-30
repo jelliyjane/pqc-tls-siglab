@@ -1,11 +1,15 @@
 # Reproducibility Status
 
+Historical snapshot, not the current release status. Some items below have
+since been published. See the [repository guide](../../README.md) for current
+data and the [build guide](../../repro/pc147/BUILD.md) for reproduction limits.
+
 Last reviewed: 2026-07-20
 
 ## Current Status
 
 The repository now pins OpenSSL, liboqs, and oqs-provider revisions and
-documents a clean Ubuntu installation in `INSTALL.md`.
+documents a clean Ubuntu installation in [INSTALL.md](../INSTALL.md).
 
 A new user can reproduce the cryptographic build and localhost TLS smoke tests
 from this repository alone.

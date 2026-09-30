@@ -37,7 +37,7 @@ solely because these sources build successfully.
 ## Build and check on a clean Ubuntu machine
 
 Use a fresh clone of **main**, not the older `repro-self-contained-v1` tag, to get
-these handoff files. Follow [INSTALL.md](../../INSTALL.md) for prerequisites.
+these handoff files. Follow [INSTALL.md](../../docs/INSTALL.md) for prerequisites.
 From the repository root:
 
 ```bash

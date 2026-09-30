@@ -1,9 +1,15 @@
 # Installation Guide
 
+For existing results and the Pareto-filter task, start with the
+[repository guide](../README.md). Installation is optional for that task.
+
 This guide installs the pinned PQC TLS SigLab cryptographic stack on a clean
 Ubuntu host and verifies that the custom OpenSSL provider is working.
 
-Use wrapper tag `repro-self-contained-v1`. Do not replace the pinned liboqs
+The historical baseline uses wrapper tag `repro-self-contained-v1`. For the
+147-candidate mapping and additional provider patch, use main and follow the
+[build guide](../repro/pc147/BUILD.md); the old tag lacks these files.
+Run the commands below from the repository root. Do not replace the pinned liboqs
 commit `fa33db143fb12a2e1e306b51ab3c8c98432a46c4` with an older revision; this
 is the self-contained revision that includes HAWK, QR-UOV Round 2, and SDitH.
 
@@ -246,8 +252,9 @@ trust root before collecting timing data.
 ## 10. Reproduction Scope
 
 This installation guide reproduces the pinned cryptographic build and local
-TLS smoke workflow. The current status of the complete multi-region paper
-experiment is tracked in `REPRODUCIBILITY_STATUS.md`.
+TLS smoke workflow, not the entire multi-region experiment. For published data
+and aggregation, see the [PC results guide](../results/pc_tls_20260929/README.md).
+For historical source limitations, see the [build guide](../repro/pc147/BUILD.md).
 
 Never commit PEM private keys, AWS credentials, generated private keys, or
 user-specific absolute paths.
