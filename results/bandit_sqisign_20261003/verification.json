@@ -1,0 +1,21 @@
+{
+  "raw_conditions_verified": 24960,
+  "raw_time_values_verified": 1248000,
+  "prepared_contexts": 1440,
+  "eligible_candidates": 150,
+  "sqisign_candidates_present": 9,
+  "checkpoint_models_verified": 150,
+  "checkpoint_decisions_independently_recomputed": 14400,
+  "exact_retraining_checks": ["region/fold0_L1_seed42", "condition/fold0_L1_seed42"],
+  "exact_retraining_arrays": ["a_inverse", "b", "counts"],
+  "unit_tests_passed": 17,
+  "historical_region_model_hashes_preserved": 75,
+  "isolated_public_code_import_verified": true,
+  "compressed_payload_objects_checked_for_private_paths_and_key_markers": 227,
+  "live_top1m_scanner_or_tls_settings_changed": false,
+  "new_remote_cost_batches": {"frankfurt_composite": 6, "seoul_client1_verify": 9},
+  "reused_frankfurt_pure_sqisign_costs": 3,
+  "remote_cost_resource_leases_released": true,
+  "old_model_files_overwritten": false,
+  "scope": "Bandit-only update; no new online TLS bandit deployment and no Pareto-filter evaluation"
+}

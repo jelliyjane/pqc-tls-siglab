@@ -1,0 +1,72 @@
+{
+  "files": [
+    {
+      "path": "code/rl_weight_selector/sqisign_bandit_release.py",
+      "original_sha256": "797190a507d6c34076c9c8d8e09347f5eab9fa9e03cf049516a5ec3d1279ca1f",
+      "published_sha256": "797190a507d6c34076c9c8d8e09347f5eab9fa9e03cf049516a5ec3d1279ca1f"
+    },
+    {
+      "path": "code/rl_weight_selector/tail5_region_holdout.py",
+      "original_sha256": "cfa1e12b54d7beb3ee146a202efc885a44d7ff91d299f26b039826cb868a4f61",
+      "published_sha256": "cfa1e12b54d7beb3ee146a202efc885a44d7ff91d299f26b039826cb868a4f61"
+    },
+    {
+      "path": "code/rl_weight_selector/retrain_ica12.py",
+      "original_sha256": "f6bb8bf554d44511cbc1f999b76734778c63a5dfe75112739de8168c21464e6c",
+      "published_sha256": "f6bb8bf554d44511cbc1f999b76734778c63a5dfe75112739de8168c21464e6c"
+    },
+    {
+      "path": "code/rl_weight_selector/screen_composite_vs_deterministic.py",
+      "original_sha256": "c6426cfc202e85ae55f28794038f14be99f46d76f035d14a2de1cc70b479a37f",
+      "published_sha256": "c6426cfc202e85ae55f28794038f14be99f46d76f035d14a2de1cc70b479a37f"
+    },
+    {
+      "path": "code/rl_weight_selector/bandit.py",
+      "original_sha256": "adf44390bf43d467191d50e1c3302d19abb58d90e902bda956f2b634996a6724",
+      "published_sha256": "adf44390bf43d467191d50e1c3302d19abb58d90e902bda956f2b634996a6724"
+    },
+    {
+      "path": "code/contextual_signature_selector/selector.py",
+      "original_sha256": "d57dc6c37b9a47ac7bb719751161b18709fba21cb9cda403c7f0794d120ccef6",
+      "published_sha256": "8a425b3c440b44a406b146ee34efb5bc36d5f2cc599611e848ecff5da74bb4cf"
+    },
+    {
+      "path": "code/contextual_signature_selector/replay_certificate_inventories.py",
+      "original_sha256": "0428bfacbe5323b285747526a8712d4fdbf4f01650b9272ccabbc4f74a6fd4c2",
+      "published_sha256": "69d0f500b00726838f4187c17ab71a8353b0b9987f182b14902e2bb4630bb5e7"
+    },
+    {
+      "path": "code/rl_weight_selector/bw147_interim_linucb.py",
+      "original_sha256": "a1761e43468343f222d8ef0a89f998971531dde8f8a8e05aa61c7e1944f31ced",
+      "published_sha256": "a1761e43468343f222d8ef0a89f998971531dde8f8a8e05aa61c7e1944f31ced"
+    },
+    {
+      "path": "code/rl_weight_selector/partial_feedback_linucb.py",
+      "original_sha256": "556bd88b8d75ea0ec89c31bb824adc8d3b24aaa8bc688a603ecc9e34a9f16bea",
+      "published_sha256": "556bd88b8d75ea0ec89c31bb824adc8d3b24aaa8bc688a603ecc9e34a9f16bea"
+    },
+    {
+      "path": "code/rl_weight_selector/screen_composite_temporal.py",
+      "original_sha256": "d5f38a3b54d1ddff7d42da54e1a3dd33421dce9cedefee39d75402b59f648f69",
+      "published_sha256": "d5f38a3b54d1ddff7d42da54e1a3dd33421dce9cedefee39d75402b59f648f69"
+    },
+    {
+      "path": "code/pqc_cti/policy.py",
+      "original_sha256": "2200ba6b14ac7cfc41496d27635333a76f8c55b1b16e5e803471a165a798bbbc",
+      "published_sha256": "2200ba6b14ac7cfc41496d27635333a76f8c55b1b16e5e803471a165a798bbbc"
+    },
+    {
+      "path": "code/rl_weight_selector/region_holdout_unified_evp.py",
+      "original_sha256": "51a280942117605f783067c0786f9ee8cab8b2a3fe641774243f225d694fe338",
+      "published_sha256": "51a280942117605f783067c0786f9ee8cab8b2a3fe641774243f225d694fe338"
+    }
+  ],
+  "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:11:29) [Clang 20.1.8 ]",
+  "numpy": "2.3.5",
+  "model_preservation": "All historical model files preserved; new models live in a new release directory.",
+  "portability_edits": [
+    "contextual_signature_selector/selector.py ROOT",
+    "contextual_signature_selector/replay_certificate_inventories.py ROOT"
+  ],
+  "metadata_sanitization": "Local absolute workspace prefixes removed from public provenance and legacy metrics; measured values and model bytes unchanged."
+}

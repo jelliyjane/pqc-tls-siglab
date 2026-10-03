@@ -7,3 +7,5 @@ src-work/
 *.der
 build/
 build-*/
+__pycache__/
+*.py[cod]

@@ -1,0 +1,16 @@
+fold,level,fit_regions,test_region,validation_region_during_tuning,selected_alpha,fit_contexts,test_contexts
+0,L1,tokyo;singapore;usa;frankfurt,seoul,tokyo,0.05,384,96
+0,L3,tokyo;singapore;usa;frankfurt,seoul,tokyo,0.1,384,96
+0,L5,tokyo;singapore;usa;frankfurt,seoul,tokyo,0.25,384,96
+1,L1,seoul;singapore;usa;frankfurt,tokyo,singapore,0.01,384,96
+1,L3,seoul;singapore;usa;frankfurt,tokyo,singapore,0.01,384,96
+1,L5,seoul;singapore;usa;frankfurt,tokyo,singapore,0.01,384,96
+2,L1,seoul;tokyo;usa;frankfurt,singapore,usa,0.05,384,96
+2,L3,seoul;tokyo;usa;frankfurt,singapore,usa,0.05,384,96
+2,L5,seoul;tokyo;usa;frankfurt,singapore,usa,0.05,384,96
+3,L1,seoul;tokyo;singapore;frankfurt,usa,frankfurt,0.05,384,96
+3,L3,seoul;tokyo;singapore;frankfurt,usa,frankfurt,0.01,384,96
+3,L5,seoul;tokyo;singapore;frankfurt,usa,frankfurt,0.05,384,96
+4,L1,seoul;tokyo;singapore;usa,frankfurt,seoul,0.01,384,96
+4,L3,seoul;tokyo;singapore;usa,frankfurt,seoul,0.05,384,96
+4,L5,seoul;tokyo;singapore;usa,frankfurt,seoul,0.1,384,96

@@ -1,0 +1,1 @@
+[{"fold":0,"test_region":"seoul","validation_region":"tokyo"},{"fold":1,"test_region":"tokyo","validation_region":"singapore"},{"fold":2,"test_region":"singapore","validation_region":"usa"},{"fold":3,"test_region":"usa","validation_region":"frankfurt"},{"fold":4,"test_region":"frankfurt","validation_region":"seoul"}]

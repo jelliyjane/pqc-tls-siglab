@@ -1,0 +1,53 @@
+{
+  "split": "5-fold grouped region/ICA/loss/BW holdout; 128/160 groups fit, 32/160 test per fold",
+  "split_seed": 20260927,
+  "actions": 1001,
+  "action_step": 0.1,
+  "feedback_mode": "selected-action",
+  "snapshot_path": "outputs/analysis/rl_full_x25519_20260923/intake/evaluator_snapshot.json",
+  "snapshot_sha256": "1a1c1d28bb158ebe13a4cd5a0ab21b9ac9e6bbf7193f1105926f4ccb64755372",
+  "source_conditions": 23520,
+  "test_decisions": 7200,
+  "models": 75,
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "alphas": [
+    0.01,
+    0.05,
+    0.1,
+    0.25
+  ],
+  "mean_rl_tls_ms": 293.36766210740075,
+  "mean_oracle_tls_ms": 282.1420988571627,
+  "evp_profile_metadata": [
+    {
+      "profile_dir": "outputs/evp_cost_remeasurement/server_sign_frankfurt_openssl357_evp_v2",
+      "manifest": "outputs/evp_cost_remeasurement/server_sign_frankfurt_openssl357_evp_v2/manifest.20260912T142008696958Z.json",
+      "averages": "outputs/evp_cost_remeasurement/server_sign_frankfurt_openssl357_evp_v2/averages.20260912T142008696958Z.csv",
+      "profile_role": "server_sign",
+      "manifest_sha256": "8d39c59013b123f1e887a1ee2794c9ad92fdd10d211cb03cec427dc32844a450",
+      "averages_sha256": "5703e40d70ac8c98e07a98dd20bafc1f225f78ec9cb1ff2f0a0169bb7014a573",
+      "protocol": "evp_cv_sha256_init_oneshot_v1"
+    },
+    {
+      "profile_dir": "outputs/evp_cost_remeasurement/seoul_client1_verify_openssl357_evp_v2",
+      "manifest": "outputs/evp_cost_remeasurement/seoul_client1_verify_openssl357_evp_v2/manifest.20260912T145141587410Z.json",
+      "averages": "outputs/evp_cost_remeasurement/seoul_client1_verify_openssl357_evp_v2/averages.20260912T145141587410Z.csv",
+      "profile_role": "seoul_client_verify",
+      "manifest_sha256": "218fb71e275bc29958873c0f7a6bfff544c1d41f29cc9265b239268d169b6370",
+      "averages_sha256": "c1f9ade75096d307b5352e992c2bfe0e59d4c4dfde1b021eb2aeddc29f3d13e0",
+      "protocol": "evp_cv_sha256_init_oneshot_v1"
+    }
+  ],
+  "elapsed_seconds": 285.56007979111746,
+  "source_hashes": {
+    "rl_weight_selector/condition_holdout_tail5.py": "39988768eb5b5a2b272f8d916b716ff7bb08ff38b26390f896f4d126e6ab8e41",
+    "rl_weight_selector/tail5_region_holdout.py": "cfa1e12b54d7beb3ee146a202efc885a44d7ff91d299f26b039826cb868a4f61",
+    "rl_weight_selector/partial_feedback_linucb.py": "556bd88b8d75ea0ec89c31bb824adc8d3b24aaa8bc688a603ecc9e34a9f16bea"
+  }
+}

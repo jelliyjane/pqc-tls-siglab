@@ -1,0 +1,137 @@
+{
+  "model": "disjoint LinUCB weight selector",
+  "score_variant": "tail5",
+  "score_features": [
+    "sign_ms",
+    "transmission_ms",
+    "extra_round_ms",
+    "verify_chain_ms",
+    "i_tail"
+  ],
+  "score_formula": "sum(w_j*N_j(f_j), j=1..4) + w5*I_tail; no overlap subtraction, no tail*sign addition",
+  "actions": 1001,
+  "action_step": 0.1,
+  "context_input": "RTT,BW only, unchanged",
+  "snapshot_path": "outputs/analysis/rl_full_x25519_20260923/intake/evaluator_snapshot.json",
+  "snapshot_sha256": "1a1c1d28bb158ebe13a4cd5a0ab21b9ac9e6bbf7193f1105926f4ccb64755372",
+  "comparison_dir": "outputs/analysis/rl_full_x25519_20260923/unified_evp",
+  "split": "per fold: four complete regions fit (80%), one complete unseen region test (20%)",
+  "run_split": {
+    "train": "3 whole regions × retained 35/50 runs",
+    "validation": "1 whole region × retained 35/50 runs",
+    "fit": "4 whole regions (80%) × retained 35/50 runs",
+    "test": "1 unseen whole region (20%) × retained 35/50 runs"
+  },
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "alphas": [
+    0.01,
+    0.05,
+    0.1,
+    0.25
+  ],
+  "included_icas": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "included_ica_loss_pairs": [
+    {
+      "ica": 1,
+      "loss_percent": 0
+    },
+    {
+      "ica": 1,
+      "loss_percent": 1
+    },
+    {
+      "ica": 2,
+      "loss_percent": 0
+    },
+    {
+      "ica": 2,
+      "loss_percent": 1
+    },
+    {
+      "ica": 3,
+      "loss_percent": 0
+    },
+    {
+      "ica": 3,
+      "loss_percent": 1
+    },
+    {
+      "ica": 4,
+      "loss_percent": 0
+    },
+    {
+      "ica": 4,
+      "loss_percent": 1
+    }
+  ],
+  "included_bandwidths_mbps": [
+    1,
+    5,
+    50,
+    100
+  ],
+  "source_algorithm_conditions": 23520,
+  "source_raw_samples": 1176000,
+  "excluded_HAWK_conditions": 960,
+  "eligible_algorithms": 141,
+  "decision_contexts": 1440,
+  "test_decisions": 7200,
+  "rtt_mismatch_contexts": 42,
+  "mean_rl_tls_ms": 296.21380332494044,
+  "mean_oracle_tls_ms": 282.1420988571627,
+  "mean_regret_ms": 14.07170446777775,
+  "mean_mldsa_tls_ms": 362.9656279144841,
+  "reduction_vs_mldsa_pct": 18.390673787235475,
+  "evp_profile_metadata": [
+    {
+      "profile_dir": "outputs/evp_cost_remeasurement/server_sign_frankfurt_openssl357_evp_v2",
+      "manifest": "outputs/evp_cost_remeasurement/server_sign_frankfurt_openssl357_evp_v2/manifest.20260912T142008696958Z.json",
+      "averages": "outputs/evp_cost_remeasurement/server_sign_frankfurt_openssl357_evp_v2/averages.20260912T142008696958Z.csv",
+      "profile_role": "server_sign",
+      "manifest_sha256": "8d39c59013b123f1e887a1ee2794c9ad92fdd10d211cb03cec427dc32844a450",
+      "averages_sha256": "5703e40d70ac8c98e07a98dd20bafc1f225f78ec9cb1ff2f0a0169bb7014a573",
+      "protocol": "evp_cv_sha256_init_oneshot_v1"
+    },
+    {
+      "profile_dir": "outputs/evp_cost_remeasurement/seoul_client1_verify_openssl357_evp_v2",
+      "manifest": "outputs/evp_cost_remeasurement/seoul_client1_verify_openssl357_evp_v2/manifest.20260912T145141587410Z.json",
+      "averages": "outputs/evp_cost_remeasurement/seoul_client1_verify_openssl357_evp_v2/averages.20260912T145141587410Z.csv",
+      "profile_role": "seoul_client_verify",
+      "manifest_sha256": "218fb71e275bc29958873c0f7a6bfff544c1d41f29cc9265b239268d169b6370",
+      "averages_sha256": "c1f9ade75096d307b5352e992c2bfe0e59d4c4dfde1b021eb2aeddc29f3d13e0",
+      "protocol": "evp_cv_sha256_init_oneshot_v1"
+    }
+  ],
+  "elapsed_seconds": 280.3775407499634,
+  "source_hashes": {
+    "rl_weight_selector/tail5_region_holdout.py": "7c3a5db3252b97a7e782c5f40b6c46b008a16664bf4db8b8fe9cbc2150bf97d3",
+    "outputs/analysis/contextual_signature_selector/itail_full_matrix/itail_all_rows_seoul.csv": "4fef8ef421a0b6e1e3f553b83c088d6215153059947d8edf89de7736ea2645e9",
+    "outputs/analysis/composite_chain_length_overhead/composite_chain_detail.csv": "16f19bd37eb96c122809d4d8491ea313b993576ae23795257b1305e4e32d77ed",
+    "rl_weight_selector/retrain_ica12.py": "4bd1f907f10623e161d864dfbad2641add0635c0007a3b01e7b0ac9f4a0cbc90",
+    "rl_weight_selector/partial_feedback_linucb.py": "556bd88b8d75ea0ec89c31bb824adc8d3b24aaa8bc688a603ecc9e34a9f16bea",
+    "rl_weight_selector/region_holdout_unified_evp.py": "51a280942117605f783067c0786f9ee8cab8b2a3fe641774243f225d694fe338",
+    "contextual_signature_selector/selector.py": "d57dc6c37b9a47ac7bb719751161b18709fba21cb9cda403c7f0794d120ccef6"
+  },
+  "limitations": [
+    "A held-out region changes the full server path, not RTT alone",
+    "All included BW values are observed in fitting; this tests unseen region, not unseen BW values",
+    "The offline policy input is RTT and BW; loss is not an independent policy feature",
+    "Five seeds are model initializations, not independent network measurements",
+    "1001 arms versus 66; same updates, so different exploration budget per arm",
+    "This comparison changes the entire cost decomposition, not just I_tail",
+    "Chain verification remains an EVP single-verify times certificate-count proxy",
+    "I_tail is the existing size/buffer heuristic, not a new per-session observation",
+    "Full 50-run offline trimming is preprocessing, not available online future feedback"
+  ]
+}
