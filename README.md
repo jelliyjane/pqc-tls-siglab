@@ -7,6 +7,7 @@ SQIsign을 포함하고 HAWK를 제외한 **150개 서명 구성**의 TLS 측정
 | --- | --- |
 | [results/latest](results/latest/README.md) | TLS 측정값 120만 개, 비용 프로파일, 지역·조건 holdout 결과와 모델 |
 | [repro/latest](repro/latest/README.md) | 최종 설정의 실행 코드와 검증 방법 |
+| [Context acquisition](docs/context-acquisition.md) | 실제 TLS 연결의 context 수집·주기적 갱신 구현, 기능 테스트와 오버헤드 측정 방법 |
 | `scripts/`, `src/`, `patches/`, `config/` | 기존 TLS 측정·빌드 보조 자료; 전체 150개 구성 목록은 `results/latest/inputs/algorithms.json` 참조 |
 
 최종 설정은 4개 비용 항, chain-only 검증 비용 추정, 손실확률 입력,

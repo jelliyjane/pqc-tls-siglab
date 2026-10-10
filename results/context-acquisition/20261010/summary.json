@@ -1,0 +1,361 @@
+{
+  "schema": "cats.context-acquisition-benchmark.v1",
+  "measured_at_utc": "2026-10-10T08:05:55Z",
+  "system": "Linux",
+  "kernel": "7.0.0-1006-aws",
+  "machine": "x86_64",
+  "cpu_count": 1,
+  "cpu_description": "Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz",
+  "compiler": "cc (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+  "source_sha256": {
+    "src/cats_context.h": "d19614862cdb4c88d496fd4c37902dda636f4d09e0714244df7837655444d6a9",
+    "src/cats_sign_timer.c": "887e19b5c427b54f0edcdb30fbe0516a9d7430efae75d1b2cd9cd78142c2f14f",
+    "src/cats_context.c": "d0b05c9ad96c08bb25974e03043316cea989935742671df827e8f603162fe3e8",
+    "src/bench_cats_context.c": "891ad2492a8686199830a316248e905601b8e228ed1dcf36b3cedb577d18c482",
+    "scripts/run_context_benchmark.py": "ca6b02a5e9d68d8a4fb9834aa9a7f1b067d7848fa313eea956fda6b9e4617927"
+  },
+  "binary_sha256": {
+    "bench_cats_context": "629f248e37855b153b0adfb803d8debce51ff958711228b338a4a39454951a7b",
+    "libcats_sign_timer.so": "9ba3a7ec39901fddbc44435e078beee60e2a1e6df1a38ce0db35cfcd49a45156"
+  },
+  "conditions": {
+    "network": "IPv4 loopback",
+    "tls": "1.3",
+    "key_exchange": "X25519",
+    "concurrency": 1,
+    "profile_slots": 150,
+    "service_response_bytes": 65536,
+    "sampler_interval_ms": 1000,
+    "log_inside_timed_section": false,
+    "clock_baseline_subtracted": false
+  },
+  "limitations": [
+    "Acquisition overhead, not total signature-selection overhead or end-to-end TLS improvement.",
+    "Only ECDSA P-256 and ML-DSA-44 are executed; 150 denotes cached profile slots, not tested algorithms.",
+    "Single-host loopback, one live service connection; no cross-region or high-concurrency claim.",
+    "BW is a host-wide historical delivery-rate proxy, not measured available bandwidth on the new path.",
+    "Loss is a recent aggregate TCP retransmission ratio, not measured packet-loss probability on the new path.",
+    "Synthetic application response is benchmark workload; collection itself sends no data.",
+    "Crypto execution time is reported separately and is NOT acquisition overhead."
+  ],
+  "algorithms": {
+    "ECDSA": {
+      "runs": [
+        {
+          "run": 0,
+          "metadata": {
+            "kind": "metadata",
+            "algorithm": "ECDSA",
+            "openssl": "OpenSSL 3.5.7 9 Jun 2026",
+            "iterations": 1000,
+            "warmup": 100,
+            "profiles": 150,
+            "context_bytes": 436808,
+            "sample_interval_ms": 1000
+          },
+          "acquisition": {
+            "n": 1000,
+            "mean_us": 4.569537,
+            "p50_us": 4.0355,
+            "p95_us": 5.130649999999999,
+            "p99_us": 8.011279999999996,
+            "max_us": 206.193
+          },
+          "sampler": {
+            "kind": "sampler",
+            "batches": 46,
+            "socket_reads": 46,
+            "elapsed_ns": 347678,
+            "max_batch_ns": 10673
+          }
+        },
+        {
+          "run": 1,
+          "metadata": {
+            "kind": "metadata",
+            "algorithm": "ECDSA",
+            "openssl": "OpenSSL 3.5.7 9 Jun 2026",
+            "iterations": 1000,
+            "warmup": 100,
+            "profiles": 150,
+            "context_bytes": 436808,
+            "sample_interval_ms": 1000
+          },
+          "acquisition": {
+            "n": 1000,
+            "mean_us": 4.508179,
+            "p50_us": 3.983,
+            "p95_us": 5.220799999999999,
+            "p99_us": 9.221139999999991,
+            "max_us": 322.061
+          },
+          "sampler": {
+            "kind": "sampler",
+            "batches": 45,
+            "socket_reads": 45,
+            "elapsed_ns": 352346,
+            "max_batch_ns": 12386
+          }
+        },
+        {
+          "run": 2,
+          "metadata": {
+            "kind": "metadata",
+            "algorithm": "ECDSA",
+            "openssl": "OpenSSL 3.5.7 9 Jun 2026",
+            "iterations": 1000,
+            "warmup": 100,
+            "profiles": 150,
+            "context_bytes": 436808,
+            "sample_interval_ms": 1000
+          },
+          "acquisition": {
+            "n": 1000,
+            "mean_us": 4.698078,
+            "p50_us": 4.046,
+            "p95_us": 5.14725,
+            "p99_us": 7.29605999999999,
+            "max_us": 316.953
+          },
+          "sampler": {
+            "kind": "sampler",
+            "batches": 46,
+            "socket_reads": 46,
+            "elapsed_ns": 366838,
+            "max_batch_ns": 17638
+          }
+        }
+      ],
+      "timing": {
+        "acquisition_ns": {
+          "n": 3000,
+          "mean_us": 4.591931333333333,
+          "p50_us": 4.022,
+          "p95_us": 5.1541,
+          "p99_us": 8.46352999999994,
+          "max_us": 322.061
+        },
+        "track_ns": {
+          "n": 3000,
+          "mean_us": 2.9915203333333333,
+          "p50_us": 2.707,
+          "p95_us": 3.583399999999998,
+          "p99_us": 6.232279999999993,
+          "max_us": 300.115
+        },
+        "untrack_ns": {
+          "n": 3000,
+          "mean_us": 7.5358979999999995,
+          "p50_us": 7.198,
+          "p95_us": 9.087799999999985,
+          "p99_us": 12.920509999999988,
+          "max_us": 265.493
+        },
+        "ewma_ns": {
+          "n": 3000,
+          "mean_us": 1.1396013333333335,
+          "p50_us": 0.871,
+          "p95_us": 1.222,
+          "p99_us": 1.5140099999999999,
+          "max_us": 301.236
+        },
+        "sign_ns": {
+          "n": 3000,
+          "mean_us": 52.209771999999994,
+          "p50_us": 49.025000000000006,
+          "p95_us": 63.03814999999995,
+          "p99_us": 89.63609999999993,
+          "max_us": 1460.963
+        }
+      },
+      "per_connection_bookkeeping": {
+        "n": 3000,
+        "mean_us": 16.258951,
+        "p50_us": 14.982,
+        "p95_us": 18.432549999999996,
+        "p99_us": 28.056049999999974,
+        "max_us": 333.174
+      },
+      "steady_state_collection": {
+        "n": 30000,
+        "mean_us": 2.1471331333333334,
+        "p50_us": 1.652,
+        "p95_us": 1.677,
+        "p99_us": 1.9940199999999968,
+        "max_us": 948.887
+      },
+      "clock_pair": {
+        "n": 30000,
+        "mean_us": 0.5160531,
+        "p50_us": 0.44,
+        "p95_us": 0.445,
+        "p99_us": 0.478,
+        "max_us": 905.33
+      },
+      "history_usage": {
+        "bw": 0,
+        "loss": 3000
+      },
+      "measured_handshakes": 3000
+    },
+    "ML-DSA-44": {
+      "runs": [
+        {
+          "run": 0,
+          "metadata": {
+            "kind": "metadata",
+            "algorithm": "ML-DSA-44",
+            "openssl": "OpenSSL 3.5.7 9 Jun 2026",
+            "iterations": 1000,
+            "warmup": 100,
+            "profiles": 150,
+            "context_bytes": 436808,
+            "sample_interval_ms": 1000
+          },
+          "acquisition": {
+            "n": 1000,
+            "mean_us": 4.386477,
+            "p50_us": 4.1365,
+            "p95_us": 5.476499999999998,
+            "p99_us": 11.268949999999991,
+            "max_us": 21.514
+          },
+          "sampler": {
+            "kind": "sampler",
+            "batches": 46,
+            "socket_reads": 46,
+            "elapsed_ns": 360322,
+            "max_batch_ns": 18093
+          }
+        },
+        {
+          "run": 1,
+          "metadata": {
+            "kind": "metadata",
+            "algorithm": "ML-DSA-44",
+            "openssl": "OpenSSL 3.5.7 9 Jun 2026",
+            "iterations": 1000,
+            "warmup": 100,
+            "profiles": 150,
+            "context_bytes": 436808,
+            "sample_interval_ms": 1000
+          },
+          "acquisition": {
+            "n": 1000,
+            "mean_us": 4.640975,
+            "p50_us": 4.103,
+            "p95_us": 5.223699999999999,
+            "p99_us": 8.76342,
+            "max_us": 220.082
+          },
+          "sampler": {
+            "kind": "sampler",
+            "batches": 46,
+            "socket_reads": 46,
+            "elapsed_ns": 361688,
+            "max_batch_ns": 12962
+          }
+        },
+        {
+          "run": 2,
+          "metadata": {
+            "kind": "metadata",
+            "algorithm": "ML-DSA-44",
+            "openssl": "OpenSSL 3.5.7 9 Jun 2026",
+            "iterations": 1000,
+            "warmup": 100,
+            "profiles": 150,
+            "context_bytes": 436808,
+            "sample_interval_ms": 1000
+          },
+          "acquisition": {
+            "n": 1000,
+            "mean_us": 4.440754,
+            "p50_us": 4.076,
+            "p95_us": 5.187899999999998,
+            "p99_us": 9.712119999999997,
+            "max_us": 149.762
+          },
+          "sampler": {
+            "kind": "sampler",
+            "batches": 45,
+            "socket_reads": 45,
+            "elapsed_ns": 373301,
+            "max_batch_ns": 12240
+          }
+        }
+      ],
+      "timing": {
+        "acquisition_ns": {
+          "n": 3000,
+          "mean_us": 4.489402,
+          "p50_us": 4.107,
+          "p95_us": 5.307199999999999,
+          "p99_us": 9.700089999999998,
+          "max_us": 220.082
+        },
+        "track_ns": {
+          "n": 3000,
+          "mean_us": 3.0022849999999996,
+          "p50_us": 2.716,
+          "p95_us": 3.431,
+          "p99_us": 5.127039999999905,
+          "max_us": 395.159
+        },
+        "untrack_ns": {
+          "n": 3000,
+          "mean_us": 7.817181333333334,
+          "p50_us": 7.317,
+          "p95_us": 8.875399999999997,
+          "p99_us": 12.22441999999999,
+          "max_us": 376.664
+        },
+        "ewma_ns": {
+          "n": 3000,
+          "mean_us": 0.9575876666666666,
+          "p50_us": 0.879,
+          "p95_us": 1.223,
+          "p99_us": 1.4450399999999992,
+          "max_us": 17.082
+        },
+        "sign_ns": {
+          "n": 3000,
+          "mean_us": 764.665,
+          "p50_us": 561.6665,
+          "p95_us": 1908.6157999999991,
+          "p99_us": 2774.000499999997,
+          "max_us": 5817.558
+        }
+      },
+      "per_connection_bookkeeping": {
+        "n": 3000,
+        "mean_us": 16.266456,
+        "p50_us": 15.17,
+        "p95_us": 18.491699999999973,
+        "p99_us": 28.052479999999964,
+        "max_us": 408.351
+      },
+      "steady_state_collection": {
+        "n": 30000,
+        "mean_us": 2.1267277,
+        "p50_us": 1.64,
+        "p95_us": 1.659,
+        "p99_us": 1.9050099999999983,
+        "max_us": 929.859
+      },
+      "clock_pair": {
+        "n": 30000,
+        "mean_us": 0.52638,
+        "p50_us": 0.443,
+        "p95_us": 0.454,
+        "p99_us": 0.4700099999999984,
+        "max_us": 437.264
+      },
+      "history_usage": {
+        "bw": 0,
+        "loss": 3000
+      },
+      "measured_handshakes": 3000
+    }
+  }
+}
