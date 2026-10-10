@@ -1,0 +1,190 @@
+{
+  "release": "final-only-20261010",
+  "source_commit": "643d4566f2816c89cd74e7a70f0207a6ffb45b6c",
+  "selection": "Four costs; chain-only verification proxy; probability loss; log1p context; training-only maximum references.",
+  "files": [
+    {
+      "path": "results/latest/region/context_spec.json",
+      "sha256": "ceade5a6b261ea67261a92e469c272ae2cbd59d91531f489565751dff9563e6b",
+      "source_at_commit": "results/bandit_update_20261010/scaling_reference_ablation_20261009/verified/train-max_region/context_spec.json"
+    },
+    {
+      "path": "results/latest/region/metrics.json",
+      "sha256": "5044eab9a39d329b820c3ef3eb4403f84e51d8c1f12042c12558aca1ce8680d6",
+      "source_at_commit": "results/bandit_update_20261010/scaling_reference_ablation_20261009/verified/train-max_region/metrics.json"
+    },
+    {
+      "path": "results/latest/region/models.tar.gz",
+      "sha256": "d02f981ec414c04c3a7afcdb94eb11d0a02f347db3c6cfa3464b8619839c861b",
+      "source_at_commit": "results/bandit_update_20261010/scaling_reference_ablation_20261009/verified/train-max_region/models.tar.gz"
+    },
+    {
+      "path": "results/latest/region/scaling_audit.json",
+      "sha256": "1a3bae8f40cb7abb75a769da6859ac1dd968dbd47142d0c0dd7f691f389b521c",
+      "source_at_commit": "results/bandit_update_20261010/scaling_reference_ablation_20261009/verified/train-max_region/scaling_audit.json"
+    },
+    {
+      "path": "results/latest/region/split_manifest.json",
+      "sha256": "1812fccb111264d96fe0d339e88ab7f012a23859453a8d4fb464357ce36b6e83",
+      "source_at_commit": "results/bandit_update_20261010/scaling_reference_ablation_20261009/verified/train-max_region/split_manifest.json"
+    },
+    {
+      "path": "results/latest/region/test_decisions.json",
+      "sha256": "c896491019c20495f5b92719355baae8d5f4296598d55ab9a5273080cbc330fa",
+      "source_at_commit": "results/bandit_update_20261010/scaling_reference_ablation_20261009/verified/train-max_region/test_decisions.json"
+    },
+    {
+      "path": "results/latest/region/validation_search.json",
+      "sha256": "e4f877532a6e4c580e0cb4eeeb2e1420529801f65bb96c83ab2cd05dd757c08a",
+      "source_at_commit": "results/bandit_update_20261010/scaling_reference_ablation_20261009/verified/train-max_region/validation_search.json"
+    },
+    {
+      "path": "results/latest/condition/context_spec.json",
+      "sha256": "ceade5a6b261ea67261a92e469c272ae2cbd59d91531f489565751dff9563e6b",
+      "source_at_commit": "results/bandit_update_20261010/scaling_reference_ablation_20261009/verified/train-max_condition/context_spec.json"
+    },
+    {
+      "path": "results/latest/condition/metrics.json",
+      "sha256": "0d57d798e32ff1bc2caa7e1e06943176a9ee0b4381d543cb5fc4c284d6e79d30",
+      "source_at_commit": "results/bandit_update_20261010/scaling_reference_ablation_20261009/verified/train-max_condition/metrics.json"
+    },
+    {
+      "path": "results/latest/condition/models.tar.gz",
+      "sha256": "2d5a55e727fa06f118bca18afb083f926611cf2df98fb7f0d9f44632b6f09ac8",
+      "source_at_commit": "results/bandit_update_20261010/scaling_reference_ablation_20261009/verified/train-max_condition/models.tar.gz"
+    },
+    {
+      "path": "results/latest/condition/scaling_audit.json",
+      "sha256": "77699e1d41873715bc96e3dde36743bdd9522b7737eefd0f21c9e0a76693ae67",
+      "source_at_commit": "results/bandit_update_20261010/scaling_reference_ablation_20261009/verified/train-max_condition/scaling_audit.json"
+    },
+    {
+      "path": "results/latest/condition/split_manifest.json",
+      "sha256": "6959c1c58fee5ed46aa053787bd78c880991c656b7eb3c7a1a5e1daa74c8c19d",
+      "source_at_commit": "results/bandit_update_20261010/scaling_reference_ablation_20261009/verified/train-max_condition/split_manifest.json"
+    },
+    {
+      "path": "results/latest/condition/test_decisions.json",
+      "sha256": "ec3ec1eaea83dde6dc76faf4a55de41a7360fc4dcbdde8b559d12459f7e83097",
+      "source_at_commit": "results/bandit_update_20261010/scaling_reference_ablation_20261009/verified/train-max_condition/test_decisions.json"
+    },
+    {
+      "path": "results/latest/condition/validation_search.json",
+      "sha256": "662ab5d2e3782f9ecf3c38ab029f917a4866c6d5a2745332975bdc5122ad9a1d",
+      "source_at_commit": "results/bandit_update_20261010/scaling_reference_ablation_20261009/verified/train-max_condition/validation_search.json"
+    }
+  ],
+  "filtered_profiles": [
+    {
+      "file": "server_sign.csv",
+      "source_sha256": "f2a4dfa34cf9e0d857f30bc5b0886de5f5e962a1184e7271688538d4d0e33eb8",
+      "rows": 150,
+      "filter": "algorithm in algorithms.json"
+    },
+    {
+      "file": "seoul_client_verify.csv",
+      "source_sha256": "9619fb12d6a07a543b3edfe501dc4bc9991342855e6fc4f2a4103761bfb68987",
+      "rows": 150,
+      "filter": "algorithm in algorithms.json"
+    },
+    {
+      "file": "pure_costs.csv",
+      "source_sha256": "ae0adbf4df569f11dd2c3b7ee64ad5eab1f5a64656a8521af61fee3c40f27ecf",
+      "rows": 200,
+      "filter": "algorithm in algorithms.json"
+    },
+    {
+      "file": "composite_costs.csv",
+      "source_sha256": "a1f30f3e3ff9fd85436b278db6c4cf63962fb54d285a28848af0fb51208f8e24",
+      "rows": 2000,
+      "filter": "algorithm in algorithms.json"
+    }
+  ],
+  "source_input": {
+    "candidates": 150,
+    "conditions": 24000,
+    "samples": 1200000,
+    "source": "results/bandit_sqisign_20261003/inputs/tls_all50.json.gz",
+    "source_sha256": "93bed5d9e1ee4dd1651928677288fcb96f6e64f78e3fed7dc81ec14601ca4033",
+    "excluded": [
+      "hawk1024",
+      "hawk512",
+      "p256_hawk512",
+      "p521_hawk1024",
+      "rsa15360_hawk1024",
+      "rsa3072_hawk512"
+    ]
+  },
+  "code": [
+    {
+      "path": "repro/latest/code/contextual_signature_selector/replay_certificate_inventories.py",
+      "source_sha256": "0428bfacbe5323b285747526a8712d4fdbf4f01650b9272ccabbc4f74a6fd4c2",
+      "published_sha256": "69d0f500b00726838f4187c17ab71a8353b0b9987f182b14902e2bb4630bb5e7"
+    },
+    {
+      "path": "repro/latest/code/contextual_signature_selector/selector.py",
+      "source_sha256": "ac45976a6403877a564655157215028e50be2e53e7a81ff63e0ab5d696370066",
+      "published_sha256": "f7e2600b8c4e3eab69999dd0f317389c6253a3ae9cf31e5f9db829f39f60b4df"
+    },
+    {
+      "path": "repro/latest/code/contextual_signature_selector/tcp_window.py",
+      "source_sha256": "1c16abd93c634ee34d3ecfc089195dc240692bd828259864080ad222c822b558",
+      "published_sha256": "1c16abd93c634ee34d3ecfc089195dc240692bd828259864080ad222c822b558"
+    },
+    {
+      "path": "repro/latest/code/pqc_cti/policy.py",
+      "source_sha256": "2200ba6b14ac7cfc41496d27635333a76f8c55b1b16e5e803471a165a798bbbc",
+      "published_sha256": "2200ba6b14ac7cfc41496d27635333a76f8c55b1b16e5e803471a165a798bbbc"
+    },
+    {
+      "path": "repro/latest/code/rl_weight_selector/bandit.py",
+      "source_sha256": "adf44390bf43d467191d50e1c3302d19abb58d90e902bda956f2b634996a6724",
+      "published_sha256": "adf44390bf43d467191d50e1c3302d19abb58d90e902bda956f2b634996a6724"
+    },
+    {
+      "path": "repro/latest/code/rl_weight_selector/bw147_interim_linucb.py",
+      "source_sha256": "a1761e43468343f222d8ef0a89f998971531dde8f8a8e05aa61c7e1944f31ced",
+      "published_sha256": "a1761e43468343f222d8ef0a89f998971531dde8f8a8e05aa61c7e1944f31ced"
+    },
+    {
+      "path": "repro/latest/code/rl_weight_selector/partial_feedback_linucb.py",
+      "source_sha256": "556bd88b8d75ea0ec89c31bb824adc8d3b24aaa8bc688a603ecc9e34a9f16bea",
+      "published_sha256": "556bd88b8d75ea0ec89c31bb824adc8d3b24aaa8bc688a603ecc9e34a9f16bea"
+    },
+    {
+      "path": "repro/latest/code/rl_weight_selector/region_holdout_unified_evp.py",
+      "source_sha256": "51a280942117605f783067c0786f9ee8cab8b2a3fe641774243f225d694fe338",
+      "published_sha256": "51a280942117605f783067c0786f9ee8cab8b2a3fe641774243f225d694fe338"
+    },
+    {
+      "path": "repro/latest/code/rl_weight_selector/retrain_ica12.py",
+      "source_sha256": "f6bb8bf554d44511cbc1f999b76734778c63a5dfe75112739de8168c21464e6c",
+      "published_sha256": "f6bb8bf554d44511cbc1f999b76734778c63a5dfe75112739de8168c21464e6c"
+    },
+    {
+      "path": "repro/latest/code/rl_weight_selector/scaling_reference_ablation.py",
+      "source_sha256": "5190927780d17ebc8db271fb01361bd622b7d1db1be5eea366b2001e44376707",
+      "published_sha256": "5190927780d17ebc8db271fb01361bd622b7d1db1be5eea366b2001e44376707"
+    },
+    {
+      "path": "repro/latest/code/rl_weight_selector/screen_composite_temporal.py",
+      "source_sha256": "d5f38a3b54d1ddff7d42da54e1a3dd33421dce9cedefee39d75402b59f648f69",
+      "published_sha256": "d5f38a3b54d1ddff7d42da54e1a3dd33421dce9cedefee39d75402b59f648f69"
+    },
+    {
+      "path": "repro/latest/code/rl_weight_selector/screen_composite_vs_deterministic.py",
+      "source_sha256": "c6426cfc202e85ae55f28794038f14be99f46d76f035d14a2de1cc70b479a37f",
+      "published_sha256": "c6426cfc202e85ae55f28794038f14be99f46d76f035d14a2de1cc70b479a37f"
+    },
+    {
+      "path": "repro/latest/code/rl_weight_selector/sqisign_bandit_release.py",
+      "source_sha256": "8fe4731149be22e2e1f15cb2b2b0f38f784ea65476c9f75025434eb1f3a37eb5",
+      "published_sha256": "8fe4731149be22e2e1f15cb2b2b0f38f784ea65476c9f75025434eb1f3a37eb5"
+    },
+    {
+      "path": "repro/latest/code/rl_weight_selector/tail5_region_holdout.py",
+      "source_sha256": "ba77792530aa47d8952dba63a41a8a39f55291d141d95f5bbab97c203e78d4c0",
+      "published_sha256": "ba77792530aa47d8952dba63a41a8a39f55291d141d95f5bbab97c203e78d4c0"
+    }
+  ]
+}

@@ -1,42 +1,17 @@
 # PQC TLS SigLab
 
-PQC 서명 기반 TLS 실험의 결과와 알고리즘 식별자, 비용 프로파일, 빌드 자료를 모아 둔 저장소입니다.
-기존 Pure PQC 49개와 Hybrid Composite 98개, 총 147개 인증서 후보의 결과를 보존하며,
-SQIsign 순수·컴포짓 9개를 추가한 156개 후보 데이터와 별도 LinUCB 재평가를 제공합니다.
+SQIsign을 포함하고 HAWK를 제외한 **150개 서명 구성**의 TLS 측정 자료와 최종 Bandit 평가입니다.
+이전 실험과 중간 비교 결과는 현재 파일 목록에서 제거했습니다.
 
-## 저장소 구성
-
-**2026-10-10 추가:** [150개 후보 TLS 결과와 최신 Bandit 비교](results/bandit_update_20261010/README.md).
-HAWK 제외 TLS 원측정 120만 개와 전체 50회 평균, 4항 비용·손실 입력·검증 비용·로그 변환·
-스케일링 비교의 결과 및 모델을 제공합니다. [코드와 실행 방법](repro/bandit_update_20261010/README.md).
-기존 release는 변경하지 않았습니다.
-
-| 폴더 | 들어 있는 자료 |
+| 경로 | 내용 |
 | --- | --- |
-| [results/bandit_sqisign_20261003/](results/bandit_sqisign_20261003/README.md) | SQIsign 포함 Bandit-only 평가 결과, 학습 모델, 재현 입력과 과거 147개 후보 참고 결과 |
-| [repro/bandit_sqisign_20261003/](repro/bandit_sqisign_20261003/README.md) | LinUCB 구현, 파라미터, 실행 및 모델 검증 방법 |
-| [results/pc_tls_20260929/](results/pc_tls_20260929/README.md) | PC 실험 결과 CSV, 서버 서명 비용과 클라이언트 검증 비용, 실험 조건과 집계 방식 |
-| [repro/pc147/](repro/pc147/README.md) | 파레토 필터 작업 안내, 147개 후보와 OpenSSL 식별자, TLS code point 매핑, 버전 기록과 추가 provider 패치 |
-| [scripts/](scripts/) | OpenSSL, liboqs, oqs-provider 빌드, 실행 환경 설정, TLS 간이 테스트 스크립트 |
-| [src/](src/) | TLS 테스트용 C 코드 |
-| [config/](config/) | Pure PQC 49개 실험 대상 목록 |
-| [patches/](patches/) | OpenSSL 핸드셰이크 시간 측정 패치 |
+| [results/latest](results/latest/README.md) | TLS 측정값 120만 개, 비용 프로파일, 지역·조건 holdout 결과와 모델 |
+| [repro/latest](repro/latest/README.md) | 최종 설정의 실행 코드와 검증 방법 |
+| `scripts/`, `src/`, `patches/`, `config/` | 기존 TLS 측정·빌드 보조 자료; 전체 150개 구성 목록은 `results/latest/inputs/algorithms.json` 참조 |
 
-## 파레토 필터 작업은 여기부터
+최종 설정은 4개 비용 항, chain-only 검증 비용 추정, 손실확률 입력,
+로그 변환 및 학습 데이터 최댓값 스케일링입니다. Pareto 필터는 사용하지 않습니다.
+결과는 오프라인 측정 데이터 replay이며 실제 서비스의 온라인 학습 결과가 아닙니다.
 
-1. [작업 안내](repro/pc147/README.md)에서 구현 순서와 비용 데이터의 범위를 확인합니다.
-2. [147개 후보 매핑](repro/pc147/algorithm_mapping.json)에 [서명 비용 CSV](results/pc_tls_20260929/server_sign_frankfurt_evp_v2.csv)와 [검증 비용 CSV](results/pc_tls_20260929/client_verify_seoul_evp_v2.csv)를 `algorithm` 이름으로 연결합니다.
-3. [TLS 실험 결과 안내](results/pc_tls_20260929/README.md)를 보고 비교할 조건과 결과 CSV를 선택합니다.
-
-기존 결과를 이용한 파레토 필터 분석에는 OpenSSL 재설치나 비용 재측정이 필요하지 않습니다.
-클라이언트 지원 목록과 보안 정책으로 후보를 먼저 제한한 뒤, 그 안에서 파레토 필터를 적용합니다.
-
-## 빌드 자료가 필요한 경우
-
-버전, commit, provider 코드와 빌드 설정은 [빌드 및 재측정 안내](repro/pc147/BUILD.md)에 정리했습니다.
-
-기존 PC release는 40,440개 조건의 요약 CSV와 147개 후보의 비용 프로파일입니다.
-별도 Bandit release에는 강제 X25519의 156개 후보·24,960개 조건에 대한
-1,248,000개 측정 시간 값, 비용 입력, SQIsign 포함 학습 모델과 평가 결과가 있습니다.
-전체 원시 연결 로그나 인증서 비밀키는 포함하지 않습니다.
-재빌드 자료만으로 당시 측정 환경이 완전히 재현된다고 보장하지는 않습니다.
+TLS 통계는 **50회 전체 평균**이고 Bandit 학습·평가는 **빠른 35회/50회**를 사용합니다.
+두 집계를 혼용하지 마세요. 원자료, 모델, 설정과 재현 절차는 위 두 폴더에서 확인할 수 있습니다.
