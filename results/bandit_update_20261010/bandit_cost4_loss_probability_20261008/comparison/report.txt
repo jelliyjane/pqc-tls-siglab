@@ -1,0 +1,50 @@
+Loss-aware context replay (engineering results)
+x = [1, log(1+RTT_ms)/log(301), log(1+BW_Mbps)/log(1001), r*b, Loss_percent/100].
+No input clipping. 1 percent loss maps to 0.01.
+Comparison baseline: outputs/analysis/bandit_loss_probability_20261008
+Score terms: 4; weight actions: 286; features: ['sign_ms', 'transmission_ms', 'extra_round_ms', 'verify_chain_ms'].
+Cost clipping, reward, splits and seeds are unchanged; tail is excluded from tie-breaking in the four-term variant.
+Loss comes from configured experiment conditions; this does not validate online loss acquisition.
+Evaluation uses each condition's fastest 35 of 50 samples, as in the frozen baseline.
+These reused holdouts are development evaluations, not untouched final tests.
+
+region
+  Mean TLS: 309.7559 -> 294.3285 ms (+4.980% reduction)
+  Mean regret: 27.6138 -> 12.1864 ms
+  Reduction vs ML-DSA: 14.660% -> 18.910%
+  epsilon=0.01: 65.264% -> 69.514%
+  epsilon=0.10: 77.694% -> 81.625%
+  epsilon=0.20: 79.667% -> 83.333%
+  epsilon=0.30: 81.486% -> 84.667%
+  epsilon=0.40: 82.042% -> 85.389%
+  epsilon=0.50: 82.667% -> 85.972%
+
+  New-model epsilon success by region (%):
+  epsilon | Seoul | Tokyo | Singapore | USA | Frankfurt | Overall
+  0.01 | 60.83 | 65.07 | 77.50 | 74.38 | 69.79 | 69.51
+  0.10 | 61.04 | 86.25 | 89.38 | 89.44 | 82.01 | 81.62
+  0.20 | 61.18 | 89.58 | 92.78 | 90.56 | 82.57 | 83.33
+  0.30 | 62.50 | 92.22 | 93.61 | 90.56 | 84.44 | 84.67
+  0.40 | 63.68 | 92.92 | 93.89 | 90.56 | 85.90 | 85.39
+  0.50 | 65.07 | 94.44 | 93.89 | 90.56 | 85.90 | 85.97
+
+condition
+  Mean TLS: 294.1244 -> 290.5840 ms (+1.204% reduction)
+  Mean regret: 11.9823 -> 8.4419 ms
+  Reduction vs ML-DSA: 18.966% -> 19.942%
+  epsilon=0.01: 68.667% -> 71.972%
+  epsilon=0.10: 80.889% -> 82.097%
+  epsilon=0.20: 82.250% -> 83.639%
+  epsilon=0.30: 83.125% -> 84.569%
+  epsilon=0.40: 83.569% -> 85.069%
+  epsilon=0.50: 84.222% -> 85.528%
+
+  New-model epsilon success by region (%):
+  epsilon | Seoul | Tokyo | Singapore | USA | Frankfurt | Overall
+  0.01 | 59.31 | 63.75 | 75.56 | 77.85 | 83.40 | 71.97
+  0.10 | 59.86 | 80.35 | 86.04 | 92.08 | 92.15 | 82.10
+  0.20 | 60.00 | 83.40 | 89.44 | 93.12 | 92.22 | 83.64
+  0.30 | 60.62 | 85.83 | 90.62 | 93.12 | 92.64 | 84.57
+  0.40 | 61.81 | 86.53 | 91.25 | 93.12 | 92.64 | 85.07
+  0.50 | 62.78 | 87.85 | 91.25 | 93.12 | 92.64 | 85.53
+

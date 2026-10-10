@@ -1,0 +1,31 @@
+Loss-aware context replay (engineering results)
+x = [1, log(1+RTT_ms)/log(301), log(1+BW_Mbps)/log(1001), r*b, Loss_percent/100].
+No input clipping. 1 percent loss maps to 0.01.
+Comparison baseline: outputs/analysis/bandit_loss5_unclipped_20261008
+Same five candidate costs, 1001 weight actions, cost clipping, reward, splits and seeds.
+Loss comes from configured experiment conditions; this does not validate online loss acquisition.
+Evaluation uses each condition's fastest 35 of 50 samples, as in the frozen baseline.
+These reused holdouts are development evaluations, not untouched final tests.
+
+region
+  Mean TLS: 303.8705 -> 309.7559 ms (-1.937% reduction)
+  Mean regret: 21.7284 -> 27.6138 ms
+  Reduction vs ML-DSA: 16.281% -> 14.660%
+  epsilon=0.01: 67.306% -> 65.264%
+  epsilon=0.10: 79.528% -> 77.694%
+  epsilon=0.20: 80.958% -> 79.667%
+  epsilon=0.30: 82.028% -> 81.486%
+  epsilon=0.40: 82.917% -> 82.042%
+  epsilon=0.50: 83.569% -> 82.667%
+
+condition
+  Mean TLS: 295.0846 -> 294.1244 ms (+0.325% reduction)
+  Mean regret: 12.9425 -> 11.9823 ms
+  Reduction vs ML-DSA: 18.702% -> 18.966%
+  epsilon=0.01: 69.653% -> 68.667%
+  epsilon=0.10: 81.764% -> 80.889%
+  epsilon=0.20: 83.542% -> 82.250%
+  epsilon=0.30: 84.458% -> 83.125%
+  epsilon=0.40: 84.861% -> 83.569%
+  epsilon=0.50: 85.347% -> 84.222%
+

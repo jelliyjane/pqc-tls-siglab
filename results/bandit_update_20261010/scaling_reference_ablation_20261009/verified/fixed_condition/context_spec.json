@@ -1,0 +1,1 @@
+{"reference_mode":"fixed","transform":"log1p(value)/log1p(reference)","features":["bias","log_rtt","log_bandwidth","log_rtt_x_log_bandwidth","loss_probability"],"clip":false,"loss_reference_percent":100.0,"reference_fit":"inner training for validation; outer training for test","score_terms":4,"verification_cost":"chain-only"}

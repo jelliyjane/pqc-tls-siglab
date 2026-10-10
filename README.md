@@ -6,6 +6,11 @@ SQIsign 순수·컴포짓 9개를 추가한 156개 후보 데이터와 별도 Li
 
 ## 저장소 구성
 
+**2026-10-10 추가:** [150개 후보 TLS 결과와 최신 Bandit 비교](results/bandit_update_20261010/README.md).
+HAWK 제외 TLS 원측정 120만 개와 전체 50회 평균, 4항 비용·손실 입력·검증 비용·로그 변환·
+스케일링 비교의 결과 및 모델을 제공합니다. [코드와 실행 방법](repro/bandit_update_20261010/README.md).
+기존 release는 변경하지 않았습니다.
+
 | 폴더 | 들어 있는 자료 |
 | --- | --- |
 | [results/bandit_sqisign_20261003/](results/bandit_sqisign_20261003/README.md) | SQIsign 포함 Bandit-only 평가 결과, 학습 모델, 재현 입력과 과거 147개 후보 참고 결과 |
