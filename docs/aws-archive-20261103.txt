@@ -28,6 +28,17 @@ each included file. The corresponding report gives its archive SHA-256.
 Each completed archive is reopened and every included member hash is verified
 before publication. Assets are uploaded only after successful packaging.
 
+Download an archive together with its matching .report.json file. From the
+repository root, verify it with:
+  python3 scripts/verify_snapshot.py /path/to/local-code-20261103.tar.gz
+To extract after verification, add --extract-to /path/to/NEW-directory.
+The destination must not already exist. The tool verifies the archive hash
+and every file hash before extraction, and rejects unsafe archive paths.
+
+Large assets are attached to the archival GitHub release, not committed as
+large Git blobs. The archive branch preserves the runtime source and model
+exports without changing the existing main branch.
+
 local-code contains the local experiment drivers, selection/training modules,
 provider sources, and runtime repository. local-experiment-data contains
 eligible numeric/text data from the workspace's outputs directory, including
