@@ -83,6 +83,22 @@ cc -O2 -Wall -Wextra \
   -Wl,-rpath,"${OPENSSL_LIBDIR}" \
   -o "${INSTALL}/tls_maxcert_client"
 
+cc -O2 -Wall -Wextra \
+  -I"${INSTALL}/openssl/include" \
+  "${ROOT}/src/tls_context_client.c" \
+  -L"${OPENSSL_LIBDIR}" -lssl -lcrypto \
+  -Wl,-rpath,"${OPENSSL_LIBDIR}" \
+  -o "${INSTALL}/tls_context_client"
+
+cc -O2 -Wall -Wextra \
+  -I"${INSTALL}/openssl/include" \
+  "${ROOT}/src/tls_context_selector_server.c" \
+  -L"${OPENSSL_LIBDIR}" -lssl -lcrypto -lm \
+  -Wl,-rpath,"${OPENSSL_LIBDIR}" \
+  -o "${INSTALL}/tls_context_selector_server"
+
 echo "Build complete."
 echo "Run: source ${ROOT}/scripts/env.sh"
 echo "TLS timer: openssl s_client -handshake_time"
+echo "Context timer: tls_context_client"
+echo "Context selector server: tls_context_selector_server"

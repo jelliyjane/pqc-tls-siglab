@@ -83,7 +83,7 @@ int cats_tcp_read(int fd, struct cats_tcp *out)
 struct cats_config cats_default_config(void)
 {
     /* Engineering defaults, not experimentally optimized constants. */
-    return (struct cats_config){1000.0, 0.0, 0.2, 10, 1000, 14 * 86400};
+    return (struct cats_config){100.0, 0.0, 0.2, 10, 1000, 14 * 86400};
 }
 
 struct cats_context *cats_context_new(struct cats_config c)

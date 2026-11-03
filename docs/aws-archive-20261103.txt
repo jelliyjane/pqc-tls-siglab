@@ -1,0 +1,63 @@
+AWS archival backup, 2026-11-03
+==============================
+
+Purpose
+-------
+Preserve research implementation and experiment artifacts before the owner
+retires AWS instances. No instance is terminated by this archival operation.
+The branch contains the existing uncommitted context collector, selector,
+frozen-model inference, CTI prototype, tests, and selection-overhead artifacts.
+These are preserved as found, not redesigned or represented as production-ready.
+
+Frozen runtime models
+---------------------
+config/models/aws-20261018 contains L1/L3/L5 model exports, their manifest and
+the numerical fixtures used by scripts/test_cats_model.py. See
+docs/adaptive-runtime.md for the historical deployment scope and caveats.
+
+Run from the repository root:
+  python3 scripts/test_cats_model.py --models config/models/aws-20261018
+  python3 scripts/test_cti_policy.py --openssl-prefix /path/to/openssl
+
+Archive assets
+--------------
+The GitHub release aws-archive-20261103 holds source/data archives so that
+multi-gigabyte experimental history does not inflate the normal Git worktree.
+Each archive contains SNAPSHOT-MANIFEST.json with a path, size and SHA-256 for
+each included file. The corresponding report gives its archive SHA-256.
+Each completed archive is reopened and every included member hash is verified
+before publication. Assets are uploaded only after successful packaging.
+
+local-code contains the local experiment drivers, selection/training modules,
+provider sources, and runtime repository. local-experiment-data contains
+eligible numeric/text data from the workspace's outputs directory, including
+historical versions. The host archives retain paths relative to each server's
+home directory. File names and historical timestamps do not imply approval.
+
+Never combine older and newer experiment/model versions or data splits merely
+because they appear together in this backup. The previously published
+results/latest directory remains a historical release and is not relabeled.
+
+Exclusions and limits
+---------------------
+SSH/AWS credentials, private keys, TLS session keys, packet captures, shell
+history, cloud CLI configuration, compiled binaries, Git internals, arbitrary
+nested archives, and private administrative documents are not public assets.
+Certificate directories and NumPy object/pickle payloads are excluded.
+The archival filter also checks text for common credential formats. Its
+private exclusion reports are retained locally, not uploaded.
+
+The owner retains separate local server-home backups, with credential/cache
+exclusions, and checksum verification logs. Public filtered snapshots are NOT
+disk images, complete OS backups, or proof that all AWS resources were found.
+External symlink targets and files outside /home/ubuntu need separate review.
+No AWS bill, EBS deletion flag, snapshot or Elastic IP allocation was inferred
+from the source archives. Check the AWS console before deleting resources.
+
+Verification performed for this archive
+--------------------------------------
+Frozen C scorer: 6,720 fixture vectors passed, including invalid input/model
+rejection checks. CTI compiler/runtime/loopback TLS suite: 19 tests passed.
+Tests were rerun locally on 2026-11-03. The local macOS SDK selection had to be
+pointed at the SDK bundled with the active Xcode; no source fix was needed.
+These tests do not establish full cross-region performance reproducibility.

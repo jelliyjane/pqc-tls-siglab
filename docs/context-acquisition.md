@@ -39,7 +39,7 @@ historical estimates from configured defaults and unavailable transport fields.
   `delivery_rate_app_limited == 0`. No fresh ACK or application-limited samples
   do not update BW. Small handshakes may never yield an eligible BW sample.
 - Each BW slot expires after 14 days. No history, expired history, or a clock
-  rollback uses the configured fallback. Default BW=1,000 Mbps and Loss=0 are
+  rollback uses the configured fallback. Default BW=100 Mbps and Loss=0 are
   explicit **engineering defaults, not measurements**. Callers can change them.
 - EWMA alpha=0.2 is configurable, not an experimentally selected optimum.
 - `cats_bw_save/load` checkpoints only 168 aggregate slots using an atomic rename.

@@ -24,7 +24,7 @@ int main(void)
     uint64_t ns = 100000000000ULL;
     cats_cached(c, ns, wall, &v);
     assert(!v.bw_from_history && !v.loss_from_history);
-    assert(v.bw_mbps == 1000 && v.loss_probability == 0);
+    assert(v.bw_mbps == 100 && v.loss_probability == 0);
     struct cats_cursor a = {0}, b = {0};
     struct cats_tcp s = {.counters_valid=1, .rate_valid=1,
         .data_segs_out=10, .retrans=1, .bytes_acked=100,
@@ -62,6 +62,7 @@ int main(void)
     assert(!v.loss_from_history); /* old traffic cannot revive after a long gap */
     cats_cached(c, ns, wall + 3600, &v); assert(!v.bw_from_history);
     cats_cached(c, ns, wall + 21 * 86400, &v); assert(!v.bw_from_history);
+    assert(v.bw_mbps == 100);
     cats_cached(c, ns, wall - 7 * 86400, &v); assert(!v.bw_from_history);
     assert(!cats_sign_init(c, 0, 10));
     assert(!cats_sign_update(c, 0, 20));

@@ -1,0 +1,25 @@
+{
+  "type": "bundle",
+  "id": "bundle--5d0092c5-5f74-4287-9642-33f4c354e56d",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--f431f809-377b-45e0-aa1c-6a4751cae5ff",
+      "created": "2026-01-01T00:00:00.000Z",
+      "modified": "2026-01-01T00:00:00.000Z",
+      "name": "CATS SYNTHETIC TEST publisher - not an authority",
+      "identity_class": "organization"
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--0c7b5b88-8ff7-4a4d-aa9d-feb398cd0061",
+      "created": "2026-01-01T00:00:00.000Z",
+      "modified": "2026-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--f431f809-377b-45e0-aa1c-6a4751cae5ff",
+      "name": "SYNTHETIC TEST ONLY - no real algorithm vulnerability asserted",
+      "description": "This fixture exercises a local operator deny rule. It is not evidence of a cryptographic break."
+    }
+  ]
+}

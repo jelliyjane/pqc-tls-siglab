@@ -24,6 +24,8 @@
 #include <linux/tcp.h>
 #endif
 #include "tcp_selection_window.h"
+#include "cats_cti_policy.h"
+#include "cats_model.h"
 #ifdef CATS_CONTEXT_ACQUISITION
 #include "cats_context.h"
 #include <dlfcn.h>
@@ -84,6 +86,9 @@ struct selector_state {
     char last_decision_id[64];
     char last_arm[32];
     long connection_serial;
+    const char *cti_policy_path;
+    int model_enabled, model_trace;
+    struct cats_model models[3];
 #ifdef CATS_CONTEXT_ACQUISITION
     struct cats_context *acquisition;
     struct cats_values acquired;
@@ -180,11 +185,11 @@ static int client_offers_candidate(
 {
     int sig_count;
     int sig_index;
-    if (!require_client_sigalg_match())
+    if (!state->cti_policy_path && !require_client_sigalg_match())
         return 1;
     sig_count = SSL_get_sigalgs(ssl, -1, NULL, NULL, NULL, NULL, NULL);
     if (sig_count <= 0)
-        return 1;
+        return state->cti_policy_path == NULL;
     for (sig_index = 0; sig_index < sig_count; sig_index++) {
         int sign = NID_undef;
         int hash = NID_undef;
@@ -488,8 +493,12 @@ static int load_chain(SSL *ssl, const char *path)
 static int cert_cb(SSL *ssl, void *arg)
 {
     struct selector_state *state = (struct selector_state *)arg;
+    struct cats_cti_policy policy;
+    unsigned char eligible[MAX_CANDIDATES] = {0};
+    int eligible_count = 0;
     const struct candidate *best = NULL;
     double best_score = 0.0;
+    double best_unit = 0.0;
     double rtt_ms;
     double loss_percent;
     long window_size;
@@ -502,6 +511,24 @@ static int cert_cb(SSL *ssl, void *arg)
     rl_algorithm[0] = '\0';
     state->last_decision_id[0] = '\0';
     state->last_arm[0] = '\0';
+
+    /* Pin one complete local policy snapshot for this decision. Apply it to
+     * BOTH the sidecar request and the local/fallback scorer. */
+    if (!cats_cti_load(state->cti_policy_path, time(NULL), &policy)) {
+        fprintf(stderr, "CTI policy unavailable, malformed or expired; refusing certificate selection\n");
+        return 0;
+    }
+    for (i = 0; i < state->count; i++) {
+        eligible[i] = cats_cti_allows(&policy, state->candidates[i].algorithm) &&
+            client_offers_candidate(ssl, state, state->candidates[i].algorithm);
+        eligible_count += eligible[i];
+    }
+    if (policy.enabled)
+        fprintf(stderr, "CTI revision=%s candidates=%d eligible=%d\n", policy.revision, state->count, eligible_count);
+    if (!eligible_count) {
+        fprintf(stderr, "SELECT failed: no candidate after security policy and client compatibility filters\n");
+        return 0;
+    }
 
 #ifdef CATS_CONTEXT_ACQUISITION
     {
@@ -534,7 +561,7 @@ static int cert_cb(SSL *ssl, void *arg)
         size_t used = 0;
         candidate_names[0] = '\0';
         for (i = 0; i < state->count; i++) {
-            if (!client_offers_candidate(ssl, state, state->candidates[i].algorithm))
+            if (!eligible[i])
                 continue;
             int appended = snprintf(candidate_names + used, sizeof(candidate_names) - used, "%s%s", used ? "," : "", state->candidates[i].algorithm);
             if (appended < 0 || (size_t)appended >= sizeof(candidate_names) - used)
@@ -561,6 +588,7 @@ static int cert_cb(SSL *ssl, void *arg)
             fprintf(stderr, "RL fallback: updater unavailable or invalid response; using deterministic selector\n");
     }
     for (i = 0; i < state->count; i++) {
+        if (!eligible[i]) continue;
         long flight = 0;
         int rounds = 0;
         int i_tail = 0;
@@ -572,13 +600,36 @@ static int cert_cb(SSL *ssl, void *arg)
             &state->candidates[i], state, rtt_ms, window_size,
             &flight, &rounds, &i_tail, &tail_bytes,
             &certificate_start_offset, &certificate_message_bytes, &tail_delay_ms);
+        double unit=score;
+        if (state->model_enabled) {
+            const struct candidate *candidate=&state->candidates[i];
+            const struct cats_model *model=&state->models[cats_model_level(candidate->level)];
+            double input[7]={rtt_ms,state->bandwidth_mbps,loss_percent/100.,(double)window_size,
+                candidate->sign_ms,candidate->verify_ms*candidate->sent_cert_count,(double)flight};
+            double costs[4],weights[4];
+            if(!cats_model_score(model,input,costs,weights,&score)) {
+                fprintf(stderr,"MODEL invalid live input; refusing selection\n"); return 0;
+            }
+            unit=costs[0]+costs[1]+costs[2]+costs[3];
+            /* The approved model has no shared RTT, tail or overlap correction. */
+            tail_delay_ms=0;
+            if(state->model_trace) {
+                fprintf(stderr,"MODEL_CANDIDATE connection=%ld algorithm=%s level=%s sha256=%s score=%.17g unit=%.17g",
+                    state->connection_serial,candidate->algorithm,candidate->level,model->source_sha256,score,unit);
+                for(int j=0;j<7;j++) fprintf(stderr," x%d=%.17g",j,input[j]);
+                for(int j=0;j<4;j++) fprintf(stderr," w%d=%.17g c%d=%.17g",j,weights[j],j,costs[j]);
+                fputc('\n',stderr);
+            }
+        }
         if (rl_algorithm[0] != '\0' && strcmp(rl_algorithm, state->candidates[i].algorithm) != 0)
             continue;
         if (!client_offers_candidate(ssl, state, state->candidates[i].algorithm))
             continue;
-        if (best == NULL || score < best_score) {
+        if (best == NULL || score < best_score || (state->model_enabled && score == best_score &&
+            (unit < best_unit || (unit == best_unit && strcmp(state->candidates[i].algorithm,best->algorithm)<0)))) {
             best = &state->candidates[i];
             best_score = score;
+            best_unit = unit;
             state->last_server_flight_bytes = flight;
             state->last_extra_rounds = rounds;
             state->last_i_tail = i_tail;
@@ -593,6 +644,7 @@ static int cert_cb(SSL *ssl, void *arg)
         fprintf(stderr, "SELECT failed: no candidate after client signature_algorithms filter\n");
         return 0;
     }
+    if (state->model_enabled) snprintf(state->last_arm,sizeof(state->last_arm),"adaptive-no-chain-cap2");
 
     if (!SSL_use_certificate_file(ssl, best->cert_path, SSL_FILETYPE_PEM)) {
         fprintf(stderr, "SELECT failed: cannot load cert %s\n", best->cert_path);
@@ -779,8 +831,13 @@ int main(int argc, char **argv)
     naccept = atoi(argv[5]);
 
     memset(&state, 0, sizeof(state));
+    state.cti_policy_path = getenv("CATS_CTI_POLICY");
+    if (state.cti_policy_path && !*state.cti_policy_path) {
+        fprintf(stderr, "CATS_CTI_POLICY must be a non-empty path\n");
+        goto out;
+    }
     state.fallback_rtt_ms = env_double("TLS_SELECTOR_FALLBACK_RTT_MS", 1.0);
-    state.bandwidth_mbps = env_double("TLS_SELECTOR_BANDWIDTH_MBPS", 1000.0);
+    state.bandwidth_mbps = env_double("TLS_SELECTOR_BANDWIDTH_MBPS", 100.0);
     /* Explicit input for dry runs/unsupported TCP_INFO only; no silent 16 KiB. */
     state.fallback_window_size = env_long("TLS_SELECTOR_WINDOW_SIZE_BYTES", -1);
     if (state.fallback_window_size > 0)
@@ -799,6 +856,27 @@ int main(int argc, char **argv)
     if (!load_manifest(manifest, &state)) {
         fprintf(stderr, "failed to load manifest: %s\n", manifest);
         goto out;
+    }
+    {
+        const char *directory=getenv("CATS_MODEL_DIR");
+        if(directory) {
+            if(!*directory || *state.rl_socket_path) {
+                fprintf(stderr,"CATS_MODEL_DIR must be nonempty and cannot be combined with TLS_RL_SOCKET\n"); goto out;
+            }
+            state.model_enabled=1;
+            state.model_trace=env_int("CATS_MODEL_TRACE",0);
+            for(int i=0;i<state.count;i++) {
+                const char *level=state.candidates[i].level;
+                int index=cats_model_level(level); char path[4096];
+                if(index<0) { fprintf(stderr,"MODEL unsupported level %s\n",level); goto out; }
+                if(state.models[index].loaded) continue;
+                int n=snprintf(path,sizeof(path),"%s/%s.model",directory,level);
+                if(n<0 || (size_t)n>=sizeof(path) || !cats_model_load(path,level,&state.models[index])) {
+                    fprintf(stderr,"MODEL missing or invalid for %s; refusing startup\n",level); goto out;
+                }
+                fprintf(stderr,"MODEL loaded level=%s source_sha256=%s features=20 coefficients=80\n",level,state.models[index].source_sha256);
+            }
+        }
     }
 #ifdef CATS_CONTEXT_ACQUISITION
     {
@@ -842,6 +920,13 @@ int main(int argc, char **argv)
     SSL_CTX_set_min_proto_version(ctx, TLS1_3_VERSION);
     SSL_CTX_set_max_proto_version(ctx, TLS1_3_VERSION);
     SSL_CTX_set_max_cert_list(ctx, 512 * 1024);
+    if (state.cti_policy_path) {
+        /* This prototype enforces policy at full-handshake certificate selection.
+         * Prevent resumption from bypassing the callback after a policy change. */
+        SSL_CTX_set_session_cache_mode(ctx, SSL_SESS_CACHE_OFF);
+        SSL_CTX_set_options(ctx, SSL_OP_NO_TICKET);
+        if (!SSL_CTX_set_num_tickets(ctx, 0)) goto out;
+    }
     if (!is_default_group(group) && !SSL_CTX_set1_groups_list(ctx, group))
         goto out;
     SSL_CTX_set_cert_cb(ctx, cert_cb, &state);

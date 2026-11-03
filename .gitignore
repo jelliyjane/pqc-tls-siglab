@@ -9,3 +9,15 @@ build/
 build-*/
 __pycache__/
 *.py[cod]
+
+# Credentials and private retirement backups must never be published.
+.env
+.env.*
+.aws/
+.ssh/
+*.pem
+*.keys
+*.keylog
+*.pcap
+*.pcapng
+*.private-exclusions.json

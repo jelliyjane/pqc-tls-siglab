@@ -1,0 +1,12 @@
+{
+  "schema": "cats-stix-policy.v1",
+  "valid_until": "2000-01-01T00:00:00.000Z",
+  "allowed_algorithms": ["mldsa44", "p256_mldsa44", "rsa3072_mldsa44", "falcon512"],
+  "trusted_creators": ["identity--f431f809-377b-45e0-aa1c-6a4751cae5ff"],
+  "rules": [
+    {
+      "stix_id": "vulnerability--0c7b5b88-8ff7-4a4d-aa9d-feb398cd0061",
+      "deny_algorithms": ["mldsa44", "p256_mldsa44", "rsa3072_mldsa44"]
+    }
+  ]
+}
